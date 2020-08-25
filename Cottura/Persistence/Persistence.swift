@@ -60,7 +60,6 @@ struct PersistenceController {
             item.name = jsonDictionary["name"] as! String
             item.price = jsonDictionary["price"] as! Float
             item.availableCount = jsonDictionary["available_count"] as! Int32
-            item.position = jsonDictionary["position"] as! Int16
             item.dateCreated = Date()
         }
         do {

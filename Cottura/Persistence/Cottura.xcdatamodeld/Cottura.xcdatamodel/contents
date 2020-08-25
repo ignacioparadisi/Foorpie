@@ -5,10 +5,9 @@
         <attribute name="dateCreated" attributeType="Date" defaultDateTimeInterval="620019780" usesScalarValueType="NO"/>
         <attribute name="imageURL" optional="YES" attributeType="URI"/>
         <attribute name="name" attributeType="String" defaultValueString=""/>
-        <attribute name="position" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="price" attributeType="Float" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="MenuFoodItem" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="MenuFoodItem" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>

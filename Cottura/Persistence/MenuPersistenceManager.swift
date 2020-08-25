@@ -16,7 +16,7 @@ class MenuPersistenceManager {
     
     func fetch() -> Result<[MenuFoodItem], Error> {
         let fetchRequest: NSFetchRequest<MenuFoodItem> = MenuFoodItem.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(MenuFoodItem.position), ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(MenuFoodItem.name), ascending: true)]
         do {
             let result = try PersistenceController.shared.container.viewContext.fetch(fetchRequest)
             return .success(result)

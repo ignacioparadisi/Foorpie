@@ -10,16 +10,16 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     private let orderListViewController = OrderListViewController()
-    private let menuViewController = MenuViewController()
+    private let menuSplitViewController = MenuSplitViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         orderListViewController.tabBarItem = UITabBarItem(title: "Pedidos", image: UIImage(systemName: "tray.full"), tag: 0)
-        menuViewController.tabBarItem = UITabBarItem(title: "Menú", image: UIImage(systemName: "doc.text"), tag: 1)
+        menuSplitViewController.tabBarItem = UITabBarItem(title: "Menú", image: UIImage(systemName: "doc.text"), tag: 1)
+        menuSplitViewController.preferredDisplayMode = .allVisible
         viewControllers = [
             UINavigationController(rootViewController: orderListViewController),
-            UINavigationController(rootViewController: menuViewController)
+            menuSplitViewController
         ]
-        view.backgroundColor = .white
     }
 }
 

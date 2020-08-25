@@ -12,6 +12,7 @@ class MenuViewController: UIViewController {
     /// TableView to display items in menu
     private let tableView: UITableView = UITableView()
     private let viewModel = MenuViewModel()
+    private let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class MenuViewController: UIViewController {
         title = "Menú"
         let addBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: nil)
         navigationItem.setRightBarButtonItems([addBarButton, editButtonItem], animated: false)
+        setupSearchController()
     }
     
     private func setupTableView() {
@@ -36,6 +38,14 @@ class MenuViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(MenuItemTableViewCell.self)
+    }
+    
+    private func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Buscar"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
     @objc private func refresh() {
@@ -77,9 +87,18 @@ extension MenuViewController: UITableViewDelegate {
         }
     }
     
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        viewModel.moveItems(sourceIndexPath: sourceIndexPath, destinationIndexPath: destinationIndexPath)
-        tableView.moveRow(at: sourceIndexPath, to: destinationIndexPath)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailViewModel = viewModel.detailForRow(at: indexPath)
+        let viewController = UINavigationController(rootViewController: MenuItemDetailViewController(viewModel: detailViewModel))
+        showDetailViewController(viewController, sender: nil)
+    }
+}
+
+// MARK: - UISearchResultsUpdating
+extension MenuViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        viewModel.filter(searchController.searchBar.text)
+        tableView.reloadData()
     }
 }
 

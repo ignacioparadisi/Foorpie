@@ -2,7 +2,7 @@
 //  MenuFoodItem+CoreDataProperties.swift
 //  Cottura
 //
-//  Created by Ignacio Paradisi on 8/24/20.
+//  Created by Ignacio Paradisi on 8/25/20.
 //  Copyright © 2020 Ignacio Paradisi. All rights reserved.
 //
 //
@@ -17,11 +17,10 @@ extension MenuFoodItem {
         return NSFetchRequest<MenuFoodItem>(entityName: "MenuFoodItem")
     }
 
-    @NSManaged public var dateCreated: Date
-    @NSManaged public var position: Int16
-    @NSManaged public var price: Float
     @NSManaged public var availableCount: Int32
-    @NSManaged public var name: String
+    @NSManaged public var dateCreated: Date
     @NSManaged public var imageURL: URL?
+    @NSManaged public var name: String
+    @NSManaged public var price: Float
 
 }
