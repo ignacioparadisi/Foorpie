@@ -58,7 +58,7 @@ struct PersistenceController {
         for jsonDictionary in jsonArray {
             let item = MenuFoodItem(context: container.viewContext)
             item.name = jsonDictionary["name"] as! String
-            item.price = jsonDictionary["price"] as! Float
+            item.price = jsonDictionary["price"] as! Double
             item.availableCount = jsonDictionary["available_count"] as! Int32
             item.dateCreated = Date()
         }

@@ -10,11 +10,13 @@ import Foundation
 
 enum FieldType {
     case textField
+    case currency
+    case integer
 }
 
-protocol FieldViewModel {
+protocol FieldViewModelRepresentable {
     var placeholder: String? { get set }
-    var stringValue: String? { get set }
+    var stringValue: String? { get }
     var title: String? { get set }
     var type: FieldType { get }
 }

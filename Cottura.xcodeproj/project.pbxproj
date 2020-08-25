@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -61,6 +61,16 @@
 		3275C6DE24F5599D004691EA /* FieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6DC24F5599D004691EA /* FieldViewModel.swift */; };
 		3275C6E024F559B4004691EA /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6DF24F559B4004691EA /* TextFieldCellViewModel.swift */; };
 		3275C6E124F559B4004691EA /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6DF24F559B4004691EA /* TextFieldCellViewModel.swift */; };
+		3275C6E424F55DD1004691EA /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3275C6E324F55DD1004691EA /* IQKeyboardManagerSwift */; };
+		3275C6E724F55DF0004691EA /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3275C6E624F55DF0004691EA /* IQKeyboardManagerSwift */; };
+		3275C6E924F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6E824F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift */; };
+		3275C6EA24F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6E824F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift */; };
+		3275C6EC24F55F96004691EA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6EB24F55F96004691EA /* String+Extension.swift */; };
+		3275C6ED24F55F96004691EA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6EB24F55F96004691EA /* String+Extension.swift */; };
+		3275C6EF24F56040004691EA /* CurrencyTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6EE24F56040004691EA /* CurrencyTextFieldCellViewModel.swift */; };
+		3275C6F024F56040004691EA /* CurrencyTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6EE24F56040004691EA /* CurrencyTextFieldCellViewModel.swift */; };
+		3275C6F224F563E0004691EA /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6F124F563E0004691EA /* CurrencyField.swift */; };
+		3275C6F324F563E0004691EA /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6F124F563E0004691EA /* CurrencyField.swift */; };
 		327B32D524F4862700B7DCD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D424F4862700B7DCD1 /* AppDelegate.swift */; };
 		327B32D724F4862700B7DCD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D624F4862700B7DCD1 /* SceneDelegate.swift */; };
 		327B32D924F4862700B7DCD1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D824F4862700B7DCD1 /* MainTabBarController.swift */; };
@@ -75,6 +85,10 @@
 		327B331424F48A3D00B7DCD1 /* order-status-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 327B331324F48A3D00B7DCD1 /* order-status-data.json */; };
 		327B331724F48C4500B7DCD1 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331624F48C4500B7DCD1 /* OrderListViewController.swift */; };
 		327B331924F48C6600B7DCD1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331824F48C6600B7DCD1 /* MenuViewController.swift */; };
+		32BE299D24F5910400BD9F15 /* IntTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */; };
+		32BE299F24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */; };
+		32BE29A024F5917C00BD9F15 /* IntTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */; };
+		32BE29A124F5917F00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +132,10 @@
 		3275C6D424F54DD4004691EA /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		3275C6DC24F5599D004691EA /* FieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldViewModel.swift; sourceTree = "<group>"; };
 		3275C6DF24F559B4004691EA /* TextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCellViewModel.swift; sourceTree = "<group>"; };
+		3275C6E824F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		3275C6EB24F55F96004691EA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		3275C6EE24F56040004691EA /* CurrencyTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextFieldCellViewModel.swift; sourceTree = "<group>"; };
+		3275C6F124F563E0004691EA /* CurrencyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
 		327B32D124F4862700B7DCD1 /* Cottura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cottura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		327B32D424F4862700B7DCD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		327B32D624F4862700B7DCD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +156,8 @@
 		327B331324F48A3D00B7DCD1 /* order-status-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "order-status-data.json"; sourceTree = "<group>"; };
 		327B331624F48C4500B7DCD1 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		327B331824F48C6600B7DCD1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextFieldCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3275C6E724F55DF0004691EA /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3275C6E424F55DD1004691EA /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +194,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		320A2D8B24F5675D006140A5 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3275C6C824F541F9004691EA /* TextFieldTableViewCell.swift */,
+				3275C6CB24F5420C004691EA /* ButtonTableViewCell.swift */,
+				3275C6E824F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift */,
+				32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
 		3250B06A24F49422001EE718 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				3275C6DF24F559B4004691EA /* TextFieldCellViewModel.swift */,
+				3275C6EE24F56040004691EA /* CurrencyTextFieldCellViewModel.swift */,
+				32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -213,8 +248,8 @@
 		3275C6D924F5596A004691EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3275C6C824F541F9004691EA /* TextFieldTableViewCell.swift */,
-				3275C6CB24F5420C004691EA /* ButtonTableViewCell.swift */,
+				320A2D8B24F5675D006140A5 /* Table View Cells */,
+				3275C6F124F563E0004691EA /* CurrencyField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +270,13 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		3275C6E524F55DF0004691EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		327B32C824F4862700B7DCD1 = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +284,7 @@
 				327B32ED24F4862800B7DCD1 /* CotturaTests */,
 				327B32F824F4862800B7DCD1 /* CotturaUITests */,
 				327B32D224F4862700B7DCD1 /* Products */,
+				3275C6E524F55DF0004691EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -308,6 +351,7 @@
 				3250B06624F493FB001EE718 /* UICollectionView+Extension.swift */,
 				3250B06424F493F2001EE718 /* UITableView+Extension.swift */,
 				3275C6D424F54DD4004691EA /* UIFont+Extension.swift */,
+				3275C6EB24F55F96004691EA /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -429,6 +473,9 @@
 			dependencies = (
 			);
 			name = "Cottura DEV";
+			packageProductDependencies = (
+				3275C6E624F55DF0004691EA /* IQKeyboardManagerSwift */,
+			);
 			productName = Cottura;
 			productReference = 3250B09D24F4C444001EE718 /* Cottura DEV.app */;
 			productType = "com.apple.product-type.application";
@@ -446,6 +493,9 @@
 			dependencies = (
 			);
 			name = Cottura;
+			packageProductDependencies = (
+				3275C6E324F55DD1004691EA /* IQKeyboardManagerSwift */,
+			);
 			productName = Cottura;
 			productReference = 327B32D124F4862700B7DCD1 /* Cottura.app */;
 			productType = "com.apple.product-type.application";
@@ -518,6 +568,9 @@
 				Base,
 			);
 			mainGroup = 327B32C824F4862700B7DCD1;
+			packageReferences = (
+				3275C6E224F55DD1004691EA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 327B32D224F4862700B7DCD1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -582,17 +635,21 @@
 				3250B08124F4C444001EE718 /* UICollectionView+Extension.swift in Sources */,
 				3250B08224F4C444001EE718 /* MainTabBarController.swift in Sources */,
 				3250B08324F4C444001EE718 /* OrderListViewController.swift in Sources */,
+				32BE29A124F5917F00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */,
 				3250B08424F4C444001EE718 /* AppDelegate.swift in Sources */,
+				3275C6F024F56040004691EA /* CurrencyTextFieldCellViewModel.swift in Sources */,
 				3250B0A124F4C6B4001EE718 /* MenuPersistenceManager.swift in Sources */,
 				3275C6CA24F541F9004691EA /* TextFieldTableViewCell.swift in Sources */,
 				3250B08524F4C444001EE718 /* ReusableView.swift in Sources */,
 				3250B08624F4C444001EE718 /* MenuViewController.swift in Sources */,
 				3250B08724F4C444001EE718 /* MenuFoodItem+CoreDataClass.swift in Sources */,
+				3275C6EA24F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift in Sources */,
 				3250B08824F4C444001EE718 /* NibLoadableView.swift in Sources */,
 				3250B08924F4C444001EE718 /* Cottura.xcdatamodeld in Sources */,
 				3250B08A24F4C444001EE718 /* MenuItemTableViewCell.swift in Sources */,
 				3275C6C724F541E1004691EA /* PhotoPickerTableViewCell.swift in Sources */,
 				3250B08B24F4C444001EE718 /* SceneDelegate.swift in Sources */,
+				32BE29A024F5917C00BD9F15 /* IntTextFieldTableViewCell.swift in Sources */,
 				3250B08C24F4C444001EE718 /* MenuFoodItem+CoreDataProperties.swift in Sources */,
 				3250B08D24F4C444001EE718 /* MenuItemViewModel.swift in Sources */,
 				3275C6E124F559B4004691EA /* TextFieldCellViewModel.swift in Sources */,
@@ -603,7 +660,9 @@
 				3275C6DE24F5599D004691EA /* FieldViewModel.swift in Sources */,
 				3275C6CD24F5420C004691EA /* ButtonTableViewCell.swift in Sources */,
 				3275C6C124F540C3004691EA /* MenuItemDetailViewController.swift in Sources */,
+				3275C6F324F563E0004691EA /* CurrencyField.swift in Sources */,
 				3250B09124F4C444001EE718 /* UITableView+Extension.swift in Sources */,
+				3275C6ED24F55F96004691EA /* String+Extension.swift in Sources */,
 				3275C6C424F540D5004691EA /* MenuItemDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,17 +675,21 @@
 				3250B06724F493FB001EE718 /* UICollectionView+Extension.swift in Sources */,
 				327B32D924F4862700B7DCD1 /* MainTabBarController.swift in Sources */,
 				327B331724F48C4500B7DCD1 /* OrderListViewController.swift in Sources */,
+				32BE299F24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */,
 				327B32D524F4862700B7DCD1 /* AppDelegate.swift in Sources */,
+				3275C6EF24F56040004691EA /* CurrencyTextFieldCellViewModel.swift in Sources */,
 				3250B0A024F4C61F001EE718 /* MenuPersistenceManager.swift in Sources */,
 				3275C6C924F541F9004691EA /* TextFieldTableViewCell.swift in Sources */,
 				3250B06C24F4942F001EE718 /* ReusableView.swift in Sources */,
 				327B331924F48C6600B7DCD1 /* MenuViewController.swift in Sources */,
 				3250B07D24F4C22B001EE718 /* MenuFoodItem+CoreDataClass.swift in Sources */,
+				3275C6E924F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift in Sources */,
 				3250B07A24F4B7F7001EE718 /* NibLoadableView.swift in Sources */,
 				327B32DF24F4862700B7DCD1 /* Cottura.xcdatamodeld in Sources */,
 				3250B07724F4AEFD001EE718 /* MenuItemTableViewCell.swift in Sources */,
 				3275C6C624F541E1004691EA /* PhotoPickerTableViewCell.swift in Sources */,
 				327B32D724F4862700B7DCD1 /* SceneDelegate.swift in Sources */,
+				32BE299D24F5910400BD9F15 /* IntTextFieldTableViewCell.swift in Sources */,
 				3250B07E24F4C22B001EE718 /* MenuFoodItem+CoreDataProperties.swift in Sources */,
 				3250B07424F49BFE001EE718 /* MenuItemViewModel.swift in Sources */,
 				3275C6E024F559B4004691EA /* TextFieldCellViewModel.swift in Sources */,
@@ -637,7 +700,9 @@
 				3275C6DD24F5599D004691EA /* FieldViewModel.swift in Sources */,
 				3275C6CC24F5420C004691EA /* ButtonTableViewCell.swift in Sources */,
 				3275C6C024F540C3004691EA /* MenuItemDetailViewController.swift in Sources */,
+				3275C6F224F563E0004691EA /* CurrencyField.swift in Sources */,
 				3250B06524F493F3001EE718 /* UITableView+Extension.swift in Sources */,
+				3275C6EC24F55F96004691EA /* String+Extension.swift in Sources */,
 				3275C6C324F540D5004691EA /* MenuItemDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1010,6 +1075,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3275C6E224F55DD1004691EA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3275C6E324F55DD1004691EA /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3275C6E224F55DD1004691EA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		3275C6E624F55DF0004691EA /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3275C6E224F55DD1004691EA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		327B32DD24F4862700B7DCD1 /* Cottura.xcdatamodeld */ = {

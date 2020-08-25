@@ -1,11 +1,11 @@
 [{
     "name": "Pizza Margarita",
-    "price": 5.0,
+    "price": 5.99,
     "image": null,
     "available_count": 10,
 }, {
     "name": "Pizza Vegetariana",
-    "price": 7.0,
+    "price": 7.00,
     "image": null,
     "available_count": 0,
 }]

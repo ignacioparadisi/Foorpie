@@ -21,6 +21,6 @@ extension MenuFoodItem {
     @NSManaged public var dateCreated: Date
     @NSManaged public var imageURL: URL?
     @NSManaged public var name: String
-    @NSManaged public var price: Float
+    @NSManaged public var price: Double
 
 }

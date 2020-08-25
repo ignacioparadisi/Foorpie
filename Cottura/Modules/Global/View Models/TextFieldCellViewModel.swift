@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TextFieldCellViewModel: FieldViewModel {
+class TextFieldCellViewModel: FieldViewModelRepresentable {
     var placeholder: String?
     var stringValue: String?
     var title: String?

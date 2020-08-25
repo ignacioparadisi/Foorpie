@@ -25,7 +25,7 @@ class MenuViewController: UIViewController {
     private func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Menú"
-        let addBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: nil)
+        let addBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addNewItem))
         navigationItem.setRightBarButtonItems([addBarButton, editButtonItem], animated: false)
         setupSearchController()
     }
@@ -57,6 +57,11 @@ class MenuViewController: UIViewController {
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         tableView.setEditing(editing, animated: animated)
+    }
+    
+    @objc private func addNewItem() {
+        let viewController = UINavigationController(rootViewController: MenuItemDetailViewController())
+        present(viewController, animated: true)
     }
 }
 

@@ -11,9 +11,16 @@ import Combine
 
 class MenuItemDetailViewModel {
     private let item: MenuFoodItem?
-    private var fields: [FieldViewModel] = []
+    private var fields: [FieldViewModelRepresentable] = []
+    var isEditing: Bool {
+        return item != nil
+    }
     var numberOfSections: Int {
-        return MenuItemDetailViewController.Section.allCases.count
+        if isEditing {
+            return MenuItemDetailViewController.Section.allCases.count
+        } else {
+            return MenuItemDetailViewController.Section.allCases.count - 1
+        }
     }
     var title: String {
         if let item = item {
@@ -25,8 +32,14 @@ class MenuItemDetailViewModel {
     
     init(item: MenuFoodItem? = nil) {
         self.item = item
+        var availableCount: Int?
+        if let item = item {
+            availableCount = Int(item.availableCount)
+        }
         fields = [
-            TextFieldCellViewModel(title: "Nombre", value: item?.name)
+            TextFieldCellViewModel(title: "Nombre", value: item?.name),
+            CurrencyTextFieldCellViewModel(title: "Precio", value: item?.price),
+            IntTextFieldCellViewModel(title: "Cantidad Disponible", value: availableCount)
         ]
     }
     
@@ -38,14 +51,12 @@ class MenuItemDetailViewModel {
         case .fields:
             return fields.count
         case .delete:
-            return 1
+            return isEditing ? 1: 0
         }
     }
     
-    func fieldForRow<T: FieldViewModel>(at indexPath: IndexPath) -> T {
-        guard let field = fields[indexPath.row] as? T else {
-            fatalError("Could not cast field \(String(describing: fields[indexPath.row].title))")
-        }
+    func fieldForRow(at indexPath: IndexPath) -> FieldViewModelRepresentable {
+       let field = fields[indexPath.row]
         return field
     }
 }
