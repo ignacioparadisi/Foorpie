@@ -29,7 +29,8 @@ class MenuItemViewModel {
             let image = UIImage(contentsOfFile: stringURL) {
             return image
         } else {
-            return UIImage(systemName: "photo")!
+            let image = UIImage(systemName: "photo", withConfiguration: UIImage.SymbolConfiguration(scale: .small))!
+            return image.withTintColor(.systemGray3, renderingMode: .alwaysOriginal)
         }
     }
     
