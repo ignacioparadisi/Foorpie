@@ -11,6 +11,7 @@ import Combine
 
 class MenuItemDetailViewModel {
     private let item: MenuFoodItem?
+    private var fields: [FieldViewModel] = []
     var numberOfSections: Int {
         return MenuItemDetailViewController.Section.allCases.count
     }
@@ -24,6 +25,9 @@ class MenuItemDetailViewModel {
     
     init(item: MenuFoodItem? = nil) {
         self.item = item
+        fields = [
+            TextFieldCellViewModel(title: "Nombre", value: item?.name)
+        ]
     }
     
     func numberOfRows(in section: Int) -> Int {
@@ -32,9 +36,16 @@ class MenuItemDetailViewModel {
         case .photo:
             return 1
         case .fields:
-            return 3
+            return fields.count
         case .delete:
             return 1
         }
+    }
+    
+    func fieldForRow<T: FieldViewModel>(at indexPath: IndexPath) -> T {
+        guard let field = fields[indexPath.row] as? T else {
+            fatalError("Could not cast field \(String(describing: fields[indexPath.row].title))")
+        }
+        return field
     }
 }

@@ -67,8 +67,13 @@ extension MenuItemDetailViewController: UITableViewDataSource {
             cell.configure(with: UIImage(named: "pizza"))
             return cell
         case .fields:
-            let cell = tableView.dequeueReusableCell(for: indexPath) as TextFieldTableViewCell
-            return cell
+            let field = viewModel.fieldForRow(at: indexPath) as TextFieldCellViewModel
+            switch field.type {
+            case .textField:
+                let cell = tableView.dequeueReusableCell(for: indexPath) as TextFieldTableViewCell
+                cell.configure(with: field)
+                return cell
+            }
         case .delete:
             let cell = tableView.dequeueReusableCell(for: indexPath) as ButtonTableViewCell
             return cell

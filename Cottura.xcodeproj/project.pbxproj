@@ -57,6 +57,10 @@
 		3275C6D324F547F1004691EA /* MenuSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6D124F547F1004691EA /* MenuSplitViewController.swift */; };
 		3275C6D524F54DD4004691EA /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6D424F54DD4004691EA /* UIFont+Extension.swift */; };
 		3275C6D624F54DD4004691EA /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6D424F54DD4004691EA /* UIFont+Extension.swift */; };
+		3275C6DD24F5599D004691EA /* FieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6DC24F5599D004691EA /* FieldViewModel.swift */; };
+		3275C6DE24F5599D004691EA /* FieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6DC24F5599D004691EA /* FieldViewModel.swift */; };
+		3275C6E024F559B4004691EA /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6DF24F559B4004691EA /* TextFieldCellViewModel.swift */; };
+		3275C6E124F559B4004691EA /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6DF24F559B4004691EA /* TextFieldCellViewModel.swift */; };
 		327B32D524F4862700B7DCD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D424F4862700B7DCD1 /* AppDelegate.swift */; };
 		327B32D724F4862700B7DCD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D624F4862700B7DCD1 /* SceneDelegate.swift */; };
 		327B32D924F4862700B7DCD1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D824F4862700B7DCD1 /* MainTabBarController.swift */; };
@@ -112,6 +116,8 @@
 		3275C6CB24F5420C004691EA /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		3275C6D124F547F1004691EA /* MenuSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSplitViewController.swift; sourceTree = "<group>"; };
 		3275C6D424F54DD4004691EA /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		3275C6DC24F5599D004691EA /* FieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldViewModel.swift; sourceTree = "<group>"; };
+		3275C6DF24F559B4004691EA /* TextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		327B32D124F4862700B7DCD1 /* Cottura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cottura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		327B32D424F4862700B7DCD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		327B32D624F4862700B7DCD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -181,10 +187,52 @@
 				3250B07524F4AEFD001EE718 /* MenuItemTableViewCell.swift */,
 				3250B07624F4AEFD001EE718 /* MenuItemTableViewCell.xib */,
 				3275C6C524F541E1004691EA /* PhotoPickerTableViewCell.swift */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		3275C6D724F5595D004691EA /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				3275C6DB24F5598F004691EA /* Protocols */,
+				3275C6DA24F55975004691EA /* View Controllers */,
+				3275C6D924F5596A004691EA /* Views */,
+				3275C6D824F55963004691EA /* View Models */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		3275C6D824F55963004691EA /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				3275C6DF24F559B4004691EA /* TextFieldCellViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		3275C6D924F5596A004691EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				3275C6C824F541F9004691EA /* TextFieldTableViewCell.swift */,
 				3275C6CB24F5420C004691EA /* ButtonTableViewCell.swift */,
 			);
-			path = "Table View Cells";
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3275C6DA24F55975004691EA /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				327B32D824F4862700B7DCD1 /* MainTabBarController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3275C6DB24F5598F004691EA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3275C6DC24F5599D004691EA /* FieldViewModel.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		327B32C824F4862700B7DCD1 = {
@@ -246,7 +294,7 @@
 		327B330724F4864400B7DCD1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				327B32D824F4862700B7DCD1 /* MainTabBarController.swift */,
+				3275C6D724F5595D004691EA /* Global */,
 				327B330B24F4867C00B7DCD1 /* Orders */,
 				327B330A24F4866900B7DCD1 /* Menu */,
 			);
@@ -547,10 +595,12 @@
 				3250B08B24F4C444001EE718 /* SceneDelegate.swift in Sources */,
 				3250B08C24F4C444001EE718 /* MenuFoodItem+CoreDataProperties.swift in Sources */,
 				3250B08D24F4C444001EE718 /* MenuItemViewModel.swift in Sources */,
+				3275C6E124F559B4004691EA /* TextFieldCellViewModel.swift in Sources */,
 				3250B08E24F4C444001EE718 /* NSLayoutAnchor+Extension.swift in Sources */,
 				3275C6D624F54DD4004691EA /* UIFont+Extension.swift in Sources */,
 				3250B08F24F4C444001EE718 /* MenuViewModel.swift in Sources */,
 				3250B09024F4C444001EE718 /* Persistence.swift in Sources */,
+				3275C6DE24F5599D004691EA /* FieldViewModel.swift in Sources */,
 				3275C6CD24F5420C004691EA /* ButtonTableViewCell.swift in Sources */,
 				3275C6C124F540C3004691EA /* MenuItemDetailViewController.swift in Sources */,
 				3250B09124F4C444001EE718 /* UITableView+Extension.swift in Sources */,
@@ -579,10 +629,12 @@
 				327B32D724F4862700B7DCD1 /* SceneDelegate.swift in Sources */,
 				3250B07E24F4C22B001EE718 /* MenuFoodItem+CoreDataProperties.swift in Sources */,
 				3250B07424F49BFE001EE718 /* MenuItemViewModel.swift in Sources */,
+				3275C6E024F559B4004691EA /* TextFieldCellViewModel.swift in Sources */,
 				3250B06924F49406001EE718 /* NSLayoutAnchor+Extension.swift in Sources */,
 				3275C6D524F54DD4004691EA /* UIFont+Extension.swift in Sources */,
 				3250B07224F49BDB001EE718 /* MenuViewModel.swift in Sources */,
 				327B330D24F4873500B7DCD1 /* Persistence.swift in Sources */,
+				3275C6DD24F5599D004691EA /* FieldViewModel.swift in Sources */,
 				3275C6CC24F5420C004691EA /* ButtonTableViewCell.swift in Sources */,
 				3275C6C024F540C3004691EA /* MenuItemDetailViewController.swift in Sources */,
 				3250B06524F493F3001EE718 /* UITableView+Extension.swift in Sources */,
