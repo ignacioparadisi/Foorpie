@@ -16,6 +16,33 @@
 		3250B07724F4AEFD001EE718 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07524F4AEFD001EE718 /* MenuItemTableViewCell.swift */; };
 		3250B07824F4AEFD001EE718 /* MenuItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3250B07624F4AEFD001EE718 /* MenuItemTableViewCell.xib */; };
 		3250B07A24F4B7F7001EE718 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07924F4B7F7001EE718 /* NibLoadableView.swift */; };
+		3250B07D24F4C22B001EE718 /* MenuFoodItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07B24F4C22B001EE718 /* MenuFoodItem+CoreDataClass.swift */; };
+		3250B07E24F4C22B001EE718 /* MenuFoodItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07C24F4C22B001EE718 /* MenuFoodItem+CoreDataProperties.swift */; };
+		3250B08124F4C444001EE718 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B06624F493FB001EE718 /* UICollectionView+Extension.swift */; };
+		3250B08224F4C444001EE718 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D824F4862700B7DCD1 /* MainTabBarController.swift */; };
+		3250B08324F4C444001EE718 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331624F48C4500B7DCD1 /* OrderListViewController.swift */; };
+		3250B08424F4C444001EE718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D424F4862700B7DCD1 /* AppDelegate.swift */; };
+		3250B08524F4C444001EE718 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B06B24F4942F001EE718 /* ReusableView.swift */; };
+		3250B08624F4C444001EE718 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331824F48C6600B7DCD1 /* MenuViewController.swift */; };
+		3250B08724F4C444001EE718 /* MenuFoodItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07B24F4C22B001EE718 /* MenuFoodItem+CoreDataClass.swift */; };
+		3250B08824F4C444001EE718 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07924F4B7F7001EE718 /* NibLoadableView.swift */; };
+		3250B08924F4C444001EE718 /* Cottura.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 327B32DD24F4862700B7DCD1 /* Cottura.xcdatamodeld */; };
+		3250B08A24F4C444001EE718 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07524F4AEFD001EE718 /* MenuItemTableViewCell.swift */; };
+		3250B08B24F4C444001EE718 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D624F4862700B7DCD1 /* SceneDelegate.swift */; };
+		3250B08C24F4C444001EE718 /* MenuFoodItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07C24F4C22B001EE718 /* MenuFoodItem+CoreDataProperties.swift */; };
+		3250B08D24F4C444001EE718 /* MenuItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07324F49BFE001EE718 /* MenuItemViewModel.swift */; };
+		3250B08E24F4C444001EE718 /* NSLayoutAnchor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B06824F49406001EE718 /* NSLayoutAnchor+Extension.swift */; };
+		3250B08F24F4C444001EE718 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07124F49BDB001EE718 /* MenuViewModel.swift */; };
+		3250B09024F4C444001EE718 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B330C24F4873500B7DCD1 /* Persistence.swift */; };
+		3250B09124F4C444001EE718 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B06424F493F2001EE718 /* UITableView+Extension.swift */; };
+		3250B09424F4C444001EE718 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 327B32E224F4862800B7DCD1 /* LaunchScreen.storyboard */; };
+		3250B09524F4C444001EE718 /* order-status-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 327B331324F48A3D00B7DCD1 /* order-status-data.json */; };
+		3250B09624F4C444001EE718 /* menu-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 327B330E24F4892500B7DCD1 /* menu-data.json */; };
+		3250B09724F4C444001EE718 /* order-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 327B331124F489DE00B7DCD1 /* order-data.json */; };
+		3250B09824F4C444001EE718 /* MenuItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3250B07624F4AEFD001EE718 /* MenuItemTableViewCell.xib */; };
+		3250B09924F4C444001EE718 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327B32E024F4862800B7DCD1 /* Assets.xcassets */; };
+		3250B0A024F4C61F001EE718 /* MenuPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B09F24F4C61F001EE718 /* MenuPersistenceManager.swift */; };
+		3250B0A124F4C6B4001EE718 /* MenuPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B09F24F4C61F001EE718 /* MenuPersistenceManager.swift */; };
 		327B32D524F4862700B7DCD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D424F4862700B7DCD1 /* AppDelegate.swift */; };
 		327B32D724F4862700B7DCD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D624F4862700B7DCD1 /* SceneDelegate.swift */; };
 		327B32D924F4862700B7DCD1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D824F4862700B7DCD1 /* MainTabBarController.swift */; };
@@ -59,6 +86,11 @@
 		3250B07524F4AEFD001EE718 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
 		3250B07624F4AEFD001EE718 /* MenuItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemTableViewCell.xib; sourceTree = "<group>"; };
 		3250B07924F4B7F7001EE718 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		3250B07B24F4C22B001EE718 /* MenuFoodItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuFoodItem+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		3250B07C24F4C22B001EE718 /* MenuFoodItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuFoodItem+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		3250B09D24F4C444001EE718 /* Cottura DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cottura DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3250B09E24F4C444001EE718 /* DEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DEV-Info.plist"; path = "/Users/ignacioparadisi/Developer/Projects/Cottura/Cottura/DEV-Info.plist"; sourceTree = "<absolute>"; };
+		3250B09F24F4C61F001EE718 /* MenuPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPersistenceManager.swift; sourceTree = "<group>"; };
 		327B32D124F4862700B7DCD1 /* Cottura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cottura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		327B32D424F4862700B7DCD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		327B32D624F4862700B7DCD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +114,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3250B09224F4C444001EE718 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		327B32CE24F4862700B7DCD1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -140,6 +179,7 @@
 				327B32D124F4862700B7DCD1 /* Cottura.app */,
 				327B32EA24F4862800B7DCD1 /* CotturaTests.xctest */,
 				327B32F524F4862800B7DCD1 /* CotturaUITests.xctest */,
+				3250B09D24F4C444001EE718 /* Cottura DEV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,6 +196,7 @@
 				327B32E024F4862800B7DCD1 /* Assets.xcassets */,
 				327B32E224F4862800B7DCD1 /* LaunchScreen.storyboard */,
 				327B32E524F4862800B7DCD1 /* Info.plist */,
+				3250B09E24F4C444001EE718 /* DEV-Info.plist */,
 			);
 			path = Cottura;
 			sourceTree = "<group>";
@@ -205,6 +246,7 @@
 				327B331024F489C100B7DCD1 /* Data Files */,
 				327B330C24F4873500B7DCD1 /* Persistence.swift */,
 				327B32DD24F4862700B7DCD1 /* Cottura.xcdatamodeld */,
+				3250B09F24F4C61F001EE718 /* MenuPersistenceManager.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -242,6 +284,8 @@
 		327B331524F48C1500B7DCD1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3250B07B24F4C22B001EE718 /* MenuFoodItem+CoreDataClass.swift */,
+				3250B07C24F4C22B001EE718 /* MenuFoodItem+CoreDataProperties.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -296,6 +340,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3250B07F24F4C444001EE718 /* Cottura DEV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3250B09A24F4C444001EE718 /* Build configuration list for PBXNativeTarget "Cottura DEV" */;
+			buildPhases = (
+				3250B08024F4C444001EE718 /* Sources */,
+				3250B09224F4C444001EE718 /* Frameworks */,
+				3250B09324F4C444001EE718 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cottura DEV";
+			productName = Cottura;
+			productReference = 3250B09D24F4C444001EE718 /* Cottura DEV.app */;
+			productType = "com.apple.product-type.application";
+		};
 		327B32D024F4862700B7DCD1 /* Cottura */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 327B32FE24F4862800B7DCD1 /* Build configuration list for PBXNativeTarget "Cottura" */;
@@ -388,11 +449,25 @@
 				327B32D024F4862700B7DCD1 /* Cottura */,
 				327B32E924F4862800B7DCD1 /* CotturaTests */,
 				327B32F424F4862800B7DCD1 /* CotturaUITests */,
+				3250B07F24F4C444001EE718 /* Cottura DEV */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3250B09324F4C444001EE718 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3250B09424F4C444001EE718 /* LaunchScreen.storyboard in Resources */,
+				3250B09524F4C444001EE718 /* order-status-data.json in Resources */,
+				3250B09624F4C444001EE718 /* menu-data.json in Resources */,
+				3250B09724F4C444001EE718 /* order-data.json in Resources */,
+				3250B09824F4C444001EE718 /* MenuItemTableViewCell.xib in Resources */,
+				3250B09924F4C444001EE718 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		327B32CF24F4862700B7DCD1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -423,6 +498,31 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3250B08024F4C444001EE718 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3250B08124F4C444001EE718 /* UICollectionView+Extension.swift in Sources */,
+				3250B08224F4C444001EE718 /* MainTabBarController.swift in Sources */,
+				3250B08324F4C444001EE718 /* OrderListViewController.swift in Sources */,
+				3250B08424F4C444001EE718 /* AppDelegate.swift in Sources */,
+				3250B0A124F4C6B4001EE718 /* MenuPersistenceManager.swift in Sources */,
+				3250B08524F4C444001EE718 /* ReusableView.swift in Sources */,
+				3250B08624F4C444001EE718 /* MenuViewController.swift in Sources */,
+				3250B08724F4C444001EE718 /* MenuFoodItem+CoreDataClass.swift in Sources */,
+				3250B08824F4C444001EE718 /* NibLoadableView.swift in Sources */,
+				3250B08924F4C444001EE718 /* Cottura.xcdatamodeld in Sources */,
+				3250B08A24F4C444001EE718 /* MenuItemTableViewCell.swift in Sources */,
+				3250B08B24F4C444001EE718 /* SceneDelegate.swift in Sources */,
+				3250B08C24F4C444001EE718 /* MenuFoodItem+CoreDataProperties.swift in Sources */,
+				3250B08D24F4C444001EE718 /* MenuItemViewModel.swift in Sources */,
+				3250B08E24F4C444001EE718 /* NSLayoutAnchor+Extension.swift in Sources */,
+				3250B08F24F4C444001EE718 /* MenuViewModel.swift in Sources */,
+				3250B09024F4C444001EE718 /* Persistence.swift in Sources */,
+				3250B09124F4C444001EE718 /* UITableView+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		327B32CD24F4862700B7DCD1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -431,12 +531,15 @@
 				327B32D924F4862700B7DCD1 /* MainTabBarController.swift in Sources */,
 				327B331724F48C4500B7DCD1 /* OrderListViewController.swift in Sources */,
 				327B32D524F4862700B7DCD1 /* AppDelegate.swift in Sources */,
+				3250B0A024F4C61F001EE718 /* MenuPersistenceManager.swift in Sources */,
 				3250B06C24F4942F001EE718 /* ReusableView.swift in Sources */,
 				327B331924F48C6600B7DCD1 /* MenuViewController.swift in Sources */,
+				3250B07D24F4C22B001EE718 /* MenuFoodItem+CoreDataClass.swift in Sources */,
 				3250B07A24F4B7F7001EE718 /* NibLoadableView.swift in Sources */,
 				327B32DF24F4862700B7DCD1 /* Cottura.xcdatamodeld in Sources */,
 				3250B07724F4AEFD001EE718 /* MenuItemTableViewCell.swift in Sources */,
 				327B32D724F4862700B7DCD1 /* SceneDelegate.swift in Sources */,
+				3250B07E24F4C22B001EE718 /* MenuFoodItem+CoreDataProperties.swift in Sources */,
 				3250B07424F49BFE001EE718 /* MenuItemViewModel.swift in Sources */,
 				3250B06924F49406001EE718 /* NSLayoutAnchor+Extension.swift in Sources */,
 				3250B07224F49BDB001EE718 /* MenuViewModel.swift in Sources */,
@@ -488,6 +591,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3250B09B24F4C444001EE718 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8T85WESY64;
+				INFOPLIST_FILE = "Cottura/DEV-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-DDEVELOPMENT";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ignacioparadisi.Cottura-dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3250B09C24F4C444001EE718 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8T85WESY64;
+				INFOPLIST_FILE = "Cottura/DEV-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-DDEVELOPMENT";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ignacioparadisi.Cottura-dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		327B32FC24F4862800B7DCD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -727,6 +870,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3250B09A24F4C444001EE718 /* Build configuration list for PBXNativeTarget "Cottura DEV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3250B09B24F4C444001EE718 /* Debug */,
+				3250B09C24F4C444001EE718 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		327B32CC24F4862700B7DCD1 /* Build configuration list for PBXProject "Cottura" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

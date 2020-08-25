@@ -12,14 +12,16 @@ import CoreData
 struct PersistenceController {
     static let shared: PersistenceController = {
         #if DEVELOPMENT
-        return PersistenceController(inMemory: true)
+        let controller = PersistenceController(inMemory: true)
+        controller.importMenuFromJSON(context: controller.container.viewContext)
+        return controller
         #else
         return PersistenceController()
         #endif
     }()
-
+    
     let container: NSPersistentContainer
-
+    
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "Cottura")
         if inMemory {
@@ -29,15 +31,15 @@ struct PersistenceController {
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-
+                
                 /*
-                Typical reasons for an error here include:
-                * The parent directory does not exist, cannot be created, or disallows writing.
-                * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                * The device is out of space.
-                * The store could not be migrated to the current model version.
-                Check the error message to determine what the actual problem was.
-                */
+                 Typical reasons for an error here include:
+                 * The parent directory does not exist, cannot be created, or disallows writing.
+                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+                 * The device is out of space.
+                 * The store could not be migrated to the current model version.
+                 Check the error message to determine what the actual problem was.
+                 */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
@@ -45,6 +47,27 @@ struct PersistenceController {
     
     func saveContext() throws {
         try container.viewContext.save()
+    }
+    
+    fileprivate func importMenuFromJSON(context: NSManagedObjectContext) {
+        let jsonURL = Bundle.main.url(forResource: "menu-data", withExtension: "json")!
+        let jsonData = try! Data(contentsOf: jsonURL)
+        
+        let jsonArray = try! JSONSerialization.jsonObject(with: jsonData, options: [.allowFragments]) as! [[String: Any]]
+        
+        for jsonDictionary in jsonArray {
+            let item = MenuFoodItem(context: container.viewContext)
+            item.name = jsonDictionary["name"] as! String
+            item.price = jsonDictionary["price"] as! Float
+            item.availableCount = jsonDictionary["available_count"] as! Int32
+            item.position = jsonDictionary["position"] as! Int16
+            item.dateCreated = Date()
+        }
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
 

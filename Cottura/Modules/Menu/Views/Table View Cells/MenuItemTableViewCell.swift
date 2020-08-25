@@ -22,12 +22,12 @@ class MenuItemTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
         itemImageView.layer.shadowRadius = 5
     }
     
-    func configure(with: MenuItemViewModel) {
-        itemImageView.image = UIImage(named: "pizza")
-        nameLabel.text = "Pizza American Pepperoni"
-        priceLabel.text = "$7.00"
-        availabilityView.backgroundColor = .systemGreen
-        availabilityLabel.text = "10 Disponibles"
+    func configure(with viewModel: MenuItemViewModel) {
+        itemImageView.image = viewModel.image
+        nameLabel.text = viewModel.name
+        priceLabel.text = viewModel.price
+        availabilityView.backgroundColor = viewModel.availableCount > 0 ? .systemGreen : .systemRed
+        availabilityLabel.text = "\(viewModel.availableCount) Disponibles"
     }
     
 }

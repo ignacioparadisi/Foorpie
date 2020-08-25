@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Combine
 
 class MenuViewController: UIViewController {
     /// TableView to display items in menu
@@ -18,8 +17,8 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         setupTableView()
-        setupViewModel()
         viewModel.fetch()
+        tableView.reloadData()
     }
     
     private func setupNavigationBar() {
@@ -30,6 +29,8 @@ class MenuViewController: UIViewController {
     }
     
     private func setupTableView() {
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         view.addSubview(tableView)
         tableView.anchor.edgesToSuperview().activate()
         tableView.dataSource = self
@@ -37,10 +38,10 @@ class MenuViewController: UIViewController {
         tableView.register(MenuItemTableViewCell.self)
     }
     
-    private func setupViewModel() {
-        viewModel.dataDidChange = { [weak self] in
-            self?.tableView.reloadData()
-        }
+    @objc private func refresh() {
+        viewModel.fetch()
+        tableView.refreshControl?.endRefreshing()
+        tableView.reloadData()
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -71,12 +72,14 @@ extension MenuViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
+            viewModel.deleteItem(at: indexPath)
+            tableView.deleteRows(at: [indexPath], with: .left)
         }
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        
+        viewModel.moveItems(sourceIndexPath: sourceIndexPath, destinationIndexPath: destinationIndexPath)
+        tableView.moveRow(at: sourceIndexPath, to: destinationIndexPath)
     }
 }
 
