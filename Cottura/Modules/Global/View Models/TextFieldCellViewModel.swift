@@ -8,15 +8,10 @@
 
 import Foundation
 
-class TextFieldCellViewModel: FieldViewModelRepresentable {
-    var placeholder: String?
-    var stringValue: String?
-    var title: String?
-    var type: FieldType {
-        return .textField
-    }
-    
+class TextFieldCellViewModel: FieldViewModel {
     init(title: String? = nil, placeholder: String? = nil, value: String? = nil) {
+        super.init()
+        self.type = .textField
         self.title = title
         self.placeholder = placeholder
         self.stringValue = value

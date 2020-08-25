@@ -8,19 +8,15 @@
 
 import Foundation
 
-class IntTextFieldCellViewModel: FieldViewModelRepresentable {
-    var placeholder: String?
-    var stringValue: String?
-    var title: String?
-    var type: FieldType {
-        return .integer
-    }
+class IntTextFieldCellViewModel: FieldViewModel {
     var value: Int?
     
     init(title: String? = nil, placeholder: String? = nil, value: Int? = nil) {
+        self.value = value
+        super.init()
+        self.type = .integer
         self.title = title
         self.placeholder = placeholder
-        self.value = value
         if let value = value {
             self.stringValue = String(describing: value)
         }

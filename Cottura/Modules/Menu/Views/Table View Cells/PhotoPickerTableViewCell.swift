@@ -53,7 +53,14 @@ class PhotoPickerTableViewCell: UITableViewCell, ReusableView {
     }
     
     func configure(with image: UIImage?) {
-        imageView?.image = image
+        if let image = image {
+            imageView?.image = image
+            imageView?.contentMode = .scaleAspectFill
+        } else {
+            imageView?.image = UIImage(systemName: "photo")?.withTintColor(.systemGray3, renderingMode: .alwaysOriginal)
+            imageView?.contentMode = .scaleAspectFit
+        }
+        
     }
     
 }

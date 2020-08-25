@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Combine
 
 class MenuItemDetailViewController: UIViewController {
     // MARK: Properties
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
+    private let imagePicker = UIImagePickerController()
     private let viewModel: MenuItemDetailViewModel
+    private var saveBarButton: UIBarButtonItem!
+    private var subscriptions = Set<AnyCancellable>()
     enum Section: Int, CaseIterable {
         case photo
         case fields
@@ -32,12 +36,15 @@ class MenuItemDetailViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         setupTableView()
+        viewModel.readyToSubmit
+            .assign(to: \.isEnabled, on: saveBarButton)
+            .store(in: &subscriptions)
     }
     
     private func setupNavigationBar() {
         title = viewModel.title
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(dismissView))
-        
+        saveBarButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(dismissView))
+        navigationItem.rightBarButtonItem = saveBarButton
         if !viewModel.isEditing {
             navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissView))
         }
@@ -62,6 +69,44 @@ class MenuItemDetailViewController: UIViewController {
             dismiss(animated: true)
         }
     }
+    
+    private func showGalleryAlert(sender: UITableViewCell?) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let galleryAction = UIAlertAction(title: "Galería", style: .default, handler: { [weak self] _ in
+                self?.presentImagePicker(sourceType: .photoLibrary)
+            })
+            galleryAction.setValue(UIImage(systemName: "photo.on.rectangle"), forKey: "image")
+            alertController.addAction(galleryAction)
+        }
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraAction = UIAlertAction(title: "Cámara", style: .default, handler: { [weak self] _ in
+                self?.presentImagePicker(sourceType: .camera)
+            })
+            cameraAction.setValue(UIImage(systemName: "camera"), forKey: "image")
+            alertController.addAction(cameraAction)
+        }
+        let clearAction = UIAlertAction(title: "Quitar Imagen", style: .destructive, handler: nil)
+        clearAction.setValue(UIImage(systemName: "trash"), forKey: "image")
+        alertController.addAction(clearAction)
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        if let popover = alertController.popoverPresentationController, let sender = sender {
+            popover.sourceView = sender
+            popover.sourceRect = sender.bounds
+        }
+        
+        present(alertController, animated: true)
+    }
+    
+    private func presentImagePicker(sourceType: UIImagePickerController.SourceType) {
+        imagePicker.sourceType = sourceType
+        imagePicker.isModalInPresentation = true
+        imagePicker.modalPresentationStyle = .fullScreen
+        imagePicker.delegate = self
+        present(imagePicker, animated: true)
+    }
 
 }
 
@@ -79,7 +124,7 @@ extension MenuItemDetailViewController: UITableViewDataSource {
         switch section {
         case .photo:
             let cell = tableView.dequeueReusableCell(for: indexPath) as PhotoPickerTableViewCell
-            cell.configure(with: UIImage(named: "pizza"))
+            cell.configure(with: viewModel.image)
             return cell
         case .fields:
             let field = viewModel.fieldForRow(at: indexPath)
@@ -108,9 +153,23 @@ extension MenuItemDetailViewController: UITableViewDataSource {
 extension MenuItemDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let section = Section(rawValue: indexPath.section) else { return }
-        if section == .fields {
+        switch section {
+        case .photo:
+            showGalleryAlert(sender: tableView.cellForRow(at: indexPath))
+        case .fields:
             let cell = tableView.cellForRow(at: indexPath)
             cell?.becomeFirstResponder()
+        case .delete:
+            break
         }
+    }
+}
+
+extension MenuItemDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        dismiss(animated: true)
+        guard let image = info[.originalImage] as? UIImage else { return }
+        viewModel.image = image
+        tableView.reloadRows(at: [IndexPath(row: 0, section: Section.photo.rawValue)], with: .automatic)
     }
 }

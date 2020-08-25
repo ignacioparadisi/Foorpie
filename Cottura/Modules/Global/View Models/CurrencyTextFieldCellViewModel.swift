@@ -7,21 +7,19 @@
 //
 
 import Foundation
+import Combine
 
-class CurrencyTextFieldCellViewModel: FieldViewModelRepresentable {
-    var placeholder: String?
-    var stringValue: String? {
-        return "\(value)"
-    }
-    var title: String?
-    private(set) var value: Double
-    var type: FieldType {
-        return .currency
-    }
-    
+class CurrencyTextFieldCellViewModel: FieldViewModel {
+    var value: Double
+
     init(title: String? = nil, placeholder: String? = nil, value: Double? = 0.0) {
+        self.value = value ?? 0.0
+        super.init()
+        self.type = .currency
         self.title = title
         self.placeholder = placeholder
-        self.value = value ?? 0.0
+        if let value = value {
+            self.stringValue = String(describing: value)
+        }
     }
 }

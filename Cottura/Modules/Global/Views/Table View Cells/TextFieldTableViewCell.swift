@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 class TextFieldTableViewCell: UITableViewCell, ReusableView {
     // MARK: Properties
@@ -29,6 +30,7 @@ class TextFieldTableViewCell: UITableViewCell, ReusableView {
         return label
     }()
     var viewModel: FieldViewModelRepresentable!
+    var subscriptions = Set<AnyCancellable>()
     
     // MARK: Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -68,7 +70,7 @@ class TextFieldTableViewCell: UITableViewCell, ReusableView {
             .activate()
     }
     
-    func configure(with viewModel: FieldViewModelRepresentable) {
+    func configure(with viewModel: FieldViewModel) {
         self.viewModel = viewModel
         titleLabel.text = viewModel.title?.uppercased()
         textField.placeholder = viewModel.placeholder
@@ -79,6 +81,16 @@ class TextFieldTableViewCell: UITableViewCell, ReusableView {
             textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
             textFieldDidChange(textField)
         }
+        
+        textField.publisher(for: \.text)
+            .assign(to: \.stringValue, on: viewModel)
+            .store(in: &subscriptions)
+        viewModel.$isValid.sink { [weak self] isValid in
+            self?.titleLabel.textColor = isValid ? .systemBlue : .secondaryLabel
+        }
+        .store(in: &subscriptions)
+        
+        
     }
     
     override func becomeFirstResponder() -> Bool {
@@ -106,11 +118,7 @@ extension String {
         formatter.maximumFractionDigits = 2
 
         var amountWithPrefix = self
-//        let splitString = amountWithPrefix.split(separator: ".")
-//        if splitString.count > 1 && splitString[1].count < 2 {
-//            amountWithPrefix += "0"
-//        }
-
+        
         // remove from String: "$", ".", ","
         let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
         amountWithPrefix = regex.stringByReplacingMatches(in: amountWithPrefix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count), withTemplate: "")
@@ -125,5 +133,15 @@ extension String {
         }
 
         return formatter.string(from: number)!
+    }
+    
+    var currencyDoubleValue: Double {
+        let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
+        let value = regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count), withTemplate: "")
+        if let doubleValue = Double(value) {
+            return doubleValue / 100
+        } else {
+            return 0.00
+        }
     }
 }

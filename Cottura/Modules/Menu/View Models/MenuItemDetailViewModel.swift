@@ -6,12 +6,13 @@
 //  Copyright © 2020 Ignacio Paradisi. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Combine
 
 class MenuItemDetailViewModel {
     private let item: MenuFoodItem?
-    private var fields: [FieldViewModelRepresentable] = []
+    private var fields: [FieldViewModel] = []
+    @Published var image: UIImage?
     var isEditing: Bool {
         return item != nil
     }
@@ -32,15 +33,7 @@ class MenuItemDetailViewModel {
     
     init(item: MenuFoodItem? = nil) {
         self.item = item
-        var availableCount: Int?
-        if let item = item {
-            availableCount = Int(item.availableCount)
-        }
-        fields = [
-            TextFieldCellViewModel(title: "Nombre", value: item?.name),
-            CurrencyTextFieldCellViewModel(title: "Precio", value: item?.price),
-            IntTextFieldCellViewModel(title: "Cantidad Disponible", value: availableCount)
-        ]
+        setupFields()
     }
     
     func numberOfRows(in section: Int) -> Int {
@@ -55,8 +48,60 @@ class MenuItemDetailViewModel {
         }
     }
     
-    func fieldForRow(at indexPath: IndexPath) -> FieldViewModelRepresentable {
+    func fieldForRow(at indexPath: IndexPath) -> FieldViewModel{
        let field = fields[indexPath.row]
         return field
     }
+    
+    private func setupFields() {
+        var availableCount: Int?
+        if let item = item {
+            availableCount = Int(item.availableCount)
+        }
+        let nameField = TextFieldCellViewModel(title: "Nombre", value: item?.name)
+        nameField.validations = [ValidatorFactory.validatorFor(type: .required)]
+        let priceField = CurrencyTextFieldCellViewModel(title: "Precio", value: item?.price)
+        priceField.validations = [ValidatorFactory.validatorFor(type: .required)]
+        let availabilityField = IntTextFieldCellViewModel(title: "Cantidad Disponible", value: availableCount)
+        availabilityField.validations = [ValidatorFactory.validatorFor(type: .required)]
+        fields = [
+            nameField,
+            priceField,
+            availabilityField
+        ]
+    }
+    
+    var readyToSubmit: AnyPublisher<Bool, Never> {
+        // if fields.count < 3 { return Just(false).eraseToAnyPublisher() }
+        return Publishers.CombineLatest3(fields[0].$isValid, fields[1].$isValid, fields[2].$isValid)
+            .map { $0 && $1 && $2}
+            .eraseToAnyPublisher()
+    }
+}
+
+protocol ValidatorConvertible {
+    func validate(_ value: String?) throws -> String
+}
+
+enum ValidatorType {
+    case required
+}
+
+enum ValidatorFactory {
+    static func validatorFor(type: ValidatorType) -> ValidatorConvertible {
+        switch type {
+        case .required: return RequiredValidator()
+        }
+    }
+}
+
+class RequiredValidator: ValidatorConvertible {
+    func validate(_ value: String?) throws -> String {
+        guard let value = value, !value.isEmpty else { throw ValidatorError.required }
+        return value
+    }
+}
+
+enum ValidatorError: Error {
+    case required
 }
