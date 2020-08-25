@@ -13,9 +13,13 @@ class MainTabBarController: UITabBarController {
     private let menuViewController = MenuViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewControllers = [orderListViewController, menuViewController]
+        orderListViewController.tabBarItem = UITabBarItem(title: "Pedidos", image: UIImage(systemName: "tray.full"), tag: 0)
+        menuViewController.tabBarItem = UITabBarItem(title: "Menú", image: UIImage(systemName: "doc.text"), tag: 1)
+        viewControllers = [
+            UINavigationController(rootViewController: orderListViewController),
+            UINavigationController(rootViewController: menuViewController)
+        ]
+        view.backgroundColor = .white
     }
-
-
 }
 
