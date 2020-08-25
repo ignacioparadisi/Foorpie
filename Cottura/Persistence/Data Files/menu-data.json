@@ -1,0 +1,11 @@
+[{
+    "name": "Pizza Margarita",
+    "price": 5.0,
+    "image": null,
+    "quantity": 10
+}, {
+    "name": "Pizza Vegetariana",
+    "price": 7.0,
+    "image": null,
+    "quantity": 6
+}]

@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		327B32D524F4862700B7DCD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D424F4862700B7DCD1 /* AppDelegate.swift */; };
 		327B32D724F4862700B7DCD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D624F4862700B7DCD1 /* SceneDelegate.swift */; };
-		327B32D924F4862700B7DCD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D824F4862700B7DCD1 /* ViewController.swift */; };
-		327B32DC24F4862700B7DCD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 327B32DA24F4862700B7DCD1 /* Main.storyboard */; };
+		327B32D924F4862700B7DCD1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D824F4862700B7DCD1 /* MainTabBarController.swift */; };
 		327B32DF24F4862700B7DCD1 /* Cottura.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 327B32DD24F4862700B7DCD1 /* Cottura.xcdatamodeld */; };
 		327B32E124F4862800B7DCD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327B32E024F4862800B7DCD1 /* Assets.xcassets */; };
 		327B32E424F4862800B7DCD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 327B32E224F4862800B7DCD1 /* LaunchScreen.storyboard */; };
 		327B32EF24F4862800B7DCD1 /* CotturaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32EE24F4862800B7DCD1 /* CotturaTests.swift */; };
 		327B32FA24F4862800B7DCD1 /* CotturaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32F924F4862800B7DCD1 /* CotturaUITests.swift */; };
+		327B330D24F4873500B7DCD1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B330C24F4873500B7DCD1 /* Persistence.swift */; };
+		327B330F24F4892500B7DCD1 /* menu-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 327B330E24F4892500B7DCD1 /* menu-data.json */; };
+		327B331224F489DE00B7DCD1 /* order-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 327B331124F489DE00B7DCD1 /* order-data.json */; };
+		327B331424F48A3D00B7DCD1 /* order-status-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 327B331324F48A3D00B7DCD1 /* order-status-data.json */; };
+		327B331724F48C4500B7DCD1 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331624F48C4500B7DCD1 /* OrderListViewController.swift */; };
+		327B331924F48C6600B7DCD1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331824F48C6600B7DCD1 /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +44,7 @@
 		327B32D124F4862700B7DCD1 /* Cottura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cottura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		327B32D424F4862700B7DCD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		327B32D624F4862700B7DCD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		327B32D824F4862700B7DCD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		327B32DB24F4862700B7DCD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		327B32D824F4862700B7DCD1 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		327B32DE24F4862700B7DCD1 /* Cottura.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cottura.xcdatamodel; sourceTree = "<group>"; };
 		327B32E024F4862800B7DCD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		327B32E324F4862800B7DCD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +55,12 @@
 		327B32F524F4862800B7DCD1 /* CotturaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CotturaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		327B32F924F4862800B7DCD1 /* CotturaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CotturaUITests.swift; sourceTree = "<group>"; };
 		327B32FB24F4862800B7DCD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		327B330C24F4873500B7DCD1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		327B330E24F4892500B7DCD1 /* menu-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "menu-data.json"; sourceTree = "<group>"; };
+		327B331124F489DE00B7DCD1 /* order-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "order-data.json"; sourceTree = "<group>"; };
+		327B331324F48A3D00B7DCD1 /* order-status-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "order-status-data.json"; sourceTree = "<group>"; };
+		327B331624F48C4500B7DCD1 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
+		327B331824F48C6600B7DCD1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +111,14 @@
 		327B32D324F4862700B7DCD1 /* Cottura */ = {
 			isa = PBXGroup;
 			children = (
+				327B330924F4865800B7DCD1 /* Persistence */,
+				327B330824F4864700B7DCD1 /* Extensions */,
+				327B330724F4864400B7DCD1 /* Modules */,
 				327B32D424F4862700B7DCD1 /* AppDelegate.swift */,
 				327B32D624F4862700B7DCD1 /* SceneDelegate.swift */,
-				327B32D824F4862700B7DCD1 /* ViewController.swift */,
-				327B32DA24F4862700B7DCD1 /* Main.storyboard */,
 				327B32E024F4862800B7DCD1 /* Assets.xcassets */,
 				327B32E224F4862800B7DCD1 /* LaunchScreen.storyboard */,
 				327B32E524F4862800B7DCD1 /* Info.plist */,
-				327B32DD24F4862700B7DCD1 /* Cottura.xcdatamodeld */,
 			);
 			path = Cottura;
 			sourceTree = "<group>";
@@ -129,6 +139,115 @@
 				327B32FB24F4862800B7DCD1 /* Info.plist */,
 			);
 			path = CotturaUITests;
+			sourceTree = "<group>";
+		};
+		327B330724F4864400B7DCD1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				327B32D824F4862700B7DCD1 /* MainTabBarController.swift */,
+				327B330B24F4867C00B7DCD1 /* Orders */,
+				327B330A24F4866900B7DCD1 /* Menu */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		327B330824F4864700B7DCD1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		327B330924F4865800B7DCD1 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				327B331524F48C1500B7DCD1 /* Classes */,
+				327B331024F489C100B7DCD1 /* Data Files */,
+				327B330C24F4873500B7DCD1 /* Persistence.swift */,
+				327B32DD24F4862700B7DCD1 /* Cottura.xcdatamodeld */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		327B330A24F4866900B7DCD1 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				327B331F24F48C8200B7DCD1 /* Views */,
+				327B331E24F48C7F00B7DCD1 /* View Models */,
+				327B331B24F48C6F00B7DCD1 /* View Controllers */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		327B330B24F4867C00B7DCD1 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				327B331D24F48C7C00B7DCD1 /* Views */,
+				327B331C24F48C7700B7DCD1 /* View Models */,
+				327B331A24F48C6800B7DCD1 /* View Controllers */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		327B331024F489C100B7DCD1 /* Data Files */ = {
+			isa = PBXGroup;
+			children = (
+				327B330E24F4892500B7DCD1 /* menu-data.json */,
+				327B331124F489DE00B7DCD1 /* order-data.json */,
+				327B331324F48A3D00B7DCD1 /* order-status-data.json */,
+			);
+			path = "Data Files";
+			sourceTree = "<group>";
+		};
+		327B331524F48C1500B7DCD1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		327B331A24F48C6800B7DCD1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				327B331624F48C4500B7DCD1 /* OrderListViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		327B331B24F48C6F00B7DCD1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				327B331824F48C6600B7DCD1 /* MenuViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		327B331C24F48C7700B7DCD1 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		327B331D24F48C7C00B7DCD1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		327B331E24F48C7F00B7DCD1 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		327B331F24F48C8200B7DCD1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,8 +355,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				327B32E424F4862800B7DCD1 /* LaunchScreen.storyboard in Resources */,
+				327B331424F48A3D00B7DCD1 /* order-status-data.json in Resources */,
+				327B330F24F4892500B7DCD1 /* menu-data.json in Resources */,
+				327B331224F489DE00B7DCD1 /* order-data.json in Resources */,
 				327B32E124F4862800B7DCD1 /* Assets.xcassets in Resources */,
-				327B32DC24F4862700B7DCD1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,10 +383,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				327B32D924F4862700B7DCD1 /* ViewController.swift in Sources */,
+				327B32D924F4862700B7DCD1 /* MainTabBarController.swift in Sources */,
+				327B331724F48C4500B7DCD1 /* OrderListViewController.swift in Sources */,
 				327B32D524F4862700B7DCD1 /* AppDelegate.swift in Sources */,
+				327B331924F48C6600B7DCD1 /* MenuViewController.swift in Sources */,
 				327B32DF24F4862700B7DCD1 /* Cottura.xcdatamodeld in Sources */,
 				327B32D724F4862700B7DCD1 /* SceneDelegate.swift in Sources */,
+				327B330D24F4873500B7DCD1 /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +425,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		327B32DA24F4862700B7DCD1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				327B32DB24F4862700B7DCD1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		327B32E224F4862800B7DCD1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -370,7 +486,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -424,7 +540,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -441,6 +557,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8T85WESY64;
 				INFOPLIST_FILE = Cottura/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,7 +565,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ignacioparadisi.Cottura;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -459,6 +576,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8T85WESY64;
 				INFOPLIST_FILE = Cottura/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,7 +584,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ignacioparadisi.Cottura;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
