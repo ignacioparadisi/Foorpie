@@ -21,23 +21,30 @@ protocol FieldViewModelRepresentable {
     var type: FieldType { get set }
     var isValid: Bool { get set }
     var validations: [ValidatorConvertible] { get set }
-}
-
-extension FieldViewModelRepresentable {
-    
+    var isChanged: Bool { get set }
 }
 
 class FieldViewModel: FieldViewModelRepresentable {
     var placeholder: String?
+    var originalValue: String?
     var stringValue: String? {
         didSet {
             validate()
+            isChanged = stringValue != originalValue
         }
     }
     var title: String?
     var type: FieldType = .textField
     @Published var isValid: Bool = false
     var validations: [ValidatorConvertible] = []
+    @Published var isChanged: Bool = false
+    
+    init(title: String? = nil, placeholder: String? = nil, stringValue: String? = nil) {
+        self.title = title
+        self.placeholder = placeholder
+        self.stringValue = stringValue
+        self.originalValue = stringValue
+    }
     
     func validate() {
         for validation in validations {

@@ -18,6 +18,13 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         setupTableView()
+        setupViewModel()
+//        viewModel.fetch()
+//        tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         viewModel.fetch()
         tableView.reloadData()
     }
@@ -48,6 +55,12 @@ class MenuViewController: UIViewController {
         definesPresentationContext = true
     }
     
+    private func setupViewModel() {
+        viewModel.reloadData = { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+    
     @objc private func refresh() {
         viewModel.fetch()
         tableView.refreshControl?.endRefreshing()
@@ -60,7 +73,8 @@ class MenuViewController: UIViewController {
     }
     
     @objc private func addNewItem() {
-        let viewController = UINavigationController(rootViewController: MenuItemDetailViewController())
+        let detailViewModel = viewModel.detailForRow()
+        let viewController = UINavigationController(rootViewController: MenuItemDetailViewController(viewModel: detailViewModel))
         present(viewController, animated: true)
     }
 }

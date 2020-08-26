@@ -43,7 +43,7 @@ class MenuItemDetailViewController: UIViewController {
     
     private func setupNavigationBar() {
         title = viewModel.title
-        saveBarButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(dismissView))
+        saveBarButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(save))
         navigationItem.rightBarButtonItem = saveBarButton
         if !viewModel.isEditing {
             navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissView))
@@ -60,6 +60,12 @@ class MenuItemDetailViewController: UIViewController {
         tableView.register(CurrencyTextFieldTableViewCell.self)
         tableView.register(IntTextFieldTableViewCell.self)
         tableView.register(ButtonTableViewCell.self)
+    }
+    
+    @objc private func save() {
+        viewModel.save()
+        dismissView()
+        saveBarButton.isEnabled = false
     }
     
     @objc private func dismissView() {

@@ -9,10 +9,15 @@
 import UIKit
 import Combine
 
+protocol MenuItemDetailViewModelDelegate {
+    func didCreateItem(item: MenuFoodItem)
+}
+
 class MenuItemDetailViewModel {
     private let item: MenuFoodItem?
     private var fields: [FieldViewModel] = []
-    @Published var image: UIImage?
+    var delegate: MenuItemDetailViewModelDelegate?
+    var image: UIImage?
     var isEditing: Bool {
         return item != nil
     }
@@ -33,6 +38,9 @@ class MenuItemDetailViewModel {
     
     init(item: MenuFoodItem? = nil) {
         self.item = item
+        if let imageURL = item?.imageURL {
+            image = UIImage(contentsOfFile: imageURL.path)
+        }
         setupFields()
     }
     
@@ -48,8 +56,8 @@ class MenuItemDetailViewModel {
         }
     }
     
-    func fieldForRow(at indexPath: IndexPath) -> FieldViewModel{
-       let field = fields[indexPath.row]
+    func fieldForRow(at indexPath: IndexPath) -> FieldViewModel {
+        let field = fields[indexPath.row]
         return field
     }
     
@@ -71,11 +79,72 @@ class MenuItemDetailViewModel {
         ]
     }
     
-    var readyToSubmit: AnyPublisher<Bool, Never> {
-        // if fields.count < 3 { return Just(false).eraseToAnyPublisher() }
+    var fieldsAreValid: AnyPublisher<Bool, Never> {
         return Publishers.CombineLatest3(fields[0].$isValid, fields[1].$isValid, fields[2].$isValid)
             .map { $0 && $1 && $2}
             .eraseToAnyPublisher()
+    }
+    
+    var fieldsAreChanged: AnyPublisher<Bool, Never> {
+        return Publishers.CombineLatest3(fields[0].$isChanged, fields[1].$isChanged, fields[2].$isChanged)
+            .map { $0 || $1 || $2}
+            .eraseToAnyPublisher()
+    }
+    
+    var readyToSubmit: AnyPublisher<Bool, Never> {
+        return Publishers.CombineLatest(fieldsAreValid, fieldsAreChanged)
+            .map { $0 && $1 }
+            .eraseToAnyPublisher()
+    }
+    
+    func save() {
+        guard let name = fields[0].stringValue else { return }
+        guard let price = fields[1].stringValue?.currencyDoubleValue else { return }
+        guard let availableCount = Int32(fields[2].stringValue ?? "0") else { return }
+        var newItem: MenuFoodItem = MenuFoodItem(context: PersistenceController.shared.container.viewContext)
+        if !name.isEmpty {
+            if let item = item {
+                newItem = item
+            } else {
+                newItem.dateCreated = Date()
+            }
+            newItem.name = name
+            newItem.price = price
+            newItem.availableCount = availableCount
+            newItem.imageURL = saveImageLocally(name: name)
+        }
+        
+        do {
+            try PersistenceController.shared.saveContext()
+            delegate?.didCreateItem(item: newItem)
+        } catch {
+            print("Error saving context")
+        }
+        
+        
+    }
+    
+    func saveImageLocally(name: String) -> URL? {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = paths[0]
+        guard let imageName = name.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return nil }
+        let imageURL = documentDirectory.appendingPathComponent("\(imageName).jpeg")
+        guard let data = image?.jpegData(compressionQuality: 0.5) else { return nil }
+        if FileManager.default.fileExists(atPath: imageURL.path) {
+            do {
+                try FileManager.default.removeItem(atPath: imageURL.path)
+            } catch {
+                print("Error deleting image")
+            }
+        }
+        
+        do {
+            try data.write(to: imageURL)
+            return imageURL
+        } catch {
+            print("Error saving image")
+        }
+        return nil
     }
 }
 

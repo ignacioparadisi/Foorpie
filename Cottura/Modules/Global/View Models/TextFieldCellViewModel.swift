@@ -10,10 +10,7 @@ import Foundation
 
 class TextFieldCellViewModel: FieldViewModel {
     init(title: String? = nil, placeholder: String? = nil, value: String? = nil) {
-        super.init()
+        super.init(title: title, placeholder: placeholder, stringValue: value)
         self.type = .textField
-        self.title = title
-        self.placeholder = placeholder
-        self.stringValue = value
     }
 }

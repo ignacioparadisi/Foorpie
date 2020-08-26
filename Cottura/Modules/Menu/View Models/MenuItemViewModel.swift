@@ -25,7 +25,7 @@ class MenuItemViewModel {
         return Int(item.availableCount)
     }
     var image: UIImage {
-        if let stringURL = item.imageURL?.absoluteString,
+        if let stringURL = item.imageURL?.path,
             let image = UIImage(contentsOfFile: stringURL) {
             return image
         } else {

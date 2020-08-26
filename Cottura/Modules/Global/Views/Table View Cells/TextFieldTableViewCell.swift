@@ -30,7 +30,8 @@ class TextFieldTableViewCell: UITableViewCell, ReusableView {
         return label
     }()
     var viewModel: FieldViewModelRepresentable!
-    var subscriptions = Set<AnyCancellable>()
+    var textFieldSubscription: AnyCancellable?
+    private var validationSubscription: AnyCancellable?
     
     // MARK: Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -75,73 +76,15 @@ class TextFieldTableViewCell: UITableViewCell, ReusableView {
         titleLabel.text = viewModel.title?.uppercased()
         textField.placeholder = viewModel.placeholder
         textField.text = viewModel.stringValue
-        if viewModel.type == .currency {
-            let field = viewModel as! CurrencyTextFieldCellViewModel
-            textField.text = String(format: "%.2f", field.value)
-            textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-            textFieldDidChange(textField)
-        }
-        
-        textField.publisher(for: \.text)
+        textFieldSubscription = textField.publisher(for: \.text)
             .assign(to: \.stringValue, on: viewModel)
-            .store(in: &subscriptions)
-        viewModel.$isValid.sink { [weak self] isValid in
+        validationSubscription = viewModel.$isValid.sink { [weak self] isValid in
             self?.titleLabel.textColor = isValid ? .systemBlue : .secondaryLabel
         }
-        .store(in: &subscriptions)
-        
-        
     }
     
     override func becomeFirstResponder() -> Bool {
         textField.becomeFirstResponder()
         return true
-    }
-    
-    
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        if let amountString = textField.text?.currencyInputFormatting() {
-            textField.text = amountString
-        }
-    }
-}
-
-extension String {
-
-    // formatting text for currency textField
-    func currencyInputFormatting() -> String {
-
-        var number: NSNumber!
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currencyAccounting
-        formatter.currencySymbol = "$"
-        formatter.maximumFractionDigits = 2
-
-        var amountWithPrefix = self
-        
-        // remove from String: "$", ".", ","
-        let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
-        amountWithPrefix = regex.stringByReplacingMatches(in: amountWithPrefix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count), withTemplate: "")
-
-        let double = (amountWithPrefix as NSString).doubleValue
-        print(double)
-        number = NSNumber(value: (double / 100))
-
-        // if first number is 0 or all numbers were deleted
-        guard number != 0 as NSNumber else {
-            return formatter.string(from: 0)!
-        }
-
-        return formatter.string(from: number)!
-    }
-    
-    var currencyDoubleValue: Double {
-        let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
-        let value = regex.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count), withTemplate: "")
-        if let doubleValue = Double(value) {
-            return doubleValue / 100
-        } else {
-            return 0.00
-        }
     }
 }

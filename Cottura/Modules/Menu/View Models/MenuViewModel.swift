@@ -13,6 +13,8 @@ class MenuViewModel {
     private var items: [MenuFoodItem] = []
     private var filteredItems: [MenuFoodItem] = []
     private var filteredText: String?
+    private var selectedIndexPath: IndexPath?
+    var reloadData: (() -> Void)?
     var numberOfSections: Int {
         return 1
     }
@@ -42,9 +44,19 @@ class MenuViewModel {
         filteredItems.remove(at: indexPath.row)
     }
     
-    func detailForRow(at indexPath: IndexPath) -> MenuItemDetailViewModel {
-        let item = filteredItems[indexPath.row]
-        return MenuItemDetailViewModel(item: item)
+    func detailForRow(at indexPath: IndexPath? = nil) -> MenuItemDetailViewModel {
+        selectedIndexPath = indexPath
+        if let indexPath = indexPath {
+            let item = filteredItems[indexPath.row]
+            let viewModel = MenuItemDetailViewModel(item: item)
+            viewModel.delegate = self
+            return viewModel
+        } else {
+            let viewModel = MenuItemDetailViewModel()
+            viewModel.delegate = self
+            return viewModel
+        }
+        
     }
     
     func filter(_ text: String?) {
@@ -56,5 +68,12 @@ class MenuViewModel {
         } else {
             filteredItems = items
         }
+    }
+}
+
+extension MenuViewModel: MenuItemDetailViewModelDelegate {
+    func didCreateItem(item: MenuFoodItem) {
+        fetch()
+        reloadData?()
     }
 }
