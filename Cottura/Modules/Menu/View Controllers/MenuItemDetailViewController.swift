@@ -64,9 +64,9 @@ class MenuItemDetailViewController: UIViewController {
     
     @objc private func save() {
         viewModel.save()
-        dismissView()
         let controller = CustomAlertViewController(title: "Guardado", message: "El artículo se guardó de manera exitosa.", style: .success)
         present(controller, animated: true)
+        dismissView()
     }
     
     @objc private func dismissView() {
