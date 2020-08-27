@@ -2,6 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSUbiquitousContainerIsDocumentScopePublic</key>
+	<true/>
+	<key>NSUbiquitousContainers</key>
+	<dict>
+		<key>iCloud.com.ignacioparadisi.container1</key>
+		<dict>
+			<key>NSUbiquitousContainerIsDocumentScopePublic</key>
+			<true/>
+			<key>NSUbiquitousContainerName</key>
+			<string>Cottura</string>
+			<key>NSUbiquitousContainerSupportedFolderLevels</key>
+			<string>Any</string>
+		</dict>
+	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>To select a picture of the items to be shown in the menu.</string>
 	<key>NSCameraUsageDescription</key>

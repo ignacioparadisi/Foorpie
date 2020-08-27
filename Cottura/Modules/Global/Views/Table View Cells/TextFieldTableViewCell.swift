@@ -74,6 +74,9 @@ class TextFieldTableViewCell: UITableViewCell, ReusableView {
     func configure(with viewModel: FieldViewModel) {
         self.viewModel = viewModel
         titleLabel.text = viewModel.title?.uppercased()
+        if let text = titleLabel.text, viewModel.validations.contains(.required) {
+            titleLabel.text = "\(text) *"
+        }
         textField.placeholder = viewModel.placeholder
         textField.text = viewModel.stringValue
         textFieldSubscription = textField.publisher(for: \.text)

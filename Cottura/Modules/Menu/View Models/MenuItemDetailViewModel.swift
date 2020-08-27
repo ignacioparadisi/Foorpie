@@ -14,7 +14,7 @@ protocol MenuItemDetailViewModelDelegate {
 }
 
 class MenuItemDetailViewModel {
-    private let item: MenuFoodItem?
+    private var item: MenuFoodItem?
     private var fields: [FieldViewModel] = []
     var delegate: MenuItemDetailViewModelDelegate?
     var image: UIImage?
@@ -68,11 +68,11 @@ class MenuItemDetailViewModel {
             availableCount = Int(item.availableCount)
         }
         let nameField = TextFieldCellViewModel(title: "Nombre", value: item?.name)
-        nameField.validations = [ValidatorFactory.validatorFor(type: .required)]
+        nameField.validations = [.required]
         let priceField = CurrencyTextFieldCellViewModel(title: "Precio", placeholder: "$0.00", value: item?.price)
-        priceField.validations = [ValidatorFactory.validatorFor(type: .required)]
+        priceField.validations = [.required]
         let availabilityField = IntTextFieldCellViewModel(title: "Cantidad Disponible", value: availableCount)
-        availabilityField.validations = [ValidatorFactory.validatorFor(type: .required)]
+        availabilityField.validations = [.required]
         fields = [
             nameField,
             priceField,
@@ -119,11 +119,16 @@ class MenuItemDetailViewModel {
             newItem.name = name
             newItem.price = price
             newItem.availableCount = availableCount
-            newItem.imageURL = saveImageLocally(name: name)
+            saveImage(named: name) { url in
+                newItem.imageURL = url
+            }
         }
         
         do {
             try PersistenceController.shared.saveContext()
+            if item != nil {
+                item = newItem
+            }
             delegate?.refresh()
         } catch {
             print("Error saving context")
@@ -137,48 +142,105 @@ class MenuItemDetailViewModel {
         }
     }
     
-    func saveImageLocally(name: String) -> URL? {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentDirectory = paths[0]
-        guard let imageName = name.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return nil }
-        let imageURL = documentDirectory.appendingPathComponent("\(imageName).jpeg")
-        guard let data = image?.jpegData(compressionQuality: 0.5) else { return nil }
-        if FileManager.default.fileExists(atPath: imageURL.path) {
-            do {
-                try FileManager.default.removeItem(atPath: imageURL.path)
-            } catch {
-                print("Error deleting image")
+    private func saveImage(named name: String, completion: @escaping (URL?) -> Void) {
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            guard let self = self else {
+                DispatchQueue.main.async {
+                    completion(nil)
+                    return
+                }
+                return
             }
+            guard let iCloudDirectory = FileManager.default.url(forUbiquityContainerIdentifier: nil)?.appendingPathComponent("Documents") else {
+                self.returnImage(url: nil, completion: completion)
+                return
+            }
+            if (!FileManager.default.fileExists(atPath: iCloudDirectory.path, isDirectory: nil)) {
+                do {
+                    try FileManager.default.createDirectory(at: iCloudDirectory, withIntermediateDirectories: true, attributes: nil)
+                }
+                catch {
+                    //Error handling
+                    print("Error in creating doc")
+                }
+            }
+            let iCloudImageDirectory = iCloudDirectory.appendingPathComponent("Images")
+            if (!FileManager.default.fileExists(atPath: iCloudImageDirectory.path, isDirectory: nil)) {
+                do {
+                    try FileManager.default.createDirectory(at: iCloudImageDirectory, withIntermediateDirectories: true, attributes: nil)
+                }
+                catch {
+                    //Error handling
+                    print("Error in creating doc")
+                }
+            }
+            guard let imageName = name.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
+                self.returnImage(url: nil, completion: completion)
+                return
+            }
+            let imageURL = iCloudImageDirectory.appendingPathComponent("\(imageName).jpeg")
+            guard let data = self.image?.jpegData(compressionQuality: 0.5) else {
+                self.returnImage(url: nil, completion: completion)
+                return
+            }
+            if FileManager.default.fileExists(atPath: imageURL.path) {
+                do {
+                    try FileManager.default.removeItem(atPath: imageURL.path)
+                } catch {
+                    print("Error deleting image")
+                }
+            }
+            
+            do {
+                try data.write(to: imageURL)
+                DispatchQueue.main.async {
+                    self.returnImage(url: imageURL, completion: completion)
+                    return
+                }
+            } catch {
+                print(error.localizedDescription)
+                print("Error saving image")
+            }
+           self.returnImage(url: nil, completion: completion)
         }
-        
-        do {
-            try data.write(to: imageURL)
-            return imageURL
-        } catch {
-            print("Error saving image")
+    }
+    
+    private func returnImage(url: URL?, completion: @escaping (URL?) -> Void) {
+        DispatchQueue.main.async {
+            completion(url)
+            return
         }
-        return nil
     }
 }
 
-protocol ValidatorConvertible {
-    func validate(_ value: String?) throws -> String
-}
-
-enum ValidatorType {
-    case required
-}
-
-enum ValidatorFactory {
-    static func validatorFor(type: ValidatorType) -> ValidatorConvertible {
-        switch type {
-        case .required: return RequiredValidator()
-        }
+class ValidatorConvertible: Equatable {
+    static var required = RequiredValidator(tag: "required")
+    var tag: String = ""
+    init(tag: String) {
+        self.tag = tag
+    }
+    func validate(_ value: String?) throws -> String {
+        fatalError("Method `validate` has to be overriden")
+    }
+    static func == (lhs: ValidatorConvertible, rhs: ValidatorConvertible) -> Bool {
+        return lhs.tag == rhs.tag
     }
 }
+
+//enum ValidatorType {
+//    case required
+//}
+//
+//enum ValidatorFactory {
+//    static func validatorFor(type: ValidatorType) -> ValidatorConvertible {
+//        switch type {
+//        case .required: return RequiredValidator()
+//        }
+//    }
+//}
 
 class RequiredValidator: ValidatorConvertible {
-    func validate(_ value: String?) throws -> String {
+    override func validate(_ value: String?) throws -> String {
         guard let value = value, !value.isEmpty else { throw ValidatorError.required }
         return value
     }

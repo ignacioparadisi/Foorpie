@@ -64,16 +64,18 @@ class MenuItemDetailViewController: UIViewController {
     
     @objc private func save() {
         viewModel.save()
-        dismissView()
-    }
-    
-    @objc private func dismissView(didSave: Bool = false) {
         if viewModel.isEditing {
             let controller = CustomAlertViewController(title: "Guardado", message: "El artículo se guardó de manera exitosa.", style: .success)
             self.present(controller, animated: true)
-            navigationController?.navigationController?.popViewController(animated: true)
-        } else {
+        }
+        dismissView()
+    }
+    
+    @objc private func dismissView(didDelete: Bool = false) {
+        if !viewModel.isEditing {
             dismiss(animated: true)
+        } else if didDelete {
+            navigationController?.navigationController?.popViewController(animated: true)
         }
     }
     
