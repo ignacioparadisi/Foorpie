@@ -65,12 +65,13 @@ class MenuItemDetailViewController: UIViewController {
     @objc private func save() {
         viewModel.save()
         dismissView()
-        saveBarButton.isEnabled = false
+        let controller = CustomAlertViewController(title: "Guardado", message: "El artículo se guardó de manera exitosa.", style: .success)
+        present(controller, animated: true)
     }
     
     @objc private func dismissView() {
         if viewModel.isEditing {
-            navigationController?.popViewController(animated: true)
+            navigationController?.navigationController?.popViewController(animated: true)
         } else {
             dismiss(animated: true)
         }
@@ -112,6 +113,18 @@ class MenuItemDetailViewController: UIViewController {
         imagePicker.modalPresentationStyle = .fullScreen
         imagePicker.delegate = self
         present(imagePicker, animated: true)
+    }
+    
+    private func showDeleteAlert() {
+        let alertController = UIAlertController(title: "¿Eliminar \"\(viewModel.title)\"?", message: "Al eliminar, no podrás agregar este producto a tus órdenes", preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: "Eliminar", style: .destructive) { _ in
+            self.viewModel.delete()
+            self.showDetailViewController(UIViewController(), sender: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
     }
 
 }
@@ -166,7 +179,7 @@ extension MenuItemDetailViewController: UITableViewDelegate {
             let cell = tableView.cellForRow(at: indexPath)
             cell?.becomeFirstResponder()
         case .delete:
-            break
+            showDeleteAlert()
         }
     }
 }
@@ -176,6 +189,7 @@ extension MenuItemDetailViewController: UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true)
         guard let image = info[.originalImage] as? UIImage else { return }
         viewModel.image = image
+        viewModel.imageDidChange = true
         tableView.reloadRows(at: [IndexPath(row: 0, section: Section.photo.rawValue)], with: .automatic)
     }
 }

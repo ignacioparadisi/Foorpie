@@ -10,7 +10,7 @@ import UIKit
 import Combine
 
 protocol MenuItemDetailViewModelDelegate {
-    func didCreateItem(item: MenuFoodItem)
+    func refresh()
 }
 
 class MenuItemDetailViewModel {
@@ -18,6 +18,7 @@ class MenuItemDetailViewModel {
     private var fields: [FieldViewModel] = []
     var delegate: MenuItemDetailViewModelDelegate?
     var image: UIImage?
+    @Published var imageDidChange: Bool = false
     var isEditing: Bool {
         return item != nil
     }
@@ -68,7 +69,7 @@ class MenuItemDetailViewModel {
         }
         let nameField = TextFieldCellViewModel(title: "Nombre", value: item?.name)
         nameField.validations = [ValidatorFactory.validatorFor(type: .required)]
-        let priceField = CurrencyTextFieldCellViewModel(title: "Precio", value: item?.price)
+        let priceField = CurrencyTextFieldCellViewModel(title: "Precio", placeholder: "$0.00", value: item?.price)
         priceField.validations = [ValidatorFactory.validatorFor(type: .required)]
         let availabilityField = IntTextFieldCellViewModel(title: "Cantidad Disponible", value: availableCount)
         availabilityField.validations = [ValidatorFactory.validatorFor(type: .required)]
@@ -81,13 +82,15 @@ class MenuItemDetailViewModel {
     
     var fieldsAreValid: AnyPublisher<Bool, Never> {
         return Publishers.CombineLatest3(fields[0].$isValid, fields[1].$isValid, fields[2].$isValid)
-            .map { $0 && $1 && $2}
+            .map { $0 && $1 && $2 }
             .eraseToAnyPublisher()
     }
     
     var fieldsAreChanged: AnyPublisher<Bool, Never> {
-        return Publishers.CombineLatest3(fields[0].$isChanged, fields[1].$isChanged, fields[2].$isChanged)
-            .map { $0 || $1 || $2}
+        return Publishers.CombineLatest4(fields[0].$isChanged, fields[1].$isChanged, fields[2].$isChanged, $imageDidChange)
+            .map { name, price, availability, image in
+                return name || price || availability || image
+            }
             .eraseToAnyPublisher()
     }
     
@@ -98,10 +101,12 @@ class MenuItemDetailViewModel {
     }
     
     func save() {
+        if let path = item?.imageURL?.path {
+            let savedImage = UIImage(contentsOfFile: path)
+            print(savedImage == image)
+        }
         guard let name = fields[0].stringValue else { return }
         guard let price = fields[1].stringValue?.doubleValue else { return }
-        print(fields[1].stringValue)
-        print(price)
         guard let availableCount = Int32(fields[2].stringValue ?? "0") else { return }
         var newItem: MenuFoodItem!
         if !name.isEmpty {
@@ -119,12 +124,17 @@ class MenuItemDetailViewModel {
         
         do {
             try PersistenceController.shared.saveContext()
-            delegate?.didCreateItem(item: newItem)
+            delegate?.refresh()
         } catch {
             print("Error saving context")
         }
-        
-        
+    }
+    
+    func delete() {
+        if let item = item {
+            PersistenceController.shared.container.viewContext.delete(item)
+            delegate?.refresh()
+        }
     }
     
     func saveImageLocally(name: String) -> URL? {

@@ -72,7 +72,7 @@ class MenuViewModel {
 }
 
 extension MenuViewModel: MenuItemDetailViewModelDelegate {
-    func didCreateItem(item: MenuFoodItem) {
+    func refresh() {
         fetch()
         reloadData?()
     }

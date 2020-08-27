@@ -28,19 +28,22 @@ class ButtonTableViewCell: UITableViewCell, ReusableView {
     }
     
     private func setup() {
-        contentView.addSubview(button)
-        button.anchor
-            .edgesToSuperview()
-            .height(constant: 44)
-            .activate()
+//        contentView.addSubview(button)
+//        button.anchor
+//            .edgesToSuperview()
+//            .height(constant: 44)
+//            .activate()
+        textLabel?.textAlignment = .center
     }
     func configure(with title: String, style: ButtonTableViewCell.Style) {
-        button.setTitle(title, for: .normal)
-        switch style {
-        case .default:
-            button.setTitleColor(.systemBlue, for: .normal)
-        case .destructive:
-            button.setTitleColor(.systemRed, for: .normal)
-        }
+        textLabel?.text = title
+        textLabel?.textColor = .systemRed
+//        button.setTitle(title, for: .normal)
+//        switch style {
+//        case .default:
+//            button.setTitleColor(.systemBlue, for: .normal)
+//        case .destructive:
+//            button.setTitleColor(.systemRed, for: .normal)
+//        }
     }
 }

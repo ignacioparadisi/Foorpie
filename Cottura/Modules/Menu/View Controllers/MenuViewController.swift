@@ -19,12 +19,6 @@ class MenuViewController: UIViewController {
         setupNavigationBar()
         setupTableView()
         setupViewModel()
-//        viewModel.fetch()
-//        tableView.reloadData()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         viewModel.fetch()
         tableView.reloadData()
     }
