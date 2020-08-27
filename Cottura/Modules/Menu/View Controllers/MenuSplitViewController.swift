@@ -16,10 +16,9 @@ class MenuSplitViewController: UISplitViewController {
         preferredDisplayMode = .allVisible
         viewControllers = [
             UINavigationController(rootViewController: MenuViewController()),
-            UIViewController()
+            NoItemSelectedViewController.menuItemController
         ]
     }
-
 }
 
 extension MenuSplitViewController: UISplitViewControllerDelegate {

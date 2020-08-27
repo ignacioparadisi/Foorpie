@@ -64,13 +64,13 @@ class MenuItemDetailViewController: UIViewController {
     
     @objc private func save() {
         viewModel.save()
-        let controller = CustomAlertViewController(title: "Guardado", message: "El artículo se guardó de manera exitosa.", style: .success)
-        present(controller, animated: true)
         dismissView()
     }
     
-    @objc private func dismissView() {
+    @objc private func dismissView(didSave: Bool = false) {
         if viewModel.isEditing {
+            let controller = CustomAlertViewController(title: "Guardado", message: "El artículo se guardó de manera exitosa.", style: .success)
+            self.present(controller, animated: true)
             navigationController?.navigationController?.popViewController(animated: true)
         } else {
             dismiss(animated: true)
@@ -119,7 +119,11 @@ class MenuItemDetailViewController: UIViewController {
         let alertController = UIAlertController(title: "¿Eliminar \"\(viewModel.title)\"?", message: "Al eliminar, no podrás agregar este producto a tus órdenes", preferredStyle: .alert)
         let deleteAction = UIAlertAction(title: "Eliminar", style: .destructive) { _ in
             self.viewModel.delete()
-            self.showDetailViewController(UIViewController(), sender: nil)
+            if self.splitViewController?.viewControllers.count == 2 {
+                self.splitViewController?.viewControllers[1] = NoItemSelectedViewController.menuItemController
+            } else {
+                self.dismissView()
+            }
         }
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
         alertController.addAction(deleteAction)

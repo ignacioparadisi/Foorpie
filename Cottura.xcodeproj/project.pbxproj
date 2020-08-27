@@ -91,6 +91,8 @@
 		32BE29A124F5917F00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */; };
 		32DA6BCE24F7431C0080DD56 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6BCD24F7431C0080DD56 /* CustomAlertViewController.swift */; };
 		32DA6BCF24F743FA0080DD56 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6BCD24F7431C0080DD56 /* CustomAlertViewController.swift */; };
+		32DA6BD424F75D8B0080DD56 /* NoItemSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6BD324F75D8B0080DD56 /* NoItemSelectedViewController.swift */; };
+		32DA6BD524F75D8B0080DD56 /* NoItemSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6BD324F75D8B0080DD56 /* NoItemSelectedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +163,7 @@
 		32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		32DA6BCD24F7431C0080DD56 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		32DA6BD324F75D8B0080DD56 /* NoItemSelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemSelectedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +265,7 @@
 			children = (
 				327B32D824F4862700B7DCD1 /* MainTabBarController.swift */,
 				32DA6BCD24F7431C0080DD56 /* CustomAlertViewController.swift */,
+				32DA6BD324F75D8B0080DD56 /* NoItemSelectedViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -658,6 +662,7 @@
 				3250B08C24F4C444001EE718 /* MenuFoodItem+CoreDataProperties.swift in Sources */,
 				3250B08D24F4C444001EE718 /* MenuItemViewModel.swift in Sources */,
 				3275C6E124F559B4004691EA /* TextFieldCellViewModel.swift in Sources */,
+				32DA6BD524F75D8B0080DD56 /* NoItemSelectedViewController.swift in Sources */,
 				3250B08E24F4C444001EE718 /* NSLayoutAnchor+Extension.swift in Sources */,
 				3275C6D624F54DD4004691EA /* UIFont+Extension.swift in Sources */,
 				3250B08F24F4C444001EE718 /* MenuViewModel.swift in Sources */,
@@ -699,6 +704,7 @@
 				3250B07E24F4C22B001EE718 /* MenuFoodItem+CoreDataProperties.swift in Sources */,
 				3250B07424F49BFE001EE718 /* MenuItemViewModel.swift in Sources */,
 				3275C6E024F559B4004691EA /* TextFieldCellViewModel.swift in Sources */,
+				32DA6BD424F75D8B0080DD56 /* NoItemSelectedViewController.swift in Sources */,
 				3250B06924F49406001EE718 /* NSLayoutAnchor+Extension.swift in Sources */,
 				3275C6D524F54DD4004691EA /* UIFont+Extension.swift in Sources */,
 				3250B07224F49BDB001EE718 /* MenuViewModel.swift in Sources */,
@@ -772,7 +778,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ignacioparadisi.Cottura-dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -792,7 +798,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ignacioparadisi.Cottura-dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -925,7 +931,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ignacioparadisi.Cottura;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -944,7 +950,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ignacioparadisi.Cottura;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
