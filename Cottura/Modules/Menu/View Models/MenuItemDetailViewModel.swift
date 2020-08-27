@@ -99,13 +99,16 @@ class MenuItemDetailViewModel {
     
     func save() {
         guard let name = fields[0].stringValue else { return }
-        guard let price = fields[1].stringValue?.currencyDoubleValue else { return }
+        guard let price = fields[1].stringValue?.doubleValue else { return }
+        print(fields[1].stringValue)
+        print(price)
         guard let availableCount = Int32(fields[2].stringValue ?? "0") else { return }
-        var newItem: MenuFoodItem = MenuFoodItem(context: PersistenceController.shared.container.viewContext)
+        var newItem: MenuFoodItem!
         if !name.isEmpty {
             if let item = item {
                 newItem = item
             } else {
+                newItem = MenuFoodItem(context: PersistenceController.shared.container.viewContext)
                 newItem.dateCreated = Date()
             }
             newItem.name = name

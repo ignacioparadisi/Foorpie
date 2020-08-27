@@ -10,7 +10,9 @@ import Foundation
 import Combine
 
 class CurrencyTextFieldCellViewModel: FieldViewModel {
+    let value: Double?
     init(title: String? = nil, placeholder: String? = nil, value: Double? = 0.0) {
+        self.value = value
         var stringValue: String?
         if let value = value {
             stringValue = String(describing: value)
