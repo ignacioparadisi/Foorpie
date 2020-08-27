@@ -43,6 +43,8 @@
 		3250B09924F4C444001EE718 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327B32E024F4862800B7DCD1 /* Assets.xcassets */; };
 		3250B0A024F4C61F001EE718 /* MenuPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B09F24F4C61F001EE718 /* MenuPersistenceManager.swift */; };
 		3250B0A124F4C6B4001EE718 /* MenuPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B09F24F4C61F001EE718 /* MenuPersistenceManager.swift */; };
+		32758B0D24F7EA8E0062441F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32758B0C24F7EA8E0062441F /* UIColor+Extension.swift */; };
+		32758B0E24F7EAED0062441F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32758B0C24F7EA8E0062441F /* UIColor+Extension.swift */; };
 		3275C6C024F540C3004691EA /* MenuItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6BF24F540C3004691EA /* MenuItemDetailViewController.swift */; };
 		3275C6C124F540C3004691EA /* MenuItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6BF24F540C3004691EA /* MenuItemDetailViewController.swift */; };
 		3275C6C324F540D5004691EA /* MenuItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6C224F540D5004691EA /* MenuItemDetailViewModel.swift */; };
@@ -127,6 +129,7 @@
 		3250B09D24F4C444001EE718 /* Cottura DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cottura DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3250B09E24F4C444001EE718 /* DEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DEV-Info.plist"; path = "/Users/ignacioparadisi/Developer/Projects/Cottura/Cottura/DEV-Info.plist"; sourceTree = "<absolute>"; };
 		3250B09F24F4C61F001EE718 /* MenuPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPersistenceManager.swift; sourceTree = "<group>"; };
+		32758B0C24F7EA8E0062441F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		3275C6BF24F540C3004691EA /* MenuItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemDetailViewController.swift; sourceTree = "<group>"; };
 		3275C6C224F540D5004691EA /* MenuItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemDetailViewModel.swift; sourceTree = "<group>"; };
 		3275C6C524F541E1004691EA /* PhotoPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerTableViewCell.swift; sourceTree = "<group>"; };
@@ -360,6 +363,7 @@
 				3250B06424F493F2001EE718 /* UITableView+Extension.swift */,
 				3275C6D424F54DD4004691EA /* UIFont+Extension.swift */,
 				3275C6EB24F55F96004691EA /* String+Extension.swift */,
+				32758B0C24F7EA8E0062441F /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -642,6 +646,7 @@
 				3275C6D324F547F1004691EA /* MenuSplitViewController.swift in Sources */,
 				3250B08124F4C444001EE718 /* UICollectionView+Extension.swift in Sources */,
 				3250B08224F4C444001EE718 /* MainTabBarController.swift in Sources */,
+				32758B0E24F7EAED0062441F /* UIColor+Extension.swift in Sources */,
 				3250B08324F4C444001EE718 /* OrderListViewController.swift in Sources */,
 				32BE29A124F5917F00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */,
 				3250B08424F4C444001EE718 /* AppDelegate.swift in Sources */,
@@ -684,6 +689,7 @@
 				3275C6D224F547F1004691EA /* MenuSplitViewController.swift in Sources */,
 				3250B06724F493FB001EE718 /* UICollectionView+Extension.swift in Sources */,
 				327B32D924F4862700B7DCD1 /* MainTabBarController.swift in Sources */,
+				32758B0D24F7EA8E0062441F /* UIColor+Extension.swift in Sources */,
 				327B331724F48C4500B7DCD1 /* OrderListViewController.swift in Sources */,
 				32BE299F24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */,
 				327B32D524F4862700B7DCD1 /* AppDelegate.swift in Sources */,

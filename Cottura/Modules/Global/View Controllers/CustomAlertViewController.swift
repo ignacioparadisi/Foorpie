@@ -17,13 +17,15 @@ class AlertView: UIView {
     private let contentMargin: CGFloat = 30
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
+        label.font = UIFont.preferredFont(forTextStyle: .title3).bold
+        label.textColor = .systemDarkGray
         label.textAlignment = .center
         return label
     }()
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.textColor = .systemDarkGray
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -37,7 +39,6 @@ class AlertView: UIView {
     init(title: String?, message: String?, style: Style = .none) {
         super.init(frame: .zero)
         setup(title: title, message: message, style: style)
-        imageView.tintColor = .systemGreen
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,6 +50,13 @@ class AlertView: UIView {
     }
     
     private func setup(title: String? = nil, message: String? = nil, style: Style = .none) {
+        layer.cornerRadius = 15
+        clipsToBounds = true
+        let blurEffect = UIBlurEffect(style: .systemThickMaterial)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = bounds
+        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(blurView)
         addSubview(imageView)
         addSubview(titleLabel)
         addSubview(descriptionLabel)
@@ -76,7 +84,7 @@ class AlertView: UIView {
         titleLabel.text = title
         descriptionLabel.text = message
         
-        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 100, weight: .semibold)
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 100, weight: .medium)
         switch style {
         case .none:
             imageView.image = nil
@@ -93,11 +101,12 @@ class AlertView: UIView {
 
 class CustomAlertViewController: UIViewController {
     
-    var alertView: AlertView!
+    private var backgroundView: UIView = UIView()
+    private var alertView: AlertView!
     private var timer: Timer?
-    private let dismissAfter: Double
+    private let dismissAfter: Double?
     
-    init(title: String, message: String, style: AlertView.Style, dismiss after: Double = 2.0) {
+    init(title: String, message: String, style: AlertView.Style, dismiss after: Double? = 2.0) {
         dismissAfter = after
         super.init(nibName: nil, bundle: nil)
         modalTransitionStyle = .crossDissolve
@@ -109,9 +118,12 @@ class CustomAlertViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        view.backgroundColor = .clear
+        view.addSubview(backgroundView)
+        backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        backgroundView.anchor.edgesToSuperview().activate()
+        
         view.addSubview(alertView)
-        alertView.backgroundColor = .systemBackground
         alertView.anchor
             .centerToSuperview()
             .top(greaterOrEqual: view.safeAreaLayoutGuide.topAnchor, constant: 20)
@@ -119,13 +131,12 @@ class CustomAlertViewController: UIViewController {
             .bottom(lessOrEqual: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
             .leading(greaterOrEqual: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)
             .width(greaterThanOrEqualToConstant: 200)
+            .width(lessThanOrEqualToConstant: 300)
             .activate()
-        alertView.layer.cornerRadius = 15
-        
-        alertView.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+        alertView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissView))
-        view.addGestureRecognizer(tapGesture)
+        backgroundView.addGestureRecognizer(tapGesture)
     }
     
     @objc private func dismissView() {
@@ -136,17 +147,31 @@ class CustomAlertViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UIView.animate(withDuration: 0.2) {
-            self.alertView.transform = CGAffineTransform.identity
-        }
+        showAlert()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        timer = Timer.scheduledTimer(withTimeInterval: TimeInterval() + dismissAfter, repeats: false) { timer in
-            self.dismiss(animated: true) {
-                timer.invalidate()
+        if let dismissAfter = dismissAfter {
+            timer = Timer.scheduledTimer(withTimeInterval: TimeInterval() + dismissAfter, repeats: false) { _ in
+                self.hideAlert()
             }
+        }
+    }
+    
+    private func showAlert() {
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 8, options: .curveEaseInOut, animations: {
+            self.alertView.transform = CGAffineTransform.identity
+        })
+    }
+    
+    private func hideAlert() {
+        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 8, options: .curveEaseInOut, animations: {
+            self.alertView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            self.alertView.alpha = 0
+        })
+        self.dismiss(animated: true) {
+            self.timer?.invalidate()
         }
     }
     
