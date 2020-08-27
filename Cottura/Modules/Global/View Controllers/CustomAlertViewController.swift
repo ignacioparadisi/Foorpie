@@ -106,7 +106,7 @@ class CustomAlertViewController: UIViewController {
     private var timer: Timer?
     private let dismissAfter: Double?
     
-    init(title: String, message: String, style: AlertView.Style, dismiss after: Double? = 2.0) {
+    init(title: String, message: String, style: AlertView.Style, dismiss after: Double? = 1.5) {
         dismissAfter = after
         super.init(nibName: nil, bundle: nil)
         modalTransitionStyle = .crossDissolve
@@ -166,7 +166,7 @@ class CustomAlertViewController: UIViewController {
     }
     
     private func hideAlert() {
-        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 8, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 8, options: .curveEaseInOut, animations: {
             self.alertView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
             self.alertView.alpha = 0
         })
