@@ -23,6 +23,7 @@ protocol MenuItemDetailViewModelDelegate {
 class MenuItemDetailViewModel {
     private var item: MenuFoodItem?
     private var fields: [FieldViewModel] = []
+    var refresh: (() -> Void)?
     var delegate: MenuItemDetailViewModelDelegate?
     var image: UIImage?
     @Published var imageDidChange: Bool = false
@@ -123,6 +124,7 @@ class MenuItemDetailViewModel {
             newItem.price = price
             newItem.availableCount = availableCount
             newItem.imageData = image?.jpegCompressedData
+            imageDidChange = false
         }
         
         do {
@@ -141,6 +143,19 @@ class MenuItemDetailViewModel {
             PersistenceController.shared.container.viewContext.delete(item)
             delegate?.refresh()
         }
+    }
+    
+    func clearImage() {
+        image = nil
+        imageDidChange = true
+        do {
+            try PersistenceController.shared.saveContext()
+            refresh?()
+            delegate?.refresh()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
     }
 }
 

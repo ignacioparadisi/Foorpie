@@ -36,6 +36,7 @@ class MenuItemDetailViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         setupTableView()
+        setupViewModel()
         viewModel.readyToSubmit
             .assign(to: \.isEnabled, on: saveBarButton)
             .store(in: &subscriptions)
@@ -62,6 +63,12 @@ class MenuItemDetailViewController: UIViewController {
         tableView.register(ButtonTableViewCell.self)
     }
     
+    private func setupViewModel() {
+        viewModel.refresh = { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+    
     @objc private func save() {
         viewModel.save()
         if viewModel.isEditing {
@@ -80,7 +87,7 @@ class MenuItemDetailViewController: UIViewController {
         }
     }
     
-    private func showGalleryAlert(sender: UITableViewCell?) {
+    private func showImagePickerAlert(sender: UIView?) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let galleryAction = UIAlertAction(title: "Galería", style: .default, handler: { [weak self] _ in
@@ -90,15 +97,19 @@ class MenuItemDetailViewController: UIViewController {
             alertController.addAction(galleryAction)
         }
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let cameraAction = UIAlertAction(title: "Cámara", style: .default, handler: { [weak self] _ in
+            let cameraAction = UIAlertAction(title: "Cámara", style: .default) { [weak self] _ in
                 self?.presentImagePicker(sourceType: .camera)
-            })
+            }
             cameraAction.setValue(UIImage(systemName: "camera"), forKey: "image")
             alertController.addAction(cameraAction)
         }
-        let clearAction = UIAlertAction(title: "Quitar Imagen", style: .destructive, handler: nil)
-        clearAction.setValue(UIImage(systemName: "trash"), forKey: "image")
-        alertController.addAction(clearAction)
+        if viewModel.image != nil {
+            let clearAction = UIAlertAction(title: "Quitar Imagen", style: .destructive) { [weak self] _ in
+                self?.viewModel.clearImage()
+            }
+            clearAction.setValue(UIImage(systemName: "trash"), forKey: "image")
+            alertController.addAction(clearAction)
+        }
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         
@@ -150,6 +161,7 @@ extension MenuItemDetailViewController: UITableViewDataSource {
         switch section {
         case .photo:
             let cell = tableView.dequeueReusableCell(for: indexPath) as PhotoPickerTableViewCell
+            cell.delegate = self
             cell.configure(with: viewModel.image)
             return cell
         case .fields:
@@ -181,7 +193,9 @@ extension MenuItemDetailViewController: UITableViewDelegate {
         guard let section = Section(rawValue: indexPath.section) else { return }
         switch section {
         case .photo:
-            showGalleryAlert(sender: tableView.cellForRow(at: indexPath))
+            if viewModel.image == nil {
+                showImagePickerAlert(sender: tableView.cellForRow(at: indexPath))
+            }
         case .fields:
             let cell = tableView.cellForRow(at: indexPath)
             cell?.becomeFirstResponder()
@@ -198,5 +212,11 @@ extension MenuItemDetailViewController: UIImagePickerControllerDelegate, UINavig
         viewModel.image = image
         viewModel.imageDidChange = true
         tableView.reloadRows(at: [IndexPath(row: 0, section: Section.photo.rawValue)], with: .automatic)
+    }
+}
+
+extension MenuItemDetailViewController: PhotoPickerTableViewCellDelegate {
+    func selectImage(sender: UIButton) {
+        showImagePickerAlert(sender: sender)
     }
 }

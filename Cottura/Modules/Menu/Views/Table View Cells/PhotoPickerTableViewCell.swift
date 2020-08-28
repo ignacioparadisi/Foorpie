@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol PhotoPickerTableViewCellDelegate: class {
+    func selectImage(sender: UIButton)
+}
+
 class PhotoPickerTableViewCell: UITableViewCell, ReusableView {
     
     // MARK: Properties
     private let selectImageButton = UIButton()
+    weak var delegate: PhotoPickerTableViewCellDelegate?
     
     // MARK: Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -50,6 +55,8 @@ class PhotoPickerTableViewCell: UITableViewCell, ReusableView {
             .trailingToSuperview(constant: -16)
             .height(constant: 44)
             .activate()
+        
+        selectImageButton.addTarget(self, action: #selector(selectImage), for: .touchUpInside)
     }
     
     func configure(with image: UIImage?) {
@@ -60,7 +67,10 @@ class PhotoPickerTableViewCell: UITableViewCell, ReusableView {
             imageView?.image = UIImage(systemName: "photo")?.withTintColor(.systemGray3, renderingMode: .alwaysOriginal)
             imageView?.contentMode = .scaleAspectFit
         }
-        
+    }
+    
+    @objc func selectImage() {
+        delegate?.selectImage(sender: selectImageButton)
     }
     
 }
