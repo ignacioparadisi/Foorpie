@@ -88,35 +88,34 @@ class MenuItemDetailViewController: UIViewController {
         }
     }
     
-    private func showImagePickerAlert(sender: UIView?) {
+    private func showImagePickerAlert(sender: PhotoPickerTableViewCell) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let galleryAction = UIAlertAction(title: "Galería", style: .default, handler: { [weak self] _ in
-                self?.presentImagePicker(sourceType: .photoLibrary)
-            })
-            galleryAction.setValue(UIImage(systemName: "photo.on.rectangle"), forKey: "image")
-            alertController.addAction(galleryAction)
-        }
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let cameraAction = UIAlertAction(title: "Cámara", style: .default) { [weak self] _ in
-                self?.presentImagePicker(sourceType: .camera)
-            }
-            cameraAction.setValue(UIImage(systemName: "camera"), forKey: "image")
-            alertController.addAction(cameraAction)
-        }
         if viewModel.image != nil {
-            let clearAction = UIAlertAction(title: "Quitar Imagen", style: .destructive) { [weak self] _ in
+            let clearAction = UIAlertAction(title: "Restablecer Foto", style: .destructive) { [weak self] _ in
                 self?.viewModel.clearImage()
             }
             clearAction.setValue(UIImage(systemName: "trash"), forKey: "image")
             alertController.addAction(clearAction)
         }
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraAction = UIAlertAction(title: "Tomar Foto", style: .default) { [weak self] _ in
+                self?.presentImagePicker(sourceType: .camera)
+            }
+            cameraAction.setValue(UIImage(systemName: "camera"), forKey: "image")
+            alertController.addAction(cameraAction)
+        }
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let galleryAction = UIAlertAction(title: "Seleccionar Foto", style: .default, handler: { [weak self] _ in
+                self?.presentImagePicker(sourceType: .photoLibrary)
+            })
+            galleryAction.setValue(UIImage(systemName: "photo.on.rectangle"), forKey: "image")
+            alertController.addAction(galleryAction)
+        }
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         
-        if let popover = alertController.popoverPresentationController, let sender = sender {
-            popover.sourceView = sender
-            popover.sourceRect = sender.bounds
+        if let popoverController = alertController.popoverPresentationController {
+            sender.setPopoverController(popoverController)
         }
         
         present(alertController, animated: true)
@@ -162,7 +161,6 @@ extension MenuItemDetailViewController: UITableViewDataSource {
         switch section {
         case .photo:
             let cell = tableView.dequeueReusableCell(for: indexPath) as PhotoPickerTableViewCell
-            cell.delegate = self
             cell.configure(with: viewModel.image)
             return cell
         case .fields:
@@ -194,8 +192,8 @@ extension MenuItemDetailViewController: UITableViewDelegate {
         guard let section = Section(rawValue: indexPath.section) else { return }
         switch section {
         case .photo:
-            if viewModel.image == nil {
-                showImagePickerAlert(sender: tableView.cellForRow(at: indexPath))
+            if let cell = tableView.cellForRow(at: indexPath) as? PhotoPickerTableViewCell {
+                showImagePickerAlert(sender: cell)
             }
         case .fields:
             let cell = tableView.cellForRow(at: indexPath)
@@ -213,11 +211,5 @@ extension MenuItemDetailViewController: UIImagePickerControllerDelegate, UINavig
         viewModel.image = image
         viewModel.imageDidChange = true
         tableView.reloadRows(at: [IndexPath(row: 0, section: Section.photo.rawValue)], with: .automatic)
-    }
-}
-
-extension MenuItemDetailViewController: PhotoPickerTableViewCellDelegate {
-    func selectImage(sender: UIButton) {
-        showImagePickerAlert(sender: sender)
     }
 }

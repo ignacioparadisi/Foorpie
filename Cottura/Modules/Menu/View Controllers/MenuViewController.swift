@@ -38,6 +38,7 @@ class MenuViewController: UIViewController {
         tableView.anchor.edgesToSuperview().activate()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.tableFooterView = UIView()
         tableView.register(MenuItemTableViewCell.self)
     }
     
