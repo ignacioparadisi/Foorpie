@@ -68,6 +68,7 @@ class MenuItemDetailViewController: UIViewController {
             let controller = CustomAlertViewController(title: "Guardado", message: "El artículo se guardó de manera exitosa.", style: .success)
             self.present(controller, animated: true)
         }
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
         dismissView()
     }
     

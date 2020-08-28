@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		324EE68524F8780400A85781 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 324EE68424F8780400A85781 /* SDWebImage */; };
+		324EE68724F8781700A85781 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 324EE68624F8781700A85781 /* SDWebImage */; };
+		324EE68924F8832700A85781 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68824F8832700A85781 /* FileManager+Extension.swift */; };
+		324EE68A24F8832700A85781 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68824F8832700A85781 /* FileManager+Extension.swift */; };
+		324EE68C24F884A100A85781 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68B24F884A100A85781 /* UIImage+Extension.swift */; };
+		324EE68D24F884A100A85781 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68B24F884A100A85781 /* UIImage+Extension.swift */; };
 		3250B06524F493F3001EE718 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B06424F493F2001EE718 /* UITableView+Extension.swift */; };
 		3250B06724F493FB001EE718 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B06624F493FB001EE718 /* UICollectionView+Extension.swift */; };
 		3250B06924F49406001EE718 /* NSLayoutAnchor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B06824F49406001EE718 /* NSLayoutAnchor+Extension.swift */; };
@@ -115,6 +121,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		324EE68824F8832700A85781 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		324EE68B24F884A100A85781 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		3250B06424F493F2001EE718 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		3250B06624F493FB001EE718 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		3250B06824F49406001EE718 /* NSLayoutAnchor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutAnchor+Extension.swift"; sourceTree = "<group>"; };
@@ -175,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				324EE68724F8781700A85781 /* SDWebImage in Frameworks */,
 				3275C6E724F55DF0004691EA /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,6 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				324EE68524F8780400A85781 /* SDWebImage in Frameworks */,
 				3275C6E424F55DD1004691EA /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +376,8 @@
 				3275C6D424F54DD4004691EA /* UIFont+Extension.swift */,
 				3275C6EB24F55F96004691EA /* String+Extension.swift */,
 				32758B0C24F7EA8E0062441F /* UIColor+Extension.swift */,
+				324EE68824F8832700A85781 /* FileManager+Extension.swift */,
+				324EE68B24F884A100A85781 /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -489,6 +501,7 @@
 			name = "Cottura DEV";
 			packageProductDependencies = (
 				3275C6E624F55DF0004691EA /* IQKeyboardManagerSwift */,
+				324EE68624F8781700A85781 /* SDWebImage */,
 			);
 			productName = Cottura;
 			productReference = 3250B09D24F4C444001EE718 /* Cottura DEV.app */;
@@ -509,6 +522,7 @@
 			name = Cottura;
 			packageProductDependencies = (
 				3275C6E324F55DD1004691EA /* IQKeyboardManagerSwift */,
+				324EE68424F8780400A85781 /* SDWebImage */,
 			);
 			productName = Cottura;
 			productReference = 327B32D124F4862700B7DCD1 /* Cottura.app */;
@@ -584,6 +598,7 @@
 			mainGroup = 327B32C824F4862700B7DCD1;
 			packageReferences = (
 				3275C6E224F55DD1004691EA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				324EE68324F8780300A85781 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 327B32D224F4862700B7DCD1 /* Products */;
 			projectDirPath = "";
@@ -654,6 +669,7 @@
 				3250B08424F4C444001EE718 /* AppDelegate.swift in Sources */,
 				3275C6F024F56040004691EA /* CurrencyTextFieldCellViewModel.swift in Sources */,
 				3250B0A124F4C6B4001EE718 /* MenuPersistenceManager.swift in Sources */,
+				324EE68A24F8832700A85781 /* FileManager+Extension.swift in Sources */,
 				32DA6BCF24F743FA0080DD56 /* CustomAlertViewController.swift in Sources */,
 				3275C6CA24F541F9004691EA /* TextFieldTableViewCell.swift in Sources */,
 				3250B08524F4C444001EE718 /* ReusableView.swift in Sources */,
@@ -679,6 +695,7 @@
 				3275C6C124F540C3004691EA /* MenuItemDetailViewController.swift in Sources */,
 				3275C6F324F563E0004691EA /* CurrencyField.swift in Sources */,
 				3250B09124F4C444001EE718 /* UITableView+Extension.swift in Sources */,
+				324EE68D24F884A100A85781 /* UIImage+Extension.swift in Sources */,
 				3275C6ED24F55F96004691EA /* String+Extension.swift in Sources */,
 				3275C6C424F540D5004691EA /* MenuItemDetailViewModel.swift in Sources */,
 			);
@@ -697,6 +714,7 @@
 				327B32D524F4862700B7DCD1 /* AppDelegate.swift in Sources */,
 				3275C6EF24F56040004691EA /* CurrencyTextFieldCellViewModel.swift in Sources */,
 				3250B0A024F4C61F001EE718 /* MenuPersistenceManager.swift in Sources */,
+				324EE68924F8832700A85781 /* FileManager+Extension.swift in Sources */,
 				32DA6BCE24F7431C0080DD56 /* CustomAlertViewController.swift in Sources */,
 				3275C6C924F541F9004691EA /* TextFieldTableViewCell.swift in Sources */,
 				3250B06C24F4942F001EE718 /* ReusableView.swift in Sources */,
@@ -722,6 +740,7 @@
 				3275C6C024F540C3004691EA /* MenuItemDetailViewController.swift in Sources */,
 				3275C6F224F563E0004691EA /* CurrencyField.swift in Sources */,
 				3250B06524F493F3001EE718 /* UITableView+Extension.swift in Sources */,
+				324EE68C24F884A100A85781 /* UIImage+Extension.swift in Sources */,
 				3275C6EC24F55F96004691EA /* String+Extension.swift in Sources */,
 				3275C6C324F540D5004691EA /* MenuItemDetailViewModel.swift in Sources */,
 			);
@@ -774,7 +793,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-DEV";
-				CODE_SIGN_ENTITLEMENTS = "Cottura DEV.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8T85WESY64;
 				INFOPLIST_FILE = "Cottura/DEV-Info.plist";
@@ -795,7 +814,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-DEV";
-				CODE_SIGN_ENTITLEMENTS = "Cottura DEV.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8T85WESY64;
 				INFOPLIST_FILE = "Cottura/DEV-Info.plist";
@@ -932,6 +951,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Cottura/Cottura.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 8T85WESY64;
 				INFOPLIST_FILE = Cottura/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -952,6 +972,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Cottura/Cottura.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 8T85WESY64;
 				INFOPLIST_FILE = Cottura/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1101,6 +1122,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		324EE68324F8780300A85781 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.0;
+			};
+		};
 		3275C6E224F55DD1004691EA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -1112,6 +1141,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		324EE68424F8780400A85781 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 324EE68324F8780300A85781 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		324EE68624F8781700A85781 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 324EE68324F8780300A85781 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		3275C6E324F55DD1004691EA /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3275C6E224F55DD1004691EA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;

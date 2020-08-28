@@ -12,4 +12,7 @@ extension String {
     var doubleValue: Double? {
         return Double(self)
     }
+    var urlEncoding: String? {
+        return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+    }
 }

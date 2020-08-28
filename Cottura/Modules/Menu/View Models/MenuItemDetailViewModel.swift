@@ -9,6 +9,13 @@
 import UIKit
 import Combine
 
+enum SaveImageError: Error {
+    case invalidPath(String)
+    case nameToURLFormat
+    case jpegConversion
+    case invalidSelf
+}
+
 protocol MenuItemDetailViewModelDelegate {
     func refresh()
 }
@@ -119,9 +126,19 @@ class MenuItemDetailViewModel {
             newItem.name = name
             newItem.price = price
             newItem.availableCount = availableCount
-            saveImage(named: name) { url in
-                newItem.imageURL = url
+            #if DEVELOPMENT
+            newItem.imageURL = saveTemporaryImage(named: name)
+            #else
+            saveImage(named: name) { result in
+                switch result {
+                case .success(let url):
+                    newItem.imageURL = url
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+                
             }
+            #endif
         }
         
         do {
@@ -142,72 +159,91 @@ class MenuItemDetailViewModel {
         }
     }
     
-    private func saveImage(named name: String, completion: @escaping (URL?) -> Void) {
-        DispatchQueue.global(qos: .background).async { [weak self] in
+    private func saveTemporaryImage(named name: String) -> URL? {
+        let temporaryDirectory = URL(fileURLWithPath: NSTemporaryDirectory())
+        guard let imageName = name.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return nil }
+        let imageURL = temporaryDirectory.appendingPathComponent("\(imageName).jpeg")
+        guard let data = self.image?.jpegData(compressionQuality: 0.5) else {
+            return nil
+        }
+        do {
+            try removeFiletIfExists(imageURL)
+            try createFile(data, in: imageURL)
+            return imageURL
+        } catch {
+            print("Error deleting image")
+        }
+        return nil
+    }
+    
+    private func saveImage(named name: String, completion: @escaping (Result<URL, Error>) -> Void) {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let self = self else {
                 DispatchQueue.main.async {
-                    completion(nil)
-                    return
+                    completion(.failure(SaveImageError.invalidSelf))
                 }
                 return
             }
-            guard let iCloudDirectory = FileManager.default.url(forUbiquityContainerIdentifier: nil)?.appendingPathComponent("Documents") else {
-                self.returnImage(url: nil, completion: completion)
+            // Get URL paths for iCloud Drive
+            guard let iCloudDirectory = FileManager.iCloudDriveDirectory, let iCloudImageDirectory = FileManager.iCloudDriveImagesDirectory else {
+                DispatchQueue.main.async {
+                    completion(.failure(SaveImageError.invalidPath("iCloud Drive")))
+                }
                 return
             }
-            if (!FileManager.default.fileExists(atPath: iCloudDirectory.path, isDirectory: nil)) {
-                do {
-                    try FileManager.default.createDirectory(at: iCloudDirectory, withIntermediateDirectories: true, attributes: nil)
+            // Convert image name to url format
+            guard let imageName = name.urlEncoding else {
+                DispatchQueue.main.async {
+                    completion(.failure(SaveImageError.nameToURLFormat))
                 }
-                catch {
-                    //Error handling
-                    print("Error in creating doc")
-                }
-            }
-            let iCloudImageDirectory = iCloudDirectory.appendingPathComponent("Images")
-            if (!FileManager.default.fileExists(atPath: iCloudImageDirectory.path, isDirectory: nil)) {
-                do {
-                    try FileManager.default.createDirectory(at: iCloudImageDirectory, withIntermediateDirectories: true, attributes: nil)
-                }
-                catch {
-                    //Error handling
-                    print("Error in creating doc")
-                }
-            }
-            guard let imageName = name.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
-                self.returnImage(url: nil, completion: completion)
                 return
             }
             let imageURL = iCloudImageDirectory.appendingPathComponent("\(imageName).jpeg")
-            guard let data = self.image?.jpegData(compressionQuality: 0.5) else {
-                self.returnImage(url: nil, completion: completion)
+            // Convert image to JPEG data
+            guard let data = self.image?.jpegCompressedData else {
+                DispatchQueue.main.async {
+                    completion(.failure(SaveImageError.jpegConversion))
+                }
                 return
             }
-            if FileManager.default.fileExists(atPath: imageURL.path) {
-                do {
-                    try FileManager.default.removeItem(atPath: imageURL.path)
-                } catch {
-                    print("Error deleting image")
-                }
-            }
-            
+            // Create directories if necessary
             do {
-                try data.write(to: imageURL)
+                try self.createDirectoryIfNeeded(iCloudDirectory)
+                try self.createDirectoryIfNeeded(iCloudImageDirectory)
+                try self.removeFiletIfExists(imageURL)
+                try self.createFile(data, in: imageURL)
                 DispatchQueue.main.async {
-                    self.returnImage(url: imageURL, completion: completion)
+                    print("Image saved in \(imageURL)")
+                    completion(.success(imageURL))
                     return
                 }
             } catch {
-                print(error.localizedDescription)
-                print("Error saving image")
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
             }
-           self.returnImage(url: nil, completion: completion)
         }
     }
     
-    private func returnImage(url: URL?, completion: @escaping (URL?) -> Void) {
+    private func createDirectoryIfNeeded(_ url: URL) throws {
+        if (!FileManager.default.fileExists(atPath: url.path, isDirectory: nil)) {
+            try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
+        }
+    }
+    
+    private func removeFiletIfExists(_ url: URL) throws {
+        if FileManager.default.fileExists(atPath: url.path) {
+            try FileManager.default.removeItem(atPath: url.path)
+        }
+    }
+    
+    private func createFile(_ data: Data, in url: URL) throws {
+        try data.write(to: url)
+    }
+    
+    private func returnImage(url: URL?, completion: @escaping (Result<URL?, Error>) -> Void) {
         DispatchQueue.main.async {
-            completion(url)
+            completion(.success(url))
             return
         }
     }
