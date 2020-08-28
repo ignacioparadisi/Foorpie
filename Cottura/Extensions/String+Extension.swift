@@ -9,9 +9,11 @@
 import Foundation
 
 extension String {
+    /// Returns the string's double value representation if exists
     var doubleValue: Double? {
         return Double(self)
     }
+    /// Returns the string encoded for URL
     var urlEncoding: String? {
         return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
     }

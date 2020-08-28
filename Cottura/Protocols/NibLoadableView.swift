@@ -9,10 +9,12 @@
 import UIKit
 
 public protocol NibLoadableView: class {
+    /// Adds a nib name to a view
     static var nibName: String { get }
 }
 
 extension NibLoadableView where Self: UIView {
+    /// Sets the nib name of the view as the name of the class
     static var nibName: String {
         return String(describing: self)
     }

@@ -9,5 +9,6 @@
 import UIKit
 
 extension UIColor {
+    /// Dark gray system color for alert's text color
     static var systemDarkGray = UIColor(named: "systemDarkGray")!
 }

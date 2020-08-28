@@ -1,5 +1,5 @@
 //
-//  MenuItemViewModel.swift
+//  DishViewModel.swift
 //  Cottura
 //
 //  Created by Ignacio Paradisi on 8/24/20.
@@ -8,24 +8,29 @@
 
 import UIKit
 
-class MenuItemViewModel {
+class DishViewModel {
     // MARK: Properties
-    private let item: MenuFoodItem
+    /// Dish where the information comes
+    private let dish: Dish
+    /// Name of the dish
     var name: String {
-        return item.name
+        return dish.name
     }
+    /// Price of the dish
     var price: String {
         let numberFormatter = NumberFormatter()
         numberFormatter.locale = Locale(identifier: "en_US")
         numberFormatter.numberStyle = .currency
         numberFormatter.maximumFractionDigits = 2
-        return numberFormatter.string(from: NSNumber(value: item.price)) ?? "$0.0"
+        return numberFormatter.string(from: NSNumber(value: dish.price)) ?? "$0.0"
     }
+    /// Available count of the dish
     var availableCount: Int {
-        return Int(item.availableCount)
+        return Int(dish.availableCount)
     }
+    /// Image of the dish
     var image: UIImage {
-        if let data = item.imageData,
+        if let data = dish.imageData,
             let image = UIImage(data: data) {
             return image
         } else {
@@ -34,7 +39,8 @@ class MenuItemViewModel {
         }
     }
     
-    init(item: MenuFoodItem) {
-        self.item = item
+    // MARK: Initializer
+    init(dish: Dish) {
+        self.dish = dish
     }
 }

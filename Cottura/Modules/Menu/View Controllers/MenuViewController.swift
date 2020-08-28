@@ -39,7 +39,7 @@ class MenuViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        tableView.register(MenuItemTableViewCell.self)
+        tableView.register(DishTableViewCell.self)
     }
     
     private func setupSearchController() {
@@ -69,7 +69,7 @@ class MenuViewController: UIViewController {
     
     @objc private func addNewItem() {
         let detailViewModel = viewModel.detailForRow()
-        let viewController = UINavigationController(rootViewController: MenuItemDetailViewController(viewModel: detailViewModel))
+        let viewController = UINavigationController(rootViewController: DishDetailViewController(viewModel: detailViewModel))
         present(viewController, animated: true)
     }
 }
@@ -85,8 +85,8 @@ extension MenuViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath) as MenuItemTableViewCell
-        cell.configure(with: viewModel.itemForRow(at: indexPath))
+        let cell = tableView.dequeueReusableCell(for: indexPath) as DishTableViewCell
+        cell.configure(with: viewModel.dishForRow(at: indexPath))
         return cell
     }
 }
@@ -96,14 +96,14 @@ extension MenuViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            viewModel.deleteItem(at: indexPath)
+            viewModel.deleteDish(at: indexPath)
             tableView.deleteRows(at: [indexPath], with: .left)
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailViewModel = viewModel.detailForRow(at: indexPath)
-        let viewController = UINavigationController(rootViewController: MenuItemDetailViewController(viewModel: detailViewModel))
+        let viewController = UINavigationController(rootViewController: DishDetailViewController(viewModel: detailViewModel))
         showDetailViewController(viewController, sender: nil)
     }
 }

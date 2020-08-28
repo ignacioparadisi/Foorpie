@@ -14,9 +14,9 @@ class MenuPersistenceManager {
     
     private init() {}
     
-    func fetch() -> Result<[MenuFoodItem], Error> {
-        let fetchRequest: NSFetchRequest<MenuFoodItem> = MenuFoodItem.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(MenuFoodItem.name), ascending: true)]
+    func fetch() -> Result<[Dish], Error> {
+        let fetchRequest: NSFetchRequest<Dish> = Dish.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Dish.name), ascending: true)]
         do {
             let result = try PersistenceController.shared.container.viewContext.fetch(fetchRequest)
             return .success(result)
@@ -25,7 +25,7 @@ class MenuPersistenceManager {
         }
     }
     
-    func delete(item: MenuFoodItem) {
-        PersistenceController.shared.container.viewContext.delete(item)
+    func delete(_ dish: Dish) {
+        PersistenceController.shared.container.viewContext.delete(dish)
     }
 }

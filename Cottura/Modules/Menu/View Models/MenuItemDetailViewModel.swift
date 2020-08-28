@@ -1,5 +1,5 @@
 //
-//  MenuItemDetailViewModel.swift
+//  DishDetailViewModel.swift
 //  Cottura
 //
 //  Created by Ignacio Paradisi on 8/25/20.
@@ -20,8 +20,8 @@ protocol MenuItemDetailViewModelDelegate {
     func refresh()
 }
 
-class MenuItemDetailViewModel {
-    private var item: MenuFoodItem?
+class DishDetailViewModel {
+    private var item: Dish?
     private var fields: [FieldViewModel] = []
     var refresh: (() -> Void)?
     var delegate: MenuItemDetailViewModelDelegate?
@@ -45,7 +45,7 @@ class MenuItemDetailViewModel {
         }
     }
     
-    init(item: MenuFoodItem? = nil) {
+    init(item: Dish? = nil) {
         self.item = item
         if let data = item?.imageData {
             image = UIImage(data: data)
@@ -112,12 +112,12 @@ class MenuItemDetailViewModel {
         guard let name = fields[0].stringValue else { return }
         guard let price = fields[1].stringValue?.doubleValue else { return }
         guard let availableCount = Int32(fields[2].stringValue ?? "0") else { return }
-        var newItem: MenuFoodItem!
+        var newItem: Dish!
         if !name.isEmpty {
             if let item = item {
                 newItem = item
             } else {
-                newItem = MenuFoodItem(context: PersistenceController.shared.container.viewContext)
+                newItem = Dish(context: PersistenceController.shared.container.viewContext)
                 newItem.dateCreated = Date()
             }
             newItem.name = name
@@ -140,7 +140,7 @@ class MenuItemDetailViewModel {
     
     func delete() {
         if let item = item {
-            PersistenceController.shared.container.viewContext.delete(item)
+            MenuPersistenceManager.shared.delete(item: item)
             delegate?.refresh()
         }
     }

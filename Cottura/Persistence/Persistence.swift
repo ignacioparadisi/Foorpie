@@ -56,11 +56,11 @@ struct PersistenceController {
         let jsonArray = try! JSONSerialization.jsonObject(with: jsonData, options: [.allowFragments]) as! [[String: Any]]
         
         for jsonDictionary in jsonArray {
-            let item = MenuFoodItem(context: container.viewContext)
-            item.name = jsonDictionary["name"] as! String
-            item.price = jsonDictionary["price"] as! Double
-            item.availableCount = jsonDictionary["available_count"] as! Int32
-            item.dateCreated = Date()
+            let dish = Dish(context: container.viewContext)
+            dish.name = jsonDictionary["name"] as! String
+            dish.price = jsonDictionary["price"] as! Double
+            dish.availableCount = jsonDictionary["available_count"] as! Int32
+            dish.dateCreated = Date()
         }
         do {
             try context.save()

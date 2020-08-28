@@ -10,13 +10,14 @@ import UIKit
 
 class MenuSplitViewController: UISplitViewController {
 
+    /// Add the view to the splitview
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
         preferredDisplayMode = .allVisible
         viewControllers = [
             UINavigationController(rootViewController: MenuViewController()),
-            NoItemSelectedViewController.menuItemController
+            NoItemSelectedViewController.menuDishController
         ]
     }
 }

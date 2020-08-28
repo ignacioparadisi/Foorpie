@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321A165A24F9231000CF0C5A /* Dish+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A165824F9231000CF0C5A /* Dish+CoreDataClass.swift */; };
+		321A165B24F9231000CF0C5A /* Dish+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A165824F9231000CF0C5A /* Dish+CoreDataClass.swift */; };
+		321A165C24F9231000CF0C5A /* Dish+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A165924F9231000CF0C5A /* Dish+CoreDataProperties.swift */; };
+		321A165D24F9231000CF0C5A /* Dish+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A165924F9231000CF0C5A /* Dish+CoreDataProperties.swift */; };
+		321A166024F9313000CF0C5A /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A165F24F9313000CF0C5A /* UIAlertController+Extension.swift */; };
+		321A166124F9313000CF0C5A /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A165F24F9313000CF0C5A /* UIAlertController+Extension.swift */; };
+		321A166424F93E9600CF0C5A /* ValidatorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A166324F93E9600CF0C5A /* ValidatorConvertible.swift */; };
+		321A166524F93E9600CF0C5A /* ValidatorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A166324F93E9600CF0C5A /* ValidatorConvertible.swift */; };
 		324EE68924F8832700A85781 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68824F8832700A85781 /* FileManager+Extension.swift */; };
 		324EE68A24F8832700A85781 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68824F8832700A85781 /* FileManager+Extension.swift */; };
 		324EE68C24F884A100A85781 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68B24F884A100A85781 /* UIImage+Extension.swift */; };
@@ -16,25 +24,21 @@
 		3250B06924F49406001EE718 /* NSLayoutAnchor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B06824F49406001EE718 /* NSLayoutAnchor+Extension.swift */; };
 		3250B06C24F4942F001EE718 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B06B24F4942F001EE718 /* ReusableView.swift */; };
 		3250B07224F49BDB001EE718 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07124F49BDB001EE718 /* MenuViewModel.swift */; };
-		3250B07424F49BFE001EE718 /* MenuItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07324F49BFE001EE718 /* MenuItemViewModel.swift */; };
-		3250B07724F4AEFD001EE718 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07524F4AEFD001EE718 /* MenuItemTableViewCell.swift */; };
-		3250B07824F4AEFD001EE718 /* MenuItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3250B07624F4AEFD001EE718 /* MenuItemTableViewCell.xib */; };
+		3250B07424F49BFE001EE718 /* DishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07324F49BFE001EE718 /* DishViewModel.swift */; };
+		3250B07724F4AEFD001EE718 /* DishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07524F4AEFD001EE718 /* DishTableViewCell.swift */; };
+		3250B07824F4AEFD001EE718 /* DishTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3250B07624F4AEFD001EE718 /* DishTableViewCell.xib */; };
 		3250B07A24F4B7F7001EE718 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07924F4B7F7001EE718 /* NibLoadableView.swift */; };
-		3250B07D24F4C22B001EE718 /* MenuFoodItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07B24F4C22B001EE718 /* MenuFoodItem+CoreDataClass.swift */; };
-		3250B07E24F4C22B001EE718 /* MenuFoodItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07C24F4C22B001EE718 /* MenuFoodItem+CoreDataProperties.swift */; };
 		3250B08124F4C444001EE718 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B06624F493FB001EE718 /* UICollectionView+Extension.swift */; };
 		3250B08224F4C444001EE718 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D824F4862700B7DCD1 /* MainTabBarController.swift */; };
 		3250B08324F4C444001EE718 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331624F48C4500B7DCD1 /* OrderListViewController.swift */; };
 		3250B08424F4C444001EE718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D424F4862700B7DCD1 /* AppDelegate.swift */; };
 		3250B08524F4C444001EE718 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B06B24F4942F001EE718 /* ReusableView.swift */; };
 		3250B08624F4C444001EE718 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331824F48C6600B7DCD1 /* MenuViewController.swift */; };
-		3250B08724F4C444001EE718 /* MenuFoodItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07B24F4C22B001EE718 /* MenuFoodItem+CoreDataClass.swift */; };
 		3250B08824F4C444001EE718 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07924F4B7F7001EE718 /* NibLoadableView.swift */; };
 		3250B08924F4C444001EE718 /* Cottura.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 327B32DD24F4862700B7DCD1 /* Cottura.xcdatamodeld */; };
-		3250B08A24F4C444001EE718 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07524F4AEFD001EE718 /* MenuItemTableViewCell.swift */; };
+		3250B08A24F4C444001EE718 /* DishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07524F4AEFD001EE718 /* DishTableViewCell.swift */; };
 		3250B08B24F4C444001EE718 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D624F4862700B7DCD1 /* SceneDelegate.swift */; };
-		3250B08C24F4C444001EE718 /* MenuFoodItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07C24F4C22B001EE718 /* MenuFoodItem+CoreDataProperties.swift */; };
-		3250B08D24F4C444001EE718 /* MenuItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07324F49BFE001EE718 /* MenuItemViewModel.swift */; };
+		3250B08D24F4C444001EE718 /* DishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07324F49BFE001EE718 /* DishViewModel.swift */; };
 		3250B08E24F4C444001EE718 /* NSLayoutAnchor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B06824F49406001EE718 /* NSLayoutAnchor+Extension.swift */; };
 		3250B08F24F4C444001EE718 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07124F49BDB001EE718 /* MenuViewModel.swift */; };
 		3250B09024F4C444001EE718 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B330C24F4873500B7DCD1 /* Persistence.swift */; };
@@ -43,16 +47,16 @@
 		3250B09524F4C444001EE718 /* order-status-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 327B331324F48A3D00B7DCD1 /* order-status-data.json */; };
 		3250B09624F4C444001EE718 /* menu-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 327B330E24F4892500B7DCD1 /* menu-data.json */; };
 		3250B09724F4C444001EE718 /* order-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 327B331124F489DE00B7DCD1 /* order-data.json */; };
-		3250B09824F4C444001EE718 /* MenuItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3250B07624F4AEFD001EE718 /* MenuItemTableViewCell.xib */; };
+		3250B09824F4C444001EE718 /* DishTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3250B07624F4AEFD001EE718 /* DishTableViewCell.xib */; };
 		3250B09924F4C444001EE718 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327B32E024F4862800B7DCD1 /* Assets.xcassets */; };
 		3250B0A024F4C61F001EE718 /* MenuPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B09F24F4C61F001EE718 /* MenuPersistenceManager.swift */; };
 		3250B0A124F4C6B4001EE718 /* MenuPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B09F24F4C61F001EE718 /* MenuPersistenceManager.swift */; };
 		32758B0D24F7EA8E0062441F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32758B0C24F7EA8E0062441F /* UIColor+Extension.swift */; };
 		32758B0E24F7EAED0062441F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32758B0C24F7EA8E0062441F /* UIColor+Extension.swift */; };
-		3275C6C024F540C3004691EA /* MenuItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6BF24F540C3004691EA /* MenuItemDetailViewController.swift */; };
-		3275C6C124F540C3004691EA /* MenuItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6BF24F540C3004691EA /* MenuItemDetailViewController.swift */; };
-		3275C6C324F540D5004691EA /* MenuItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6C224F540D5004691EA /* MenuItemDetailViewModel.swift */; };
-		3275C6C424F540D5004691EA /* MenuItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6C224F540D5004691EA /* MenuItemDetailViewModel.swift */; };
+		3275C6C024F540C3004691EA /* DishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6BF24F540C3004691EA /* DishDetailViewController.swift */; };
+		3275C6C124F540C3004691EA /* DishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6BF24F540C3004691EA /* DishDetailViewController.swift */; };
+		3275C6C324F540D5004691EA /* DishDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6C224F540D5004691EA /* DishDetailViewModel.swift */; };
+		3275C6C424F540D5004691EA /* DishDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6C224F540D5004691EA /* DishDetailViewModel.swift */; };
 		3275C6C624F541E1004691EA /* PhotoPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6C524F541E1004691EA /* PhotoPickerTableViewCell.swift */; };
 		3275C6C724F541E1004691EA /* PhotoPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6C524F541E1004691EA /* PhotoPickerTableViewCell.swift */; };
 		3275C6C924F541F9004691EA /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6C824F541F9004691EA /* TextFieldTableViewCell.swift */; };
@@ -119,6 +123,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		321A165824F9231000CF0C5A /* Dish+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dish+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		321A165924F9231000CF0C5A /* Dish+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dish+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		321A165F24F9313000CF0C5A /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		321A166324F93E9600CF0C5A /* ValidatorConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorConvertible.swift; sourceTree = "<group>"; };
 		324EE68824F8832700A85781 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		324EE68B24F884A100A85781 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		3250B06424F493F2001EE718 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
@@ -126,19 +134,17 @@
 		3250B06824F49406001EE718 /* NSLayoutAnchor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutAnchor+Extension.swift"; sourceTree = "<group>"; };
 		3250B06B24F4942F001EE718 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		3250B07124F49BDB001EE718 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
-		3250B07324F49BFE001EE718 /* MenuItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewModel.swift; sourceTree = "<group>"; };
-		3250B07524F4AEFD001EE718 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
-		3250B07624F4AEFD001EE718 /* MenuItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemTableViewCell.xib; sourceTree = "<group>"; };
+		3250B07324F49BFE001EE718 /* DishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishViewModel.swift; sourceTree = "<group>"; };
+		3250B07524F4AEFD001EE718 /* DishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishTableViewCell.swift; sourceTree = "<group>"; };
+		3250B07624F4AEFD001EE718 /* DishTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishTableViewCell.xib; sourceTree = "<group>"; };
 		3250B07924F4B7F7001EE718 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
-		3250B07B24F4C22B001EE718 /* MenuFoodItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuFoodItem+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		3250B07C24F4C22B001EE718 /* MenuFoodItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuFoodItem+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		3250B09D24F4C444001EE718 /* Cottura DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cottura DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3250B09E24F4C444001EE718 /* DEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DEV-Info.plist"; path = "/Users/ignacioparadisi/Developer/Projects/Cottura/Cottura/DEV-Info.plist"; sourceTree = "<absolute>"; };
 		3250B09F24F4C61F001EE718 /* MenuPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPersistenceManager.swift; sourceTree = "<group>"; };
 		32758B0C24F7EA8E0062441F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		32758B1024F8013A0062441F /* Cottura.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cottura.entitlements; sourceTree = "<group>"; };
-		3275C6BF24F540C3004691EA /* MenuItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemDetailViewController.swift; sourceTree = "<group>"; };
-		3275C6C224F540D5004691EA /* MenuItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemDetailViewModel.swift; sourceTree = "<group>"; };
+		3275C6BF24F540C3004691EA /* DishDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailViewController.swift; sourceTree = "<group>"; };
+		3275C6C224F540D5004691EA /* DishDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailViewModel.swift; sourceTree = "<group>"; };
 		3275C6C524F541E1004691EA /* PhotoPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerTableViewCell.swift; sourceTree = "<group>"; };
 		3275C6C824F541F9004691EA /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		3275C6CB24F5420C004691EA /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
@@ -221,6 +227,14 @@
 			path = "Table View Cells";
 			sourceTree = "<group>";
 		};
+		321A166224F93E8800CF0C5A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				321A166324F93E9600CF0C5A /* ValidatorConvertible.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		3250B06A24F49422001EE718 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,8 +247,8 @@
 		3250B06D24F499B3001EE718 /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
-				3250B07524F4AEFD001EE718 /* MenuItemTableViewCell.swift */,
-				3250B07624F4AEFD001EE718 /* MenuItemTableViewCell.xib */,
+				3250B07524F4AEFD001EE718 /* DishTableViewCell.swift */,
+				3250B07624F4AEFD001EE718 /* DishTableViewCell.xib */,
 				3275C6C524F541E1004691EA /* PhotoPickerTableViewCell.swift */,
 			);
 			path = "Table View Cells";
@@ -243,6 +257,7 @@
 		3275C6D724F5595D004691EA /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				321A166224F93E8800CF0C5A /* Classes */,
 				3275C6DB24F5598F004691EA /* Protocols */,
 				3275C6DA24F55975004691EA /* View Controllers */,
 				3275C6D924F5596A004691EA /* Views */,
@@ -321,16 +336,16 @@
 			isa = PBXGroup;
 			children = (
 				32758B1024F8013A0062441F /* Cottura.entitlements */,
-				3250B06A24F49422001EE718 /* Protocols */,
-				327B330924F4865800B7DCD1 /* Persistence */,
-				327B330824F4864700B7DCD1 /* Extensions */,
-				327B330724F4864400B7DCD1 /* Modules */,
 				327B32D424F4862700B7DCD1 /* AppDelegate.swift */,
 				327B32D624F4862700B7DCD1 /* SceneDelegate.swift */,
 				327B32E024F4862800B7DCD1 /* Assets.xcassets */,
 				327B32E224F4862800B7DCD1 /* LaunchScreen.storyboard */,
 				327B32E524F4862800B7DCD1 /* Info.plist */,
 				3250B09E24F4C444001EE718 /* DEV-Info.plist */,
+				3250B06A24F49422001EE718 /* Protocols */,
+				327B330924F4865800B7DCD1 /* Persistence */,
+				327B330824F4864700B7DCD1 /* Extensions */,
+				327B330724F4864400B7DCD1 /* Modules */,
 			);
 			path = Cottura;
 			sourceTree = "<group>";
@@ -374,6 +389,7 @@
 				32758B0C24F7EA8E0062441F /* UIColor+Extension.swift */,
 				324EE68824F8832700A85781 /* FileManager+Extension.swift */,
 				324EE68B24F884A100A85781 /* UIImage+Extension.swift */,
+				321A165F24F9313000CF0C5A /* UIAlertController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -423,8 +439,8 @@
 		327B331524F48C1500B7DCD1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3250B07B24F4C22B001EE718 /* MenuFoodItem+CoreDataClass.swift */,
-				3250B07C24F4C22B001EE718 /* MenuFoodItem+CoreDataProperties.swift */,
+				321A165824F9231000CF0C5A /* Dish+CoreDataClass.swift */,
+				321A165924F9231000CF0C5A /* Dish+CoreDataProperties.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -441,7 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				327B331824F48C6600B7DCD1 /* MenuViewController.swift */,
-				3275C6BF24F540C3004691EA /* MenuItemDetailViewController.swift */,
+				3275C6BF24F540C3004691EA /* DishDetailViewController.swift */,
 				3275C6D124F547F1004691EA /* MenuSplitViewController.swift */,
 			);
 			path = "View Controllers";
@@ -465,8 +481,8 @@
 			isa = PBXGroup;
 			children = (
 				3250B07124F49BDB001EE718 /* MenuViewModel.swift */,
-				3250B07324F49BFE001EE718 /* MenuItemViewModel.swift */,
-				3275C6C224F540D5004691EA /* MenuItemDetailViewModel.swift */,
+				3250B07324F49BFE001EE718 /* DishViewModel.swift */,
+				3275C6C224F540D5004691EA /* DishDetailViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -614,7 +630,7 @@
 				3250B09524F4C444001EE718 /* order-status-data.json in Resources */,
 				3250B09624F4C444001EE718 /* menu-data.json in Resources */,
 				3250B09724F4C444001EE718 /* order-data.json in Resources */,
-				3250B09824F4C444001EE718 /* MenuItemTableViewCell.xib in Resources */,
+				3250B09824F4C444001EE718 /* DishTableViewCell.xib in Resources */,
 				3250B09924F4C444001EE718 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -627,7 +643,7 @@
 				327B331424F48A3D00B7DCD1 /* order-status-data.json in Resources */,
 				327B330F24F4892500B7DCD1 /* menu-data.json in Resources */,
 				327B331224F489DE00B7DCD1 /* order-data.json in Resources */,
-				3250B07824F4AEFD001EE718 /* MenuItemTableViewCell.xib in Resources */,
+				3250B07824F4AEFD001EE718 /* DishTableViewCell.xib in Resources */,
 				327B32E124F4862800B7DCD1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -667,30 +683,32 @@
 				3275C6CA24F541F9004691EA /* TextFieldTableViewCell.swift in Sources */,
 				3250B08524F4C444001EE718 /* ReusableView.swift in Sources */,
 				3250B08624F4C444001EE718 /* MenuViewController.swift in Sources */,
-				3250B08724F4C444001EE718 /* MenuFoodItem+CoreDataClass.swift in Sources */,
 				3275C6EA24F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift in Sources */,
+				321A165B24F9231000CF0C5A /* Dish+CoreDataClass.swift in Sources */,
 				3250B08824F4C444001EE718 /* NibLoadableView.swift in Sources */,
 				3250B08924F4C444001EE718 /* Cottura.xcdatamodeld in Sources */,
-				3250B08A24F4C444001EE718 /* MenuItemTableViewCell.swift in Sources */,
+				3250B08A24F4C444001EE718 /* DishTableViewCell.swift in Sources */,
 				3275C6C724F541E1004691EA /* PhotoPickerTableViewCell.swift in Sources */,
 				3250B08B24F4C444001EE718 /* SceneDelegate.swift in Sources */,
+				321A166124F9313000CF0C5A /* UIAlertController+Extension.swift in Sources */,
 				32BE29A024F5917C00BD9F15 /* IntTextFieldTableViewCell.swift in Sources */,
-				3250B08C24F4C444001EE718 /* MenuFoodItem+CoreDataProperties.swift in Sources */,
-				3250B08D24F4C444001EE718 /* MenuItemViewModel.swift in Sources */,
+				3250B08D24F4C444001EE718 /* DishViewModel.swift in Sources */,
+				321A166524F93E9600CF0C5A /* ValidatorConvertible.swift in Sources */,
 				3275C6E124F559B4004691EA /* TextFieldCellViewModel.swift in Sources */,
 				32DA6BD524F75D8B0080DD56 /* NoItemSelectedViewController.swift in Sources */,
+				321A165D24F9231000CF0C5A /* Dish+CoreDataProperties.swift in Sources */,
 				3250B08E24F4C444001EE718 /* NSLayoutAnchor+Extension.swift in Sources */,
 				3275C6D624F54DD4004691EA /* UIFont+Extension.swift in Sources */,
 				3250B08F24F4C444001EE718 /* MenuViewModel.swift in Sources */,
 				3250B09024F4C444001EE718 /* Persistence.swift in Sources */,
 				3275C6DE24F5599D004691EA /* FieldViewModel.swift in Sources */,
 				3275C6CD24F5420C004691EA /* ButtonTableViewCell.swift in Sources */,
-				3275C6C124F540C3004691EA /* MenuItemDetailViewController.swift in Sources */,
+				3275C6C124F540C3004691EA /* DishDetailViewController.swift in Sources */,
 				3275C6F324F563E0004691EA /* CurrencyField.swift in Sources */,
 				3250B09124F4C444001EE718 /* UITableView+Extension.swift in Sources */,
 				324EE68D24F884A100A85781 /* UIImage+Extension.swift in Sources */,
 				3275C6ED24F55F96004691EA /* String+Extension.swift in Sources */,
-				3275C6C424F540D5004691EA /* MenuItemDetailViewModel.swift in Sources */,
+				3275C6C424F540D5004691EA /* DishDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,30 +730,32 @@
 				3275C6C924F541F9004691EA /* TextFieldTableViewCell.swift in Sources */,
 				3250B06C24F4942F001EE718 /* ReusableView.swift in Sources */,
 				327B331924F48C6600B7DCD1 /* MenuViewController.swift in Sources */,
-				3250B07D24F4C22B001EE718 /* MenuFoodItem+CoreDataClass.swift in Sources */,
 				3275C6E924F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift in Sources */,
+				321A165A24F9231000CF0C5A /* Dish+CoreDataClass.swift in Sources */,
 				3250B07A24F4B7F7001EE718 /* NibLoadableView.swift in Sources */,
 				327B32DF24F4862700B7DCD1 /* Cottura.xcdatamodeld in Sources */,
-				3250B07724F4AEFD001EE718 /* MenuItemTableViewCell.swift in Sources */,
+				3250B07724F4AEFD001EE718 /* DishTableViewCell.swift in Sources */,
 				3275C6C624F541E1004691EA /* PhotoPickerTableViewCell.swift in Sources */,
 				327B32D724F4862700B7DCD1 /* SceneDelegate.swift in Sources */,
+				321A166024F9313000CF0C5A /* UIAlertController+Extension.swift in Sources */,
 				32BE299D24F5910400BD9F15 /* IntTextFieldTableViewCell.swift in Sources */,
-				3250B07E24F4C22B001EE718 /* MenuFoodItem+CoreDataProperties.swift in Sources */,
-				3250B07424F49BFE001EE718 /* MenuItemViewModel.swift in Sources */,
+				3250B07424F49BFE001EE718 /* DishViewModel.swift in Sources */,
+				321A166424F93E9600CF0C5A /* ValidatorConvertible.swift in Sources */,
 				3275C6E024F559B4004691EA /* TextFieldCellViewModel.swift in Sources */,
 				32DA6BD424F75D8B0080DD56 /* NoItemSelectedViewController.swift in Sources */,
+				321A165C24F9231000CF0C5A /* Dish+CoreDataProperties.swift in Sources */,
 				3250B06924F49406001EE718 /* NSLayoutAnchor+Extension.swift in Sources */,
 				3275C6D524F54DD4004691EA /* UIFont+Extension.swift in Sources */,
 				3250B07224F49BDB001EE718 /* MenuViewModel.swift in Sources */,
 				327B330D24F4873500B7DCD1 /* Persistence.swift in Sources */,
 				3275C6DD24F5599D004691EA /* FieldViewModel.swift in Sources */,
 				3275C6CC24F5420C004691EA /* ButtonTableViewCell.swift in Sources */,
-				3275C6C024F540C3004691EA /* MenuItemDetailViewController.swift in Sources */,
+				3275C6C024F540C3004691EA /* DishDetailViewController.swift in Sources */,
 				3275C6F224F563E0004691EA /* CurrencyField.swift in Sources */,
 				3250B06524F493F3001EE718 /* UITableView+Extension.swift in Sources */,
 				324EE68C24F884A100A85781 /* UIImage+Extension.swift in Sources */,
 				3275C6EC24F55F96004691EA /* String+Extension.swift in Sources */,
-				3275C6C324F540D5004691EA /* MenuItemDetailViewModel.swift in Sources */,
+				3275C6C324F540D5004691EA /* DishDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

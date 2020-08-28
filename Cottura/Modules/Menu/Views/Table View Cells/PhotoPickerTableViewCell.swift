@@ -11,7 +11,15 @@ import UIKit
 class PhotoPickerTableViewCell: UITableViewCell, ReusableView {
     
     // MARK: Properties
-    private let selectImageButton = UIButton()
+    private let selectImageButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        button.tintColor = .white
+        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .footnote).bold
+        button.setImage(UIImage(systemName: "camera.fill"), for: .normal)
+        button.layer.cornerRadius = 22
+        return button
+    }()
     
     // MARK: Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -25,11 +33,8 @@ class PhotoPickerTableViewCell: UITableViewCell, ReusableView {
     }
     
     // MARK: Functions
+    /// Add the components into the view
     private func setup() {
-        setupView()
-    }
-    
-    private func setupView() {
         selectionStyle = .none
         if let imageView = imageView {
             imageView.anchor
@@ -39,11 +44,6 @@ class PhotoPickerTableViewCell: UITableViewCell, ReusableView {
                 .activate()
         }
         contentView.addSubview(selectImageButton)
-        selectImageButton.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-        selectImageButton.tintColor = .white
-        selectImageButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .footnote).bold
-        selectImageButton.setImage(UIImage(systemName: "camera.fill"), for: .normal)
-        selectImageButton.layer.cornerRadius = 22
         
         selectImageButton.anchor
             .bottomToSuperview(constant: -16)
@@ -55,6 +55,8 @@ class PhotoPickerTableViewCell: UITableViewCell, ReusableView {
         selectImageButton.isUserInteractionEnabled = false
     }
     
+    /// Add a new image to the image view
+    /// - Parameter image: Image to be displayed
     func configure(with image: UIImage?) {
         if let image = image {
             imageView?.image = image
@@ -65,6 +67,8 @@ class PhotoPickerTableViewCell: UITableViewCell, ReusableView {
         }
     }
     
+    /// Sets a popover view to the `selectImageButton`
+    /// - Parameter popoverController: PopoverController to be shown
     func setPopoverController(_ popoverController: UIPopoverPresentationController) {
         popoverController.sourceView = selectImageButton
         popoverController.sourceRect = selectImageButton.bounds

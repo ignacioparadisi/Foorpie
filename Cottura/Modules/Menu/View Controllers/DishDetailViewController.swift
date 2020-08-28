@@ -11,16 +11,23 @@ import Combine
 
 class DishDetailViewController: UIViewController {
     // MARK: Properties
-    private let tableView = UITableView(frame: .zero, style: .insetGrouped)
-    private let imagePicker = UIImagePickerController()
-    private let viewModel: DishDetailViewModel
-    private var saveBarButton: UIBarButtonItem!
-    private var subscriptions = Set<AnyCancellable>()
+    /// Sections in the Table View
     enum Section: Int, CaseIterable {
         case photo
         case fields
         case delete
     }
+    
+    /// Table View to display the fields
+    private let tableView = UITableView(frame: .zero, style: .insetGrouped)
+    /// Image picker for the dish image
+    private let imagePicker = UIImagePickerController()
+    /// View model that contains the dish information
+    private let viewModel: DishDetailViewModel
+    /// Navigation bar button for saving the dish
+    private var saveBarButton: UIBarButtonItem!
+    /// Set for storing combine subscriptions
+    private var subscriptions = Set<AnyCancellable>()
     
     // MARK: Initializers
     init(viewModel: DishDetailViewModel = DishDetailViewModel()) {
@@ -37,11 +44,9 @@ class DishDetailViewController: UIViewController {
         setupNavigationBar()
         setupTableView()
         setupViewModel()
-        viewModel.readyToSubmit
-            .assign(to: \.isEnabled, on: saveBarButton)
-            .store(in: &subscriptions)
     }
     
+    /// Setup the Navigation Bar with title and buttons
     private func setupNavigationBar() {
         title = viewModel.title
         saveBarButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(save))
@@ -51,6 +56,7 @@ class DishDetailViewController: UIViewController {
         }
     }
 
+    /// Add the Table View into the view and register cells
     private func setupTableView() {
         view.addSubview(tableView)
         tableView.anchor.edgesToSuperview().activate()
@@ -64,12 +70,17 @@ class DishDetailViewController: UIViewController {
         tableView.register(ButtonTableViewCell.self)
     }
     
+    /// Implement all view model closures and subscriptions
     private func setupViewModel() {
         viewModel.refresh = { [weak self] in
             self?.tableView.reloadData()
         }
+        viewModel.readyToSubmit
+            .assign(to: \.isEnabled, on: saveBarButton)
+            .store(in: &subscriptions)
     }
     
+    /// Save dish information
     @objc private func save() {
         viewModel.save()
         if viewModel.isEditing {
@@ -80,6 +91,8 @@ class DishDetailViewController: UIViewController {
         dismissView()
     }
     
+    /// Dismiss view
+    /// - Parameter didDelete: Whether the user is deleting the dish or not
     @objc private func dismissView(didDelete: Bool = false) {
         if !viewModel.isEditing {
             dismiss(animated: true)
@@ -88,39 +101,34 @@ class DishDetailViewController: UIViewController {
         }
     }
     
+    /// Show alert with image picker options
+    /// - Parameter sender: The cell that triggered the event
     private func showImagePickerAlert(sender: PhotoPickerTableViewCell) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if viewModel.image != nil {
-            let clearAction = UIAlertAction(title: "Restablecer Foto", style: .destructive) { [weak self] _ in
-                self?.viewModel.clearImage()
+            alertController.addAction(title: "Restablecer Foto", style: .destructive, imageName: "trash") { [weak self] _ in
+               self?.viewModel.clearImage()
             }
-            clearAction.setValue(UIImage(systemName: "trash"), forKey: "image")
-            alertController.addAction(clearAction)
         }
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let cameraAction = UIAlertAction(title: "Tomar Foto", style: .default) { [weak self] _ in
-                self?.presentImagePicker(sourceType: .camera)
+            alertController.addAction(title: "Tomar Foto", style: .destructive, imageName: "camera") { [weak self] _ in
+               self?.presentImagePicker(sourceType: .camera)
             }
-            cameraAction.setValue(UIImage(systemName: "camera"), forKey: "image")
-            alertController.addAction(cameraAction)
         }
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let galleryAction = UIAlertAction(title: "Seleccionar Foto", style: .default, handler: { [weak self] _ in
-                self?.presentImagePicker(sourceType: .photoLibrary)
-            })
-            galleryAction.setValue(UIImage(systemName: "photo.on.rectangle"), forKey: "image")
-            alertController.addAction(galleryAction)
+            alertController.addAction(title: "Seleccionar Foto", style: .destructive, imageName: "photo.on.rectangle") { [weak self] _ in
+               self?.presentImagePicker(sourceType: .photoLibrary)
+            }
         }
-        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
-        alertController.addAction(cancelAction)
-        
+        alertController.addAction(title: "Cancelar", style: .cancel)
         if let popoverController = alertController.popoverPresentationController {
             sender.setPopoverController(popoverController)
         }
-        
         present(alertController, animated: true)
     }
     
+    /// Presents the image picker on screen
+    /// - Parameter sourceType: Type of picker to show (Camera or Gallery)
     private func presentImagePicker(sourceType: UIImagePickerController.SourceType) {
         imagePicker.sourceType = sourceType
         imagePicker.isModalInPresentation = true
@@ -129,6 +137,7 @@ class DishDetailViewController: UIViewController {
         present(imagePicker, animated: true)
     }
     
+    /// Show delete confirmation alert
     private func showDeleteAlert() {
         let alertController = UIAlertController(title: "¿Eliminar \"\(viewModel.title)\"?", message: "Al eliminar, no podrás agregar este producto a tus órdenes", preferredStyle: .alert)
         let deleteAction = UIAlertAction(title: "Eliminar", style: .destructive) { _ in
@@ -147,6 +156,7 @@ class DishDetailViewController: UIViewController {
 
 }
 
+// MARK: - UITableViewDataSource
 extension DishDetailViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections
@@ -187,6 +197,7 @@ extension DishDetailViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension DishDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let section = Section(rawValue: indexPath.section) else { return }
@@ -204,6 +215,7 @@ extension DishDetailViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - UIImagePickerControllerDelegate
 extension DishDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true)

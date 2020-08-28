@@ -23,7 +23,7 @@ class NoItemSelectedViewController: UIViewController {
         return label
     }()
     
-    static var menuItemController = NoItemSelectedViewController(title: "No tienes ningún plato seleccionado", message: "Por favor selecciona un plato para ver el detalle.")
+    static var menuDishController = NoItemSelectedViewController(title: "No tienes ningún plato seleccionado", message: "Por favor selecciona un plato para ver el detalle.")
     
     init(title: String, message: String) {
         super.init(nibName: nil, bundle: nil)
