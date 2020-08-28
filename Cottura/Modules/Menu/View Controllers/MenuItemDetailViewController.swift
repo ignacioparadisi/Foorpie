@@ -56,6 +56,7 @@ class MenuItemDetailViewController: UIViewController {
         tableView.anchor.edgesToSuperview().activate()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         tableView.register(PhotoPickerTableViewCell.self)
         tableView.register(TextFieldTableViewCell.self)
         tableView.register(CurrencyTextFieldTableViewCell.self)
