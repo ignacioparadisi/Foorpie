@@ -25,9 +25,8 @@ class MenuItemViewModel {
         return Int(item.availableCount)
     }
     var image: UIImage {
-        print(item.imageURL)
-        if let stringURL = item.imageURL?.path,
-            let image = UIImage(contentsOfFile: stringURL) {
+        if let data = item.imageData,
+            let image = UIImage(data: data) {
             return image
         } else {
             let image = UIImage(systemName: "photo", withConfiguration: UIImage.SymbolConfiguration(scale: .small))!

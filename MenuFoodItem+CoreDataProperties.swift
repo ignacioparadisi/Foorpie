@@ -2,7 +2,7 @@
 //  MenuFoodItem+CoreDataProperties.swift
 //  Cottura
 //
-//  Created by Ignacio Paradisi on 8/25/20.
+//  Created by Ignacio Paradisi on 8/27/20.
 //  Copyright © 2020 Ignacio Paradisi. All rights reserved.
 //
 //
@@ -19,7 +19,7 @@ extension MenuFoodItem {
 
     @NSManaged public var availableCount: Int32
     @NSManaged public var dateCreated: Date
-    @NSManaged public var imageURL: URL?
+    @NSManaged public var imageData: Data?
     @NSManaged public var name: String
     @NSManaged public var price: Double
 
