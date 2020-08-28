@@ -9,6 +9,12 @@
 import UIKit
 
 class NoItemSelectedViewController: UIViewController {
+    // MARK: Types of NotItemSelected Controllers
+    /// View Controller to be shown then there's no a dish selected in the menu.
+    static var menuDishController = NoItemSelectedViewController(title: "No tienes ningún plato seleccionado", message: "Por favor selecciona un plato para ver el detalle.")
+    
+    // MARK: Properties
+    /// Label for the title of the view
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .title3).bold
@@ -23,8 +29,7 @@ class NoItemSelectedViewController: UIViewController {
         return label
     }()
     
-    static var menuDishController = NoItemSelectedViewController(title: "No tienes ningún plato seleccionado", message: "Por favor selecciona un plato para ver el detalle.")
-    
+    // MARK: Initializers
     init(title: String, message: String) {
         super.init(nibName: nil, bundle: nil)
         titleLabel.text = title
@@ -34,6 +39,7 @@ class NoItemSelectedViewController: UIViewController {
         super.init(coder: coder)
     }
     
+    // MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground

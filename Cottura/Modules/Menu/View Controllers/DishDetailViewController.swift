@@ -10,6 +10,7 @@ import UIKit
 import Combine
 
 class DishDetailViewController: UIViewController {
+    
     // MARK: Properties
     /// Sections in the Table View
     enum Section: Int, CaseIterable {
@@ -158,6 +159,7 @@ class DishDetailViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 extension DishDetailViewController: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections
     }
@@ -195,10 +197,12 @@ extension DishDetailViewController: UITableViewDataSource {
             return cell
         }
     }
+    
 }
 
 // MARK: - UITableViewDelegate
 extension DishDetailViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let section = Section(rawValue: indexPath.section) else { return }
         switch section {
@@ -213,10 +217,12 @@ extension DishDetailViewController: UITableViewDelegate {
             showDeleteAlert()
         }
     }
+    
 }
 
 // MARK: - UIImagePickerControllerDelegate
 extension DishDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true)
         guard let image = info[.originalImage] as? UIImage else { return }
@@ -224,4 +230,5 @@ extension DishDetailViewController: UIImagePickerControllerDelegate, UINavigatio
         viewModel.imageDidChange = true
         tableView.reloadRows(at: [IndexPath(row: 0, section: Section.photo.rawValue)], with: .automatic)
     }
+    
 }

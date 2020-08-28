@@ -10,7 +10,7 @@ import UIKit
 
 class MenuSplitViewController: UISplitViewController {
 
-    /// Add the view to the splitview
+    /// Add the View Controller to the Split View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
@@ -25,6 +25,7 @@ class MenuSplitViewController: UISplitViewController {
 extension MenuSplitViewController: UISplitViewControllerDelegate {
     
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        // Always show the master controller
         return true
     }
     

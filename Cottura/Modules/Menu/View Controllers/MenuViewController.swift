@@ -8,22 +8,24 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
-    /// TableView to display items in menu
+class MenuViewController: BaseViewController {
+    
+    // MARK: Properties
+    /// TableView to display dishes in menu
     private let tableView: UITableView = UITableView()
+    /// View model that contains the information for the view
     private let viewModel = MenuViewModel()
+    /// Search controller to filter dishes by name
     private let searchController = UISearchController(searchResultsController: nil)
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupNavigationBar()
+    
+    // MARK: Functions
+    override func setupView() {
         setupTableView()
-        setupViewModel()
         viewModel.fetch()
         tableView.reloadData()
     }
     
-    private func setupNavigationBar() {
+    override func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Menú"
         let addBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addNewItem))
@@ -31,6 +33,13 @@ class MenuViewController: UIViewController {
         setupSearchController()
     }
     
+    override func setupViewModel() {
+           viewModel.reloadData = { [weak self] in
+               self?.tableView.reloadData()
+           }
+       }
+    
+    /// Add tableview to the view configure the table view and register cells.
     private func setupTableView() {
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -42,6 +51,7 @@ class MenuViewController: UIViewController {
         tableView.register(DishTableViewCell.self)
     }
     
+    /// Configure the SearchBarController.
     private func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -50,32 +60,31 @@ class MenuViewController: UIViewController {
         definesPresentationContext = true
     }
     
-    private func setupViewModel() {
-        viewModel.reloadData = { [weak self] in
-            self?.tableView.reloadData()
-        }
-    }
-    
+    /// Fetches the information and reloads the table view.
     @objc private func refresh() {
         viewModel.fetch()
         tableView.refreshControl?.endRefreshing()
         tableView.reloadData()
     }
     
+    /// Sets tableView into edit mode when the edit button in the navigation bar is tapped
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         tableView.setEditing(editing, animated: animated)
     }
     
+    /// Present view controller for creating a new `Dish`
     @objc private func addNewItem() {
         let detailViewModel = viewModel.detailForRow()
         let viewController = UINavigationController(rootViewController: DishDetailViewController(viewModel: detailViewModel))
         present(viewController, animated: true)
     }
+    
 }
 
 // MARK: - UITableViewDataSource
 extension MenuViewController: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections
     }
@@ -89,6 +98,7 @@ extension MenuViewController: UITableViewDataSource {
         cell.configure(with: viewModel.dishForRow(at: indexPath))
         return cell
     }
+    
 }
 
 // MARK: - UITableViewDelegate
@@ -110,10 +120,13 @@ extension MenuViewController: UITableViewDelegate {
 
 // MARK: - UISearchResultsUpdating
 extension MenuViewController: UISearchResultsUpdating {
+    
+    /// Updates the table view when the user is filtering the data
     func updateSearchResults(for searchController: UISearchController) {
         viewModel.filter(searchController.searchBar.text)
         tableView.reloadData()
     }
+    
 }
 
 

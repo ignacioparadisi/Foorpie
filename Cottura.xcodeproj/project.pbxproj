@@ -15,6 +15,10 @@
 		321A166124F9313000CF0C5A /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A165F24F9313000CF0C5A /* UIAlertController+Extension.swift */; };
 		321A166424F93E9600CF0C5A /* ValidatorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A166324F93E9600CF0C5A /* ValidatorConvertible.swift */; };
 		321A166524F93E9600CF0C5A /* ValidatorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A166324F93E9600CF0C5A /* ValidatorConvertible.swift */; };
+		321A166724F95D2700CF0C5A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A166624F95D2700CF0C5A /* BaseViewController.swift */; };
+		321A166824F95D2700CF0C5A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A166624F95D2700CF0C5A /* BaseViewController.swift */; };
+		321A166A24F95E2500CF0C5A /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A166924F95E2500CF0C5A /* AlertView.swift */; };
+		321A166B24F95E2500CF0C5A /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A166924F95E2500CF0C5A /* AlertView.swift */; };
 		324EE68924F8832700A85781 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68824F8832700A85781 /* FileManager+Extension.swift */; };
 		324EE68A24F8832700A85781 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68824F8832700A85781 /* FileManager+Extension.swift */; };
 		324EE68C24F884A100A85781 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68B24F884A100A85781 /* UIImage+Extension.swift */; };
@@ -79,8 +83,6 @@
 		3275C6ED24F55F96004691EA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6EB24F55F96004691EA /* String+Extension.swift */; };
 		3275C6EF24F56040004691EA /* CurrencyTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6EE24F56040004691EA /* CurrencyTextFieldCellViewModel.swift */; };
 		3275C6F024F56040004691EA /* CurrencyTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6EE24F56040004691EA /* CurrencyTextFieldCellViewModel.swift */; };
-		3275C6F224F563E0004691EA /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6F124F563E0004691EA /* CurrencyField.swift */; };
-		3275C6F324F563E0004691EA /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6F124F563E0004691EA /* CurrencyField.swift */; };
 		327B32D524F4862700B7DCD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D424F4862700B7DCD1 /* AppDelegate.swift */; };
 		327B32D724F4862700B7DCD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D624F4862700B7DCD1 /* SceneDelegate.swift */; };
 		327B32D924F4862700B7DCD1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D824F4862700B7DCD1 /* MainTabBarController.swift */; };
@@ -127,6 +129,8 @@
 		321A165924F9231000CF0C5A /* Dish+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dish+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		321A165F24F9313000CF0C5A /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		321A166324F93E9600CF0C5A /* ValidatorConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorConvertible.swift; sourceTree = "<group>"; };
+		321A166624F95D2700CF0C5A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		321A166924F95E2500CF0C5A /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		324EE68824F8832700A85781 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		324EE68B24F884A100A85781 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		3250B06424F493F2001EE718 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
@@ -155,7 +159,6 @@
 		3275C6E824F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		3275C6EB24F55F96004691EA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		3275C6EE24F56040004691EA /* CurrencyTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextFieldCellViewModel.swift; sourceTree = "<group>"; };
-		3275C6F124F563E0004691EA /* CurrencyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
 		327B32D124F4862700B7DCD1 /* Cottura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cottura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		327B32D424F4862700B7DCD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		327B32D624F4862700B7DCD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -280,7 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				320A2D8B24F5675D006140A5 /* Table View Cells */,
-				3275C6F124F563E0004691EA /* CurrencyField.swift */,
+				321A166924F95E2500CF0C5A /* AlertView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				327B32D824F4862700B7DCD1 /* MainTabBarController.swift */,
 				32DA6BCD24F7431C0080DD56 /* CustomAlertViewController.swift */,
 				32DA6BD324F75D8B0080DD56 /* NoItemSelectedViewController.swift */,
+				321A166624F95D2700CF0C5A /* BaseViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -674,10 +678,12 @@
 				3250B08224F4C444001EE718 /* MainTabBarController.swift in Sources */,
 				32758B0E24F7EAED0062441F /* UIColor+Extension.swift in Sources */,
 				3250B08324F4C444001EE718 /* OrderListViewController.swift in Sources */,
+				321A166B24F95E2500CF0C5A /* AlertView.swift in Sources */,
 				32BE29A124F5917F00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */,
 				3250B08424F4C444001EE718 /* AppDelegate.swift in Sources */,
 				3275C6F024F56040004691EA /* CurrencyTextFieldCellViewModel.swift in Sources */,
 				3250B0A124F4C6B4001EE718 /* MenuPersistenceManager.swift in Sources */,
+				321A166824F95D2700CF0C5A /* BaseViewController.swift in Sources */,
 				324EE68A24F8832700A85781 /* FileManager+Extension.swift in Sources */,
 				32DA6BCF24F743FA0080DD56 /* CustomAlertViewController.swift in Sources */,
 				3275C6CA24F541F9004691EA /* TextFieldTableViewCell.swift in Sources */,
@@ -704,7 +710,6 @@
 				3275C6DE24F5599D004691EA /* FieldViewModel.swift in Sources */,
 				3275C6CD24F5420C004691EA /* ButtonTableViewCell.swift in Sources */,
 				3275C6C124F540C3004691EA /* DishDetailViewController.swift in Sources */,
-				3275C6F324F563E0004691EA /* CurrencyField.swift in Sources */,
 				3250B09124F4C444001EE718 /* UITableView+Extension.swift in Sources */,
 				324EE68D24F884A100A85781 /* UIImage+Extension.swift in Sources */,
 				3275C6ED24F55F96004691EA /* String+Extension.swift in Sources */,
@@ -721,10 +726,12 @@
 				327B32D924F4862700B7DCD1 /* MainTabBarController.swift in Sources */,
 				32758B0D24F7EA8E0062441F /* UIColor+Extension.swift in Sources */,
 				327B331724F48C4500B7DCD1 /* OrderListViewController.swift in Sources */,
+				321A166A24F95E2500CF0C5A /* AlertView.swift in Sources */,
 				32BE299F24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */,
 				327B32D524F4862700B7DCD1 /* AppDelegate.swift in Sources */,
 				3275C6EF24F56040004691EA /* CurrencyTextFieldCellViewModel.swift in Sources */,
 				3250B0A024F4C61F001EE718 /* MenuPersistenceManager.swift in Sources */,
+				321A166724F95D2700CF0C5A /* BaseViewController.swift in Sources */,
 				324EE68924F8832700A85781 /* FileManager+Extension.swift in Sources */,
 				32DA6BCE24F7431C0080DD56 /* CustomAlertViewController.swift in Sources */,
 				3275C6C924F541F9004691EA /* TextFieldTableViewCell.swift in Sources */,
@@ -751,7 +758,6 @@
 				3275C6DD24F5599D004691EA /* FieldViewModel.swift in Sources */,
 				3275C6CC24F5420C004691EA /* ButtonTableViewCell.swift in Sources */,
 				3275C6C024F540C3004691EA /* DishDetailViewController.swift in Sources */,
-				3275C6F224F563E0004691EA /* CurrencyField.swift in Sources */,
 				3250B06524F493F3001EE718 /* UITableView+Extension.swift in Sources */,
 				324EE68C24F884A100A85781 /* UIImage+Extension.swift in Sources */,
 				3275C6EC24F55F96004691EA /* String+Extension.swift in Sources */,

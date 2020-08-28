@@ -8,104 +8,19 @@
 
 import UIKit
 
-class AlertView: UIView {
-    enum Style {
-        case success
-        case error
-        case none
-    }
-    private let contentMargin: CGFloat = 30
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .title3).bold
-        label.textColor = .systemDarkGray
-        label.textAlignment = .center
-        return label
-    }()
-    private let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        label.textColor = .systemDarkGray
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        return label
-    }()
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
-    
-    init(title: String?, message: String?, style: Style = .none) {
-        super.init(frame: .zero)
-        setup(title: title, message: message, style: style)
-    }
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
-    }
-    
-    private func setup(title: String? = nil, message: String? = nil, style: Style = .none) {
-        layer.cornerRadius = 15
-        clipsToBounds = true
-        let blurEffect = UIBlurEffect(style: .systemThickMaterial)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = bounds
-        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        addSubview(blurView)
-        addSubview(imageView)
-        addSubview(titleLabel)
-        addSubview(descriptionLabel)
-        
-        imageView.anchor
-            .topToSuperview(constant: contentMargin)
-            .leading(greaterOrEqual: leadingAnchor, constant: contentMargin)
-            .trailing(greaterOrEqual: trailingAnchor, constant: -contentMargin)
-            .centerXToSuperview()
-            .width(constant: 100)
-            .height(to: imageView.widthAnchor)
-            .activate()
-        titleLabel.anchor
-            .top(to: imageView.bottomAnchor, constant: 10)
-            .leadingToSuperview(constant: contentMargin)
-            .trailingToSuperview(constant: -contentMargin)
-            .activate()
-        descriptionLabel.anchor
-            .top(to: titleLabel.bottomAnchor, constant: 5)
-            .leadingToSuperview(constant: contentMargin)
-            .trailingToSuperview(constant: -contentMargin)
-            .bottomToSuperview(constant: -contentMargin)
-            .activate()
-        
-        titleLabel.text = title
-        descriptionLabel.text = message
-        
-        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 100, weight: .medium)
-        switch style {
-        case .none:
-            imageView.image = nil
-            imageView.anchor.height(constant: 0).activate()
-        case .success:
-            imageView.image = UIImage(systemName: "checkmark.circle", withConfiguration: symbolConfiguration)
-            imageView.tintColor = .systemGreen
-        case .error:
-            imageView.image = UIImage(systemName: "xmark.circle", withConfiguration: symbolConfiguration)
-            imageView.tintColor = .systemRed
-        }
-    }
-}
-
 class CustomAlertViewController: UIViewController {
     
+    // MARK: Properties
+    /// Background for the view. When tapped, the alert dismisses.
     private var backgroundView: UIView = UIView()
+    /// Alert view that contains the alert content.
     private var alertView: AlertView!
+    /// Timer for dismissing the view after certain amount of time.
     private var timer: Timer?
+    /// Amount of time after the alert should be dismissed.
     private let dismissAfter: Double?
     
+    // MARK: Initializers
     init(title: String, message: String, style: AlertView.Style, dismiss after: Double? = 1.5) {
         dismissAfter = after
         super.init(nibName: nil, bundle: nil)
@@ -117,6 +32,7 @@ class CustomAlertViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Functions
     override func viewDidLoad() {
         view.backgroundColor = .clear
         view.addSubview(backgroundView)
@@ -139,6 +55,7 @@ class CustomAlertViewController: UIViewController {
         backgroundView.addGestureRecognizer(tapGesture)
     }
     
+    /// Dismiss the view
     @objc private func dismissView() {
         dismiss(animated: true) {
             self.timer?.invalidate()
@@ -147,11 +64,13 @@ class CustomAlertViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // Show alert when the view will appear
         showAlert()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        // Start timer when the view did appear.
         if let dismissAfter = dismissAfter {
             timer = Timer.scheduledTimer(withTimeInterval: TimeInterval() + dismissAfter, repeats: false) { _ in
                 self.hideAlert()
@@ -159,12 +78,14 @@ class CustomAlertViewController: UIViewController {
         }
     }
     
+    /// Show the alert in the screen with a scale animation
     private func showAlert() {
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 8, options: .curveEaseInOut, animations: {
             self.alertView.transform = CGAffineTransform.identity
         })
     }
     
+    /// Removes the alert from the screen with a scale animation
     private func hideAlert() {
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 8, options: .curveEaseInOut, animations: {
             self.alertView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)

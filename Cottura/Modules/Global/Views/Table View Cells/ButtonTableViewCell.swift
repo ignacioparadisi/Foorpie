@@ -11,12 +11,17 @@ import UIKit
 
 
 class ButtonTableViewCell: UITableViewCell, ReusableView {
+    // MARK: Properties
+    /// Style of the cell
+    /// - Cases:
+    ///     - default: The cell has a textColor of accent color
+    ///     - destructive: The cell has a textColor of red
     enum Style {
         case `default`
         case destructive
     }
-    let button = UIButton()
     
+    // MARK: Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
@@ -27,23 +32,22 @@ class ButtonTableViewCell: UITableViewCell, ReusableView {
         setup()
     }
     
+    // MARK: Functions
+    /// Setup view
     private func setup() {
-//        contentView.addSubview(button)
-//        button.anchor
-//            .edgesToSuperview()
-//            .height(constant: 44)
-//            .activate()
         textLabel?.textAlignment = .center
     }
+    /// Configure the cell with a title and a style
+    /// - Parameters:
+    ///   - title: Title for the cell
+    ///   - style: Style of the cell
     func configure(with title: String, style: ButtonTableViewCell.Style) {
         textLabel?.text = title
-        textLabel?.textColor = .systemRed
-//        button.setTitle(title, for: .normal)
-//        switch style {
-//        case .default:
-//            button.setTitleColor(.systemBlue, for: .normal)
-//        case .destructive:
-//            button.setTitleColor(.systemRed, for: .normal)
-//        }
+        switch style {
+        case .default:
+            textLabel?.textColor = .systemBlue
+        case .destructive:
+            textLabel?.textColor = .systemRed
+        }
     }
 }
