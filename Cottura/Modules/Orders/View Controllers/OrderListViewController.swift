@@ -8,23 +8,60 @@
 
 import UIKit
 
-class OrderListViewController: UIViewController {
+class OrderListViewController: BaseViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    private let tableView: UITableView = UITableView()
+    
+    override func setupView() {
+        super.setupView()
+        setupTableView()
+        addErrorMessage()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func setupNavigationBar() {
+        super.setupNavigationBar()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = "Pedidos"
+        let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        navigationItem.rightBarButtonItems = [addButtonItem, editButtonItem]
     }
-    */
+    
+    private func setupTableView() {
+        view.addSubview(tableView)
+        tableView.anchor.edgesToSuperview().activate()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(OrderTableViewCell.self)
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: animated)
+    }
 
+}
+
+// MARK: - UITableViewDataSource
+extension OrderListViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(for: indexPath) as OrderTableViewCell
+        cell.configure(orderNumber: indexPath.row, clientName: "Ignacio Paradisi", status: "Preparando")
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+        }
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension OrderListViewController: UITableViewDelegate {
+    
 }

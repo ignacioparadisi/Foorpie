@@ -11,14 +11,14 @@ import UIKit
 class MainTabBarController: UITabBarController {
     // MARK: Properties
     /// View controller for listing orders
-    private let orderListViewController = OrderListViewController()
+    private let orderSplitViewController = OrderSplitViewController()
     /// View controller for listing dishes
     private let menuSplitViewController = MenuSplitViewController()
     
     // MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        orderListViewController.tabBarItem = UITabBarItem(title: "Pedidos", image: UIImage(systemName: "tray.full"), tag: 0)
+        orderSplitViewController.tabBarItem = UITabBarItem(title: "Pedidos", image: UIImage(systemName: "tray.full"), tag: 0)
         if #available(iOS 14, *) {
             menuSplitViewController.tabBarItem = UITabBarItem(title: "Menú", image: UIImage(systemName: "wallet.pass"), tag: 1)
         } else {
@@ -26,7 +26,7 @@ class MainTabBarController: UITabBarController {
         }
         menuSplitViewController.preferredDisplayMode = .allVisible
         viewControllers = [
-            UINavigationController(rootViewController: orderListViewController),
+            orderSplitViewController,
             menuSplitViewController
         ]
     }

@@ -21,6 +21,8 @@
 		321A166B24F95E2500CF0C5A /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A166924F95E2500CF0C5A /* AlertView.swift */; };
 		321A166D24F9CAC400CF0C5A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A166C24F9CAC400CF0C5A /* UIViewController+Extension.swift */; };
 		321A166E24F9CE7600CF0C5A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A166C24F9CAC400CF0C5A /* UIViewController+Extension.swift */; };
+		321A167124F9E55C00CF0C5A /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A167024F9E55C00CF0C5A /* OrderTableViewCell.swift */; };
+		321A167224F9E55C00CF0C5A /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A167024F9E55C00CF0C5A /* OrderTableViewCell.swift */; };
 		324EE68924F8832700A85781 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68824F8832700A85781 /* FileManager+Extension.swift */; };
 		324EE68A24F8832700A85781 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68824F8832700A85781 /* FileManager+Extension.swift */; };
 		324EE68C24F884A100A85781 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68B24F884A100A85781 /* UIImage+Extension.swift */; };
@@ -57,6 +59,10 @@
 		3250B09924F4C444001EE718 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327B32E024F4862800B7DCD1 /* Assets.xcassets */; };
 		3250B0A024F4C61F001EE718 /* MenuPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B09F24F4C61F001EE718 /* MenuPersistenceManager.swift */; };
 		3250B0A124F4C6B4001EE718 /* MenuPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B09F24F4C61F001EE718 /* MenuPersistenceManager.swift */; };
+		325CE51B24FA8ECA00E7C88B /* OrderPlateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325CE51924FA8ECA00E7C88B /* OrderPlateCollectionViewCell.swift */; };
+		325CE51C24FA8ECA00E7C88B /* OrderPlateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325CE51924FA8ECA00E7C88B /* OrderPlateCollectionViewCell.swift */; };
+		325CE51D24FA8ECA00E7C88B /* OrderPlateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325CE51A24FA8ECA00E7C88B /* OrderPlateCollectionViewCell.xib */; };
+		325CE51E24FA8ECA00E7C88B /* OrderPlateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325CE51A24FA8ECA00E7C88B /* OrderPlateCollectionViewCell.xib */; };
 		32758B0D24F7EA8E0062441F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32758B0C24F7EA8E0062441F /* UIColor+Extension.swift */; };
 		32758B0E24F7EAED0062441F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32758B0C24F7EA8E0062441F /* UIColor+Extension.swift */; };
 		3275C6C024F540C3004691EA /* DishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6BF24F540C3004691EA /* DishDetailViewController.swift */; };
@@ -99,6 +105,8 @@
 		327B331424F48A3D00B7DCD1 /* order-status-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 327B331324F48A3D00B7DCD1 /* order-status-data.json */; };
 		327B331724F48C4500B7DCD1 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331624F48C4500B7DCD1 /* OrderListViewController.swift */; };
 		327B331924F48C6600B7DCD1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331824F48C6600B7DCD1 /* MenuViewController.swift */; };
+		32AEE04724FABD28006EF7CE /* OrderSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */; };
+		32AEE04824FABD28006EF7CE /* OrderSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */; };
 		32BE299D24F5910400BD9F15 /* IntTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */; };
 		32BE299F24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */; };
 		32BE29A024F5917C00BD9F15 /* IntTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */; };
@@ -134,6 +142,7 @@
 		321A166624F95D2700CF0C5A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		321A166924F95E2500CF0C5A /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		321A166C24F9CAC400CF0C5A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		321A167024F9E55C00CF0C5A /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		324EE68824F8832700A85781 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		324EE68B24F884A100A85781 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		3250B06424F493F2001EE718 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
@@ -148,6 +157,8 @@
 		3250B09D24F4C444001EE718 /* Cottura DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cottura DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3250B09E24F4C444001EE718 /* DEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DEV-Info.plist"; path = "/Users/ignacioparadisi/Developer/Projects/Cottura/Cottura/DEV-Info.plist"; sourceTree = "<absolute>"; };
 		3250B09F24F4C61F001EE718 /* MenuPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPersistenceManager.swift; sourceTree = "<group>"; };
+		325CE51924FA8ECA00E7C88B /* OrderPlateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPlateCollectionViewCell.swift; sourceTree = "<group>"; };
+		325CE51A24FA8ECA00E7C88B /* OrderPlateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderPlateCollectionViewCell.xib; sourceTree = "<group>"; };
 		32758B0C24F7EA8E0062441F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		32758B1024F8013A0062441F /* Cottura.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cottura.entitlements; sourceTree = "<group>"; };
 		3275C6BF24F540C3004691EA /* DishDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +193,7 @@
 		327B331324F48A3D00B7DCD1 /* order-status-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "order-status-data.json"; sourceTree = "<group>"; };
 		327B331624F48C4500B7DCD1 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		327B331824F48C6600B7DCD1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSplitViewController.swift; sourceTree = "<group>"; };
 		32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		32DA6BCD24F7431C0080DD56 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +253,14 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		321A166F24F9E53300CF0C5A /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				321A167024F9E55C00CF0C5A /* OrderTableViewCell.swift */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
 		3250B06A24F49422001EE718 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +278,15 @@
 				3275C6C524F541E1004691EA /* PhotoPickerTableViewCell.swift */,
 			);
 			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		325CE50F24FA8E1800E7C88B /* Collection View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				325CE51924FA8ECA00E7C88B /* OrderPlateCollectionViewCell.swift */,
+				325CE51A24FA8ECA00E7C88B /* OrderPlateCollectionViewCell.xib */,
+			);
+			path = "Collection View Cells";
 			sourceTree = "<group>";
 		};
 		3275C6D724F5595D004691EA /* Global */ = {
@@ -457,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				327B331624F48C4500B7DCD1 /* OrderListViewController.swift */,
+				32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -481,6 +511,8 @@
 		327B331D24F48C7C00B7DCD1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				325CE50F24FA8E1800E7C88B /* Collection View Cells */,
+				321A166F24F9E53300CF0C5A /* Table View Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -640,6 +672,7 @@
 				3250B09724F4C444001EE718 /* order-data.json in Resources */,
 				3250B09824F4C444001EE718 /* DishTableViewCell.xib in Resources */,
 				3250B09924F4C444001EE718 /* Assets.xcassets in Resources */,
+				325CE51E24FA8ECA00E7C88B /* OrderPlateCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +686,7 @@
 				327B331224F489DE00B7DCD1 /* order-data.json in Resources */,
 				3250B07824F4AEFD001EE718 /* DishTableViewCell.xib in Resources */,
 				327B32E124F4862800B7DCD1 /* Assets.xcassets in Resources */,
+				325CE51D24FA8ECA00E7C88B /* OrderPlateCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,6 +737,7 @@
 				3250B08B24F4C444001EE718 /* SceneDelegate.swift in Sources */,
 				321A166124F9313000CF0C5A /* UIAlertController+Extension.swift in Sources */,
 				32BE29A024F5917C00BD9F15 /* IntTextFieldTableViewCell.swift in Sources */,
+				32AEE04824FABD28006EF7CE /* OrderSplitViewController.swift in Sources */,
 				3250B08D24F4C444001EE718 /* DishViewModel.swift in Sources */,
 				321A166524F93E9600CF0C5A /* ValidatorConvertible.swift in Sources */,
 				3275C6E124F559B4004691EA /* TextFieldCellViewModel.swift in Sources */,
@@ -715,9 +750,11 @@
 				3275C6DE24F5599D004691EA /* FieldViewModel.swift in Sources */,
 				3275C6CD24F5420C004691EA /* ButtonTableViewCell.swift in Sources */,
 				3275C6C124F540C3004691EA /* DishDetailViewController.swift in Sources */,
+				325CE51C24FA8ECA00E7C88B /* OrderPlateCollectionViewCell.swift in Sources */,
 				3250B09124F4C444001EE718 /* UITableView+Extension.swift in Sources */,
 				324EE68D24F884A100A85781 /* UIImage+Extension.swift in Sources */,
 				3275C6ED24F55F96004691EA /* String+Extension.swift in Sources */,
+				321A167224F9E55C00CF0C5A /* OrderTableViewCell.swift in Sources */,
 				3275C6C424F540D5004691EA /* DishDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,6 +789,7 @@
 				327B32D724F4862700B7DCD1 /* SceneDelegate.swift in Sources */,
 				321A166024F9313000CF0C5A /* UIAlertController+Extension.swift in Sources */,
 				32BE299D24F5910400BD9F15 /* IntTextFieldTableViewCell.swift in Sources */,
+				32AEE04724FABD28006EF7CE /* OrderSplitViewController.swift in Sources */,
 				3250B07424F49BFE001EE718 /* DishViewModel.swift in Sources */,
 				321A166424F93E9600CF0C5A /* ValidatorConvertible.swift in Sources */,
 				3275C6E024F559B4004691EA /* TextFieldCellViewModel.swift in Sources */,
@@ -764,9 +802,11 @@
 				3275C6DD24F5599D004691EA /* FieldViewModel.swift in Sources */,
 				3275C6CC24F5420C004691EA /* ButtonTableViewCell.swift in Sources */,
 				3275C6C024F540C3004691EA /* DishDetailViewController.swift in Sources */,
+				325CE51B24FA8ECA00E7C88B /* OrderPlateCollectionViewCell.swift in Sources */,
 				3250B06524F493F3001EE718 /* UITableView+Extension.swift in Sources */,
 				324EE68C24F884A100A85781 /* UIImage+Extension.swift in Sources */,
 				3275C6EC24F55F96004691EA /* String+Extension.swift in Sources */,
+				321A167124F9E55C00CF0C5A /* OrderTableViewCell.swift in Sources */,
 				3275C6C324F540D5004691EA /* DishDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,13 @@ extension UICollectionView {
         register(T.self, forCellWithReuseIdentifier: T.reusableIdentifier)
     }
     
+    /// Registers a cell that conforms the ReusableView and NibLoadableView protocols
+    /// - Parameter _: Class of the cell to be registered
+    func register<T: UICollectionViewCell>(_: T.Type) where T: ReusableView, T: NibLoadableView {
+        let nib = UINib(nibName: T.nibName, bundle: nil)
+        register(nib, forCellWithReuseIdentifier: T.reusableIdentifier)
+    }
+    
     /// Dequeues cell if UITableViewCell subclass conforms ReusableView protocol
     /// - Parameter indexPath: IndexPath of UITableViewCell
     /// - Returns: UITableViewCell dequeued
