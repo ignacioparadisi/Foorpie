@@ -27,6 +27,8 @@ class DishDetailViewModel {
     private var fields: [FieldViewModel] = []
     /// Called to reload the table view data
     var refresh: (() -> Void)?
+    /// Handle error in UI when an error happens
+    var errorHandler: ((String) -> Void)?
     /// Delegate for notifying when a dish is created or deleted
     var delegate: DishDetailViewModelDelegate?
     /// Image to be displayed in the image field
@@ -150,7 +152,7 @@ class DishDetailViewModel {
             }
             delegate?.refresh()
         } catch {
-            print("Error saving context")
+            errorHandler?("Ocurrió un error al guardar el plato.")
         }
     }
     
@@ -171,7 +173,7 @@ class DishDetailViewModel {
             refresh?()
             delegate?.refresh()
         } catch {
-            print(error.localizedDescription)
+            errorHandler?("Ocurrió un error restableciendo la imagen.")
         }
         
     }

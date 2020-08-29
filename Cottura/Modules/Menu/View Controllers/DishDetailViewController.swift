@@ -85,8 +85,7 @@ class DishDetailViewController: UIViewController {
     @objc private func save() {
         viewModel.save()
         if viewModel.isEditing {
-            let controller = CustomAlertViewController(title: "Guardado", message: "El artículo se guardó de manera exitosa.", style: .success)
-            self.present(controller, animated: true)
+            showSuccessAlert()
         }
         UINotificationFeedbackGenerator().notificationOccurred(.success)
         dismissView()
@@ -153,6 +152,11 @@ class DishDetailViewController: UIViewController {
         alertController.addAction(deleteAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true)
+    }
+    
+    /// Presents a success alert
+    private func showSuccessAlert() {
+        showAlert(title: "Guardado", message: "El artículo se guardó de manera exitosa.", style: .success)
     }
 
 }

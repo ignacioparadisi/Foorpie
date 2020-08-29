@@ -21,6 +21,7 @@ class MenuViewController: BaseViewController {
     // MARK: Functions
     override func setupView() {
         setupTableView()
+        addErrorMessage()
         viewModel.fetch()
         tableView.reloadData()
     }
@@ -34,10 +35,13 @@ class MenuViewController: BaseViewController {
     }
     
     override func setupViewModel() {
-           viewModel.reloadData = { [weak self] in
-               self?.tableView.reloadData()
-           }
-       }
+        viewModel.reloadData = { [weak self] in
+            self?.tableView.reloadData()
+        }
+        viewModel.errorHandler = { [weak self] message in
+            self?.showErroMessage(message)
+        }
+    }
     
     /// Add tableview to the view configure the table view and register cells.
     private func setupTableView() {
@@ -62,6 +66,7 @@ class MenuViewController: BaseViewController {
     
     /// Fetches the information and reloads the table view.
     @objc private func refresh() {
+        tableView.refreshControl?.beginRefreshing()
         viewModel.fetch()
         tableView.refreshControl?.endRefreshing()
         tableView.reloadData()
@@ -115,6 +120,16 @@ extension MenuViewController: UITableViewDelegate {
         let detailViewModel = viewModel.detailForRow(at: indexPath)
         let viewController = UINavigationController(rootViewController: DishDetailViewController(viewModel: detailViewModel))
         showDetailViewController(viewController, sender: nil)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard scrollView.contentOffset.y < 0 else { return }
+        let topSafeAreaHeight = view.safeAreaInsets.top
+        if topSafeAreaHeight > abs(scrollView.contentOffset.y) {
+            setErrorMessageTopAnchorConstant()
+        } else {
+            setErrorMessageTopAnchorConstant(abs(scrollView.contentOffset.y))
+        }
     }
 }
 

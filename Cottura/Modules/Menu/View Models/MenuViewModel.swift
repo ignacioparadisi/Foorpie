@@ -20,6 +20,7 @@ class MenuViewModel {
     private var selectedIndexPath: IndexPath?
     /// Reload table view data if data changed
     var reloadData: (() -> Void)?
+    var errorHandler: ((String) -> Void)?
     /// Number of section for the table view
     var numberOfSections: Int {
         return 1
@@ -33,8 +34,8 @@ class MenuViewModel {
         case .success(let dishes):
             self.dishes = dishes
             self.filteredDishes = dishes
-        case .failure(let error):
-            print(error)
+        case .failure:
+            errorHandler?("Hubo un error obteniendo el menú")
         }
     }
     
