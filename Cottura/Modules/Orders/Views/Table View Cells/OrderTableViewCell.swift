@@ -12,11 +12,6 @@ class OrderTableViewCell: UITableViewCell, ReusableView {
     // MARK: Properties
     private let verticalMargin: CGFloat = 8
     private let horizontalMargin: CGFloat = 16
-    private let containerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .clear
-        return view
-    }()
     private let orderNumberLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .footnote).bold
@@ -26,6 +21,12 @@ class OrderTableViewCell: UITableViewCell, ReusableView {
     private let clientNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .body)
+        return label
+    }()
+    private let notesLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.textColor = .secondaryLabel
         return label
     }()
     private let orderStatusButton: UIButton = {
@@ -43,10 +44,12 @@ class OrderTableViewCell: UITableViewCell, ReusableView {
     }()
     private let orderDishCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 16
+        layout.scrollDirection = .horizontal
+        layout.estimatedItemSize = CGSize(width: 240, height: 220)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.layer.cornerRadius = 15
-        collectionView.clipsToBounds = true
-        collectionView.backgroundColor = .secondarySystemBackground
+        collectionView.backgroundColor = .clear
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         return collectionView
     }()
     
@@ -61,44 +64,54 @@ class OrderTableViewCell: UITableViewCell, ReusableView {
     }
     
     private func setupView() {
-        contentView.addSubview(containerView)
-        containerView.anchor
-            .edgesToSuperview(insets: UIEdgeInsets(top: verticalMargin, left: horizontalMargin, bottom: -verticalMargin, right: -horizontalMargin))
-            .activate()
+        contentView.addSubview(orderNumberLabel)
+        contentView.addSubview(clientNameLabel)
+        contentView.addSubview(orderDishCollectionView)
+        contentView.addSubview(totalPriceLabel)
         
-        containerView.addSubview(orderNumberLabel)
-        containerView.addSubview(clientNameLabel)
-        containerView.addSubview(orderStatusButton)
-        containerView.addSubview(totalPriceLabel)
+        let statusButtonContainerView = UIView()
+        statusButtonContainerView.backgroundColor = .clear
+        contentView.addSubview(statusButtonContainerView)
+        statusButtonContainerView.addSubview(orderStatusButton)
         
-        orderStatusButton.anchor
-            .topToSuperview()
-            .trailingToSuperview()
-            .activate()
         orderNumberLabel.anchor
-            .topToSuperview()
-            .leadingToSuperview()
-            .bottom(to: orderStatusButton.bottomAnchor)
-            .trailing(to: orderStatusButton.leadingAnchor, constant: -10)
+            .topToSuperview(constant: verticalMargin)
+            .leadingToSuperview(constant: horizontalMargin)
+            .trailing(to: clientNameLabel.trailingAnchor)
             .activate()
         clientNameLabel.anchor
-            .top(to: orderStatusButton.bottomAnchor, constant: 5)
-            .leadingToSuperview()
-            .trailingToSuperview()
+            .top(to: orderNumberLabel.bottomAnchor, constant: 5)
+            .leadingToSuperview(constant: horizontalMargin)
             .activate()
-        containerView.addSubview(orderDishCollectionView)
+        statusButtonContainerView.anchor
+            .topToSuperview(constant: verticalMargin)
+            .leading(greaterOrEqual: clientNameLabel.trailingAnchor, constant: 10)
+            .bottom(to: clientNameLabel.bottomAnchor)
+            .trailingToSuperview(constant: -horizontalMargin)
+            .activate()
         orderDishCollectionView.anchor
             .top(to: clientNameLabel.bottomAnchor, constant: 10)
             .leadingToSuperview()
             .trailingToSuperview()
-            .height(constant: 150)
+            .height(constant: 220)
             .activate()
         totalPriceLabel.anchor
             .top(to: orderDishCollectionView.bottomAnchor, constant: 10)
-            .leadingToSuperview()
-            .bottomToSuperview()
-            .trailingToSuperview()
+            .leadingToSuperview(constant: horizontalMargin)
+            .bottomToSuperview(constant: -verticalMargin)
+            .trailingToSuperview(constant: -horizontalMargin)
             .activate()
+        
+        orderStatusButton.anchor
+            .centerYToSuperview()
+            .trailingToSuperview()
+            .top(greaterOrEqual: statusButtonContainerView.topAnchor)
+            .bottom(lessOrEqual: statusButtonContainerView.bottomAnchor)
+            .leadingToSuperview()
+            .activate()
+        
+        orderDishCollectionView.dataSource = self
+        orderDishCollectionView.register(OrderPlateCollectionViewCell.self)
     }
     
     func configure(orderNumber: Int, clientName: String, status: String) {
@@ -108,5 +121,16 @@ class OrderTableViewCell: UITableViewCell, ReusableView {
         orderStatusButton.setTitleColor(.white, for: .normal)
         orderStatusButton.backgroundColor = .systemBlue
         totalPriceLabel.text = "Total: $14.00"
+    }
+}
+
+extension OrderTableViewCell: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(for: indexPath) as OrderPlateCollectionViewCell
+        return cell
     }
 }
