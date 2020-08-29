@@ -1,0 +1,55 @@
+//
+//  Localizable.swift
+//  Cottura
+//
+//  Created by Ignacio Paradisi on 8/29/20.
+//  Copyright © 2020 Ignacio Paradisi. All rights reserved.
+//
+
+import Foundation
+
+class Localizable {
+    
+    struct Title {
+        static var orders: String = "ordersKey".localized
+        static var menu: String = "menuKey".localized
+        static var noOrderSelected: String = "noOrderSelectedTitleKey".localized
+        static var noDishSelected: String = "noDishSelectedTitleKey".localized
+        static var newDish: String = "newDishKey".localized
+        static var delete: String = "deleteTitleKey".localized
+        static var saved: String = "savedTitleKey".localized
+    }
+    
+    struct Message {
+        static var noOrderSelected: String = "noOrderSelectedMessageKey".localized
+        static var noDishSelected: String = "noDishSelectedMessageKey".localized
+        static var deleteDish: String = "deleteDishMessageKey".localized
+        static var savedDish: String = "savedDishMessageKey".localized
+    }
+    
+    struct Text {
+        static var order: String = "orderKey".localized
+        static var total: String = "totalKey".localized
+        static var available: String = "availableKey".localized
+        static var name: String = "nameKey".localized
+        static var price: String = "priceKey".localized
+        static var availableCount: String = "availableCountKey".localized
+        static var search: String = "searchKey".localized
+    }
+    
+    struct Button {
+        static var done: String = "doneKey".localized
+        static var resetPhoto: String = "resetPhotoKey".localized
+        static var takePhoto: String = "takePhotoKey".localized
+        static var choosePhoto: String = "choosePhotoKey".localized
+        static var cancel: String = "cancelKey".localized
+        static var delete: String = "deleteKey".localized
+    }
+    
+    struct Error {
+        static var fetchingMenu: String = "fetchingMenuErrorKey".localized
+        static var saveDish: String = "saveDishErrorKey".localized
+        static var resetImage: String = "resetImageErrorKey".localized
+    }
+    
+}

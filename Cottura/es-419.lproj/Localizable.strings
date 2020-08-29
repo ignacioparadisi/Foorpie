@@ -1,0 +1,44 @@
+/* 
+  Localizable.strings
+  Cottura
+
+  Created by Ignacio Paradisi on 8/29/20.
+  Copyright © 2020 Ignacio Paradisi. All rights reserved.
+*/
+
+// MARK: - Button
+"doneKey" = "Listo";
+"resetPhotoKey" = "Restablecer Foto";
+"takePhotoKey" = "Tomar Foto";
+"choosePhotoKey" = "Seleccionar Foto";
+"cancelKey" = "Cancelar";
+"deleteKey" = "Eliminar";
+
+// MARK: - Title
+"ordersKey" = "Pedidos";
+"menuKey" = "Menú";
+"noDishSelectedTitleKey" = "No tienes ningún plato seleccionado";
+"noOrderSelectedTitleKey" = "No tienes ninguna orden seleccionada";
+"newDishKey" = "Nuevo Plato";
+"deleteTitleKey" = "¿Eliminar \"%@?\"";
+"savedTitleKey" = "Guardado";
+
+// MARK: - Message
+"noDishSelectedMessageKey" = "Por favor selecciona un plato para ver el detalle.";
+"noOrderSelectedMessageKey" = "Por favor selecciona una orden para ver el detalle.";
+"deleteDishMessageKey" = "Al eliminar, no podrás agregar este plato a tus órdenes.";
+"savedDishMessageKey" = "El plato se guardó de manera exitosa";
+
+// MARK: - Text
+"orderKey" = "Orden";
+"totalKey" = "Total";
+"availableKey" = "Disponibles";
+"nameKey" = "Nombre";
+"priceKey" = "Precio";
+"availableCountKey" = "Cantidad Disponible";
+"searchKey" = "Buscar";
+
+// MARK: - Error
+"fetchingMenuErrorKey" = "Ocurrió un error obteniendo el Menú.";
+"saveDishErrorKey" = "Ocurrió un error al guardar el plato.";
+"resetImageErrorKey" = "Ocurrió un error al restablecer la imagen.";

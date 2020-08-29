@@ -34,7 +34,7 @@ class DishTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
         nameLabel.text = viewModel.name
         priceLabel.text = viewModel.price
         availabilityView.backgroundColor = viewModel.availableCount > 0 ? .systemGreen : .systemRed
-        availabilityLabel.text = "\(viewModel.availableCount) Disponibles"
+        availabilityLabel.text = "\(viewModel.availableCount) \(Localizable.Text.available)"
     }
     
 }

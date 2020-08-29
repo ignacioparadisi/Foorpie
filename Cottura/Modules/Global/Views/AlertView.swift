@@ -107,10 +107,10 @@ class AlertView: UIView {
             imageView.image = nil
             imageView.anchor.height(constant: 0).activate()
         case .success:
-            imageView.image = UIImage(systemName: "checkmark.circle", withConfiguration: symbolConfiguration)
+            imageView.image = UIImage.checkmarkCircle?.applyingSymbolConfiguration(symbolConfiguration)
             imageView.tintColor = .systemGreen
         case .error:
-            imageView.image = UIImage(systemName: "xmark.circle", withConfiguration: symbolConfiguration)
+            imageView.image = UIImage.xmarkCircle?.applyingSymbolConfiguration(symbolConfiguration)
             imageView.tintColor = .systemRed
         }
     }

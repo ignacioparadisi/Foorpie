@@ -18,11 +18,11 @@ class MainTabBarController: UITabBarController {
     // MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        orderSplitViewController.tabBarItem = UITabBarItem(title: "Pedidos", image: UIImage(systemName: "tray.full"), tag: 0)
+        orderSplitViewController.tabBarItem = UITabBarItem(title: Localizable.Title.orders, image: .trayFull, tag: 0)
         if #available(iOS 14, *) {
-            menuSplitViewController.tabBarItem = UITabBarItem(title: "Menú", image: UIImage(systemName: "wallet.pass"), tag: 1)
+            menuSplitViewController.tabBarItem = UITabBarItem(title: Localizable.Title.menu, image: .walletPass, tag: 1)
         } else {
-            menuSplitViewController.tabBarItem = UITabBarItem(title: "Menú", image: UIImage(systemName: "doc.plaintext"), tag: 1)
+            menuSplitViewController.tabBarItem = UITabBarItem(title: Localizable.Title.menu, image: .docPlaintext, tag: 1)
         }
         menuSplitViewController.preferredDisplayMode = .allVisible
         viewControllers = [

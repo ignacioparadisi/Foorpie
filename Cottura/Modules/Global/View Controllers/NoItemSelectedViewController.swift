@@ -11,7 +11,8 @@ import UIKit
 class NoItemSelectedViewController: UIViewController {
     // MARK: Types of NotItemSelected Controllers
     /// View Controller to be shown then there's no a dish selected in the menu.
-    static var menuDishController = NoItemSelectedViewController(title: "No tienes ningún plato seleccionado", message: "Por favor selecciona un plato para ver el detalle.")
+    static var noDishSelected = NoItemSelectedViewController(title: Localizable.Title.noDishSelected, message: Localizable.Message.noDishSelected)
+    static var noOrderSelected = NoItemSelectedViewController(title: Localizable.Title.noOrderSelected, message: Localizable.Message.noOrderSelected)
     
     // MARK: Properties
     /// Label for the title of the view

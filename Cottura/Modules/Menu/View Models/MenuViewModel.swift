@@ -35,7 +35,7 @@ class MenuViewModel {
             self.dishes = dishes
             self.filteredDishes = dishes
         case .failure:
-            errorHandler?("Hubo un error obteniendo el menú")
+            errorHandler?(Localizable.Error.fetchingMenu)
         }
     }
     
