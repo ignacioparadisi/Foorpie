@@ -105,6 +105,8 @@
 		327B331424F48A3D00B7DCD1 /* order-status-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 327B331324F48A3D00B7DCD1 /* order-status-data.json */; };
 		327B331724F48C4500B7DCD1 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331624F48C4500B7DCD1 /* OrderListViewController.swift */; };
 		327B331924F48C6600B7DCD1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331824F48C6600B7DCD1 /* MenuViewController.swift */; };
+		32AEE04724FABD28006EF7CE /* OrderSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */; };
+		32AEE04824FABD28006EF7CE /* OrderSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */; };
 		32BE299D24F5910400BD9F15 /* IntTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */; };
 		32BE299F24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */; };
 		32BE29A024F5917C00BD9F15 /* IntTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */; };
@@ -191,6 +193,7 @@
 		327B331324F48A3D00B7DCD1 /* order-status-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "order-status-data.json"; sourceTree = "<group>"; };
 		327B331624F48C4500B7DCD1 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		327B331824F48C6600B7DCD1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSplitViewController.swift; sourceTree = "<group>"; };
 		32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		32DA6BCD24F7431C0080DD56 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
@@ -483,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				327B331624F48C4500B7DCD1 /* OrderListViewController.swift */,
+				32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -733,6 +737,7 @@
 				3250B08B24F4C444001EE718 /* SceneDelegate.swift in Sources */,
 				321A166124F9313000CF0C5A /* UIAlertController+Extension.swift in Sources */,
 				32BE29A024F5917C00BD9F15 /* IntTextFieldTableViewCell.swift in Sources */,
+				32AEE04824FABD28006EF7CE /* OrderSplitViewController.swift in Sources */,
 				3250B08D24F4C444001EE718 /* DishViewModel.swift in Sources */,
 				321A166524F93E9600CF0C5A /* ValidatorConvertible.swift in Sources */,
 				3275C6E124F559B4004691EA /* TextFieldCellViewModel.swift in Sources */,
@@ -784,6 +789,7 @@
 				327B32D724F4862700B7DCD1 /* SceneDelegate.swift in Sources */,
 				321A166024F9313000CF0C5A /* UIAlertController+Extension.swift in Sources */,
 				32BE299D24F5910400BD9F15 /* IntTextFieldTableViewCell.swift in Sources */,
+				32AEE04724FABD28006EF7CE /* OrderSplitViewController.swift in Sources */,
 				3250B07424F49BFE001EE718 /* DishViewModel.swift in Sources */,
 				321A166424F93E9600CF0C5A /* ValidatorConvertible.swift in Sources */,
 				3275C6E024F559B4004691EA /* TextFieldCellViewModel.swift in Sources */,
