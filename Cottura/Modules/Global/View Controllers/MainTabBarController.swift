@@ -12,7 +12,7 @@ class MainTabBarController: UITabBarController {
     // MARK: Properties
     /// View controller for listing orders
     private let orderSplitViewController = OrderSplitViewController()
-    /// View controller for listing dishes
+    /// View controller for listing recipes
     private let menuSplitViewController = MenuSplitViewController()
     
     // MARK: Functions

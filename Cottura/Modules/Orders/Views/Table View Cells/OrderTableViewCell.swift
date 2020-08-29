@@ -42,7 +42,7 @@ class OrderTableViewCell: UITableViewCell, ReusableView {
         label.font = UIFont.preferredFont(forTextStyle: .title2).bold
         return label
     }()
-    private let orderDishCollectionView: UICollectionView = {
+    private let recipeOrderCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 16
         layout.scrollDirection = .horizontal
@@ -66,7 +66,7 @@ class OrderTableViewCell: UITableViewCell, ReusableView {
     private func setupView() {
         contentView.addSubview(orderNumberLabel)
         contentView.addSubview(clientNameLabel)
-        contentView.addSubview(orderDishCollectionView)
+        contentView.addSubview(recipeOrderCollectionView)
         contentView.addSubview(totalPriceLabel)
         
         let statusButtonContainerView = UIView()
@@ -89,14 +89,14 @@ class OrderTableViewCell: UITableViewCell, ReusableView {
             .bottom(to: clientNameLabel.bottomAnchor)
             .trailingToSuperview(constant: -horizontalMargin)
             .activate()
-        orderDishCollectionView.anchor
+        recipeOrderCollectionView.anchor
             .top(to: clientNameLabel.bottomAnchor, constant: 10)
             .leadingToSuperview()
             .trailingToSuperview()
             .height(constant: 220)
             .activate()
         totalPriceLabel.anchor
-            .top(to: orderDishCollectionView.bottomAnchor, constant: 10)
+            .top(to: recipeOrderCollectionView.bottomAnchor, constant: 10)
             .leadingToSuperview(constant: horizontalMargin)
             .bottomToSuperview(constant: -verticalMargin)
             .trailingToSuperview(constant: -horizontalMargin)
@@ -110,8 +110,8 @@ class OrderTableViewCell: UITableViewCell, ReusableView {
             .leadingToSuperview()
             .activate()
         
-        orderDishCollectionView.dataSource = self
-        orderDishCollectionView.register(OrderPlateCollectionViewCell.self)
+        recipeOrderCollectionView.dataSource = self
+        recipeOrderCollectionView.register(OrderPlateCollectionViewCell.self)
     }
     
     func configure(orderNumber: Int, clientName: String, status: String) {

@@ -1,8 +1,8 @@
 //
-//  Dish+CoreDataProperties.swift
+//  Recipe+CoreDataProperties.swift
 //  Cottura
 //
-//  Created by Ignacio Paradisi on 8/28/20.
+//  Created by Ignacio Paradisi on 8/29/20.
 //  Copyright © 2020 Ignacio Paradisi. All rights reserved.
 //
 //
@@ -11,10 +11,10 @@ import Foundation
 import CoreData
 
 
-extension Dish {
+extension Recipe {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Dish> {
-        return NSFetchRequest<Dish>(entityName: "Dish")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Recipe> {
+        return NSFetchRequest<Recipe>(entityName: "Recipe")
     }
 
     @NSManaged public var availableCount: Int32

@@ -17,17 +17,17 @@
 // MARK: - Title
 "ordersKey" = "Orders";
 "menuKey" = "Menu";
-"noDishSelectedTitleKey" = "No Dish Selected";
+"noRecipeSelectedTitleKey" = "No Recipe Selected";
 "noOrderSelectedTitleKey" = "No Order Selected";
-"newDishKey" = "New Dish";
+"newRecipeKey" = "New Recipe";
 "deleteTitleKey" = "Delete \"%@?\"";
 "savedTitleKey" = "Saved";
 
 // MARK: - Message
-"noDishSelectedMessageKey" = "Please select a dish to see its detail.";
+"noRecipeSelectedMessageKey" = "Please select a recipe to see its detail.";
 "noOrderSelectedMessageKey" = "Please select an order to see its detail.";
-"deleteDishMessageKey" = "Once deleted you won't be able to add this dish to your orders.";
-"savedDishMessageKey" = "The dish was saved successfully";
+"deleteRecipeMessageKey" = "Once deleted you won't be able to add this recipe to your orders.";
+"savedRecipeMessageKey" = "The recipe was saved successfully";
 
 // MARK: - Text
 "orderKey" = "Order";
@@ -40,5 +40,5 @@
 
 // MARK: - Error
 "fetchingMenuErrorKey" = "There was an error fetching the Menu.";
-"saveDishErrorKey" = "There was an error saving the dish.";
+"saveRecipeErrorKey" = "There was an error saving the recpie.";
 "resetImageErrorKey" = "There was an error resetting the image.";

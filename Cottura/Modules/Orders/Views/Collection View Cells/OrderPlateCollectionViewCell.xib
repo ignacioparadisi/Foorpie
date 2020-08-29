@@ -132,9 +132,9 @@
             <connections>
                 <outlet property="availabilityLabel" destination="RMp-PN-BHh" id="Gsh-Wc-ZDc"/>
                 <outlet property="availabilityStepper" destination="ubX-i7-dQq" id="KFl-Zp-75R"/>
-                <outlet property="dishImageView" destination="aof-w2-k4B" id="cfn-5i-9VR"/>
                 <outlet property="nameLabel" destination="3i3-mw-twD" id="M7J-gf-9kS"/>
                 <outlet property="priceLabel" destination="g5A-Vf-ZEP" id="srh-Qo-P9c"/>
+                <outlet property="recipeImageView" destination="aof-w2-k4B" id="cfn-5i-9VR"/>
                 <outlet property="statusButton" destination="VuE-dE-pQj" id="rnm-TY-seA"/>
             </connections>
             <point key="canvasLocation" x="166.66666666666669" y="177.45535714285714"/>

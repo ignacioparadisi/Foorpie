@@ -14,17 +14,17 @@ class Localizable {
         static var orders: String = "ordersKey".localized
         static var menu: String = "menuKey".localized
         static var noOrderSelected: String = "noOrderSelectedTitleKey".localized
-        static var noDishSelected: String = "noDishSelectedTitleKey".localized
-        static var newDish: String = "newDishKey".localized
+        static var noRecipeSelected: String = "noRecipeSelectedTitleKey".localized
+        static var newRecipe: String = "newRecipeKey".localized
         static var delete: String = "deleteTitleKey".localized
         static var saved: String = "savedTitleKey".localized
     }
     
     struct Message {
         static var noOrderSelected: String = "noOrderSelectedMessageKey".localized
-        static var noDishSelected: String = "noDishSelectedMessageKey".localized
-        static var deleteDish: String = "deleteDishMessageKey".localized
-        static var savedDish: String = "savedDishMessageKey".localized
+        static var noRecipeSelected: String = "noRecipeSelectedMessageKey".localized
+        static var deleteRecipe: String = "deleteRecipeMessageKey".localized
+        static var savedRecipe: String = "savedRecipeMessageKey".localized
     }
     
     struct Text {
@@ -48,7 +48,7 @@ class Localizable {
     
     struct Error {
         static var fetchingMenu: String = "fetchingMenuErrorKey".localized
-        static var saveDish: String = "saveDishErrorKey".localized
+        static var saveRecipe: String = "saveRecipeErrorKey".localized
         static var resetImage: String = "resetImageErrorKey".localized
     }
     

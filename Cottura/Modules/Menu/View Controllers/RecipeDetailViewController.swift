@@ -1,5 +1,5 @@
 //
-//  DishDetailViewController.swift
+//  RecipeDetailViewController.swift
 //  Cottura
 //
 //  Created by Ignacio Paradisi on 8/25/20.
@@ -9,7 +9,7 @@
 import UIKit
 import Combine
 
-class DishDetailViewController: UIViewController {
+class RecipeDetailViewController: UIViewController {
     
     // MARK: Properties
     /// Sections in the Table View
@@ -21,17 +21,17 @@ class DishDetailViewController: UIViewController {
     
     /// Table View to display the fields
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
-    /// Image picker for the dish image
+    /// Image picker for the recipe image
     private let imagePicker = UIImagePickerController()
-    /// View model that contains the dish information
-    private let viewModel: DishDetailViewModel
-    /// Navigation bar button for saving the dish
+    /// View model that contains the recipe information
+    private let viewModel: RecipeDetailViewModel
+    /// Navigation bar button for saving the recipe
     private var saveBarButton: UIBarButtonItem!
     /// Set for storing combine subscriptions
     private var subscriptions = Set<AnyCancellable>()
     
     // MARK: Initializers
-    init(viewModel: DishDetailViewModel = DishDetailViewModel()) {
+    init(viewModel: RecipeDetailViewModel = RecipeDetailViewModel()) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -81,7 +81,7 @@ class DishDetailViewController: UIViewController {
             .store(in: &subscriptions)
     }
     
-    /// Save dish information
+    /// Save recipe information
     @objc private func save() {
         viewModel.save()
         if viewModel.isEditing {
@@ -92,7 +92,7 @@ class DishDetailViewController: UIViewController {
     }
     
     /// Dismiss view
-    /// - Parameter didDelete: Whether the user is deleting the dish or not
+    /// - Parameter didDelete: Whether the user is deleting the recipe or not
     @objc private func dismissView(didDelete: Bool = false) {
         if !viewModel.isEditing {
             dismiss(animated: true)
@@ -139,11 +139,11 @@ class DishDetailViewController: UIViewController {
     
     /// Show delete confirmation alert
     private func showDeleteAlert() {
-        let alertController = UIAlertController(title: String(format:Localizable.Title.delete, viewModel.title), message: Localizable.Message.deleteDish, preferredStyle: .alert)
+        let alertController = UIAlertController(title: String(format:Localizable.Title.delete, viewModel.title), message: Localizable.Message.deleteRecipe, preferredStyle: .alert)
         let deleteAction = UIAlertAction(title: Localizable.Button.delete, style: .destructive) { _ in
             self.viewModel.delete()
             if self.splitViewController?.viewControllers.count == 2 {
-                self.splitViewController?.viewControllers[1] = NoItemSelectedViewController.noDishSelected
+                self.splitViewController?.viewControllers[1] = NoItemSelectedViewController.noRecipeSelected
             } else {
                 self.dismissView()
             }
@@ -156,13 +156,13 @@ class DishDetailViewController: UIViewController {
     
     /// Presents a success alert
     private func showSuccessAlert() {
-        showAlert(title: Localizable.Title.saved, message: Localizable.Message.savedDish, style: .success)
+        showAlert(title: Localizable.Title.saved, message: Localizable.Message.savedRecipe, style: .success)
     }
 
 }
 
 // MARK: - UITableViewDataSource
-extension DishDetailViewController: UITableViewDataSource {
+extension RecipeDetailViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections
@@ -205,7 +205,7 @@ extension DishDetailViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-extension DishDetailViewController: UITableViewDelegate {
+extension RecipeDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let section = Section(rawValue: indexPath.section) else { return }
@@ -225,7 +225,7 @@ extension DishDetailViewController: UITableViewDelegate {
 }
 
 // MARK: - UIImagePickerControllerDelegate
-extension DishDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension RecipeDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true)

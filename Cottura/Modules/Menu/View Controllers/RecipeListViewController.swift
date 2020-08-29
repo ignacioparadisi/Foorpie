@@ -1,5 +1,5 @@
 //
-//  MenuViewController.swift
+//  RecipeListViewController.swift
 //  Cottura
 //
 //  Created by Ignacio Paradisi on 8/24/20.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class MenuViewController: BaseViewController {
+class RecipeListViewController: BaseViewController {
     
     // MARK: Properties
-    /// TableView to display dishes in menu
+    /// TableView to display recipes in menu
     private let tableView: UITableView = UITableView()
     /// View model that contains the information for the view
-    private let viewModel = MenuViewModel()
-    /// Search controller to filter dishes by name
+    private let viewModel = RecipeListViewModel()
+    /// Search controller to filter recipes by name
     private let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: Functions
@@ -52,7 +52,7 @@ class MenuViewController: BaseViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        tableView.register(DishTableViewCell.self)
+        tableView.register(RecipeTableViewCell.self)
     }
     
     /// Configure the SearchBarController.
@@ -78,17 +78,17 @@ class MenuViewController: BaseViewController {
         tableView.setEditing(editing, animated: animated)
     }
     
-    /// Present view controller for creating a new `Dish`
+    /// Present view controller for creating a new `Recipe`
     @objc private func addNewItem() {
         let detailViewModel = viewModel.detailForRow()
-        let viewController = UINavigationController(rootViewController: DishDetailViewController(viewModel: detailViewModel))
+        let viewController = UINavigationController(rootViewController: RecipeDetailViewController(viewModel: detailViewModel))
         present(viewController, animated: true)
     }
     
 }
 
 // MARK: - UITableViewDataSource
-extension MenuViewController: UITableViewDataSource {
+extension RecipeListViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections
@@ -99,29 +99,40 @@ extension MenuViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath) as DishTableViewCell
-        cell.configure(with: viewModel.dishForRow(at: indexPath))
-        return cell
+        if viewModel.section(for: indexPath) == .ingredients {
+            let cell = UITableViewCell()
+            cell.textLabel?.text = "Ingredientes"
+            cell.accessoryType = .disclosureIndicator
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(for: indexPath) as RecipeTableViewCell
+            cell.configure(with: viewModel.recipeForRow(at: indexPath))
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return viewModel.section(for: indexPath) == .recipes
     }
     
 }
 
 // MARK: - UITableViewDelegate
-extension MenuViewController: UITableViewDelegate {
-    
+extension RecipeListViewController: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            viewModel.deleteDish(at: indexPath)
+            viewModel.deleteRecipe(at: indexPath)
             tableView.deleteRows(at: [indexPath], with: .left)
         }
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailViewModel = viewModel.detailForRow(at: indexPath)
-        let viewController = UINavigationController(rootViewController: DishDetailViewController(viewModel: detailViewModel))
+        let viewController = UINavigationController(rootViewController: RecipeDetailViewController(viewModel: detailViewModel))
         showDetailViewController(viewController, sender: nil)
     }
-    
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard scrollView.contentOffset.y < 0 else { return }
         let topSafeAreaHeight = view.safeAreaInsets.top
@@ -134,7 +145,7 @@ extension MenuViewController: UITableViewDelegate {
 }
 
 // MARK: - UISearchResultsUpdating
-extension MenuViewController: UISearchResultsUpdating {
+extension RecipeListViewController: UISearchResultsUpdating {
     
     /// Updates the table view when the user is filtering the data
     func updateSearchResults(for searchController: UISearchController) {

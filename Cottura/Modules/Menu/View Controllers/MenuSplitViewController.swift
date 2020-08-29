@@ -16,8 +16,8 @@ class MenuSplitViewController: UISplitViewController {
         delegate = self
         preferredDisplayMode = .allVisible
         viewControllers = [
-            UINavigationController(rootViewController: MenuViewController()),
-            NoItemSelectedViewController.noDishSelected
+            UINavigationController(rootViewController: RecipeListViewController()),
+            NoItemSelectedViewController.noRecipeSelected
         ]
     }
 }

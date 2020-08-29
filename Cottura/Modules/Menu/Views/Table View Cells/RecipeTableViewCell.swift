@@ -1,5 +1,5 @@
 //
-//  DishTableViewCell.swift
+//  RecipeTableViewCell.swift
 //  Cottura
 //
 //  Created by Ignacio Paradisi on 8/24/20.
@@ -8,29 +8,29 @@
 
 import UIKit
 
-class DishTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
+class RecipeTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
-    /// Image view for displaying the dish image
-    @IBOutlet weak var dishImageView: UIImageView!
-    /// Label for displaying dish name
+    /// Image view for displaying the recipe image
+    @IBOutlet weak var recipeImageView: UIImageView!
+    /// Label for displaying recipe name
     @IBOutlet weak var nameLabel: UILabel!
-    /// Label for displaying dish price
+    /// Label for displaying recipe price
     @IBOutlet weak var priceLabel: UILabel!
-    /// Label for displaying dish available count
+    /// Label for displaying recipe available count
     @IBOutlet weak var availabilityLabel: UILabel!
-    /// View that turns green if there are dished available and red otherwise
+    /// View that turns green if there are recipes available and red otherwise
     @IBOutlet weak var availabilityView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        dishImageView.layer.shadowColor = UIColor.black.cgColor
-        dishImageView.layer.shadowRadius = 5
+        recipeImageView.layer.shadowColor = UIColor.black.cgColor
+        recipeImageView.layer.shadowRadius = 5
     }
     
     /// Add the information to each view component
-    /// - Parameter viewModel: View Model that holds the dish information
-    func configure(with viewModel: DishViewModel) {
-        dishImageView.image = viewModel.image
+    /// - Parameter viewModel: View Model that holds the recipe information
+    func configure(with viewModel: RecipeViewModel) {
+        recipeImageView.image = viewModel.image
         nameLabel.text = viewModel.name
         priceLabel.text = viewModel.price
         availabilityView.backgroundColor = viewModel.availableCount > 0 ? .systemGreen : .systemRed

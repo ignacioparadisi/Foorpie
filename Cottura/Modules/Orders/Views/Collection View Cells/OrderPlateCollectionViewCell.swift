@@ -10,7 +10,7 @@ import UIKit
 
 class OrderPlateCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableView {
 
-    @IBOutlet private weak var dishImageView: UIImageView!
+    @IBOutlet private weak var recipeImageView: UIImageView!
     @IBOutlet private weak var statusButton: UIButton!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var availabilityLabel: UILabel!

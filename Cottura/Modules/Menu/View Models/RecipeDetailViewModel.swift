@@ -1,5 +1,5 @@
 //
-//  DishDetailViewModel.swift
+//  RecipeDetailViewModel.swift
 //  Cottura
 //
 //  Created by Ignacio Paradisi on 8/25/20.
@@ -16,43 +16,43 @@ enum SaveImageError: Error {
     case invalidSelf
 }
 
-protocol DishDetailViewModelDelegate {
+protocol RecipeDetailViewModelDelegate {
     func refresh()
 }
 
-class DishDetailViewModel {
-    /// Dish to be edited
-    private var dish: Dish?
+class RecipeDetailViewModel {
+    /// Recipe to be edited
+    private var recipe: Recipe?
     /// Fields to be shown in the table view
     private var fields: [FieldViewModel] = []
     /// Called to reload the table view data
     var refresh: (() -> Void)?
     /// Handle error in UI when an error happens
     var errorHandler: ((String) -> Void)?
-    /// Delegate for notifying when a dish is created or deleted
-    var delegate: DishDetailViewModelDelegate?
+    /// Delegate for notifying when a recipe is created or deleted
+    var delegate: RecipeDetailViewModelDelegate?
     /// Image to be displayed in the image field
     var image: UIImage?
     /// Defines whether the image was changed or not
     @Published var imageDidChange: Bool = false
-    /// Defined whether the user is editing an existing dish or creating a new one
+    /// Defined whether the user is editing an existing recipe or creating a new one
     var isEditing: Bool {
-        return dish != nil
+        return recipe != nil
     }
     /// Number of sections fo the table view
     var numberOfSections: Int {
         if isEditing {
-            return DishDetailViewController.Section.allCases.count
+            return RecipeDetailViewController.Section.allCases.count
         } else {
-            return DishDetailViewController.Section.allCases.count - 1
+            return RecipeDetailViewController.Section.allCases.count - 1
         }
     }
     /// Title for the navigation bar
     var title: String {
-        if let dish = dish {
-            return dish.name
+        if let recipe = recipe {
+            return recipe.name
         } else {
-            return Localizable.Title.newDish
+            return Localizable.Title.newRecipe
         }
     }
     /// Checks that the information of all fields are valid
@@ -76,9 +76,9 @@ class DishDetailViewModel {
             .eraseToAnyPublisher()
     }
     
-    init(dish: Dish? = nil) {
-        self.dish = dish
-        if let data = dish?.imageData {
+    init(recipe: Recipe? = nil) {
+        self.recipe = recipe
+        if let data = recipe?.imageData {
             image = UIImage(data: data)
         }
         setupFields()
@@ -88,7 +88,7 @@ class DishDetailViewModel {
     /// - Parameter section: Section where the rows belong
     /// - Returns: Number of rows for a section
     func numberOfRows(in section: Int) -> Int {
-        guard let section = DishDetailViewController.Section(rawValue: section) else { return 0 }
+        guard let section = RecipeDetailViewController.Section(rawValue: section) else { return 0 }
         switch section {
         case .photo:
             return 1
@@ -110,12 +110,12 @@ class DishDetailViewModel {
     /// Creates all fields that will be shown in the table view
     private func setupFields() {
         var availableCount: Int?
-        if let dish = dish {
-            availableCount = Int(dish.availableCount)
+        if let recipe = recipe {
+            availableCount = Int(recipe.availableCount)
         }
-        let nameField = TextFieldCellViewModel(title: Localizable.Text.name, value: dish?.name)
+        let nameField = TextFieldCellViewModel(title: Localizable.Text.name, value: recipe?.name)
         nameField.validations = [.required]
-        let priceField = CurrencyTextFieldCellViewModel(title: Localizable.Text.price, placeholder: "$0.00", value: dish?.price)
+        let priceField = CurrencyTextFieldCellViewModel(title: Localizable.Text.price, placeholder: "$0.00", value: recipe?.price)
         priceField.validations = [.required]
         let availabilityField = IntTextFieldCellViewModel(title: Localizable.Text.availableCount, value: availableCount)
         availabilityField.validations = [.required]
@@ -126,45 +126,45 @@ class DishDetailViewModel {
         ]
     }
     
-    /// Create a new dish if `dish` is nil or updates the current dish oherwise
+    /// Create a new recipe if `recipe` is nil or updates the current recipe otherwise
     func save() {
         guard let name = fields[0].stringValue else { return }
         guard let price = fields[1].stringValue?.doubleValue else { return }
         guard let availableCount = Int32(fields[2].stringValue ?? "0") else { return }
-        var newDish: Dish!
+        var newRecipe: Recipe!
         if !name.isEmpty {
-            if let dish = dish {
-                newDish = dish
+            if let recipe = recipe {
+                newRecipe = recipe
             } else {
-                newDish = Dish(context: PersistenceController.shared.container.viewContext)
-                newDish.dateCreated = Date()
+                newRecipe = Recipe(context: PersistenceController.shared.container.viewContext)
+                newRecipe.dateCreated = Date()
             }
-            newDish.name = name
-            newDish.price = price
-            newDish.availableCount = availableCount
-            newDish.imageData = image?.jpegCompressedData
+            newRecipe.name = name
+            newRecipe.price = price
+            newRecipe.availableCount = availableCount
+            newRecipe.imageData = image?.jpegCompressedData
             imageDidChange = false
         }
         do {
             try PersistenceController.shared.saveContext()
-            if dish != nil {
-                dish = newDish
+            if recipe != nil {
+                recipe = newRecipe
             }
             delegate?.refresh()
         } catch {
-            errorHandler?(Localizable.Error.saveDish)
+            errorHandler?(Localizable.Error.saveRecipe)
         }
     }
     
-    /// Deletes the current dish
+    /// Deletes the current recipe
     func delete() {
-        if let dish = dish {
-            MenuPersistenceManager.shared.delete(dish)
+        if let recipe = recipe {
+            MenuPersistenceManager.shared.delete(recipe)
             delegate?.refresh()
         }
     }
     
-    /// Sets the dish image to nil
+    /// Sets the recipe image to nil
     func clearImage() {
         image = nil
         imageDidChange = true

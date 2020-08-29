@@ -17,17 +17,17 @@
 // MARK: - Title
 "ordersKey" = "Pedidos";
 "menuKey" = "Menú";
-"noDishSelectedTitleKey" = "No tienes ningún plato seleccionado";
+"noRecipeSelectedTitleKey" = "No tienes ninguna receta seleccionado";
 "noOrderSelectedTitleKey" = "No tienes ninguna orden seleccionada";
-"newDishKey" = "Nuevo Plato";
+"newRecipeKey" = "Nueva Receta";
 "deleteTitleKey" = "¿Eliminar \"%@?\"";
 "savedTitleKey" = "Guardado";
 
 // MARK: - Message
-"noDishSelectedMessageKey" = "Por favor selecciona un plato para ver el detalle.";
+"noRecipeSelectedMessageKey" = "Por favor selecciona una receta para ver el detalle.";
 "noOrderSelectedMessageKey" = "Por favor selecciona una orden para ver el detalle.";
-"deleteDishMessageKey" = "Al eliminar, no podrás agregar este plato a tus órdenes.";
-"savedDishMessageKey" = "El plato se guardó de manera exitosa";
+"deleteRecipeMessageKey" = "Al eliminar, no podrás agregar esta receta a tus órdenes.";
+"savedRecipeMessageKey" = "La receta se guardó de manera exitosa";
 
 // MARK: - Text
 "orderKey" = "Orden";
@@ -40,5 +40,5 @@
 
 // MARK: - Error
 "fetchingMenuErrorKey" = "Ocurrió un error obteniendo el Menú.";
-"saveDishErrorKey" = "Ocurrió un error al guardar el plato.";
+"saveRecipeErrorKey" = "Ocurrió un error al guardar la receta.";
 "resetImageErrorKey" = "Ocurrió un error al restablecer la imagen.";
