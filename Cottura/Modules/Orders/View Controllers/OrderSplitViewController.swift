@@ -17,7 +17,7 @@ class OrderSplitViewController: UISplitViewController {
 
         viewControllers = [
             UINavigationController(rootViewController: OrderListViewController()),
-            NoItemSelectedViewController(title: "No tienes ninguna orden seleccionada", message: "Por favor selecciona una orden para ver su detalle.")
+            NoItemSelectedViewController.noOrderSelected
         ]
     }
 

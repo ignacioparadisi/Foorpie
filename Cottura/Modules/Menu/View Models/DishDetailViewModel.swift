@@ -52,7 +52,7 @@ class DishDetailViewModel {
         if let dish = dish {
             return dish.name
         } else {
-            return "Nuevo Artículo"
+            return Localizable.Title.newDish
         }
     }
     /// Checks that the information of all fields are valid
@@ -113,11 +113,11 @@ class DishDetailViewModel {
         if let dish = dish {
             availableCount = Int(dish.availableCount)
         }
-        let nameField = TextFieldCellViewModel(title: "Nombre", value: dish?.name)
+        let nameField = TextFieldCellViewModel(title: Localizable.Text.name, value: dish?.name)
         nameField.validations = [.required]
-        let priceField = CurrencyTextFieldCellViewModel(title: "Precio", placeholder: "$0.00", value: dish?.price)
+        let priceField = CurrencyTextFieldCellViewModel(title: Localizable.Text.price, placeholder: "$0.00", value: dish?.price)
         priceField.validations = [.required]
-        let availabilityField = IntTextFieldCellViewModel(title: "Cantidad Disponible", value: availableCount)
+        let availabilityField = IntTextFieldCellViewModel(title: Localizable.Text.availableCount, value: availableCount)
         availabilityField.validations = [.required]
         fields = [
             nameField,
@@ -152,7 +152,7 @@ class DishDetailViewModel {
             }
             delegate?.refresh()
         } catch {
-            errorHandler?("Ocurrió un error al guardar el plato.")
+            errorHandler?(Localizable.Error.saveDish)
         }
     }
     
@@ -173,8 +173,8 @@ class DishDetailViewModel {
             refresh?()
             delegate?.refresh()
         } catch {
-            errorHandler?("Ocurrió un error restableciendo la imagen.")
+            errorHandler?(Localizable.Error.resetImage)
         }
-        
     }
+    
 }

@@ -1,0 +1,44 @@
+/* 
+  Localizable.strings
+  Cottura
+
+  Created by Ignacio Paradisi on 8/29/20.
+  Copyright © 2020 Ignacio Paradisi. All rights reserved.
+*/
+
+// MARK: - Button
+"doneKey" = "Done";
+"resetPhotoKey" = "Reset Photo";
+"takePhotoKey" = "Take Photo";
+"choosePhotoKey" = "Choose Photo";
+"cancelKey" = "Cancel";
+"deleteKey" = "Delete";
+
+// MARK: - Title
+"ordersKey" = "Orders";
+"menuKey" = "Menu";
+"noDishSelectedTitleKey" = "No Dish Selected";
+"noOrderSelectedTitleKey" = "No Order Selected";
+"newDishKey" = "New Dish";
+"deleteTitleKey" = "Delete \"%@?\"";
+"savedTitleKey" = "Saved";
+
+// MARK: - Message
+"noDishSelectedMessageKey" = "Please select a dish to see its detail.";
+"noOrderSelectedMessageKey" = "Please select an order to see its detail.";
+"deleteDishMessageKey" = "Once deleted you won't be able to add this dish to your orders.";
+"savedDishMessageKey" = "The dish was saved successfully";
+
+// MARK: - Text
+"orderKey" = "Order";
+"totalKey" = "Total";
+"availableKey" = "Available";
+"nameKey" = "Name";
+"priceKey" = "Price";
+"availableCountKey" = "Available Count";
+"searchKey" = "Search";
+
+// MARK: - Error
+"fetchingMenuErrorKey" = "There was an error fetching the Menu.";
+"saveDishErrorKey" = "There was an error saving the dish.";
+"resetImageErrorKey" = "There was an error resetting the image.";

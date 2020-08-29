@@ -28,8 +28,8 @@ class MenuViewController: BaseViewController {
     
     override func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        title = "Menú"
-        let addBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addNewItem))
+        title = Localizable.Title.menu
+        let addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItem))
         navigationItem.setRightBarButtonItems([addBarButton, editButtonItem], animated: false)
         setupSearchController()
     }
@@ -39,7 +39,7 @@ class MenuViewController: BaseViewController {
             self?.tableView.reloadData()
         }
         viewModel.errorHandler = { [weak self] message in
-            self?.showErroMessage(message)
+            self?.showErrorMessage(message)
         }
     }
     
@@ -59,7 +59,7 @@ class MenuViewController: BaseViewController {
     private func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Buscar"
+        searchController.searchBar.placeholder = Localizable.Text.search
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }

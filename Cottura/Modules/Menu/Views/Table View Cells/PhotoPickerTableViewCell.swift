@@ -16,7 +16,7 @@ class PhotoPickerTableViewCell: UITableViewCell, ReusableView {
         button.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         button.tintColor = .white
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .footnote).bold
-        button.setImage(UIImage(systemName: "camera.fill"), for: .normal)
+        button.setImage(.cameraFill, for: .normal)
         button.layer.cornerRadius = 22
         return button
     }()
@@ -62,7 +62,7 @@ class PhotoPickerTableViewCell: UITableViewCell, ReusableView {
             imageView?.image = image
             imageView?.contentMode = .scaleAspectFill
         } else {
-            imageView?.image = UIImage(systemName: "photo")?.withTintColor(.systemGray3, renderingMode: .alwaysOriginal)
+            imageView?.image = UIImage.photo?.withTintColor(.systemGray3, renderingMode: .alwaysOriginal)
             imageView?.contentMode = .scaleAspectFit
         }
     }

@@ -106,21 +106,21 @@ class DishDetailViewController: UIViewController {
     private func showImagePickerAlert(sender: PhotoPickerTableViewCell) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if viewModel.image != nil {
-            alertController.addAction(title: "Restablecer Foto", style: .destructive, imageName: "trash") { [weak self] _ in
+            alertController.addAction(title: Localizable.Button.resetPhoto, style: .destructive, image: .trash) { [weak self] _ in
                self?.viewModel.clearImage()
             }
         }
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            alertController.addAction(title: "Tomar Foto", style: .destructive, imageName: "camera") { [weak self] _ in
+            alertController.addAction(title: Localizable.Button.takePhoto, style: .default, image: .camera) { [weak self] _ in
                self?.presentImagePicker(sourceType: .camera)
             }
         }
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            alertController.addAction(title: "Seleccionar Foto", style: .destructive, imageName: "photo.on.rectangle") { [weak self] _ in
+            alertController.addAction(title: Localizable.Button.choosePhoto, style: .default, image: .photoOnRectangle) { [weak self] _ in
                self?.presentImagePicker(sourceType: .photoLibrary)
             }
         }
-        alertController.addAction(title: "Cancelar", style: .cancel)
+        alertController.addAction(title: Localizable.Button.cancel, style: .cancel)
         if let popoverController = alertController.popoverPresentationController {
             sender.setPopoverController(popoverController)
         }
@@ -139,16 +139,16 @@ class DishDetailViewController: UIViewController {
     
     /// Show delete confirmation alert
     private func showDeleteAlert() {
-        let alertController = UIAlertController(title: "¿Eliminar \"\(viewModel.title)\"?", message: "Al eliminar, no podrás agregar este producto a tus órdenes", preferredStyle: .alert)
-        let deleteAction = UIAlertAction(title: "Eliminar", style: .destructive) { _ in
+        let alertController = UIAlertController(title: String(format:Localizable.Title.delete, viewModel.title), message: Localizable.Message.deleteDish, preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: Localizable.Button.delete, style: .destructive) { _ in
             self.viewModel.delete()
             if self.splitViewController?.viewControllers.count == 2 {
-                self.splitViewController?.viewControllers[1] = NoItemSelectedViewController.menuDishController
+                self.splitViewController?.viewControllers[1] = NoItemSelectedViewController.noDishSelected
             } else {
                 self.dismissView()
             }
         }
-        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: Localizable.Button.cancel, style: .cancel, handler: nil)
         alertController.addAction(deleteAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true)
@@ -156,7 +156,7 @@ class DishDetailViewController: UIViewController {
     
     /// Presents a success alert
     private func showSuccessAlert() {
-        showAlert(title: "Guardado", message: "El artículo se guardó de manera exitosa.", style: .success)
+        showAlert(title: Localizable.Title.saved, message: Localizable.Message.savedDish, style: .success)
     }
 
 }
@@ -197,7 +197,7 @@ extension DishDetailViewController: UITableViewDataSource {
             }
         case .delete:
             let cell = tableView.dequeueReusableCell(for: indexPath) as ButtonTableViewCell
-            cell.configure(with: "Eliminar", style: .destructive)
+            cell.configure(with: Localizable.Button.delete, style: .destructive)
             return cell
         }
     }

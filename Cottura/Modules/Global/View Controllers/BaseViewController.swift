@@ -57,7 +57,7 @@ class BaseViewController: UIViewController {
         errorLabelTopAnchor?.isActive = true
     }
     
-    func showErroMessage(_ message: String) {
+    func showErrorMessage(_ message: String) {
         errorLabel.text = message
         errorLabelHeightAnchor?.constant = 44
         UIView.animate(withDuration: 0.3) {

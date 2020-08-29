@@ -34,7 +34,7 @@ class DishViewModel {
             let image = UIImage(data: data) {
             return image
         } else {
-            let image = UIImage(systemName: "photo", withConfiguration: UIImage.SymbolConfiguration(scale: .small))!
+            let image = UIImage.photo!.applyingSymbolConfiguration(UIImage.SymbolConfiguration(scale: .small))!
             return image.withTintColor(.systemGray3, renderingMode: .alwaysOriginal)
         }
     }

@@ -107,6 +107,10 @@
 		327B331924F48C6600B7DCD1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331824F48C6600B7DCD1 /* MenuViewController.swift */; };
 		32AEE04724FABD28006EF7CE /* OrderSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */; };
 		32AEE04824FABD28006EF7CE /* OrderSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */; };
+		32AEE04A24FABF6A006EF7CE /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04924FABF6A006EF7CE /* Localizable.swift */; };
+		32AEE04B24FABF6A006EF7CE /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04924FABF6A006EF7CE /* Localizable.swift */; };
+		32AEE05224FAC0B3006EF7CE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32AEE05524FAC0B3006EF7CE /* Localizable.strings */; };
+		32AEE05324FAC0B3006EF7CE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32AEE05524FAC0B3006EF7CE /* Localizable.strings */; };
 		32BE299D24F5910400BD9F15 /* IntTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */; };
 		32BE299F24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */; };
 		32BE29A024F5917C00BD9F15 /* IntTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */; };
@@ -194,6 +198,11 @@
 		327B331624F48C4500B7DCD1 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		327B331824F48C6600B7DCD1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSplitViewController.swift; sourceTree = "<group>"; };
+		32AEE04924FABF6A006EF7CE /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		32AEE04F24FAC090006EF7CE /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		32AEE05124FAC0A2006EF7CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		32AEE05424FAC0B3006EF7CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		32AEE05624FAC0B9006EF7CE /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		32DA6BCD24F7431C0080DD56 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
@@ -378,6 +387,8 @@
 				327B32E224F4862800B7DCD1 /* LaunchScreen.storyboard */,
 				327B32E524F4862800B7DCD1 /* Info.plist */,
 				3250B09E24F4C444001EE718 /* DEV-Info.plist */,
+				32AEE04924FABF6A006EF7CE /* Localizable.swift */,
+				32AEE05524FAC0B3006EF7CE /* Localizable.strings */,
 				3250B06A24F49422001EE718 /* Protocols */,
 				327B330924F4865800B7DCD1 /* Persistence */,
 				327B330824F4864700B7DCD1 /* Extensions */,
@@ -644,6 +655,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = 327B32C824F4862700B7DCD1;
 			packageReferences = (
@@ -671,6 +683,7 @@
 				3250B09624F4C444001EE718 /* menu-data.json in Resources */,
 				3250B09724F4C444001EE718 /* order-data.json in Resources */,
 				3250B09824F4C444001EE718 /* DishTableViewCell.xib in Resources */,
+				32AEE05324FAC0B3006EF7CE /* Localizable.strings in Resources */,
 				3250B09924F4C444001EE718 /* Assets.xcassets in Resources */,
 				325CE51E24FA8ECA00E7C88B /* OrderPlateCollectionViewCell.xib in Resources */,
 			);
@@ -685,6 +698,7 @@
 				327B330F24F4892500B7DCD1 /* menu-data.json in Resources */,
 				327B331224F489DE00B7DCD1 /* order-data.json in Resources */,
 				3250B07824F4AEFD001EE718 /* DishTableViewCell.xib in Resources */,
+				32AEE05224FAC0B3006EF7CE /* Localizable.strings in Resources */,
 				327B32E124F4862800B7DCD1 /* Assets.xcassets in Resources */,
 				325CE51D24FA8ECA00E7C88B /* OrderPlateCollectionViewCell.xib in Resources */,
 			);
@@ -713,6 +727,7 @@
 			files = (
 				3275C6D324F547F1004691EA /* MenuSplitViewController.swift in Sources */,
 				3250B08124F4C444001EE718 /* UICollectionView+Extension.swift in Sources */,
+				32AEE04B24FABF6A006EF7CE /* Localizable.swift in Sources */,
 				3250B08224F4C444001EE718 /* MainTabBarController.swift in Sources */,
 				32758B0E24F7EAED0062441F /* UIColor+Extension.swift in Sources */,
 				3250B08324F4C444001EE718 /* OrderListViewController.swift in Sources */,
@@ -765,6 +780,7 @@
 			files = (
 				3275C6D224F547F1004691EA /* MenuSplitViewController.swift in Sources */,
 				3250B06724F493FB001EE718 /* UICollectionView+Extension.swift in Sources */,
+				32AEE04A24FABF6A006EF7CE /* Localizable.swift in Sources */,
 				327B32D924F4862700B7DCD1 /* MainTabBarController.swift in Sources */,
 				32758B0D24F7EA8E0062441F /* UIColor+Extension.swift in Sources */,
 				327B331724F48C4500B7DCD1 /* OrderListViewController.swift in Sources */,
@@ -847,8 +863,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				327B32E324F4862800B7DCD1 /* Base */,
+				32AEE04F24FAC090006EF7CE /* es-419 */,
+				32AEE05124FAC0A2006EF7CE /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		32AEE05524FAC0B3006EF7CE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32AEE05424FAC0B3006EF7CE /* en */,
+				32AEE05624FAC0B9006EF7CE /* es-419 */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -900,6 +927,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -960,6 +988,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
