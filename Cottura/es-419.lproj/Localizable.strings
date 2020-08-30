@@ -19,6 +19,7 @@
 "menuKey" = "Menú";
 "noRecipeSelectedTitleKey" = "No tienes ninguna receta seleccionado";
 "noOrderSelectedTitleKey" = "No tienes ninguna orden seleccionada";
+"noIngredientSelectedTitleKey" = "No tienes ningún ingrediente seleccionado";
 "newRecipeKey" = "Nueva Receta";
 "deleteTitleKey" = "¿Eliminar \"%@?\"";
 "savedTitleKey" = "Guardado";
@@ -26,6 +27,7 @@
 // MARK: - Message
 "noRecipeSelectedMessageKey" = "Por favor selecciona una receta para ver el detalle.";
 "noOrderSelectedMessageKey" = "Por favor selecciona una orden para ver el detalle.";
+"noIngredientSelectedMessageKey" = "Por favor selecciona un ingrediente para ver el detalle.";
 "deleteRecipeMessageKey" = "Al eliminar, no podrás agregar esta receta a tus órdenes.";
 "savedRecipeMessageKey" = "La receta se guardó de manera exitosa";
 
@@ -37,6 +39,7 @@
 "priceKey" = "Precio";
 "availableCountKey" = "Cantidad Disponible";
 "searchKey" = "Buscar";
+"ingredientsKey" = "Ingredientes";
 
 // MARK: - Error
 "fetchingMenuErrorKey" = "Ocurrió un error obteniendo el Menú.";

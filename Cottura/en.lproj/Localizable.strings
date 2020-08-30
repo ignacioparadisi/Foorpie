@@ -19,13 +19,15 @@
 "menuKey" = "Menu";
 "noRecipeSelectedTitleKey" = "No Recipe Selected";
 "noOrderSelectedTitleKey" = "No Order Selected";
+"noIngredientSelectedTitleKey" = "No Ingredient Selected";
 "newRecipeKey" = "New Recipe";
 "deleteTitleKey" = "Delete \"%@?\"";
 "savedTitleKey" = "Saved";
 
 // MARK: - Message
-"noRecipeSelectedMessageKey" = "Please select a recipe to see its detail.";
-"noOrderSelectedMessageKey" = "Please select an order to see its detail.";
+"noRecipeSelectedMessageKey" = "Please select a recipe to see its details.";
+"noOrderSelectedMessageKey" = "Please select an order to see its details.";
+"noIngredientSelectedMessageKey" = "Please select an ingredient to see its details.";
 "deleteRecipeMessageKey" = "Once deleted you won't be able to add this recipe to your orders.";
 "savedRecipeMessageKey" = "The recipe was saved successfully";
 
@@ -37,6 +39,7 @@
 "priceKey" = "Price";
 "availableCountKey" = "Available Count";
 "searchKey" = "Search";
+"ingredientsKey" = "Ingredients";
 
 // MARK: - Error
 "fetchingMenuErrorKey" = "There was an error fetching the Menu.";

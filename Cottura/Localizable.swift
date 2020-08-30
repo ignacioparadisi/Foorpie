@@ -15,14 +15,17 @@ class Localizable {
         static var menu: String = "menuKey".localized
         static var noOrderSelected: String = "noOrderSelectedTitleKey".localized
         static var noRecipeSelected: String = "noRecipeSelectedTitleKey".localized
+        static var noIngredientSelected: String = "noIngredientSelectedTitleKey".localized
         static var newRecipe: String = "newRecipeKey".localized
         static var delete: String = "deleteTitleKey".localized
         static var saved: String = "savedTitleKey".localized
+        static var ingredients: String = "ingredientsKey".localized
     }
     
     struct Message {
         static var noOrderSelected: String = "noOrderSelectedMessageKey".localized
         static var noRecipeSelected: String = "noRecipeSelectedMessageKey".localized
+        static var noIngredientSelected: String = "noIngredientSelectedMessageKey".localized
         static var deleteRecipe: String = "deleteRecipeMessageKey".localized
         static var savedRecipe: String = "savedRecipeMessageKey".localized
     }

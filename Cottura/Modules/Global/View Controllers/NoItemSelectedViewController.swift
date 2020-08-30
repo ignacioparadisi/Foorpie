@@ -13,6 +13,7 @@ class NoItemSelectedViewController: UIViewController {
     /// View Controller to be shown then there's no a recipes selected in the menu.
     static var noRecipeSelected = NoItemSelectedViewController(title: Localizable.Title.noRecipeSelected, message: Localizable.Message.noRecipeSelected)
     static var noOrderSelected = NoItemSelectedViewController(title: Localizable.Title.noOrderSelected, message: Localizable.Message.noOrderSelected)
+    static var noIngredientSelected = NoItemSelectedViewController(title: Localizable.Title.noIngredientSelected, message: Localizable.Message.noIngredientSelected)
     
     // MARK: Properties
     /// Label for the title of the view

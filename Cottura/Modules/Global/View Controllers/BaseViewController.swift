@@ -34,6 +34,7 @@ class BaseViewController: UIViewController {
     
     /// Called in `viewDidAppear`. This method is for setting up the Navigation Bar
     func setupNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     ///  This functions is the last function called in `viewDidAppear`. It's for setting up the view.

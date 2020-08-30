@@ -20,7 +20,6 @@ class OrderListViewController: BaseViewController {
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        navigationController?.navigationBar.prefersLargeTitles = true
         title = Localizable.Title.orders
         let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
         navigationItem.rightBarButtonItems = [addButtonItem, editButtonItem]

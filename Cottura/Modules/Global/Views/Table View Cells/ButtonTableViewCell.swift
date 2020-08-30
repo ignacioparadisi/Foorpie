@@ -24,30 +24,37 @@ class ButtonTableViewCell: UITableViewCell, ReusableView {
     // MARK: Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setup()
-        
-    }
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
+        setupView()
     }
     
-    // MARK: Functions
-    /// Setup view
-    private func setup() {
-        textLabel?.textAlignment = .center
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
     }
+    
+    private func setupView() {
+        // preservesSuperviewLayoutMargins = false
+        // layoutMargins = UIEdgeInsets.zero
+        separatorInset = UIEdgeInsets.zero
+    }
+    
     /// Configure the cell with a title and a style
     /// - Parameters:
     ///   - title: Title for the cell
+    ///   - image: Image to be shown in the imageView
     ///   - style: Style of the cell
-    func configure(with title: String, style: ButtonTableViewCell.Style) {
+    ///   - alignment: Alignment for the text
+    func configure(with title: String, image: UIImage? = nil, style: ButtonTableViewCell.Style, alignment: NSTextAlignment = .center) {
         textLabel?.text = title
+        textLabel?.textAlignment = alignment
+        imageView?.image = image
         switch style {
         case .default:
             textLabel?.textColor = .systemBlue
+            imageView?.tintColor = .systemBlue
         case .destructive:
             textLabel?.textColor = .systemRed
+            imageView?.tintColor = .systemRed
         }
     }
 }

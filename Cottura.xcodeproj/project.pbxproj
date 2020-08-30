@@ -101,6 +101,8 @@
 		327B331424F48A3D00B7DCD1 /* order-status-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 327B331324F48A3D00B7DCD1 /* order-status-data.json */; };
 		327B331724F48C4500B7DCD1 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331624F48C4500B7DCD1 /* OrderListViewController.swift */; };
 		327B331924F48C6600B7DCD1 /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331824F48C6600B7DCD1 /* RecipeListViewController.swift */; };
+		32AD6C7524FB31AC00A55D7D /* IngredientDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AD6C7424FB31AC00A55D7D /* IngredientDetailViewModel.swift */; };
+		32AD6C7624FB31AC00A55D7D /* IngredientDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AD6C7424FB31AC00A55D7D /* IngredientDetailViewModel.swift */; };
 		32AEE04724FABD28006EF7CE /* OrderSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */; };
 		32AEE04824FABD28006EF7CE /* OrderSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */; };
 		32AEE04A24FABF6A006EF7CE /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04924FABF6A006EF7CE /* Localizable.swift */; };
@@ -111,10 +113,20 @@
 		32BCDCCB24FB056F001CA617 /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDCC824FB056F001CA617 /* Recipe+CoreDataClass.swift */; };
 		32BCDCCC24FB056F001CA617 /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDCC924FB056F001CA617 /* Recipe+CoreDataProperties.swift */; };
 		32BCDCCD24FB056F001CA617 /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDCC924FB056F001CA617 /* Recipe+CoreDataProperties.swift */; };
+		32BCDCD024FB2390001CA617 /* IngredientListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDCCF24FB2390001CA617 /* IngredientListViewController.swift */; };
+		32BCDCD124FB2390001CA617 /* IngredientListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDCCF24FB2390001CA617 /* IngredientListViewController.swift */; };
+		32BCDCD324FB29AF001CA617 /* IngredientListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDCD224FB29AF001CA617 /* IngredientListViewModel.swift */; };
+		32BCDCD424FB29AF001CA617 /* IngredientListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDCD224FB29AF001CA617 /* IngredientListViewModel.swift */; };
+		32BCDCD724FB2C11001CA617 /* Ingredient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDCD524FB2C11001CA617 /* Ingredient+CoreDataClass.swift */; };
+		32BCDCD824FB2C11001CA617 /* Ingredient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDCD524FB2C11001CA617 /* Ingredient+CoreDataClass.swift */; };
+		32BCDCD924FB2C11001CA617 /* Ingredient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDCD624FB2C11001CA617 /* Ingredient+CoreDataProperties.swift */; };
+		32BCDCDA24FB2C11001CA617 /* Ingredient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDCD624FB2C11001CA617 /* Ingredient+CoreDataProperties.swift */; };
 		32BE299D24F5910400BD9F15 /* IntTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */; };
 		32BE299F24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */; };
 		32BE29A024F5917C00BD9F15 /* IntTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */; };
 		32BE29A124F5917F00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */; };
+		32C706D624FB309D00E86728 /* IngredientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C706D524FB309D00E86728 /* IngredientDetailViewController.swift */; };
+		32C706D724FB309D00E86728 /* IngredientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C706D524FB309D00E86728 /* IngredientDetailViewController.swift */; };
 		32DA6BCE24F7431C0080DD56 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6BCD24F7431C0080DD56 /* CustomAlertViewController.swift */; };
 		32DA6BCF24F743FA0080DD56 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6BCD24F7431C0080DD56 /* CustomAlertViewController.swift */; };
 		32DA6BD424F75D8B0080DD56 /* NoItemSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6BD324F75D8B0080DD56 /* NoItemSelectedViewController.swift */; };
@@ -195,6 +207,7 @@
 		327B331324F48A3D00B7DCD1 /* order-status-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "order-status-data.json"; sourceTree = "<group>"; };
 		327B331624F48C4500B7DCD1 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		327B331824F48C6600B7DCD1 /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
+		32AD6C7424FB31AC00A55D7D /* IngredientDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetailViewModel.swift; sourceTree = "<group>"; };
 		32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSplitViewController.swift; sourceTree = "<group>"; };
 		32AEE04924FABF6A006EF7CE /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		32AEE04F24FAC090006EF7CE /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -203,8 +216,13 @@
 		32AEE05624FAC0B9006EF7CE /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		32BCDCC824FB056F001CA617 /* Recipe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		32BCDCC924FB056F001CA617 /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		32BCDCCF24FB2390001CA617 /* IngredientListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListViewController.swift; sourceTree = "<group>"; };
+		32BCDCD224FB29AF001CA617 /* IngredientListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListViewModel.swift; sourceTree = "<group>"; };
+		32BCDCD524FB2C11001CA617 /* Ingredient+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ingredient+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		32BCDCD624FB2C11001CA617 /* Ingredient+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ingredient+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextFieldCellViewModel.swift; sourceTree = "<group>"; };
+		32C706D524FB309D00E86728 /* IngredientDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetailViewController.swift; sourceTree = "<group>"; };
 		32DA6BCD24F7431C0080DD56 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		32DA6BD324F75D8B0080DD56 /* NoItemSelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemSelectedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -487,6 +505,8 @@
 		327B331524F48C1500B7DCD1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				32BCDCD524FB2C11001CA617 /* Ingredient+CoreDataClass.swift */,
+				32BCDCD624FB2C11001CA617 /* Ingredient+CoreDataProperties.swift */,
 				32BCDCC824FB056F001CA617 /* Recipe+CoreDataClass.swift */,
 				32BCDCC924FB056F001CA617 /* Recipe+CoreDataProperties.swift */,
 			);
@@ -508,6 +528,8 @@
 				327B331824F48C6600B7DCD1 /* RecipeListViewController.swift */,
 				3275C6BF24F540C3004691EA /* RecipeDetailViewController.swift */,
 				3275C6D124F547F1004691EA /* MenuSplitViewController.swift */,
+				32BCDCCF24FB2390001CA617 /* IngredientListViewController.swift */,
+				32C706D524FB309D00E86728 /* IngredientDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -534,6 +556,8 @@
 				3250B07124F49BDB001EE718 /* RecipeListViewModel.swift */,
 				3250B07324F49BFE001EE718 /* RecipeViewModel.swift */,
 				3275C6C224F540D5004691EA /* RecipeDetailViewModel.swift */,
+				32BCDCD224FB29AF001CA617 /* IngredientListViewModel.swift */,
+				32AD6C7424FB31AC00A55D7D /* IngredientDetailViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -726,11 +750,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3275C6D324F547F1004691EA /* MenuSplitViewController.swift in Sources */,
+				32BCDCD124FB2390001CA617 /* IngredientListViewController.swift in Sources */,
+				32BCDCD824FB2C11001CA617 /* Ingredient+CoreDataClass.swift in Sources */,
 				32BCDCCB24FB056F001CA617 /* Recipe+CoreDataClass.swift in Sources */,
 				3250B08124F4C444001EE718 /* UICollectionView+Extension.swift in Sources */,
 				32AEE04B24FABF6A006EF7CE /* Localizable.swift in Sources */,
 				3250B08224F4C444001EE718 /* MainTabBarController.swift in Sources */,
 				32758B0E24F7EAED0062441F /* UIColor+Extension.swift in Sources */,
+				32C706D724FB309D00E86728 /* IngredientDetailViewController.swift in Sources */,
 				3250B08324F4C444001EE718 /* OrderListViewController.swift in Sources */,
 				321A166B24F95E2500CF0C5A /* AlertView.swift in Sources */,
 				32BE29A124F5917F00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */,
@@ -740,6 +767,7 @@
 				321A166824F95D2700CF0C5A /* BaseViewController.swift in Sources */,
 				324EE68A24F8832700A85781 /* FileManager+Extension.swift in Sources */,
 				32DA6BCF24F743FA0080DD56 /* CustomAlertViewController.swift in Sources */,
+				32AD6C7624FB31AC00A55D7D /* IngredientDetailViewModel.swift in Sources */,
 				3275C6CA24F541F9004691EA /* TextFieldTableViewCell.swift in Sources */,
 				3250B08524F4C444001EE718 /* ReusableView.swift in Sources */,
 				3250B08624F4C444001EE718 /* RecipeListViewController.swift in Sources */,
@@ -765,7 +793,9 @@
 				3275C6CD24F5420C004691EA /* ButtonTableViewCell.swift in Sources */,
 				3275C6C124F540C3004691EA /* RecipeDetailViewController.swift in Sources */,
 				325CE51C24FA8ECA00E7C88B /* OrderPlateCollectionViewCell.swift in Sources */,
+				32BCDCD424FB29AF001CA617 /* IngredientListViewModel.swift in Sources */,
 				3250B09124F4C444001EE718 /* UITableView+Extension.swift in Sources */,
+				32BCDCDA24FB2C11001CA617 /* Ingredient+CoreDataProperties.swift in Sources */,
 				324EE68D24F884A100A85781 /* UIImage+Extension.swift in Sources */,
 				3275C6ED24F55F96004691EA /* String+Extension.swift in Sources */,
 				32BCDCCD24FB056F001CA617 /* Recipe+CoreDataProperties.swift in Sources */,
@@ -779,11 +809,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3275C6D224F547F1004691EA /* MenuSplitViewController.swift in Sources */,
+				32BCDCD024FB2390001CA617 /* IngredientListViewController.swift in Sources */,
+				32BCDCD724FB2C11001CA617 /* Ingredient+CoreDataClass.swift in Sources */,
 				32BCDCCA24FB056F001CA617 /* Recipe+CoreDataClass.swift in Sources */,
 				3250B06724F493FB001EE718 /* UICollectionView+Extension.swift in Sources */,
 				32AEE04A24FABF6A006EF7CE /* Localizable.swift in Sources */,
 				327B32D924F4862700B7DCD1 /* MainTabBarController.swift in Sources */,
 				32758B0D24F7EA8E0062441F /* UIColor+Extension.swift in Sources */,
+				32C706D624FB309D00E86728 /* IngredientDetailViewController.swift in Sources */,
 				327B331724F48C4500B7DCD1 /* OrderListViewController.swift in Sources */,
 				321A166A24F95E2500CF0C5A /* AlertView.swift in Sources */,
 				32BE299F24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */,
@@ -793,6 +826,7 @@
 				321A166724F95D2700CF0C5A /* BaseViewController.swift in Sources */,
 				324EE68924F8832700A85781 /* FileManager+Extension.swift in Sources */,
 				32DA6BCE24F7431C0080DD56 /* CustomAlertViewController.swift in Sources */,
+				32AD6C7524FB31AC00A55D7D /* IngredientDetailViewModel.swift in Sources */,
 				3275C6C924F541F9004691EA /* TextFieldTableViewCell.swift in Sources */,
 				3250B06C24F4942F001EE718 /* ReusableView.swift in Sources */,
 				327B331924F48C6600B7DCD1 /* RecipeListViewController.swift in Sources */,
@@ -818,7 +852,9 @@
 				3275C6CC24F5420C004691EA /* ButtonTableViewCell.swift in Sources */,
 				3275C6C024F540C3004691EA /* RecipeDetailViewController.swift in Sources */,
 				325CE51B24FA8ECA00E7C88B /* OrderPlateCollectionViewCell.swift in Sources */,
+				32BCDCD324FB29AF001CA617 /* IngredientListViewModel.swift in Sources */,
 				3250B06524F493F3001EE718 /* UITableView+Extension.swift in Sources */,
+				32BCDCD924FB2C11001CA617 /* Ingredient+CoreDataProperties.swift in Sources */,
 				324EE68C24F884A100A85781 /* UIImage+Extension.swift in Sources */,
 				3275C6EC24F55F96004691EA /* String+Extension.swift in Sources */,
 				32BCDCCC24FB056F001CA617 /* Recipe+CoreDataProperties.swift in Sources */,

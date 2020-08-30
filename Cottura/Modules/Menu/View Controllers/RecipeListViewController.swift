@@ -27,10 +27,10 @@ class RecipeListViewController: BaseViewController {
     }
     
     override func setupNavigationBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
+        super.setupNavigationBar()
         title = Localizable.Title.menu
-        let addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItem))
-        navigationItem.setRightBarButtonItems([addBarButton, editButtonItem], animated: false)
+        let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItem))
+        navigationItem.setRightBarButtonItems([addButtonItem, editButtonItem], animated: false)
         setupSearchController()
     }
     
@@ -53,6 +53,7 @@ class RecipeListViewController: BaseViewController {
         tableView.delegate = self
         tableView.tableFooterView = UIView()
         tableView.register(RecipeTableViewCell.self)
+        tableView.register(ButtonTableViewCell.self)
     }
     
     /// Configure the SearchBarController.
@@ -100,8 +101,8 @@ extension RecipeListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if viewModel.section(for: indexPath) == .ingredients {
-            let cell = UITableViewCell()
-            cell.textLabel?.text = "Ingredientes"
+            let cell = tableView.dequeueReusableCell(for: indexPath) as ButtonTableViewCell
+            cell.configure(with: Localizable.Title.ingredients, image: .cartFill, style: .default, alignment: .natural)
             cell.accessoryType = .disclosureIndicator
             return cell
         } else {
@@ -128,9 +129,17 @@ extension RecipeListViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailViewModel = viewModel.detailForRow(at: indexPath)
-        let viewController = UINavigationController(rootViewController: RecipeDetailViewController(viewModel: detailViewModel))
-        showDetailViewController(viewController, sender: nil)
+        guard let section = viewModel.section(for: indexPath) else { return }
+        switch section {
+        case .recipes:
+            let detailViewModel = viewModel.detailForRow(at: indexPath)
+            let viewController = UINavigationController(rootViewController: RecipeDetailViewController(viewModel: detailViewModel))
+            showDetailViewController(viewController, sender: nil)
+        case .ingredients:
+            let ingredientsViewController = IngredientListViewController()
+            navigationController?.pushViewController(ingredientsViewController, animated: true)
+        }
+        
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

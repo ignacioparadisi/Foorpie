@@ -22,5 +22,42 @@ extension Recipe {
     @NSManaged public var imageData: Data?
     @NSManaged public var name: String
     @NSManaged public var price: Double
+    @NSManaged public var recipes: NSSet?
+    @NSManaged public var recipe: Recipe?
+    @NSManaged public var ingredients: NSSet?
+
+}
+
+// MARK: Generated accessors for recipes
+extension Recipe {
+
+    @objc(addRecipesObject:)
+    @NSManaged public func addToRecipes(_ value: Recipe)
+
+    @objc(removeRecipesObject:)
+    @NSManaged public func removeFromRecipes(_ value: Recipe)
+
+    @objc(addRecipes:)
+    @NSManaged public func addToRecipes(_ values: NSSet)
+
+    @objc(removeRecipes:)
+    @NSManaged public func removeFromRecipes(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for ingredients
+extension Recipe {
+
+    @objc(addIngredientsObject:)
+    @NSManaged public func addToIngredients(_ value: Ingredient)
+
+    @objc(removeIngredientsObject:)
+    @NSManaged public func removeFromIngredients(_ value: Ingredient)
+
+    @objc(addIngredients:)
+    @NSManaged public func addToIngredients(_ values: NSSet)
+
+    @objc(removeIngredients:)
+    @NSManaged public func removeFromIngredients(_ values: NSSet)
 
 }

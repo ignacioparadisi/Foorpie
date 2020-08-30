@@ -8,10 +8,12 @@
 
 import UIKit
 
+// MARK: - SF Symbol Icons
 extension UIImage {
     
     static var camera: UIImage? = UIImage(systemName: "camera")
     static var cameraFill: UIImage? = UIImage(systemName: "camera.fill")
+    static var cartFill: UIImage? = UIImage(systemName: "cart.fill")
     static var checkmarkCircle: UIImage? = UIImage(systemName: "checkmark.circle")
     static var docPlaintext: UIImage? = UIImage(systemName: "doc.plaintext")
     static var photo: UIImage? = UIImage(systemName: "photo")
