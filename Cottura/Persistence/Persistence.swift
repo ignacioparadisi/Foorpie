@@ -50,17 +50,18 @@ struct PersistenceController {
     }
     
     fileprivate func importMenuFromJSON(context: NSManagedObjectContext) {
-        let jsonURL = Bundle.main.url(forResource: "menu-data", withExtension: "json")!
+        let jsonURL = Bundle.main.url(forResource: "ingredients-data", withExtension: "json")!
         let jsonData = try! Data(contentsOf: jsonURL)
         
         let jsonArray = try! JSONSerialization.jsonObject(with: jsonData, options: [.allowFragments]) as! [[String: Any]]
         
         for jsonDictionary in jsonArray {
-            let recipe = Recipe(context: container.viewContext)
-            recipe.name = jsonDictionary["name"] as! String
-            recipe.price = jsonDictionary["price"] as! Double
-            recipe.availableCount = jsonDictionary["available_count"] as! Int32
-            recipe.dateCreated = Date()
+            let ingredient = Ingredient(context: container.viewContext)
+            ingredient.name = jsonDictionary["name"] as! String
+            ingredient.price = jsonDictionary["price"] as! Double
+            ingredient.unitCount = jsonDictionary["unitCount"] as! Int32
+            ingredient.unit = jsonDictionary["unit"] as! String
+            ingredient.dateCreated = Date()
         }
         do {
             try context.save()

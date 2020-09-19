@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Ingredient" representedClassName="Ingredient" syncable="YES">
+        <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String" minValueString="0" defaultValueString=""/>
         <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="unit" attributeType="String" defaultValueString=""/>
@@ -18,7 +19,7 @@
         <relationship name="recipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="recipe" inverseEntity="Recipe"/>
     </entity>
     <elements>
+        <element name="Ingredient" positionX="162" positionY="234" width="128" height="133"/>
         <element name="Recipe" positionX="160" positionY="192" width="128" height="163"/>
-        <element name="Ingredient" positionX="162" positionY="234" width="128" height="118"/>
     </elements>
 </model>

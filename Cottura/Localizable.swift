@@ -38,6 +38,19 @@ class Localizable {
         static var price: String = "priceKey".localized
         static var availableCount: String = "availableCountKey".localized
         static var search: String = "searchKey".localized
+        static var kilogram: String = "kilogramKey".localized
+        static var gram: String = "gramKey".localized
+        static var milligram: String = "milligramKey".localized
+        static var pound: String = "poundKey".localized
+        static var ounce: String = "onceKey".localized
+        static var liter: String = "literKey".localized
+        static var milliliter: String = "milliliterKey".localized
+        static var gallon: String = "gallonKey".localized
+        static var meters: String = "meterKey".localized
+        static var centimeters: String = "centimeterKey".localized
+        static var feet: String = "feetKey".localized
+        static var inch: String = "inchKey".localized
+        static var unit: String = "unitKey".localized
     }
     
     struct Button {

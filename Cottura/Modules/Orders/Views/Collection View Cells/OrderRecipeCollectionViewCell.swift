@@ -1,5 +1,5 @@
 //
-//  OrderPlateCollectionViewCell.swift
+//  OrderRecipeCollectionViewCell.swift
 //  Cottura
 //
 //  Created by Ignacio Paradisi on 8/29/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrderPlateCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableView {
+class OrderRecipeCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableView {
 
     @IBOutlet private weak var recipeImageView: UIImageView!
     @IBOutlet private weak var statusButton: UIButton!
@@ -29,10 +29,15 @@ class OrderPlateCollectionViewCell: UICollectionViewCell, ReusableView, NibLoada
 
     @IBAction func didTapStatusButton(_ sender: UIButton) {
         isReady.toggle()
+        UISelectionFeedbackGenerator().selectionChanged()
+        statusButton.shrink()
         statusButton.backgroundColor = isReady ? .systemGreen : .systemGray3
+        statusButton.setTitleColor(isReady ? .white : .lightText, for: .normal)
+        statusButton.tintColor = isReady ? .white : .lightText
     }
     @IBAction func stepperValueDidChange(_ sender: UIStepper) {
         availabilityLabel.text = "\(Int(sender.value))"
         priceLabel.text = "$\(7 * sender.value)"
     }
+
 }

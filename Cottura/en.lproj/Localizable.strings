@@ -40,6 +40,19 @@
 "availableCountKey" = "Available Count";
 "searchKey" = "Search";
 "ingredientsKey" = "Ingredients";
+"kilogramKey" = "Kilogram";
+"gramKey" = "Grams";
+"milligramKey" = "Milligrams";
+"poundKey" = "Pounds";
+"onceKey" = "Onces";
+"literKey" = "Liters";
+"milliliterKey" = "Milliliters";
+"gallonKey" = "Gallons";
+"meterKey" = "Meters";
+"centimeterKey" = "Centimeters";
+"feetKey" = "Feet";
+"inchKey" = "Inches";
+"unitKey" = "Units";
 
 // MARK: - Error
 "fetchingMenuErrorKey" = "There was an error fetching the Menu.";

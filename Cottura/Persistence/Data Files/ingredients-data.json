@@ -1,0 +1,46 @@
+[{
+    "name": "Harina",
+    "price": 1.0,
+    "unitCount": 100,
+    "unit": "gr"
+}, {
+    "name": "Huevos",
+    "price": 2.0,
+    "unitCount": 12,
+    "unit": "u"
+}, {
+    "name": "Huevos",
+    "price": 2.0,
+    "unitCount": 12,
+    "unit": "u"
+}, {
+    "name": "Huevos",
+    "price": 2.0,
+    "unitCount": 12,
+    "unit": "u"
+}, {
+    "name": "Huevos",
+    "price": 2.0,
+    "unitCount": 12,
+    "unit": "u"
+}, {
+    "name": "Huevos",
+    "price": 2.0,
+    "unitCount": 12,
+    "unit": "u"
+}, {
+    "name": "Huevos",
+    "price": 2.0,
+    "unitCount": 12,
+    "unit": "u"
+}, {
+    "name": "Huevos",
+    "price": 2.0,
+    "unitCount": 12,
+    "unit": "u"
+}, {
+    "name": "Huevos",
+    "price": 2.0,
+    "unitCount": 12,
+    "unit": "u"
+}]

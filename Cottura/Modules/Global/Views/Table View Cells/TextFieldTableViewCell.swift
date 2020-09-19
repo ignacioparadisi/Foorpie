@@ -97,6 +97,6 @@ class TextFieldTableViewCell: UITableViewCell, ReusableView {
     /// Make textfield become first responder when the cell becomes first responder.
     override func becomeFirstResponder() -> Bool {
         textField.becomeFirstResponder()
-        return true
+        return super.becomeFirstResponder()
     }
 }

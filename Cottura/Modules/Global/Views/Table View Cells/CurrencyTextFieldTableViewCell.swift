@@ -13,22 +13,21 @@ class CurrencyTextFieldTableViewCell: TextFieldTableViewCell {
     // MARK: Properties
     /// Double representation of the textField's value
     @Published var doubleValue: Double = 0.0
-    /// Currency amount displayed in textField as Int
-    private var amount: Int = 0
-    /// Number Formatter to convert number into currency.
-    private let numberFormatter: NumberFormatter = {
-       let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.maximumFractionDigits = 2
-        return formatter
-    }()
+    private let currencyTextField = CurrencyTextField()
     
     // MARK: Functions
     /// Setup view
     override func setup() {
         super.setup()
-        textField.keyboardType = .numberPad
-        textField.delegate = self
+        textField.isUserInteractionEnabled = false
+        textField.isHidden = true
+        contentView.addSubview(currencyTextField)
+        currencyTextField.anchor
+            .top(to: textField.topAnchor)
+            .leading(to: textField.leadingAnchor)
+            .bottom(to: textField.bottomAnchor)
+            .trailing(to: textField.trailingAnchor)
+            .activate()
     }
     
     /// Configure the cell with the viewModel's information
@@ -36,37 +35,16 @@ class CurrencyTextFieldTableViewCell: TextFieldTableViewCell {
     func configure(with viewModel: CurrencyTextFieldCellViewModel) {
         super.configure(with: viewModel)
         if viewModel.type == .currency {
-            textFieldSubscription = $doubleValue
+            textFieldSubscription = currencyTextField.$doubleValue
                 .map { "\($0)" }
                 .assign(to: \.stringValue, on: viewModel)
-            if let value = viewModel.value {
-                amount = Int(value * 100)
-                textField.text = updateTextField()
-            }
+            currencyTextField.configure(with: viewModel.value)
         }
     }
     
-    /// Updates the text field with the `amount` with currency format
-    /// - Returns: Currency format of `amount` number.
-    private func updateTextField() -> String? {
-        let number = Double(amount / 100) + Double(amount % 100) / 100
-        doubleValue = number
-        return numberFormatter.string(from: NSNumber(value: number))
+    override func becomeFirstResponder() -> Bool {
+        currencyTextField.becomeFirstResponder()
+        return super.becomeFirstResponder()
     }
-}
-
-// MARK: - UITextFieldDelegate
-extension CurrencyTextFieldTableViewCell: UITextFieldDelegate {
-    /// Convert text field text into currency format each time the user enters a value.
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if let digit = Int(string) {
-            amount = amount * 10 + digit
-            textField.text = updateTextField()
-        }
-        if string == "" {
-            amount = amount / 10
-            textField.text = updateTextField()
-        }
-        return false
-    }
+    
 }

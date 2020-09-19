@@ -111,7 +111,7 @@ class OrderTableViewCell: UITableViewCell, ReusableView {
             .activate()
         
         recipeOrderCollectionView.dataSource = self
-        recipeOrderCollectionView.register(OrderPlateCollectionViewCell.self)
+        recipeOrderCollectionView.register(OrderRecipeCollectionViewCell.self)
     }
     
     func configure(orderNumber: Int, clientName: String, status: String) {
@@ -130,7 +130,7 @@ extension OrderTableViewCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath) as OrderPlateCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(for: indexPath) as OrderRecipeCollectionViewCell
         return cell
     }
 }

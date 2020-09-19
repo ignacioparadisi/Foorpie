@@ -28,4 +28,15 @@ class MenuPersistenceManager {
     func delete(_ recipe: Recipe) {
         PersistenceController.shared.container.viewContext.delete(recipe)
     }
+    
+    func fetchIngredients() -> Result<[Ingredient], Error> {
+        let fetchRequest: NSFetchRequest<Ingredient> = Ingredient.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Ingredient.name), ascending: true)]
+        do {
+            let result = try PersistenceController.shared.container.viewContext.fetch(fetchRequest)
+            return .success(result)
+        } catch {
+            return .failure(error)
+        }
+    }
 }

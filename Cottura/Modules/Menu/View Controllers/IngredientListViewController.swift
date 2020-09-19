@@ -11,7 +11,7 @@ import UIKit
 class IngredientListViewController: BaseViewController {
     
     // MARK: - Properties
-    private let tableView: UITableView = UITableView()
+    private var tableView: UITableView = UITableView()
     private let searchController = UISearchController(searchResultsController: nil)
     private let viewModel = IngredientListViewModel()
     
@@ -21,20 +21,20 @@ class IngredientListViewController: BaseViewController {
         title = Localizable.Title.ingredients
         let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showNewIngredientView))
         navigationItem.setRightBarButtonItems([addButtonItem, editButtonItem], animated: false)
+        setupSearchController()
     }
     
     override func setupView() {
         super.setupView()
         setupTableView()
+        viewModel.fetch()
     }
     
     private func setupTableView() {
-        view.addSubview(tableView)
-        tableView.anchor.edgesToSuperview().activate()
         tableView.tableFooterView = UIView()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
+        tableView.register(IngredientTableViewCell.self)
     }
     private func setupSearchController() {
         searchController.searchResultsUpdater = self
@@ -60,8 +60,8 @@ extension IngredientListViewController: UITableViewDataSource {
         return viewModel.numberOfRows
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath)
-        cell.textLabel?.text = "Ingrediente \(indexPath.row)"
+        let cell = tableView.dequeueReusableCell(for: indexPath) as IngredientTableViewCell
+        cell.textLabel?.text = viewModel.text(for: indexPath)
         return cell
     }
 }
@@ -76,7 +76,6 @@ extension IngredientListViewController: UISearchResultsUpdating {
     /// Updates the table view when the user is filtering the data
     func updateSearchResults(for searchController: UISearchController) {
         viewModel.filter(searchController.searchBar.text)
-        tableView.reloadData()
     }
     
 }
