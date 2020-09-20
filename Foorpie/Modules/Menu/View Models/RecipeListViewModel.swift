@@ -6,7 +6,8 @@
 //  Copyright © 2020 Ignacio Paradisi. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import MobileCoreServices
 
 class RecipeListViewModel {
     // MARK: Properties
@@ -102,6 +103,19 @@ class RecipeListViewModel {
         } else {
             filteredRecipes = recipes
         }
+    }
+    
+    /// Creates a drag item from a Recipe
+    /// - Parameter indexPath: Index path where the recipe is listed
+    /// - Returns: An array with a drag item if the cell can be dragged.
+    func dragItemsForRow(at indexPath: IndexPath) -> [UIDragItem] {
+        if section(for: indexPath) != .recipes { return [] }
+        let recipe = recipes[indexPath.row]
+        guard let data = recipe.name.data(using: .utf8) else { return [] }
+        let itemProvider = NSItemProvider(item: data as NSData, typeIdentifier: kUTTypePlainText as String)
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = recipe
+        return [dragItem]
     }
 }
 
