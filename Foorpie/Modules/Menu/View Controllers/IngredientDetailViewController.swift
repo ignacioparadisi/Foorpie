@@ -52,6 +52,7 @@ class IngredientDetailViewController: BaseViewController {
         tableView.register(CurrencyTextFieldTableViewCell.self)
         tableView.register(IntTextFieldTableViewCell.self)
         tableView.register(ButtonTableViewCell.self)
+        tableView.register(UnitTextFieldTableViewCell.self)
     }
     
     @objc private func dismissView() {
@@ -86,6 +87,11 @@ extension IngredientDetailViewController: UITableViewDataSource {
                 let cell = tableView.dequeueReusableCell(for: indexPath) as IntTextFieldTableViewCell
                 cell.configure(with: field as! IntTextFieldCellViewModel)
                 return cell
+            case .unit:
+                let cell = tableView.dequeueReusableCell(for: indexPath) as UnitTextFieldTableViewCell
+                cell.configure(with: field as! UnitTextFieldCellViewModel)
+                cell.delegate = self
+                return cell
             }
         case .delete:
             let cell = tableView.dequeueReusableCell(for: indexPath) as ButtonTableViewCell
@@ -98,4 +104,10 @@ extension IngredientDetailViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension IngredientDetailViewController: UITableViewDelegate {
     
+}
+
+extension IngredientDetailViewController: UnitTextFieldTableViewCellDelegate {
+    func presentSheet(_ alert: UIAlertController) {
+        present(alert, animated: true)
+    }
 }

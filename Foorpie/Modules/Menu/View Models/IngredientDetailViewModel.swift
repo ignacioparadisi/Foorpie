@@ -54,7 +54,7 @@ class IngredientDetailViewModel {
         nameField.validations = [.required]
         let priceField = CurrencyTextFieldCellViewModel(title: Localizable.Text.price, placeholder: "$0.00", value: ingredient?.price)
         priceField.validations = [.required]
-        let unitField = TextFieldCellViewModel(title: "Unidad", value: ingredient?.unit)
+        let unitField = UnitTextFieldCellViewModel(title: "Unidad", value: Int(ingredient?.unitCount ?? 0), unitType: nil)
         unitField.validations = [.required]
         let unitAmountField = IntTextFieldCellViewModel(title: Localizable.Text.availableCount, value: unitAmount)
         unitAmountField.validations = [.required]

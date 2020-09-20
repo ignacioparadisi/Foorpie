@@ -115,6 +115,10 @@
 		32ACEF97251786A40030EBD1 /* MenuCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ACEF95251786A40030EBD1 /* MenuCoreDataManager.swift */; };
 		32ACEF9D251786B60030EBD1 /* MenuAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ACEF9C251786B60030EBD1 /* MenuAPIManager.swift */; };
 		32ACEF9E251786B60030EBD1 /* MenuAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ACEF9C251786B60030EBD1 /* MenuAPIManager.swift */; };
+		32ACEFA825178F470030EBD1 /* UnitTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ACEFA725178F470030EBD1 /* UnitTextFieldTableViewCell.swift */; };
+		32ACEFA925178F470030EBD1 /* UnitTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ACEFA725178F470030EBD1 /* UnitTextFieldTableViewCell.swift */; };
+		32ACEFAF251791510030EBD1 /* UnitTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ACEFAE251791510030EBD1 /* UnitTextFieldCellViewModel.swift */; };
+		32ACEFB0251791510030EBD1 /* UnitTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ACEFAE251791510030EBD1 /* UnitTextFieldCellViewModel.swift */; };
 		32AD6C7524FB31AC00A55D7D /* IngredientDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AD6C7424FB31AC00A55D7D /* IngredientDetailViewModel.swift */; };
 		32AD6C7624FB31AC00A55D7D /* IngredientDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AD6C7424FB31AC00A55D7D /* IngredientDetailViewModel.swift */; };
 		32AEE04724FABD28006EF7CE /* OrderSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */; };
@@ -228,6 +232,8 @@
 		32ACEF8A2517868E0030EBD1 /* MenuPersistenceManagerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPersistenceManagerRepresentable.swift; sourceTree = "<group>"; };
 		32ACEF95251786A40030EBD1 /* MenuCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoreDataManager.swift; sourceTree = "<group>"; };
 		32ACEF9C251786B60030EBD1 /* MenuAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAPIManager.swift; sourceTree = "<group>"; };
+		32ACEFA725178F470030EBD1 /* UnitTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		32ACEFAE251791510030EBD1 /* UnitTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		32AD6C7424FB31AC00A55D7D /* IngredientDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetailViewModel.swift; sourceTree = "<group>"; };
 		32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSplitViewController.swift; sourceTree = "<group>"; };
 		32AEE04924FABF6A006EF7CE /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
@@ -325,6 +331,7 @@
 				3250B07624F4AEFD001EE718 /* RecipeTableViewCell.xib */,
 				3275C6C524F541E1004691EA /* PhotoPickerTableViewCell.swift */,
 				324CAE33250AE33B006A6703 /* IngredientTableViewCell.swift */,
+				32ACEFA725178F470030EBD1 /* UnitTextFieldTableViewCell.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -370,6 +377,7 @@
 				3275C6DF24F559B4004691EA /* TextFieldCellViewModel.swift */,
 				3275C6EE24F56040004691EA /* CurrencyTextFieldCellViewModel.swift */,
 				32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */,
+				32ACEFAE251791510030EBD1 /* UnitTextFieldCellViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -831,6 +839,7 @@
 				32ACEF8C2517868E0030EBD1 /* MenuPersistenceManagerRepresentable.swift in Sources */,
 				32DA6BCF24F743FA0080DD56 /* CustomAlertViewController.swift in Sources */,
 				32AD6C7624FB31AC00A55D7D /* IngredientDetailViewModel.swift in Sources */,
+				32ACEFB0251791510030EBD1 /* UnitTextFieldCellViewModel.swift in Sources */,
 				3275C6CA24F541F9004691EA /* TextFieldTableViewCell.swift in Sources */,
 				32ACEF9E251786B60030EBD1 /* MenuAPIManager.swift in Sources */,
 				3250B08524F4C444001EE718 /* ReusableView.swift in Sources */,
@@ -838,6 +847,7 @@
 				3275C6EA24F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift in Sources */,
 				321A166E24F9CE7600CF0C5A /* UIViewController+Extension.swift in Sources */,
 				3250B08824F4C444001EE718 /* NibLoadableView.swift in Sources */,
+				32ACEFA925178F470030EBD1 /* UnitTextFieldTableViewCell.swift in Sources */,
 				32ACEF83251784090030EBD1 /* PersistenceManagerFactory.swift in Sources */,
 				3250B08924F4C444001EE718 /* Foorpie.xcdatamodeld in Sources */,
 				3250B08A24F4C444001EE718 /* RecipeTableViewCell.swift in Sources */,
@@ -896,6 +906,7 @@
 				32ACEF8B2517868E0030EBD1 /* MenuPersistenceManagerRepresentable.swift in Sources */,
 				32DA6BCE24F7431C0080DD56 /* CustomAlertViewController.swift in Sources */,
 				32AD6C7524FB31AC00A55D7D /* IngredientDetailViewModel.swift in Sources */,
+				32ACEFAF251791510030EBD1 /* UnitTextFieldCellViewModel.swift in Sources */,
 				3275C6C924F541F9004691EA /* TextFieldTableViewCell.swift in Sources */,
 				32ACEF9D251786B60030EBD1 /* MenuAPIManager.swift in Sources */,
 				3250B06C24F4942F001EE718 /* ReusableView.swift in Sources */,
@@ -903,6 +914,7 @@
 				3275C6E924F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift in Sources */,
 				321A166D24F9CAC400CF0C5A /* UIViewController+Extension.swift in Sources */,
 				3250B07A24F4B7F7001EE718 /* NibLoadableView.swift in Sources */,
+				32ACEFA825178F470030EBD1 /* UnitTextFieldTableViewCell.swift in Sources */,
 				32ACEF82251784090030EBD1 /* PersistenceManagerFactory.swift in Sources */,
 				327B32DF24F4862700B7DCD1 /* Foorpie.xcdatamodeld in Sources */,
 				3250B07724F4AEFD001EE718 /* RecipeTableViewCell.swift in Sources */,

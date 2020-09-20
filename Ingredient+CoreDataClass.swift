@@ -14,24 +14,24 @@ import CoreData
 public class Ingredient: NSManagedObject {
 
     enum UnitType: Int, CaseIterable {
+        // Unit
+        case unit
         // Weight
+        case pound
         case kilogram
         case gram
         case milligram
-        case pound
-        // Weight and Volume
-        case ounce
         // Volume
+        case gallon
         case liter
         case milliliter
-        case gallon
+        // Weight and Volume
+        case ounce
         // Length
         case meters
         case centimeters
         case feet
         case inch
-        // Unit
-        case unit
         
         var abbreviatedText: String {
             switch self {

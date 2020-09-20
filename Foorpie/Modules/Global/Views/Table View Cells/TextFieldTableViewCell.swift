@@ -12,11 +12,11 @@ import Combine
 class TextFieldTableViewCell: UITableViewCell, ReusableView {
     // MARK: Properties
     /// Vertical margin for the content of the cell
-    private let verticalMargin: CGFloat = 8
+    let verticalMargin: CGFloat = 8
     /// Horizontal margin for the content of the cell
-    private let horizontalMargin: CGFloat = 16
+    let horizontalMargin: CGFloat = 16
     /// Label for displaying the title of the field
-    private let titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .caption1).bold
         label.textColor = .secondaryLabel

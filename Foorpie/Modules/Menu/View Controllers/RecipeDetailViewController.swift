@@ -195,6 +195,8 @@ extension RecipeDetailViewController: UITableViewDataSource {
                 let cell = tableView.dequeueReusableCell(for: indexPath) as IntTextFieldTableViewCell
                 cell.configure(with: field as! IntTextFieldCellViewModel)
                 return cell
+            case .unit:
+                return UITableViewCell()
             }
         case .delete:
             let cell = tableView.dequeueReusableCell(for: indexPath) as ButtonTableViewCell
