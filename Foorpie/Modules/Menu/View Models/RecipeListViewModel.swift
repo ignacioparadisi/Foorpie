@@ -34,13 +34,15 @@ class RecipeListViewModel {
     // MARK: Functions
     /// Fetch all recipes to be displayed
     func fetch() {
-        let result = MenuPersistenceManager.shared.fetch()
-        switch result {
-        case .success(let recipes):
-            self.recipes = recipes
-            self.filteredRecipes = recipes
-        case .failure:
-            errorHandler?(Localizable.Error.fetchingMenu)
+        PersistenceManagerFactory.menuPersistenceManager.fetchRecipes { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let recipes):
+                self.recipes = recipes
+                self.filteredRecipes = recipes
+            case .failure:
+                errorHandler?(Localizable.Error.fetchingMenu)
+            }
         }
     }
     
@@ -71,8 +73,16 @@ class RecipeListViewModel {
     /// Delete recipe at a specific index path
     /// - Parameter indexPath: Index path of the recipe to be deleted
     func deleteRecipe(at indexPath: IndexPath) {
-        MenuPersistenceManager.shared.delete(filteredRecipes[indexPath.row])
-        filteredRecipes.remove(at: indexPath.row)
+        let recipeToBeDeleted = filteredRecipes[indexPath.row]
+        PersistenceManagerFactory.menuPersistenceManager.delete(recipeToBeDeleted) { [weak self] result in
+            switch result {
+            case .success:
+                self?.filteredRecipes.remove(at: indexPath.row)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
     }
     
     /// View Model for the recipe of the selected index path. If no index path is selected, it returns an empty view model

@@ -137,7 +137,6 @@ class RecipeDetailViewModel {
                 newRecipe = recipe
             } else {
                 newRecipe = Recipe(context: PersistenceController.shared.container.viewContext)
-                newRecipe.dateCreated = Date()
             }
             newRecipe.name = name
             newRecipe.price = price
@@ -145,22 +144,42 @@ class RecipeDetailViewModel {
             newRecipe.imageData = image?.jpegCompressedData
             imageDidChange = false
         }
-        do {
-            try PersistenceController.shared.saveContext()
-            if recipe != nil {
-                recipe = newRecipe
+        if recipe == nil {
+            PersistenceManagerFactory.menuPersistenceManager.create(newRecipe) { [weak self] result in
+                switch result {
+                case .success:
+                    self?.delegate?.refresh()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    self?.errorHandler?(Localizable.Error.saveRecipe)
+                }
             }
-            delegate?.refresh()
-        } catch {
-            errorHandler?(Localizable.Error.saveRecipe)
+        } else {
+            PersistenceManagerFactory.menuPersistenceManager.update(newRecipe) { [weak self] result in
+                switch result {
+                case .success(let recipe):
+                    self?.recipe = recipe
+                    self?.delegate?.refresh()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    self?.errorHandler?(Localizable.Error.saveRecipe)
+                }
+            }
         }
     }
     
     /// Deletes the current recipe
     func delete() {
         if let recipe = recipe {
-            MenuPersistenceManager.shared.delete(recipe)
-            delegate?.refresh()
+            PersistenceManagerFactory.menuPersistenceManager.delete(recipe) { [weak self] result in
+                switch result {
+                case .success:
+                    self?.delegate?.refresh()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+            
         }
     }
     

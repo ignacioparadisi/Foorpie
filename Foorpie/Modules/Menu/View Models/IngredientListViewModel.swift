@@ -69,13 +69,15 @@ class IngredientListViewModel {
     }
     
     func fetch() {
-        let result = MenuPersistenceManager.shared.fetchIngredients()
-        switch result {
-        case .success(let ingredients):
-            self.ingredients = ingredients.map { IngredientViewModel(ingredient: $0) }
-            self.filteredIngredients = self.ingredients
-        case .failure(let error):
-            print(error.localizedDescription)
+        PersistenceManagerFactory.menuPersistenceManager.fetchIngredients { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let ingredients):
+                self.ingredients = ingredients.map { IngredientViewModel(ingredient: $0) }
+                self.filteredIngredients = self.ingredients
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
     }
     
