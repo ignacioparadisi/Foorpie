@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class RecipeListViewController: BaseViewController {
     
@@ -51,6 +52,7 @@ class RecipeListViewController: BaseViewController {
         tableView.anchor.edgesToSuperview().activate()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.dragDelegate = self
         tableView.tableFooterView = UIView()
         tableView.register(RecipeTableViewCell.self)
         tableView.register(ButtonTableViewCell.self)
@@ -150,6 +152,16 @@ extension RecipeListViewController: UITableViewDelegate {
         } else {
             setErrorMessageTopAnchorConstant(abs(scrollView.contentOffset.y))
         }
+    }
+}
+
+extension RecipeListViewController: UITableViewDragDelegate {
+    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        if viewModel.section(for: indexPath) != .recipes { return [] }
+        let recipe = viewModel.recipeForRow(at: indexPath)
+        guard let data = recipe.name.data(using: .utf8) else { return [] }
+        let itemProvider = NSItemProvider(item: data as NSData, typeIdentifier: kUTTypePlainText as String)
+        return [UIDragItem(itemProvider: itemProvider)]
     }
 }
 
