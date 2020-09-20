@@ -16,11 +16,11 @@ class IngredientViewModel: Hashable {
     var price: Double {
         return ingredient.price
     }
-    var unitCount: Int {
-        return Int(ingredient.unitCount)
+    var unitAmount: Double {
+        return ingredient.unitAmount
     }
-    var unit: String {
-        return ingredient.unit
+    var unit: Ingredient.UnitType? {
+        return Ingredient.UnitType(rawValue: Int(ingredient.unitType))
     }
     
     init(ingredient: Ingredient) {
@@ -30,14 +30,14 @@ class IngredientViewModel: Hashable {
     static func == (lhs: IngredientViewModel, rhs: IngredientViewModel) -> Bool {
         return lhs.name == rhs.name &&
             lhs.price == rhs.price &&
-            lhs.unitCount == rhs.unitCount &&
+            lhs.unitAmount == rhs.unitAmount &&
             lhs.unit == rhs.unit
     }
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(name)
         hasher.combine(price)
-        hasher.combine(unitCount)
+        hasher.combine(unitAmount)
         hasher.combine(unit)
     }
 }

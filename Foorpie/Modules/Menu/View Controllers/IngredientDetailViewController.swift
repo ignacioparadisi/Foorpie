@@ -50,7 +50,7 @@ class IngredientDetailViewController: BaseViewController {
         tableView.delegate = self
         tableView.register(TextFieldTableViewCell.self)
         tableView.register(CurrencyTextFieldTableViewCell.self)
-        tableView.register(IntTextFieldTableViewCell.self)
+        tableView.register(FloatTextFieldTableViewCell.self)
         tableView.register(ButtonTableViewCell.self)
         tableView.register(UnitTextFieldTableViewCell.self)
     }
@@ -83,21 +83,26 @@ extension IngredientDetailViewController: UITableViewDataSource {
                 let cell = tableView.dequeueReusableCell(for: indexPath) as CurrencyTextFieldTableViewCell
                 cell.configure(with: field as! CurrencyTextFieldCellViewModel)
                 return cell
-            case .integer:
-                let cell = tableView.dequeueReusableCell(for: indexPath) as IntTextFieldTableViewCell
-                cell.configure(with: field as! IntTextFieldCellViewModel)
+            case .float:
+                let cell = tableView.dequeueReusableCell(for: indexPath) as FloatTextFieldTableViewCell
+                cell.configure(with: field as! FloatTextFieldCellViewModel)
                 return cell
             case .unit:
                 let cell = tableView.dequeueReusableCell(for: indexPath) as UnitTextFieldTableViewCell
                 cell.configure(with: field as! UnitTextFieldCellViewModel)
                 cell.delegate = self
                 return cell
+            default:
+                return UITableViewCell()
             }
         case .delete:
             let cell = tableView.dequeueReusableCell(for: indexPath) as ButtonTableViewCell
             cell.configure(with: Localizable.Button.delete, style: .destructive)
             return cell
         }
+    }
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return "Esta información se utiliza para calcular el precio bruto de cada receta. El precio introducido debe ser el costo de las unidades ingresadas."
     }
 }
 

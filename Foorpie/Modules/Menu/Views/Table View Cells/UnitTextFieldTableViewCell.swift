@@ -42,7 +42,7 @@ class UnitTextFieldTableViewCell: TextFieldTableViewCell {
             unitButton.addTarget(self, action: #selector(createSheetController), for: .touchUpInside)
         }
         textField.anchor.trailing(to: unitButton.leadingAnchor, constant: -10).activate()
-        
+        textField.delegate = self
         
         unitButton.backgroundColor = .tertiarySystemFill
     }
@@ -78,5 +78,16 @@ class UnitTextFieldTableViewCell: TextFieldTableViewCell {
             popoverController.sourceRect = unitButton.bounds
         }
         delegate?.presentSheet(sheetController)
+    }
+}
+
+
+extension UnitTextFieldTableViewCell: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if !(textField.text?.isEmpty ?? true) || !string.isEmpty {
+            let text = (textField.text ?? "") + string
+            return Double(text) != nil
+        }
+        return true
     }
 }

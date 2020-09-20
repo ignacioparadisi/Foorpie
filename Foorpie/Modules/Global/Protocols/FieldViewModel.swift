@@ -12,6 +12,7 @@ enum FieldType {
     case textField
     case currency
     case integer
+    case float
     case unit
 }
 

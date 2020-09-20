@@ -1,8 +1,8 @@
 //
 //  Ingredient+CoreDataProperties.swift
-//  Cottura
+//  Foorpie
 //
-//  Created by Ignacio Paradisi on 8/30/20.
+//  Created by Ignacio Paradisi on 9/20/20.
 //  Copyright © 2020 Ignacio Paradisi. All rights reserved.
 //
 //
@@ -17,11 +17,16 @@ extension Ingredient {
         return NSFetchRequest<Ingredient>(entityName: "Ingredient")
     }
 
+    @NSManaged public var dateCreated: Date?
     @NSManaged public var name: String
     @NSManaged public var price: Double
-    @NSManaged public var unit: String
-    @NSManaged public var unitCount: Int32
-    @NSManaged public var dateCreated: Date
+    @NSManaged public var unitType: Int16
+    @NSManaged public var unitAmount: Double
+    @NSManaged public var availableAmount: Double
     @NSManaged public var recipe: Recipe?
+
+}
+
+extension Ingredient : Identifiable {
 
 }

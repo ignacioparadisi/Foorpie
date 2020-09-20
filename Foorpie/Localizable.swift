@@ -37,6 +37,7 @@ class Localizable {
         static var name: String = "nameKey".localized
         static var price: String = "priceKey".localized
         static var availableCount: String = "availableCountKey".localized
+        static var availableAmount: String = "availableAmountKey".localized
         static var search: String = "searchKey".localized
         static var kilogram: String = "kilogramKey".localized
         static var gram: String = "gramKey".localized

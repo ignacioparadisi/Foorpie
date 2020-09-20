@@ -50,24 +50,24 @@ struct PersistenceController {
     }
     
     fileprivate func importMenuFromJSON(context: NSManagedObjectContext) {
-        let jsonURL = Bundle.main.url(forResource: "ingredients-data", withExtension: "json")!
-        let jsonData = try! Data(contentsOf: jsonURL)
-        
-        let jsonArray = try! JSONSerialization.jsonObject(with: jsonData, options: [.allowFragments]) as! [[String: Any]]
-        
-        for jsonDictionary in jsonArray {
-            let ingredient = Ingredient(context: container.viewContext)
-            ingredient.name = jsonDictionary["name"] as! String
-            ingredient.price = jsonDictionary["price"] as! Double
-            ingredient.unitCount = jsonDictionary["unitCount"] as! Int32
-            ingredient.unit = jsonDictionary["unit"] as! String
-            ingredient.dateCreated = Date()
-        }
-        do {
-            try context.save()
-        } catch {
-            print(error.localizedDescription)
-        }
+//        let jsonURL = Bundle.main.url(forResource: "ingredients-data", withExtension: "json")!
+//        let jsonData = try! Data(contentsOf: jsonURL)
+//        
+//        let jsonArray = try! JSONSerialization.jsonObject(with: jsonData, options: [.allowFragments]) as! [[String: Any]]
+//        
+//        for jsonDictionary in jsonArray {
+//            let ingredient = Ingredient(context: container.viewContext)
+//            ingredient.name = jsonDictionary["name"] as! String
+//            ingredient.price = jsonDictionary["price"] as! Double
+//            ingredient.unitCount = jsonDictionary["unitCount"] as! Double
+//            ingredient.unit = jsonDictionary["unit"] as! Int16
+//            ingredient.dateCreated = Date()
+//        }
+//        do {
+//            try context.save()
+//        } catch {
+//            print(error.localizedDescription)
+//        }
     }
 }
 

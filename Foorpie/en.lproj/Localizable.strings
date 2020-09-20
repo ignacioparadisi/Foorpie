@@ -38,6 +38,7 @@
 "nameKey" = "Name";
 "priceKey" = "Price";
 "availableCountKey" = "Available Count";
+"availableAmountKey" = "Available Amount";
 "searchKey" = "Search";
 "ingredientsKey" = "Ingredients";
 "kilogramKey" = "Kilogram";

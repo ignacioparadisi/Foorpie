@@ -1,8 +1,8 @@
 //
 //  Recipe+CoreDataProperties.swift
-//  Cottura
+//  Foorpie
 //
-//  Created by Ignacio Paradisi on 8/29/20.
+//  Created by Ignacio Paradisi on 9/20/20.
 //  Copyright © 2020 Ignacio Paradisi. All rights reserved.
 //
 //
@@ -17,14 +17,31 @@ extension Recipe {
         return NSFetchRequest<Recipe>(entityName: "Recipe")
     }
 
-    @NSManaged public var availableCount: Int32
-    @NSManaged public var dateCreated: Date
-    @NSManaged public var imageData: Data?
     @NSManaged public var name: String
+    @NSManaged public var dateCreated: Date?
+    @NSManaged public var imageData: Data?
     @NSManaged public var price: Double
+    @NSManaged public var availableCount: Int32
+    @NSManaged public var ingredients: NSSet?
     @NSManaged public var recipes: NSSet?
     @NSManaged public var recipe: Recipe?
-    @NSManaged public var ingredients: NSSet?
+
+}
+
+// MARK: Generated accessors for ingredients
+extension Recipe {
+
+    @objc(addIngredientsObject:)
+    @NSManaged public func addToIngredients(_ value: Ingredient)
+
+    @objc(removeIngredientsObject:)
+    @NSManaged public func removeFromIngredients(_ value: Ingredient)
+
+    @objc(addIngredients:)
+    @NSManaged public func addToIngredients(_ values: NSSet)
+
+    @objc(removeIngredients:)
+    @NSManaged public func removeFromIngredients(_ values: NSSet)
 
 }
 
@@ -45,19 +62,6 @@ extension Recipe {
 
 }
 
-// MARK: Generated accessors for ingredients
-extension Recipe {
-
-    @objc(addIngredientsObject:)
-    @NSManaged public func addToIngredients(_ value: Ingredient)
-
-    @objc(removeIngredientsObject:)
-    @NSManaged public func removeFromIngredients(_ value: Ingredient)
-
-    @objc(addIngredients:)
-    @NSManaged public func addToIngredients(_ values: NSSet)
-
-    @objc(removeIngredients:)
-    @NSManaged public func removeFromIngredients(_ values: NSSet)
+extension Recipe : Identifiable {
 
 }

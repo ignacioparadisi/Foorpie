@@ -1,8 +1,8 @@
 //
 //  Recipe+CoreDataClass.swift
-//  Cottura
+//  Foorpie
 //
-//  Created by Ignacio Paradisi on 8/29/20.
+//  Created by Ignacio Paradisi on 9/20/20.
 //  Copyright © 2020 Ignacio Paradisi. All rights reserved.
 //
 //

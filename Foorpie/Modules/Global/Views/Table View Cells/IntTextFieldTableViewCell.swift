@@ -29,6 +29,7 @@ class IntTextFieldTableViewCell: TextFieldTableViewCell {
         
         stepper.addTarget(self, action: #selector(stepperValueChanged(_:)), for: .valueChanged)
         textField.addTarget(self, action: #selector(textFieldValueChanged(_:)), for: .editingDidEnd)
+        textField.delegate = self
     }
     
     // Configure the cell with the viewModel's information
@@ -55,5 +56,15 @@ class IntTextFieldTableViewCell: TextFieldTableViewCell {
             stepper.value = 0
         }
         
+    }
+}
+
+extension IntTextFieldTableViewCell: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if !(textField.text?.isEmpty ?? true) || !string.isEmpty {
+            let text = (textField.text ?? "") + string
+            return Int(text) != nil
+        }
+        return true
     }
 }
