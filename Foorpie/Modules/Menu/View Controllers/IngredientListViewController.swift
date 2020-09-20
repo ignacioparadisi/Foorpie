@@ -31,6 +31,8 @@ class IngredientListViewController: BaseViewController {
     }
     
     private func setupTableView() {
+        view.addSubview(tableView)
+        tableView.anchor.edgesToSuperview().activate()
         tableView.tableFooterView = UIView()
         tableView.dataSource = self
         tableView.delegate = self
