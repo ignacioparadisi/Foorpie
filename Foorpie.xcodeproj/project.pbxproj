@@ -181,7 +181,7 @@
 		3250B07624F4AEFD001EE718 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
 		3250B07924F4B7F7001EE718 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		3250B09D24F4C444001EE718 /* Foorpie DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Foorpie DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3250B09E24F4C444001EE718 /* DEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DEV-Info.plist"; path = "/Users/ignacioparadisi/Developer/Projects/Cottura/Foorpie/DEV-Info.plist"; sourceTree = "<absolute>"; };
+		3250B09E24F4C444001EE718 /* DEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DEV-Info.plist"; path = "/Users/ignacioparadisi/Developer/Projects/Foorpie/Foorpie/DEV-Info.plist"; sourceTree = "<absolute>"; };
 		3250B09F24F4C61F001EE718 /* MenuPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPersistenceManager.swift; sourceTree = "<group>"; };
 		325CE51924FA8ECA00E7C88B /* OrderRecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		325CE51A24FA8ECA00E7C88B /* OrderRecipeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderRecipeCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -318,6 +318,20 @@
 				324CAE33250AE33B006A6703 /* IngredientTableViewCell.swift */,
 			);
 			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		3251113325177DF800664ECA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		3251113425177DFC00664ECA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		325CE50F24FA8E1800E7C88B /* Collection View Cells */ = {
@@ -490,6 +504,7 @@
 		327B330A24F4866900B7DCD1 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				3251113425177DFC00664ECA /* Classes */,
 				327B331F24F48C8200B7DCD1 /* Views */,
 				327B331E24F48C7F00B7DCD1 /* View Models */,
 				327B331B24F48C6F00B7DCD1 /* View Controllers */,
@@ -500,6 +515,7 @@
 		327B330B24F4867C00B7DCD1 /* Orders */ = {
 			isa = PBXGroup;
 			children = (
+				3251113325177DF800664ECA /* Classes */,
 				327B331D24F48C7C00B7DCD1 /* Views */,
 				327B331C24F48C7700B7DCD1 /* View Models */,
 				327B331A24F48C6800B7DCD1 /* View Controllers */,
