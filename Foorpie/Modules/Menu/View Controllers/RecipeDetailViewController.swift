@@ -178,6 +178,7 @@ extension RecipeDetailViewController: UITableViewDataSource {
         case .photo:
             let cell = tableView.dequeueReusableCell(for: indexPath) as PhotoPickerTableViewCell
             cell.configure(with: viewModel.image)
+            cell.delegate = self
             return cell
         case .fields:
             let field = viewModel.fieldForRow(at: indexPath)
@@ -235,4 +236,11 @@ extension RecipeDetailViewController: UIImagePickerControllerDelegate, UINavigat
         tableView.reloadRows(at: [IndexPath(row: 0, section: Section.photo.rawValue)], with: .automatic)
     }
     
+}
+
+extension RecipeDetailViewController: PhotoPickerTableViewCellDelegate {
+    func imageDidChange(_ image: UIImage?) {
+        viewModel.image = image
+        viewModel.imageDidChange = true
+    }
 }

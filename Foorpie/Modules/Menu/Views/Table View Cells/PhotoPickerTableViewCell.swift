@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import MobileCoreServices
+
+protocol PhotoPickerTableViewCellDelegate: class {
+    func imageDidChange(_ image: UIImage?)
+}
 
 class PhotoPickerTableViewCell: UITableViewCell, ReusableView {
     
@@ -20,6 +25,8 @@ class PhotoPickerTableViewCell: UITableViewCell, ReusableView {
         button.layer.cornerRadius = 22
         return button
     }()
+    private var dropInteraction: UIDropInteraction!
+    weak var delegate: PhotoPickerTableViewCellDelegate?
     
     // MARK: Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -35,6 +42,8 @@ class PhotoPickerTableViewCell: UITableViewCell, ReusableView {
     // MARK: Functions
     /// Add the components into the view
     private func setup() {
+        dropInteraction = UIDropInteraction(delegate: self)
+        self.addInteraction(dropInteraction)
         selectionStyle = .none
         if let imageView = imageView {
             imageView.anchor
@@ -75,4 +84,30 @@ class PhotoPickerTableViewCell: UITableViewCell, ReusableView {
         popoverController.permittedArrowDirections = .down
     }
     
+}
+
+extension PhotoPickerTableViewCell: UIDropInteractionDelegate {
+    // Defines if an element can be drop or not. In this case we make sure to only drop one image.
+    func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
+        return session.hasItemsConforming(toTypeIdentifiers: [kUTTypeImage as String]) && session.items.count == 1
+    }
+    
+    func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
+        let dropLocation = session.location(in: self)
+        let operation: UIDropOperation!
+        if self.frame.contains(dropLocation) {
+            operation = .copy
+        } else {
+            operation = .cancel
+        }
+        return UIDropProposal(operation: operation)
+    }
+    
+    func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
+        session.loadObjects(ofClass: UIImage.self) { [weak self] imageItems in
+            guard let images = imageItems as? [UIImage] else { return }
+            self?.imageView?.image = images.first
+            self?.delegate?.imageDidChange(images.first)
+        }
+    }
 }

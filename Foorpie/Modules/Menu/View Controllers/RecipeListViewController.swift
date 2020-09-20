@@ -137,7 +137,7 @@ extension RecipeListViewController: UITableViewDelegate {
             showDetailViewController(viewController, sender: nil)
         case .ingredients:
             let ingredientsViewController = IngredientListViewController()
-            navigationController?.pushViewController(ingredientsViewController, animated: true)
+            showDetailViewController(ingredientsViewController, sender: nil)
         }
         
     }
