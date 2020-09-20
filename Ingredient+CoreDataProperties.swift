@@ -17,12 +17,12 @@ extension Ingredient {
         return NSFetchRequest<Ingredient>(entityName: "Ingredient")
     }
 
+    @NSManaged public var availableAmount: Double
     @NSManaged public var dateCreated: Date?
     @NSManaged public var name: String
     @NSManaged public var price: Double
-    @NSManaged public var unitType: Int16
     @NSManaged public var unitAmount: Double
-    @NSManaged public var availableAmount: Double
+    @NSManaged public var unitType: String
     @NSManaged public var recipe: Recipe?
 
 }

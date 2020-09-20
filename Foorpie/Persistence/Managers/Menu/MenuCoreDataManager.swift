@@ -26,7 +26,7 @@ class MenuCoreDataManager: MenuPersistenceManagerRepresentable {
         }
     }
     
-    func create(_ recipe: Recipe, result: (Result<Recipe, Error>) -> Void) {
+    func create(recipe: Recipe, result: (Result<Recipe, Error>) -> Void) {
         recipe.dateCreated = Date()
         do {
             try PersistenceController.shared.saveContext()
@@ -36,7 +36,7 @@ class MenuCoreDataManager: MenuPersistenceManagerRepresentable {
         }
     }
     
-    func update(_ recipe: Recipe, result: (Result<Recipe, Error>) -> Void) {
+    func update(recipe: Recipe, result: (Result<Recipe, Error>) -> Void) {
         do {
             try PersistenceController.shared.saveContext()
             result(.success(recipe))
@@ -45,7 +45,7 @@ class MenuCoreDataManager: MenuPersistenceManagerRepresentable {
         }
     }
     
-    func delete(_ recipe: Recipe, result: (Result<Bool, Error>) -> Void) {
+    func delete(recipe: Recipe, result: (Result<Bool, Error>) -> Void) {
         PersistenceController.shared.container.viewContext.delete(recipe)
         result(.success(true))
     }
@@ -60,5 +60,29 @@ class MenuCoreDataManager: MenuPersistenceManagerRepresentable {
         } catch {
             return result(.failure(error))
         }
+    }
+    
+    func create(ingredient: Ingredient, result: (Result<Ingredient, Error>) -> Void) {
+        ingredient.dateCreated = Date()
+        do {
+            try PersistenceController.shared.saveContext()
+            result(.success(ingredient))
+        } catch {
+            result(.failure(error))
+        }
+    }
+    
+    func update(ingredient: Ingredient, result: (Result<Ingredient, Error>) -> Void) {
+        do {
+            try PersistenceController.shared.saveContext()
+            result(.success(ingredient))
+        } catch {
+            result(.failure(error))
+        }
+    }
+    
+    func delete(ingredient: Ingredient, result: (Result<Bool, Error>) -> Void) {
+        PersistenceController.shared.container.viewContext.delete(ingredient)
+        result(.success(true))
     }
 }

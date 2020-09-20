@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import Combine
 
 class IngredientDetailViewController: BaseViewController {
     
     // MARK: Properties
     private let viewModel: IngredientDetailViewModel
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
-    private var saveButtonItem: UIBarButtonItem?
+    private var saveButtonItem: UIBarButtonItem!
+    /// Set for storing combine subscriptions
+    private var subscriptions = Set<AnyCancellable>()
     
     // MARK: Initializers
     init(viewModel: IngredientDetailViewModel = IngredientDetailViewModel()) {
@@ -28,11 +31,9 @@ class IngredientDetailViewController: BaseViewController {
         super.setupNavigationBar()
         navigationController?.navigationBar.prefersLargeTitles = false
         title = viewModel.title
-        if !viewModel.isEditing {
-            let closeButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissView))
-            navigationItem.leftBarButtonItem = closeButtonItem
-        }
-        saveButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: nil)
+        let closeButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissView))
+        navigationItem.leftBarButtonItem = closeButtonItem
+        saveButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(save))
         navigationItem.rightBarButtonItem = saveButtonItem
     }
     
@@ -55,8 +56,26 @@ class IngredientDetailViewController: BaseViewController {
         tableView.register(UnitTextFieldTableViewCell.self)
     }
     
+    override func setupViewModel() {
+        viewModel.readyToSubmit
+            .assign(to: \.isEnabled, on: saveButtonItem)
+            .store(in: &subscriptions)
+    }
+    
     @objc private func dismissView() {
         dismiss(animated: true)
+    }
+    
+    @objc private func save() {
+        viewModel.save()
+        dismiss(animated: true) { [weak self] in
+            self?.showSuccessAlert()
+        }
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
+    }
+    /// Presents a success alert
+    private func showSuccessAlert() {
+        showAlert(title: Localizable.Title.saved, message: Localizable.Message.savedRecipe, style: .success)
     }
 
 }
@@ -102,6 +121,7 @@ extension IngredientDetailViewController: UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if section != 0 { return nil }
         return "Esta información se utiliza para calcular el precio bruto de cada receta. El precio introducido debe ser el costo de las unidades ingresadas."
     }
 }

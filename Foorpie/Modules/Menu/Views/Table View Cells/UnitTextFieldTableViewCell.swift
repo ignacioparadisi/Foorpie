@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 protocol UnitTextFieldTableViewCellDelegate: class {
     func presentSheet(_ alert: UIAlertController)
@@ -14,13 +15,22 @@ protocol UnitTextFieldTableViewCellDelegate: class {
 
 class UnitTextFieldTableViewCell: TextFieldTableViewCell {
     
-    let unitButton = UIButton()
+    private var subscription: AnyCancellable?
+    private let unitButton = UIButton()
     weak var delegate: UnitTextFieldTableViewCellDelegate?
     
+    func configure(with viewModel: UnitTextFieldCellViewModel) {
+        super.configure(with: viewModel)
+        unitButton.setTitle(viewModel.unitType?.abbreviatedText, for: .normal)
+        subscription = unitButton.titleLabel?
+            .publisher(for: \.text)
+            .replaceNil(with: "u")
+            .map { Ingredient.UnitType(rawValue: $0) }
+            .assign(to: \.unitType, on: viewModel)
+    }
     override func setup() {
         super.setup()
         contentView.addSubview(unitButton)
-        unitButton.setTitle(Ingredient.UnitType.unit.abbreviatedText, for: .normal)
         unitButton.setTitleColor(.label, for: .normal)
         textField.anchor.deactivate()
         textField.anchor
@@ -28,11 +38,12 @@ class UnitTextFieldTableViewCell: TextFieldTableViewCell {
             .leadingToSuperview(constant: horizontalMargin)
             .activate()
         unitButton.anchor
-            .top(to: textField.topAnchor)
-            .bottom(to: textField.bottomAnchor)
+            .top(greaterOrEqual: contentView.topAnchor, constant: verticalMargin)
+            .bottom(greaterOrEqual: contentView.bottomAnchor, constant: -verticalMargin)
+            .centerYToSuperview()
             .trailingToSuperview(constant: -horizontalMargin)
-            .width(constant: 50)
             .activate()
+        unitButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         unitButton.layer.cornerRadius = 10
         
         if #available(iOS 14.0, *) {
@@ -45,6 +56,7 @@ class UnitTextFieldTableViewCell: TextFieldTableViewCell {
         textField.delegate = self
         
         unitButton.backgroundColor = .tertiarySystemFill
+        textField.keyboardType = .decimalPad
     }
     
     private func createMenu() -> UIMenu {

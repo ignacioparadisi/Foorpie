@@ -36,6 +36,7 @@ class IngredientListViewController: BaseViewController {
         tableView.tableFooterView = UIView()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.dragDelegate = self
         tableView.register(IngredientTableViewCell.self)
     }
     private func setupSearchController() {
@@ -55,6 +56,7 @@ class IngredientListViewController: BaseViewController {
         let controller = IngredientDetailViewController()
         present(UINavigationController(rootViewController: controller), animated: true)
     }
+    
 }
 
 extension IngredientListViewController: UITableViewDataSource {
@@ -69,7 +71,21 @@ extension IngredientListViewController: UITableViewDataSource {
 }
 
 extension IngredientListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailViewModel = viewModel.detailForRow(at: indexPath)
+        let viewController = IngredientDetailViewController(viewModel: detailViewModel)
+        present(UINavigationController(rootViewController: viewController), animated: true)
+    }
+}
+
+extension IngredientListViewController: UITableViewDragDelegate {
+    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        return viewModel.dragItemForRow(at: indexPath)
+    }
     
+    func tableView(_ tableView: UITableView, itemsForAddingTo session: UIDragSession, at indexPath: IndexPath, point: CGPoint) -> [UIDragItem] {
+        return viewModel.dragItemForRow(at: indexPath)
+    }
 }
 
 // MARK: - UISearchResultsUpdating
@@ -78,6 +94,7 @@ extension IngredientListViewController: UISearchResultsUpdating {
     /// Updates the table view when the user is filtering the data
     func updateSearchResults(for searchController: UISearchController) {
         viewModel.filter(searchController.searchBar.text)
+        tableView.reloadData()
     }
     
 }

@@ -145,7 +145,7 @@ class RecipeDetailViewModel {
             imageDidChange = false
         }
         if recipe == nil {
-            PersistenceManagerFactory.menuPersistenceManager.create(newRecipe) { [weak self] result in
+            PersistenceManagerFactory.menuPersistenceManager.create(recipe: newRecipe) { [weak self] result in
                 switch result {
                 case .success:
                     self?.delegate?.refresh()
@@ -155,7 +155,7 @@ class RecipeDetailViewModel {
                 }
             }
         } else {
-            PersistenceManagerFactory.menuPersistenceManager.update(newRecipe) { [weak self] result in
+            PersistenceManagerFactory.menuPersistenceManager.update(recipe: newRecipe) { [weak self] result in
                 switch result {
                 case .success(let recipe):
                     self?.recipe = recipe
@@ -171,7 +171,7 @@ class RecipeDetailViewModel {
     /// Deletes the current recipe
     func delete() {
         if let recipe = recipe {
-            PersistenceManagerFactory.menuPersistenceManager.delete(recipe) { [weak self] result in
+            PersistenceManagerFactory.menuPersistenceManager.delete(recipe: recipe) { [weak self] result in
                 switch result {
                 case .success:
                     self?.delegate?.refresh()

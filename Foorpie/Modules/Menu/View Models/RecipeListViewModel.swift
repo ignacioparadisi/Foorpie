@@ -74,7 +74,7 @@ class RecipeListViewModel {
     /// - Parameter indexPath: Index path of the recipe to be deleted
     func deleteRecipe(at indexPath: IndexPath) {
         let recipeToBeDeleted = filteredRecipes[indexPath.row]
-        PersistenceManagerFactory.menuPersistenceManager.delete(recipeToBeDeleted) { [weak self] result in
+        PersistenceManagerFactory.menuPersistenceManager.delete(recipe: recipeToBeDeleted) { [weak self] result in
             switch result {
             case .success:
                 self?.filteredRecipes.remove(at: indexPath.row)
@@ -118,7 +118,7 @@ class RecipeListViewModel {
     /// Creates a drag item from a Recipe
     /// - Parameter indexPath: Index path where the recipe is listed
     /// - Returns: An array with a drag item if the cell can be dragged.
-    func dragItemsForRow(at indexPath: IndexPath) -> [UIDragItem] {
+    func dragItemForRow(at indexPath: IndexPath) -> [UIDragItem] {
         if section(for: indexPath) != .recipes { return [] }
         let recipe = recipes[indexPath.row]
         guard let data = recipe.name.data(using: .utf8) else { return [] }

@@ -139,7 +139,8 @@ extension RecipeListViewController: UITableViewDelegate {
             showDetailViewController(viewController, sender: nil)
         case .ingredients:
             let ingredientsViewController = IngredientListViewController()
-            showDetailViewController(ingredientsViewController, sender: nil)
+            let viewController = UINavigationController(rootViewController: ingredientsViewController)
+            showDetailViewController(viewController, sender: nil)
         }
         
     }
@@ -157,11 +158,11 @@ extension RecipeListViewController: UITableViewDelegate {
 
 extension RecipeListViewController: UITableViewDragDelegate {
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-        return viewModel.dragItemsForRow(at: indexPath)
+        return viewModel.dragItemForRow(at: indexPath)
     }
     
     func tableView(_ tableView: UITableView, itemsForAddingTo session: UIDragSession, at indexPath: IndexPath, point: CGPoint) -> [UIDragItem] {
-        return viewModel.dragItemsForRow(at: indexPath)
+        return viewModel.dragItemForRow(at: indexPath)
     }
 }
 
