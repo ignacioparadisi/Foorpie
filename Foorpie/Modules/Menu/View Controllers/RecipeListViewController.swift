@@ -161,7 +161,19 @@ extension RecipeListViewController: UITableViewDragDelegate {
         let recipe = viewModel.recipeForRow(at: indexPath)
         guard let data = recipe.name.data(using: .utf8) else { return [] }
         let itemProvider = NSItemProvider(item: data as NSData, typeIdentifier: kUTTypePlainText as String)
-        return [UIDragItem(itemProvider: itemProvider)]
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = recipe
+        return [dragItem]
+    }
+    
+    func tableView(_ tableView: UITableView, itemsForAddingTo session: UIDragSession, at indexPath: IndexPath, point: CGPoint) -> [UIDragItem] {
+        if viewModel.section(for: indexPath) != .recipes { return [] }
+        let recipe = viewModel.recipeForRow(at: indexPath)
+        guard let data = recipe.name.data(using: .utf8) else { return [] }
+        let itemProvider = NSItemProvider(item: data as NSData, typeIdentifier: kUTTypePlainText as String)
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = recipe
+        return [dragItem]
     }
 }
 
