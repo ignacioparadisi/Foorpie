@@ -203,7 +203,7 @@
 		3250B07624F4AEFD001EE718 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
 		3250B07924F4B7F7001EE718 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		3250B09D24F4C444001EE718 /* Foorpie DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Foorpie DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3250B09E24F4C444001EE718 /* DEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DEV-Info.plist"; path = "/Users/ignacioparadisi/Developer/Projects/Foorpie/Foorpie/DEV-Info.plist"; sourceTree = "<absolute>"; };
+		3250B09E24F4C444001EE718 /* DEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DEV-Info.plist"; path = "/Users/ignacioparadisi/Developer/Projects/Foorpie/foorpie-ios/Foorpie/DEV-Info.plist"; sourceTree = "<absolute>"; };
 		325CE51924FA8ECA00E7C88B /* OrderRecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		325CE51A24FA8ECA00E7C88B /* OrderRecipeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderRecipeCollectionViewCell.xib; sourceTree = "<group>"; };
 		32628241251801E900E372EB /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };

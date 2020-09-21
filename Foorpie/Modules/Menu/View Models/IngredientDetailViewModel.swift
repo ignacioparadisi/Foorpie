@@ -72,10 +72,6 @@ class IngredientDetailViewModel {
     // MARK: Functions
     /// Creates all fields that will be shown in the table view
     private func setupFields() {
-        var unitAmount: Double?
-        if let ingredient = ingredient {
-            unitAmount = ingredient.availableAmount
-        }
         let nameField = TextFieldCellViewModel(title: Localizable.Text.name, value: ingredient?.name)
         nameField.validations = [.required]
         let priceField = CurrencyTextFieldCellViewModel(title: Localizable.Text.price, placeholder: "$0.00", value: ingredient?.price)
@@ -83,13 +79,13 @@ class IngredientDetailViewModel {
         let unitType = Ingredient.UnitType(rawValue: ingredient?.unitType ?? "u")
         let unitField = UnitTextFieldCellViewModel(title: "Unidad", value: Int(ingredient?.unitAmount ?? 0), unitType: unitType)
         unitField.validations = [.required]
-        let unitAmountField = FloatTextFieldCellViewModel(title: Localizable.Text.availableAmount, value: unitAmount)
-        unitAmountField.validations = [.required]
+//        let unitAmountField = FloatTextFieldCellViewModel(title: Localizable.Text.availableAmount, value: unitAmount)
+//        unitAmountField.validations = [.required]
         fields = [
             nameField,
             priceField,
             unitField,
-            unitAmountField
+  //          unitAmountField
         ]
     }
     func section(for indexPath: IndexPath) -> Section? {
