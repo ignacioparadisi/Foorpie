@@ -14,6 +14,7 @@ class MainTabBarController: UITabBarController {
     private let orderSplitViewController = OrderSplitViewController()
     /// View controller for listing recipes
     private let menuSplitViewController = MenuSplitViewController()
+    private let settingsViewController = UINavigationController(rootViewController: SettingsViewController())
     
     // MARK: Functions
     override func viewDidLoad() {
@@ -24,10 +25,12 @@ class MainTabBarController: UITabBarController {
         } else {
             menuSplitViewController.tabBarItem = UITabBarItem(title: Localizable.Title.menu, image: .docPlaintext, tag: 1)
         }
+        settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: .gearshape, tag: 2)
         menuSplitViewController.preferredDisplayMode = .allVisible
         viewControllers = [
             orderSplitViewController,
-            menuSplitViewController
+            menuSplitViewController,
+            settingsViewController
         ]
     }
 }

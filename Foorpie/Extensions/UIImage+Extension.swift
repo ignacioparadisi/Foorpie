@@ -16,6 +16,7 @@ extension UIImage {
     static var cartFill: UIImage? = UIImage(systemName: "cart.fill")
     static var checkmarkCircle: UIImage? = UIImage(systemName: "checkmark.circle")
     static var docPlaintext: UIImage? = UIImage(systemName: "doc.plaintext")
+    static var gearshape: UIImage? = UIImage(systemName: "gearshape")
     static var photo: UIImage? = UIImage(systemName: "photo")
     static var photoOnRectangle: UIImage? = UIImage(systemName: "photo.on.rectangle")
     static var trash: UIImage? = UIImage(systemName: "trash")

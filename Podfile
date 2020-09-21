@@ -18,11 +18,3 @@ target 'Foorpie' do
   end
 
 end
-
-target 'Foorpie DEV' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for Foorpie DEV
-
-end
