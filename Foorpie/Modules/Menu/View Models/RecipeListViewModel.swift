@@ -127,7 +127,36 @@ class RecipeListViewModel {
         dragItem.localObject = recipe
         return [dragItem]
     }
+    
+    func addDroppedItem(_ coordinator: UITableViewDropCoordinator) {
+        guard let indexPath = coordinator.destinationIndexPath else { return }
+        if section(for: indexPath) == .ingredients { return }
+        coordinator.session.loadObjects(ofClass: NSString.self) { [weak self] items in
+            guard let strings = items as? [String] else { return }
+            var uuids: [UUID] = []
+            for string in strings where string.starts(with: "ingredient") {
+                let uuidString = String(describing: string.split(separator: ":")[1])
+                if let uuid = UUID(uuidString: uuidString) {
+                    uuids.append(uuid)
+                }
+            }
+            PersistenceManagerFactory.menuPersistenceManager.fetchIngredient(by: uuids) { result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let ingredients):
+                    let recipe = self.recipes[indexPath.row]
+                    recipe.addToIngredients(NSSet(array: ingredients))
+                    PersistenceManagerFactory.menuPersistenceManager.update(recipe: recipe) { _ in
+                        
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
 }
+
 
 // MARK: - RecipeDetailViewModelDelegate
 extension RecipeListViewModel: RecipeDetailViewModelDelegate {

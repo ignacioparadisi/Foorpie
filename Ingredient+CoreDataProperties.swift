@@ -22,7 +22,8 @@ extension Ingredient {
     @NSManaged public var name: String
     @NSManaged public var price: Double
     @NSManaged public var unitAmount: Double
-    @NSManaged public var unitType: String
+    @NSManaged public var unitType: String?
+    @NSManaged public var uuid: UUID
     @NSManaged public var recipe: Recipe?
 
 }

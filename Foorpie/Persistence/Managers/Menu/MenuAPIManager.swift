@@ -25,6 +25,8 @@ class MenuAPIManager: MenuPersistenceManagerRepresentable {
     // MARK: - Ingredients
     func fetchIngredients(result: (Result<[Ingredient], Error>) -> Void) {
     }
+    func fetchIngredient(by uuids: [UUID], result: (Result<[Ingredient], Error>) -> Void) {
+    }
     func create(ingredient: Ingredient, result: (Result<Ingredient, Error>) -> Void) {
     }
     func update(ingredient: Ingredient, result: (Result<Ingredient, Error>) -> Void) {

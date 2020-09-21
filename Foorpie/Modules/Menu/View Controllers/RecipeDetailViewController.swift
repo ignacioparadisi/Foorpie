@@ -12,12 +12,6 @@ import Combine
 class RecipeDetailViewController: UIViewController {
     
     // MARK: Properties
-    /// Sections in the Table View
-    enum Section: Int, CaseIterable {
-        case photo
-        case fields
-        case delete
-    }
     
     /// Table View to display the fields
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -69,12 +63,17 @@ class RecipeDetailViewController: UIViewController {
         tableView.register(CurrencyTextFieldTableViewCell.self)
         tableView.register(IntTextFieldTableViewCell.self)
         tableView.register(ButtonTableViewCell.self)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
     }
     
     /// Implement all view model closures and subscriptions
     private func setupViewModel() {
-        viewModel.refresh = { [weak self] in
-            self?.tableView.reloadData()
+        viewModel.refresh = { [weak self] section in
+            if let section = section {
+                self?.tableView.reloadSections(IndexSet(integer: section), with: .automatic)
+            } else {
+                self?.tableView.reloadData()
+            }
         }
         viewModel.readyToSubmit
             .assign(to: \.isEnabled, on: saveBarButton)
@@ -172,8 +171,12 @@ extension RecipeDetailViewController: UITableViewDataSource {
         return viewModel.numberOfRows(in: section)
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.title(for: section)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let section = Section(rawValue: indexPath.section) else { return UITableViewCell() }
+        guard let section = viewModel.section(at: indexPath) else { return UITableViewCell() }
         switch section {
         case .photo:
             let cell = tableView.dequeueReusableCell(for: indexPath) as PhotoPickerTableViewCell
@@ -198,11 +201,22 @@ extension RecipeDetailViewController: UITableViewDataSource {
             default:
                 return UITableViewCell()
             }
+        case .ingredients:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+            cell.textLabel?.text = viewModel.ingredientsForRow(at: indexPath)
+            return cell
         case .delete:
             let cell = tableView.dequeueReusableCell(for: indexPath) as ButtonTableViewCell
             cell.configure(with: Localizable.Button.delete, style: .destructive)
             return cell
+        default:
+            return UITableViewCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        guard let section = viewModel.section(at: indexPath) else { return false }
+        return section == .ingredients || section == .recipes
     }
     
 }
@@ -211,7 +225,7 @@ extension RecipeDetailViewController: UITableViewDataSource {
 extension RecipeDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let section = Section(rawValue: indexPath.section) else { return }
+        guard let section = viewModel.section(at: indexPath) else { return }
         switch section {
         case .photo:
             if let cell = tableView.cellForRow(at: indexPath) as? PhotoPickerTableViewCell {
@@ -222,6 +236,14 @@ extension RecipeDetailViewController: UITableViewDelegate {
             cell?.becomeFirstResponder()
         case .delete:
             showDeleteAlert()
+        default:
+            break
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
         }
     }
     
@@ -235,7 +257,7 @@ extension RecipeDetailViewController: UIImagePickerControllerDelegate, UINavigat
         guard let image = info[.originalImage] as? UIImage else { return }
         viewModel.image = image
         viewModel.imageDidChange = true
-        tableView.reloadRows(at: [IndexPath(row: 0, section: Section.photo.rawValue)], with: .automatic)
+        tableView.reloadRows(at: [IndexPath(row: 0, section: RecipeDetailViewModel.Section.photo.rawValue)], with: .automatic)
     }
     
 }

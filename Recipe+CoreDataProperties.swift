@@ -17,14 +17,15 @@ extension Recipe {
         return NSFetchRequest<Recipe>(entityName: "Recipe")
     }
 
-    @NSManaged public var name: String
+    @NSManaged public var availableCount: Int32
     @NSManaged public var dateCreated: Date?
     @NSManaged public var imageData: Data?
+    @NSManaged public var name: String
     @NSManaged public var price: Double
-    @NSManaged public var availableCount: Int32
+    @NSManaged public var uuid: UUID
     @NSManaged public var ingredients: NSSet?
-    @NSManaged public var recipes: NSSet?
     @NSManaged public var recipe: Recipe?
+    @NSManaged public var recipes: NSSet?
 
 }
 

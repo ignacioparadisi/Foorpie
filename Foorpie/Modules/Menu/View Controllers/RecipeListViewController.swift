@@ -53,6 +53,7 @@ class RecipeListViewController: BaseViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.dragDelegate = self
+        tableView.dropDelegate = self
         tableView.tableFooterView = UIView()
         tableView.register(RecipeTableViewCell.self)
         tableView.register(ButtonTableViewCell.self)
@@ -163,6 +164,12 @@ extension RecipeListViewController: UITableViewDragDelegate {
     
     func tableView(_ tableView: UITableView, itemsForAddingTo session: UIDragSession, at indexPath: IndexPath, point: CGPoint) -> [UIDragItem] {
         return viewModel.dragItemForRow(at: indexPath)
+    }
+}
+
+extension RecipeListViewController: UITableViewDropDelegate {
+    func tableView(_ tableView: UITableView, performDropWith coordinator: UITableViewDropCoordinator) {
+        viewModel.addDroppedItem(coordinator)
     }
 }
 

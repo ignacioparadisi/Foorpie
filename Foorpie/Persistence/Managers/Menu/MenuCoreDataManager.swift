@@ -27,6 +27,7 @@ class MenuCoreDataManager: MenuPersistenceManagerRepresentable {
     }
     
     func create(recipe: Recipe, result: (Result<Recipe, Error>) -> Void) {
+        recipe.uuid = UUID()
         recipe.dateCreated = Date()
         do {
             try PersistenceController.shared.saveContext()
@@ -62,7 +63,20 @@ class MenuCoreDataManager: MenuPersistenceManagerRepresentable {
         }
     }
     
+    func fetchIngredient(by uuids: [UUID], result: (Result<[Ingredient], Error>) -> Void) {
+        let fetchRequest: NSFetchRequest<Ingredient> = Ingredient.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Ingredient.name), ascending: true)]
+        fetchRequest.predicate = NSPredicate(format: "%K IN %@", #keyPath(Ingredient.uuid), uuids)
+        do {
+            let ingredients = try PersistenceController.shared.container.viewContext.fetch(fetchRequest)
+            return result(.success(ingredients))
+        } catch {
+            return result(.failure(error))
+        }
+    }
+    
     func create(ingredient: Ingredient, result: (Result<Ingredient, Error>) -> Void) {
+        ingredient.uuid = UUID()
         ingredient.dateCreated = Date()
         do {
             try PersistenceController.shared.saveContext()

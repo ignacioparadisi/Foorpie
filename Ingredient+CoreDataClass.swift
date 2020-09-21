@@ -16,23 +16,50 @@ var ingredientTypeIdentifier = "com.ignacioparadisi.Foorpie.Ingredient"
 @objc(Ingredient)
 public class Ingredient: NSManagedObject {
     
-    // MARK: Initializers
-    /// Initializer for the Decodable protocol
+//    required convenience init(name: String) {
+//        self.init(context: PersistenceController.shared.container.viewContext)
+//        self.name = name
+//    }
+//
+//    required convenience init(_ ingredient: Ingredient) {
+//        self.init(context: PersistenceController.shared.container.viewContext)
+//        self.name = ingredient.name
+//        self.price = ingredient.price
+//        self.availableAmount = ingredient.availableAmount
+//        self.unitType = ingredient.unitType
+//        self.unitAmount = ingredient.unitAmount
+//    }
+//
+//    public func encode(to encoder: Encoder) throws {
+//        var container = encoder.container(keyedBy: CodingKeys.self)
+//        do {
+//            try container.encode(name, forKey: .name)
+//            try container.encode(availableAmount, forKey: .availableAmount)
+//            try container.encode(price, forKey: .price)
+//            try container.encode(unitAmount, forKey: .unitAmount)
+//            try container.encode(unitType, forKey: .unitType)
+//            try container.encode(dateCreated, forKey: .dateCreated)
+//        } catch {
+//            print(error.localizedDescription)
+//        }
+//    }
+//
+//    // MARK: Initializers
+//    /// Initializer for the Decodable protocol
 //    required public convenience init(from decoder: Decoder) throws {
-//        guard let contextUserInfoKey = CodingUserInfoKey.managedObjectContext,
+//        guard let contextUserInfoKey = CodingUserInfoKey(rawValue: "managedObjectContext"), // CodingUserInfoKey.managedObjectContext,
 //            let context = decoder.userInfo[contextUserInfoKey] as? NSManagedObjectContext,
-//            let entity = NSEntityDescription.entity(forEntityName: "InspectionPointAI", in: context) else {
-//                fatalError("Failed to decode InspectionPointAI")
+//            let entity = NSEntityDescription.entity(forEntityName: "Ingredient", in: context) else {
+//                fatalError("Failed to decode Ingredient")
 //        }
 //        self.init(entity: entity, insertInto: context)
 //        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        self.question = try container.decodeIfPresent(String.self, forKey: .question)
-//        self.fieldId = try container.decodeIfPresent(Int32.self, forKey: .fieldId) ?? 0
-//        self.information = try container.decodeIfPresent(String.self, forKey: .information)
-//        self.type = try container.decodeIfPresent(String.self, forKey: .type)
-//        self.order = try container.decodeIfPresent(Int32.self, forKey: .order) ?? 0
-//        self.whoActiveRepair = try container.decodeIfPresent(Int32.self, forKey: .whoActiveRepair) ?? 0
-//        self.offenderType = try container.decodeIfPresent(String.self, forKey: .offenderType)
+//        self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
+//        self.availableAmount = try container.decodeIfPresent(Double.self, forKey: .availableAmount) ?? 0
+//        self.price = try container.decodeIfPresent(Double.self, forKey: .price) ?? 0
+//        self.unitAmount = try container.decodeIfPresent(Double.self, forKey: .unitAmount) ?? 0
+//        self.unitType = try container.decodeIfPresent(String.self, forKey: .unitType) ?? ""
+//        self.dateCreated = try container.decodeIfPresent(Date.self, forKey: .dateCreated)
 //    }
 //
 //    enum CodingKeys: String, CodingKey {
@@ -42,7 +69,6 @@ public class Ingredient: NSManagedObject {
 //        case price
 //        case unitAmount
 //        case unitType
-//        case recipe
 //    }
     
 }
@@ -51,7 +77,7 @@ public class Ingredient: NSManagedObject {
 //    public static var writableTypeIdentifiersForItemProvider: [String] {
 //        return [ingredientTypeIdentifier, kUTTypePlainText as String]
 //    }
-//    
+//
 //    public func loadData(withTypeIdentifier typeIdentifier: String, forItemProviderCompletionHandler completionHandler: @escaping (Data?, Error?) -> Void) -> Progress? {
 //        if typeIdentifier == kUTTypePlainText as String {
 //            completionHandler(name.data(using: .utf8), nil)
@@ -61,7 +87,7 @@ public class Ingredient: NSManagedObject {
 //                try archiver.encodeEncodable(self, forKey: NSKeyedArchiveRootObjectKey)
 //                archiver.finishEncoding()
 //                let data = archiver.encodedData
-//                
+//
 //                completionHandler(data, nil)
 //              } catch {
 //                completionHandler(nil, nil)
@@ -69,8 +95,44 @@ public class Ingredient: NSManagedObject {
 //        }
 //        return nil
 //    }
-//    
-//    
+//}
+//
+//enum EncodingError: Error {
+//  case invalidData
+//}
+//
+//extension Ingredient: NSItemProviderReading {
+//    // 1
+//    public static var readableTypeIdentifiersForItemProvider: [String] {
+//        return [ingredientTypeIdentifier,
+//                kUTTypePlainText as String]
+//    }
+//    // 2
+//    public static func object(withItemProviderData data: Data,
+//                              typeIdentifier: String) throws -> Self {
+//        if typeIdentifier == kUTTypePlainText as String {
+//            // 3
+//            guard let name = String(data: data, encoding: .utf8) else {
+//                throw EncodingError.invalidData
+//            }
+//            return self.init(
+//                name: name)
+//        } else if typeIdentifier == ingredientTypeIdentifier {
+//            do {
+//                let unarchiver = try NSKeyedUnarchiver(forReadingFrom: data)
+//                guard let ingredient =
+//                        try unarchiver.decodeTopLevelDecodable(
+//                            Ingredient.self, forKey: NSKeyedArchiveRootObjectKey) else {
+//                    throw EncodingError.invalidData
+//                }
+//                return self.init(ingredient)
+//            } catch {
+//                throw EncodingError.invalidData
+//            }
+//        } else {
+//            throw EncodingError.invalidData
+//        }
+//    }
 //}
 
 extension Ingredient {

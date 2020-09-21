@@ -86,6 +86,11 @@ extension IngredientListViewController: UITableViewDragDelegate {
     func tableView(_ tableView: UITableView, itemsForAddingTo session: UIDragSession, at indexPath: IndexPath, point: CGPoint) -> [UIDragItem] {
         return viewModel.dragItemForRow(at: indexPath)
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // TODO: Delete ingredient
+        }
+    }
 }
 
 // MARK: - UISearchResultsUpdating

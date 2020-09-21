@@ -103,7 +103,7 @@ class IngredientListViewModel {
     func dragItemForRow(at indexPath: IndexPath) -> [UIDragItem] {
         if indexPath.section != 0 { return [] }
         let ingredient = ingredients[indexPath.row]
-        guard let data = ingredient.name.data(using: .utf8) else { return [] }
+        guard let data = "ingredient:\(ingredient.uuid.uuidString)".data(using: .utf8) else { return [] }
         let itemProvider = NSItemProvider(item: data as NSData, typeIdentifier: kUTTypePlainText as String)
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = ingredient

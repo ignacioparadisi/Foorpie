@@ -21,18 +21,30 @@ protocol RecipeDetailViewModelDelegate {
 }
 
 class RecipeDetailViewModel {
+    /// Sections in the Table View
+    enum Section: Int, CaseIterable {
+        case photo
+        case fields
+        case recipes
+        case ingredients
+        case delete
+    }
     /// Recipe to be edited
     private var recipe: Recipe?
     /// Fields to be shown in the table view
     private var fields: [FieldViewModel] = []
     /// Called to reload the table view data
-    var refresh: (() -> Void)?
+    var refresh: ((Int?) -> Void)?
     /// Handle error in UI when an error happens
     var errorHandler: ((String) -> Void)?
     /// Delegate for notifying when a recipe is created or deleted
     var delegate: RecipeDetailViewModelDelegate?
     /// Image to be displayed in the image field
     var image: UIImage?
+    var ingredients: [Ingredient] {
+        guard let ingredients = recipe?.ingredients else { return [] }
+        return ingredients.allObjects as? [Ingredient] ?? []
+    }
     /// Defines whether the image was changed or not
     @Published var imageDidChange: Bool = false
     /// Defined whether the user is editing an existing recipe or creating a new one
@@ -42,9 +54,9 @@ class RecipeDetailViewModel {
     /// Number of sections fo the table view
     var numberOfSections: Int {
         if isEditing {
-            return RecipeDetailViewController.Section.allCases.count
+            return Section.allCases.count
         } else {
-            return RecipeDetailViewController.Section.allCases.count - 1
+            return Section.allCases.count - 1
         }
     }
     /// Title for the navigation bar
@@ -88,15 +100,35 @@ class RecipeDetailViewModel {
     /// - Parameter section: Section where the rows belong
     /// - Returns: Number of rows for a section
     func numberOfRows(in section: Int) -> Int {
-        guard let section = RecipeDetailViewController.Section(rawValue: section) else { return 0 }
+        guard let section = Section(rawValue: section) else { return 0 }
         switch section {
         case .photo:
             return 1
         case .fields:
             return fields.count
         case .delete:
-            return isEditing ? 1: 0
+            return isEditing ? 1 : 0
+        case .ingredients:
+            return (recipe?.ingredients?.count ?? 0) + 1
+        default:
+            return 0
         }
+    }
+    
+    func title(for section: Int) -> String? {
+        guard let section = Section(rawValue: section) else { return nil }
+        switch section {
+        case .recipes:
+            return "Recetas"
+        case .ingredients:
+            return "Ingredientes"
+        default:
+            return nil
+        }
+    }
+    
+    func section(at indexPath: IndexPath) -> Section? {
+        return Section(rawValue: indexPath.section)
     }
     
     /// Field to be displayed at a specific row
@@ -105,6 +137,12 @@ class RecipeDetailViewModel {
     func fieldForRow(at indexPath: IndexPath) -> FieldViewModel {
         let field = fields[indexPath.row]
         return field
+    }
+    
+    func ingredientsForRow(at indexPath: IndexPath) -> String? {
+        if indexPath.row >= ingredients.count { return nil }
+        let ingredient = ingredients[indexPath.row]
+        return ingredient.name
     }
     
     /// Creates all fields that will be shown in the table view
@@ -189,11 +227,10 @@ class RecipeDetailViewModel {
         imageDidChange = true
         do {
             try PersistenceController.shared.saveContext()
-            refresh?()
+            refresh?(Section.photo.rawValue)
             delegate?.refresh()
         } catch {
             errorHandler?(Localizable.Error.resetImage)
         }
     }
-    
 }
