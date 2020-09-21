@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14A3815B000C1CF93FDB480D /* Pods_Foorpie_FoorpieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF78F377816673893CA980C /* Pods_Foorpie_FoorpieUITests.framework */; };
 		3202C8CD24FBE9730076B0FA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202C8CC24FBE9730076B0FA /* UIView+Extension.swift */; };
 		3202C8D224FC0A820076B0FA /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202C8D124FC0A820076B0FA /* CurrencyTextField.swift */; };
 		3202C8D324FC0A820076B0FA /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202C8D124FC0A820076B0FA /* CurrencyTextField.swift */; };
@@ -99,8 +100,8 @@
 		3275C6DE24F5599D004691EA /* FieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6DC24F5599D004691EA /* FieldViewModel.swift */; };
 		3275C6E024F559B4004691EA /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6DF24F559B4004691EA /* TextFieldCellViewModel.swift */; };
 		3275C6E124F559B4004691EA /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6DF24F559B4004691EA /* TextFieldCellViewModel.swift */; };
-		3275C6E424F55DD1004691EA /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3275C6E324F55DD1004691EA /* IQKeyboardManagerSwift */; };
-		3275C6E724F55DF0004691EA /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3275C6E624F55DF0004691EA /* IQKeyboardManagerSwift */; };
+		3275C6E424F55DD1004691EA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 3275C6E324F55DD1004691EA /* SwiftPackageProductDependency */; };
+		3275C6E724F55DF0004691EA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 3275C6E624F55DF0004691EA /* SwiftPackageProductDependency */; };
 		3275C6E924F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6E824F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift */; };
 		3275C6EA24F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6E824F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift */; };
 		3275C6EC24F55F96004691EA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6EB24F55F96004691EA /* String+Extension.swift */; };
@@ -154,6 +155,9 @@
 		32DA6BCF24F743FA0080DD56 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6BCD24F7431C0080DD56 /* CustomAlertViewController.swift */; };
 		32DA6BD424F75D8B0080DD56 /* NoItemSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6BD324F75D8B0080DD56 /* NoItemSelectedViewController.swift */; };
 		32DA6BD524F75D8B0080DD56 /* NoItemSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6BD324F75D8B0080DD56 /* NoItemSelectedViewController.swift */; };
+		473559E2822CF0F4FFFBECD4 /* Pods_Foorpie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374BC301F05832E9885FAACB /* Pods_Foorpie.framework */; };
+		562CF7810FC2778FC27D04B0 /* Pods_FoorpieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D529183EB31AF22299ABA6 /* Pods_FoorpieTests.framework */; };
+		74941E6441B84B5D4D7AA172 /* Pods_Foorpie_DEV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066210FF6A06B783FC9D2B3E /* Pods_Foorpie_DEV.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +178,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		066210FF6A06B783FC9D2B3E /* Pods_Foorpie_DEV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foorpie_DEV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2312FE7B61C845E2358C115D /* Pods-Foorpie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foorpie.release.xcconfig"; path = "Target Support Files/Pods-Foorpie/Pods-Foorpie.release.xcconfig"; sourceTree = "<group>"; };
+		29D529183EB31AF22299ABA6 /* Pods_FoorpieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoorpieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3202C8CC24FBE9730076B0FA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3202C8D124FC0A820076B0FA /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
 		3202C8DA24FC50AA0076B0FA /* ingredients-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "ingredients-data.json"; sourceTree = "<group>"; };
@@ -260,6 +267,15 @@
 		32C706D524FB309D00E86728 /* IngredientDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetailViewController.swift; sourceTree = "<group>"; };
 		32DA6BCD24F7431C0080DD56 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		32DA6BD324F75D8B0080DD56 /* NoItemSelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemSelectedViewController.swift; sourceTree = "<group>"; };
+		3434A3B436E6B6B21F3F8F0B /* Pods-FoorpieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoorpieTests.release.xcconfig"; path = "Target Support Files/Pods-FoorpieTests/Pods-FoorpieTests.release.xcconfig"; sourceTree = "<group>"; };
+		374BC301F05832E9885FAACB /* Pods_Foorpie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foorpie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A908FFEF8B67606468329E5 /* Pods-Foorpie-FoorpieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foorpie-FoorpieUITests.debug.xcconfig"; path = "Target Support Files/Pods-Foorpie-FoorpieUITests/Pods-Foorpie-FoorpieUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		80C2B6DB002640A6E50B9CCC /* Pods-FoorpieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoorpieTests.debug.xcconfig"; path = "Target Support Files/Pods-FoorpieTests/Pods-FoorpieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C3D1F9E3F46900E52C6B1A1B /* Pods-Foorpie DEV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foorpie DEV.release.xcconfig"; path = "Target Support Files/Pods-Foorpie DEV/Pods-Foorpie DEV.release.xcconfig"; sourceTree = "<group>"; };
+		C8BEA33587AD25A1C2073FD5 /* Pods-Foorpie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foorpie.debug.xcconfig"; path = "Target Support Files/Pods-Foorpie/Pods-Foorpie.debug.xcconfig"; sourceTree = "<group>"; };
+		CEF78F377816673893CA980C /* Pods_Foorpie_FoorpieUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foorpie_FoorpieUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAC87067597F942F4DCE6654 /* Pods-Foorpie DEV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foorpie DEV.debug.xcconfig"; path = "Target Support Files/Pods-Foorpie DEV/Pods-Foorpie DEV.debug.xcconfig"; sourceTree = "<group>"; };
+		ED123C8EAAA00E17444C951E /* Pods-Foorpie-FoorpieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foorpie-FoorpieUITests.release.xcconfig"; path = "Target Support Files/Pods-Foorpie-FoorpieUITests/Pods-Foorpie-FoorpieUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,7 +283,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3275C6E724F55DF0004691EA /* IQKeyboardManagerSwift in Frameworks */,
+				3275C6E724F55DF0004691EA /* BuildFile in Frameworks */,
+				74941E6441B84B5D4D7AA172 /* Pods_Foorpie_DEV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,8 +292,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3275C6E424F55DD1004691EA /* IQKeyboardManagerSwift in Frameworks */,
+				3275C6E424F55DD1004691EA /* BuildFile in Frameworks */,
 				32628242251801E900E372EB /* CloudKit.framework in Frameworks */,
+				473559E2822CF0F4FFFBECD4 /* Pods_Foorpie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +302,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				562CF7810FC2778FC27D04B0 /* Pods_FoorpieTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +310,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A3815B000C1CF93FDB480D /* Pods_Foorpie_FoorpieUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +446,10 @@
 			isa = PBXGroup;
 			children = (
 				32628241251801E900E372EB /* CloudKit.framework */,
+				374BC301F05832E9885FAACB /* Pods_Foorpie.framework */,
+				066210FF6A06B783FC9D2B3E /* Pods_Foorpie_DEV.framework */,
+				CEF78F377816673893CA980C /* Pods_Foorpie_FoorpieUITests.framework */,
+				29D529183EB31AF22299ABA6 /* Pods_FoorpieTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -438,6 +462,7 @@
 				327B32F824F4862800B7DCD1 /* FoorpieUITests */,
 				327B32D224F4862700B7DCD1 /* Products */,
 				3275C6E524F55DF0004691EA /* Frameworks */,
+				BC5DE236F6726239039EDD00 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -650,6 +675,22 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		BC5DE236F6726239039EDD00 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C8BEA33587AD25A1C2073FD5 /* Pods-Foorpie.debug.xcconfig */,
+				2312FE7B61C845E2358C115D /* Pods-Foorpie.release.xcconfig */,
+				EAC87067597F942F4DCE6654 /* Pods-Foorpie DEV.debug.xcconfig */,
+				C3D1F9E3F46900E52C6B1A1B /* Pods-Foorpie DEV.release.xcconfig */,
+				7A908FFEF8B67606468329E5 /* Pods-Foorpie-FoorpieUITests.debug.xcconfig */,
+				ED123C8EAAA00E17444C951E /* Pods-Foorpie-FoorpieUITests.release.xcconfig */,
+				80C2B6DB002640A6E50B9CCC /* Pods-FoorpieTests.debug.xcconfig */,
+				3434A3B436E6B6B21F3F8F0B /* Pods-FoorpieTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -657,6 +698,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3250B09A24F4C444001EE718 /* Build configuration list for PBXNativeTarget "Foorpie DEV" */;
 			buildPhases = (
+				84F0D70A2141455FE0657224 /* [CP] Check Pods Manifest.lock */,
 				3250B08024F4C444001EE718 /* Sources */,
 				3250B09224F4C444001EE718 /* Frameworks */,
 				3250B09324F4C444001EE718 /* Resources */,
@@ -667,7 +709,7 @@
 			);
 			name = "Foorpie DEV";
 			packageProductDependencies = (
-				3275C6E624F55DF0004691EA /* IQKeyboardManagerSwift */,
+				3275C6E624F55DF0004691EA /* SwiftPackageProductDependency */,
 			);
 			productName = Cottura;
 			productReference = 3250B09D24F4C444001EE718 /* Foorpie DEV.app */;
@@ -677,9 +719,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 327B32FE24F4862800B7DCD1 /* Build configuration list for PBXNativeTarget "Foorpie" */;
 			buildPhases = (
+				FB73987B3A04161532732781 /* [CP] Check Pods Manifest.lock */,
 				327B32CD24F4862700B7DCD1 /* Sources */,
 				327B32CE24F4862700B7DCD1 /* Frameworks */,
 				327B32CF24F4862700B7DCD1 /* Resources */,
+				AAA2B0AD92EDFD786D78C047 /* [CP] Embed Pods Frameworks */,
+				F14647E3DF6F242A4A106879 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -687,7 +732,7 @@
 			);
 			name = Foorpie;
 			packageProductDependencies = (
-				3275C6E324F55DD1004691EA /* IQKeyboardManagerSwift */,
+				3275C6E324F55DD1004691EA /* SwiftPackageProductDependency */,
 			);
 			productName = Cottura;
 			productReference = 327B32D124F4862700B7DCD1 /* Foorpie.app */;
@@ -697,6 +742,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 327B330124F4862800B7DCD1 /* Build configuration list for PBXNativeTarget "FoorpieTests" */;
 			buildPhases = (
+				F9E2A71648CD5DEC588C7950 /* [CP] Check Pods Manifest.lock */,
 				327B32E624F4862800B7DCD1 /* Sources */,
 				327B32E724F4862800B7DCD1 /* Frameworks */,
 				327B32E824F4862800B7DCD1 /* Resources */,
@@ -715,9 +761,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 327B330424F4862800B7DCD1 /* Build configuration list for PBXNativeTarget "FoorpieUITests" */;
 			buildPhases = (
+				9FB30AFC3F3F54E75A58D7BC /* [CP] Check Pods Manifest.lock */,
 				327B32F124F4862800B7DCD1 /* Sources */,
 				327B32F224F4862800B7DCD1 /* Frameworks */,
 				327B32F324F4862800B7DCD1 /* Resources */,
+				C2D15B3D86D38E4843CF9CE2 /* [CP] Embed Pods Frameworks */,
+				AE0AE92E951D0DCC6F509BF3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -763,7 +812,7 @@
 			);
 			mainGroup = 327B32C824F4862700B7DCD1;
 			packageReferences = (
-				3275C6E224F55DD1004691EA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				3275C6E224F55DD1004691EA /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 327B32D224F4862700B7DCD1 /* Products */;
 			projectDirPath = "";
@@ -825,6 +874,165 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84F0D70A2141455FE0657224 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Foorpie DEV-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FB30AFC3F3F54E75A58D7BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Foorpie-FoorpieUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAA2B0AD92EDFD786D78C047 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Foorpie/Pods-Foorpie-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Foorpie/Pods-Foorpie-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Foorpie/Pods-Foorpie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE0AE92E951D0DCC6F509BF3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Foorpie-FoorpieUITests/Pods-Foorpie-FoorpieUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Foorpie-FoorpieUITests/Pods-Foorpie-FoorpieUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Foorpie-FoorpieUITests/Pods-Foorpie-FoorpieUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2D15B3D86D38E4843CF9CE2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Foorpie-FoorpieUITests/Pods-Foorpie-FoorpieUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Foorpie-FoorpieUITests/Pods-Foorpie-FoorpieUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Foorpie-FoorpieUITests/Pods-Foorpie-FoorpieUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F14647E3DF6F242A4A106879 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Foorpie/Pods-Foorpie-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Foorpie/Pods-Foorpie-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Foorpie/Pods-Foorpie-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9E2A71648CD5DEC588C7950 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoorpieTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB73987B3A04161532732781 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Foorpie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3250B08024F4C444001EE718 /* Sources */ = {
@@ -1021,6 +1229,7 @@
 /* Begin XCBuildConfiguration section */
 		3250B09B24F4C444001EE718 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAC87067597F942F4DCE6654 /* Pods-Foorpie DEV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-DEV";
 				CODE_SIGN_ENTITLEMENTS = "";
@@ -1042,6 +1251,7 @@
 		};
 		3250B09C24F4C444001EE718 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3D1F9E3F46900E52C6B1A1B /* Pods-Foorpie DEV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-DEV";
 				CODE_SIGN_ENTITLEMENTS = "";
@@ -1179,6 +1389,7 @@
 		};
 		327B32FF24F4862800B7DCD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8BEA33587AD25A1C2073FD5 /* Pods-Foorpie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Foorpie/Foorpie.entitlements;
@@ -1201,6 +1412,7 @@
 		};
 		327B330024F4862800B7DCD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2312FE7B61C845E2358C115D /* Pods-Foorpie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Foorpie/Foorpie.entitlements;
@@ -1223,6 +1435,7 @@
 		};
 		327B330224F4862800B7DCD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80C2B6DB002640A6E50B9CCC /* Pods-FoorpieTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1245,6 +1458,7 @@
 		};
 		327B330324F4862800B7DCD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3434A3B436E6B6B21F3F8F0B /* Pods-FoorpieTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1267,6 +1481,7 @@
 		};
 		327B330524F4862800B7DCD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A908FFEF8B67606468329E5 /* Pods-Foorpie-FoorpieUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1287,6 +1502,7 @@
 		};
 		327B330624F4862800B7DCD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED123C8EAAA00E17444C951E /* Pods-Foorpie-FoorpieUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1356,7 +1572,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3275C6E224F55DD1004691EA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+		3275C6E224F55DD1004691EA /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
@@ -1367,14 +1583,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3275C6E324F55DD1004691EA /* IQKeyboardManagerSwift */ = {
+		3275C6E324F55DD1004691EA /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3275C6E224F55DD1004691EA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			package = 3275C6E224F55DD1004691EA /* RemoteSwiftPackageReference */;
 			productName = IQKeyboardManagerSwift;
 		};
-		3275C6E624F55DF0004691EA /* IQKeyboardManagerSwift */ = {
+		3275C6E624F55DF0004691EA /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3275C6E224F55DD1004691EA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			package = 3275C6E224F55DD1004691EA /* RemoteSwiftPackageReference */;
 			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
