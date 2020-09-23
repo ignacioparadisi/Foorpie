@@ -14,4 +14,8 @@ class PersistenceManagerFactory {
         return MenuCoreDataManager.shared
     }
     
+    static var userPersistenceManager: UserPersistenceManagerRepresentable {
+        return UserAPIManager.shared
+    }
+    
 }

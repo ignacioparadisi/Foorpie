@@ -16,7 +16,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         GIDSignIn.sharedInstance()?.delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
     }
 
 
@@ -48,9 +47,23 @@ extension LoginViewController: GIDSignInDelegate {
         let fullName = user.profile.name
         let givenName = user.profile.givenName
         let familyName = user.profile.familyName
-        let email = user.profile.email
+        guard let email = user.profile.email else { return }
+        let user = User(email: email, fullName: fullName, googleToken: idToken)
+        PersistenceManagerFactory.userPersistenceManager.login(user: user) { result in
+            print(result)
+            switch result {
+            case .success(let user):
+                let window = UIApplication.shared.windows.first
+                window?.setRootViewController(MainTabBarController())
+            case .failure(let error):
+                let alert = UIAlertController(title: "Inicio de sesión fallido", message: "Hubo un error al iniciar sesión.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+                alert.addAction(okAction)
+                GIDSignIn.sharedInstance()?.signOut()
+                self.present(alert, animated: true)
+            }
+        }
 
-        let window = UIApplication.shared.windows.first
-        window?.setRootViewController(MainTabBarController())
+        
     }
 }

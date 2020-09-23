@@ -23,3 +23,18 @@ var environment: Environment {
     return .production
     #endif
 }
+
+class URLManager {
+    static private var baseURL: URL? {
+        switch environment {
+        case .local:
+            return URL(string: "http://10.0.0.7:3000")
+        default:
+            return URL(string: "https://foorpie-dev.herokuapp.com")
+        }
+    }
+    
+    static var loginURL: URL? {
+        return baseURL?.appendingPathComponent("login")
+    }
+}
