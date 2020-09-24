@@ -177,6 +177,90 @@
 		32E29A1D251BD616000B5F1C /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E29A1B251BD616000B5F1C /* APIService.swift */; };
 		32E29A27251BDE4C000B5F1C /* APIValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E29A26251BDE4C000B5F1C /* APIValidationError.swift */; };
 		32E29A28251BDE4C000B5F1C /* APIValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E29A26251BDE4C000B5F1C /* APIValidationError.swift */; };
+		32E29A36251C078F000B5F1C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D1F8B02519067E004068C7 /* LoginViewController.swift */; };
+		32E29A37251C078F000B5F1C /* MenuSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6D124F547F1004691EA /* MenuSplitViewController.swift */; };
+		32E29A38251C078F000B5F1C /* IngredientListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDCCF24FB2390001CA617 /* IngredientListViewController.swift */; };
+		32E29A39251C078F000B5F1C /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B06624F493FB001EE718 /* UICollectionView+Extension.swift */; };
+		32E29A3A251C078F000B5F1C /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04924FABF6A006EF7CE /* Localizable.swift */; };
+		32E29A3B251C078F000B5F1C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D824F4862700B7DCD1 /* MainTabBarController.swift */; };
+		32E29A3C251C078F000B5F1C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32758B0C24F7EA8E0062441F /* UIColor+Extension.swift */; };
+		32E29A3D251C078F000B5F1C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFEB7B25191ADF00D66485 /* SettingsViewController.swift */; };
+		32E29A3E251C078F000B5F1C /* IngredientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C706D524FB309D00E86728 /* IngredientDetailViewController.swift */; };
+		32E29A3F251C078F000B5F1C /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331624F48C4500B7DCD1 /* OrderListViewController.swift */; };
+		32E29A40251C078F000B5F1C /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324CAE33250AE33B006A6703 /* IngredientTableViewCell.swift */; };
+		32E29A41251C078F000B5F1C /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A166924F95E2500CF0C5A /* AlertView.swift */; };
+		32E29A42251C078F000B5F1C /* IntTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */; };
+		32E29A43251C078F000B5F1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D424F4862700B7DCD1 /* AppDelegate.swift */; };
+		32E29A44251C078F000B5F1C /* CurrencyTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6EE24F56040004691EA /* CurrencyTextFieldCellViewModel.swift */; };
+		32E29A45251C078F000B5F1C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A166624F95D2700CF0C5A /* BaseViewController.swift */; };
+		32E29A46251C078F000B5F1C /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68824F8832700A85781 /* FileManager+Extension.swift */; };
+		32E29A47251C078F000B5F1C /* MenuPersistenceManagerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ACEF8A2517868E0030EBD1 /* MenuPersistenceManagerRepresentable.swift */; };
+		32E29A48251C078F000B5F1C /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6BCD24F7431C0080DD56 /* CustomAlertViewController.swift */; };
+		32E29A49251C078F000B5F1C /* IngredientDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AD6C7424FB31AC00A55D7D /* IngredientDetailViewModel.swift */; };
+		32E29A4A251C078F000B5F1C /* Ingredient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FF6022517E70A0029EE39 /* Ingredient+CoreDataProperties.swift */; };
+		32E29A4B251C078F000B5F1C /* UnitTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ACEFAE251791510030EBD1 /* UnitTextFieldCellViewModel.swift */; };
+		32E29A4C251C078F000B5F1C /* Ingredient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FF6012517E70A0029EE39 /* Ingredient+CoreDataClass.swift */; };
+		32E29A4D251C078F000B5F1C /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6C824F541F9004691EA /* TextFieldTableViewCell.swift */; };
+		32E29A4E251C078F000B5F1C /* MenuAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ACEF9C251786B60030EBD1 /* MenuAPIManager.swift */; };
+		32E29A4F251C078F000B5F1C /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B06B24F4942F001EE718 /* ReusableView.swift */; };
+		32E29A50251C078F000B5F1C /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331824F48C6600B7DCD1 /* RecipeListViewController.swift */; };
+		32E29A51251C078F000B5F1C /* CurrencyTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6E824F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift */; };
+		32E29A52251C078F000B5F1C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A166C24F9CAC400CF0C5A /* UIViewController+Extension.swift */; };
+		32E29A53251C078F000B5F1C /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07924F4B7F7001EE718 /* NibLoadableView.swift */; };
+		32E29A54251C078F000B5F1C /* FloatTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FF5B12517E2120029EE39 /* FloatTextFieldTableViewCell.swift */; };
+		32E29A55251C078F000B5F1C /* UnitTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ACEFA725178F470030EBD1 /* UnitTextFieldTableViewCell.swift */; };
+		32E29A56251C078F000B5F1C /* PersistenceManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ACEF81251784090030EBD1 /* PersistenceManagerFactory.swift */; };
+		32E29A57251C078F000B5F1C /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07524F4AEFD001EE718 /* RecipeTableViewCell.swift */; };
+		32E29A58251C078F000B5F1C /* PhotoPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6C524F541E1004691EA /* PhotoPickerTableViewCell.swift */; };
+		32E29A59251C078F000B5F1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D624F4862700B7DCD1 /* SceneDelegate.swift */; };
+		32E29A5A251C078F000B5F1C /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A165F24F9313000CF0C5A /* UIAlertController+Extension.swift */; };
+		32E29A5B251C078F000B5F1C /* IntTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */; };
+		32E29A5C251C078F000B5F1C /* FloatTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FF5BC2517E3410029EE39 /* FloatTextFieldCellViewModel.swift */; };
+		32E29A5D251C078F000B5F1C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202C8CC24FBE9730076B0FA /* UIView+Extension.swift */; };
+		32E29A5E251C078F000B5F1C /* OrderSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */; };
+		32E29A5F251C078F000B5F1C /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07324F49BFE001EE718 /* RecipeViewModel.swift */; };
+		32E29A60251C078F000B5F1C /* ValidatorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A166324F93E9600CF0C5A /* ValidatorConvertible.swift */; };
+		32E29A61251C078F000B5F1C /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6DF24F559B4004691EA /* TextFieldCellViewModel.swift */; };
+		32E29A62251C078F000B5F1C /* NoItemSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6BD324F75D8B0080DD56 /* NoItemSelectedViewController.swift */; };
+		32E29A63251C078F000B5F1C /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202C8D124FC0A820076B0FA /* CurrencyTextField.swift */; };
+		32E29A64251C078F000B5F1C /* NSLayoutAnchor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B06824F49406001EE718 /* NSLayoutAnchor+Extension.swift */; };
+		32E29A65251C078F000B5F1C /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6D424F54DD4004691EA /* UIFont+Extension.swift */; };
+		32E29A66251C078F000B5F1C /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07124F49BDB001EE718 /* RecipeListViewModel.swift */; };
+		32E29A67251C078F000B5F1C /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FF6002517E70A0029EE39 /* Recipe+CoreDataProperties.swift */; };
+		32E29A68251C078F000B5F1C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B330C24F4873500B7DCD1 /* Persistence.swift */; };
+		32E29A69251C078F000B5F1C /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFEB842519241600D66485 /* UIWindow+Extension.swift */; };
+		32E29A6A251C078F000B5F1C /* APIValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E29A26251BDE4C000B5F1C /* APIValidationError.swift */; };
+		32E29A6B251C078F000B5F1C /* FieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6DC24F5599D004691EA /* FieldViewModel.swift */; };
+		32E29A6C251C078F000B5F1C /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6CB24F5420C004691EA /* ButtonTableViewCell.swift */; };
+		32E29A6D251C078F000B5F1C /* UserPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6B37C251AA54300DB4CBC /* UserPersistenceManager.swift */; };
+		32E29A6E251C078F000B5F1C /* MenuCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ACEF95251786A40030EBD1 /* MenuCoreDataManager.swift */; };
+		32E29A6F251C078F000B5F1C /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6BF24F540C3004691EA /* RecipeDetailViewController.swift */; };
+		32E29A70251C078F000B5F1C /* OrderRecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325CE51924FA8ECA00E7C88B /* OrderRecipeCollectionViewCell.swift */; };
+		32E29A71251C078F000B5F1C /* IngredientListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDCD224FB29AF001CA617 /* IngredientListViewModel.swift */; };
+		32E29A72251C078F000B5F1C /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B06424F493F2001EE718 /* UITableView+Extension.swift */; };
+		32E29A73251C078F000B5F1C /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6B2FE251A974200DB4CBC /* URLManager.swift */; };
+		32E29A74251C078F000B5F1C /* Foorpie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 320FF5E72517E4BF0029EE39 /* Foorpie.xcdatamodeld */; };
+		32E29A75251C078F000B5F1C /* UserAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6B371251AA53600DB4CBC /* UserAPIManager.swift */; };
+		32E29A76251C078F000B5F1C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68B24F884A100A85781 /* UIImage+Extension.swift */; };
+		32E29A77251C078F000B5F1C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6EB24F55F96004691EA /* String+Extension.swift */; };
+		32E29A78251C078F000B5F1C /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A167024F9E55C00CF0C5A /* OrderTableViewCell.swift */; };
+		32E29A79251C078F000B5F1C /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E29A1B251BD616000B5F1C /* APIService.swift */; };
+		32E29A7A251C078F000B5F1C /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6C224F540D5004691EA /* RecipeDetailViewModel.swift */; };
+		32E29A7B251C078F000B5F1C /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FF5FF2517E70A0029EE39 /* Recipe+CoreDataClass.swift */; };
+		32E29A7D251C078F000B5F1C /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 32E29A32251C078F000B5F1C /* IQKeyboardManagerSwift */; };
+		32E29A7E251C078F000B5F1C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32628241251801E900E372EB /* CloudKit.framework */; };
+		32E29A7F251C078F000B5F1C /* Pods_Foorpie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374BC301F05832E9885FAACB /* Pods_Foorpie.framework */; };
+		32E29A81251C078F000B5F1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 327B32E224F4862800B7DCD1 /* LaunchScreen.storyboard */; };
+		32E29A82251C078F000B5F1C /* order-status-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 327B331324F48A3D00B7DCD1 /* order-status-data.json */; };
+		32E29A83251C078F000B5F1C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32D1F8B12519067E004068C7 /* LoginViewController.xib */; };
+		32E29A84251C078F000B5F1C /* menu-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 327B330E24F4892500B7DCD1 /* menu-data.json */; };
+		32E29A85251C078F000B5F1C /* order-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 327B331124F489DE00B7DCD1 /* order-data.json */; };
+		32E29A86251C078F000B5F1C /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3250B07624F4AEFD001EE718 /* RecipeTableViewCell.xib */; };
+		32E29A87251C078F000B5F1C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32AEE05524FAC0B3006EF7CE /* Localizable.strings */; };
+		32E29A88251C078F000B5F1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327B32E024F4862800B7DCD1 /* Assets.xcassets */; };
+		32E29A89251C078F000B5F1C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32D1F88D251903C5004068C7 /* GoogleService-Info.plist */; };
+		32E29A8A251C078F000B5F1C /* ingredients-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 3202C8DA24FC50AA0076B0FA /* ingredients-data.json */; };
+		32E29A8B251C078F000B5F1C /* OrderRecipeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325CE51A24FA8ECA00E7C88B /* OrderRecipeCollectionViewCell.xib */; };
 		473559E2822CF0F4FFFBECD4 /* Pods_Foorpie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374BC301F05832E9885FAACB /* Pods_Foorpie.framework */; };
 		562CF7810FC2778FC27D04B0 /* Pods_FoorpieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D529183EB31AF22299ABA6 /* Pods_FoorpieTests.framework */; };
 /* End PBXBuildFile section */
@@ -298,6 +382,8 @@
 		32DA6BD324F75D8B0080DD56 /* NoItemSelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemSelectedViewController.swift; sourceTree = "<group>"; };
 		32E29A1B251BD616000B5F1C /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		32E29A26251BDE4C000B5F1C /* APIValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIValidationError.swift; sourceTree = "<group>"; };
+		32E29A91251C078F000B5F1C /* Foorpie Staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Foorpie Staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32E29A97251C078F000B5F1C /* FoorpieStaging-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FoorpieStaging-Info.plist"; path = "/Users/ignacioparadisi/Developer/Projects/Foorpie/foorpie-ios/Foorpie/FoorpieStaging-Info.plist"; sourceTree = "<absolute>"; };
 		3434A3B436E6B6B21F3F8F0B /* Pods-FoorpieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoorpieTests.release.xcconfig"; path = "Target Support Files/Pods-FoorpieTests/Pods-FoorpieTests.release.xcconfig"; sourceTree = "<group>"; };
 		374BC301F05832E9885FAACB /* Pods_Foorpie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foorpie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A908FFEF8B67606468329E5 /* Pods-Foorpie-FoorpieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foorpie-FoorpieUITests.debug.xcconfig"; path = "Target Support Files/Pods-Foorpie-FoorpieUITests/Pods-Foorpie-FoorpieUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -343,6 +429,16 @@
 				32D6B34E251A97BD00DB4CBC /* IQKeyboardManagerSwift in Frameworks */,
 				32D6B34F251A97BD00DB4CBC /* CloudKit.framework in Frameworks */,
 				32D6B350251A97BD00DB4CBC /* Pods_Foorpie.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32E29A7C251C078F000B5F1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32E29A7D251C078F000B5F1C /* IQKeyboardManagerSwift in Frameworks */,
+				32E29A7E251C078F000B5F1C /* CloudKit.framework in Frameworks */,
+				32E29A7F251C078F000B5F1C /* Pods_Foorpie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +601,7 @@
 				327B32EA24F4862800B7DCD1 /* FoorpieTests.xctest */,
 				327B32F524F4862800B7DCD1 /* FoorpieUITests.xctest */,
 				32D6B362251A97BD00DB4CBC /* Foorpie Local.app */,
+				32E29A91251C078F000B5F1C /* Foorpie Staging.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -519,6 +616,7 @@
 				327B32E224F4862800B7DCD1 /* LaunchScreen.storyboard */,
 				327B32E524F4862800B7DCD1 /* Info.plist */,
 				32D6B363251A97BD00DB4CBC /* FoorpieLocal-Info.plist */,
+				32E29A97251C078F000B5F1C /* FoorpieStaging-Info.plist */,
 				32D1F88D251903C5004068C7 /* GoogleService-Info.plist */,
 				32AEE04924FABF6A006EF7CE /* Localizable.swift */,
 				32AEE05524FAC0B3006EF7CE /* Localizable.strings */,
@@ -845,6 +943,29 @@
 			productReference = 32D6B362251A97BD00DB4CBC /* Foorpie Local.app */;
 			productType = "com.apple.product-type.application";
 		};
+		32E29A31251C078F000B5F1C /* Foorpie Staging */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32E29A8E251C078F000B5F1C /* Build configuration list for PBXNativeTarget "Foorpie Staging" */;
+			buildPhases = (
+				32E29A34251C078F000B5F1C /* [CP] Check Pods Manifest.lock */,
+				32E29A35251C078F000B5F1C /* Sources */,
+				32E29A7C251C078F000B5F1C /* Frameworks */,
+				32E29A80251C078F000B5F1C /* Resources */,
+				32E29A8C251C078F000B5F1C /* [CP] Embed Pods Frameworks */,
+				32E29A8D251C078F000B5F1C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Foorpie Staging";
+			packageProductDependencies = (
+				32E29A32251C078F000B5F1C /* IQKeyboardManagerSwift */,
+			);
+			productName = Cottura;
+			productReference = 32E29A91251C078F000B5F1C /* Foorpie Staging.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -889,6 +1010,7 @@
 				327B32E924F4862800B7DCD1 /* FoorpieTests */,
 				327B32F424F4862800B7DCD1 /* FoorpieUITests */,
 				32D6B306251A97BD00DB4CBC /* Foorpie Local */,
+				32E29A31251C078F000B5F1C /* Foorpie Staging */,
 			);
 		};
 /* End PBXProject section */
@@ -944,6 +1066,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		32E29A80251C078F000B5F1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32E29A81251C078F000B5F1C /* LaunchScreen.storyboard in Resources */,
+				32E29A82251C078F000B5F1C /* order-status-data.json in Resources */,
+				32E29A83251C078F000B5F1C /* LoginViewController.xib in Resources */,
+				32E29A84251C078F000B5F1C /* menu-data.json in Resources */,
+				32E29A85251C078F000B5F1C /* order-data.json in Resources */,
+				32E29A86251C078F000B5F1C /* RecipeTableViewCell.xib in Resources */,
+				32E29A87251C078F000B5F1C /* Localizable.strings in Resources */,
+				32E29A88251C078F000B5F1C /* Assets.xcassets in Resources */,
+				32E29A89251C078F000B5F1C /* GoogleService-Info.plist in Resources */,
+				32E29A8A251C078F000B5F1C /* ingredients-data.json in Resources */,
+				32E29A8B251C078F000B5F1C /* OrderRecipeCollectionViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -987,6 +1127,62 @@
 			showEnvVarsInLog = 0;
 		};
 		32D6B35E251A97BD00DB4CBC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Foorpie/Pods-Foorpie-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Foorpie/Pods-Foorpie-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Foorpie/Pods-Foorpie-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32E29A34251C078F000B5F1C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Foorpie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32E29A8C251C078F000B5F1C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Foorpie/Pods-Foorpie-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Foorpie/Pods-Foorpie-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Foorpie/Pods-Foorpie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32E29A8D251C078F000B5F1C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1307,6 +1503,83 @@
 				32E29A1D251BD616000B5F1C /* APIService.swift in Sources */,
 				32D6B34B251A97BD00DB4CBC /* RecipeDetailViewModel.swift in Sources */,
 				32D6B34C251A97BD00DB4CBC /* Recipe+CoreDataClass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32E29A35251C078F000B5F1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32E29A36251C078F000B5F1C /* LoginViewController.swift in Sources */,
+				32E29A37251C078F000B5F1C /* MenuSplitViewController.swift in Sources */,
+				32E29A38251C078F000B5F1C /* IngredientListViewController.swift in Sources */,
+				32E29A39251C078F000B5F1C /* UICollectionView+Extension.swift in Sources */,
+				32E29A3A251C078F000B5F1C /* Localizable.swift in Sources */,
+				32E29A3B251C078F000B5F1C /* MainTabBarController.swift in Sources */,
+				32E29A3C251C078F000B5F1C /* UIColor+Extension.swift in Sources */,
+				32E29A3D251C078F000B5F1C /* SettingsViewController.swift in Sources */,
+				32E29A3E251C078F000B5F1C /* IngredientDetailViewController.swift in Sources */,
+				32E29A3F251C078F000B5F1C /* OrderListViewController.swift in Sources */,
+				32E29A40251C078F000B5F1C /* IngredientTableViewCell.swift in Sources */,
+				32E29A41251C078F000B5F1C /* AlertView.swift in Sources */,
+				32E29A42251C078F000B5F1C /* IntTextFieldCellViewModel.swift in Sources */,
+				32E29A43251C078F000B5F1C /* AppDelegate.swift in Sources */,
+				32E29A44251C078F000B5F1C /* CurrencyTextFieldCellViewModel.swift in Sources */,
+				32E29A45251C078F000B5F1C /* BaseViewController.swift in Sources */,
+				32E29A46251C078F000B5F1C /* FileManager+Extension.swift in Sources */,
+				32E29A47251C078F000B5F1C /* MenuPersistenceManagerRepresentable.swift in Sources */,
+				32E29A48251C078F000B5F1C /* CustomAlertViewController.swift in Sources */,
+				32E29A49251C078F000B5F1C /* IngredientDetailViewModel.swift in Sources */,
+				32E29A4A251C078F000B5F1C /* Ingredient+CoreDataProperties.swift in Sources */,
+				32E29A4B251C078F000B5F1C /* UnitTextFieldCellViewModel.swift in Sources */,
+				32E29A4C251C078F000B5F1C /* Ingredient+CoreDataClass.swift in Sources */,
+				32E29A4D251C078F000B5F1C /* TextFieldTableViewCell.swift in Sources */,
+				32E29A4E251C078F000B5F1C /* MenuAPIManager.swift in Sources */,
+				32E29A4F251C078F000B5F1C /* ReusableView.swift in Sources */,
+				32E29A50251C078F000B5F1C /* RecipeListViewController.swift in Sources */,
+				32E29A51251C078F000B5F1C /* CurrencyTextFieldTableViewCell.swift in Sources */,
+				32E29A52251C078F000B5F1C /* UIViewController+Extension.swift in Sources */,
+				32E29A53251C078F000B5F1C /* NibLoadableView.swift in Sources */,
+				32E29A54251C078F000B5F1C /* FloatTextFieldTableViewCell.swift in Sources */,
+				32E29A55251C078F000B5F1C /* UnitTextFieldTableViewCell.swift in Sources */,
+				32E29A56251C078F000B5F1C /* PersistenceManagerFactory.swift in Sources */,
+				32E29A57251C078F000B5F1C /* RecipeTableViewCell.swift in Sources */,
+				32E29A58251C078F000B5F1C /* PhotoPickerTableViewCell.swift in Sources */,
+				32E29A59251C078F000B5F1C /* SceneDelegate.swift in Sources */,
+				32E29A5A251C078F000B5F1C /* UIAlertController+Extension.swift in Sources */,
+				32E29A5B251C078F000B5F1C /* IntTextFieldTableViewCell.swift in Sources */,
+				32E29A5C251C078F000B5F1C /* FloatTextFieldCellViewModel.swift in Sources */,
+				32E29A5D251C078F000B5F1C /* UIView+Extension.swift in Sources */,
+				32E29A5E251C078F000B5F1C /* OrderSplitViewController.swift in Sources */,
+				32E29A5F251C078F000B5F1C /* RecipeViewModel.swift in Sources */,
+				32E29A60251C078F000B5F1C /* ValidatorConvertible.swift in Sources */,
+				32E29A61251C078F000B5F1C /* TextFieldCellViewModel.swift in Sources */,
+				32E29A62251C078F000B5F1C /* NoItemSelectedViewController.swift in Sources */,
+				32E29A63251C078F000B5F1C /* CurrencyTextField.swift in Sources */,
+				32E29A64251C078F000B5F1C /* NSLayoutAnchor+Extension.swift in Sources */,
+				32E29A65251C078F000B5F1C /* UIFont+Extension.swift in Sources */,
+				32E29A66251C078F000B5F1C /* RecipeListViewModel.swift in Sources */,
+				32E29A67251C078F000B5F1C /* Recipe+CoreDataProperties.swift in Sources */,
+				32E29A68251C078F000B5F1C /* Persistence.swift in Sources */,
+				32E29A69251C078F000B5F1C /* UIWindow+Extension.swift in Sources */,
+				32E29A6A251C078F000B5F1C /* APIValidationError.swift in Sources */,
+				32E29A6B251C078F000B5F1C /* FieldViewModel.swift in Sources */,
+				32E29A6C251C078F000B5F1C /* ButtonTableViewCell.swift in Sources */,
+				32E29A6D251C078F000B5F1C /* UserPersistenceManager.swift in Sources */,
+				32E29A6E251C078F000B5F1C /* MenuCoreDataManager.swift in Sources */,
+				32E29A6F251C078F000B5F1C /* RecipeDetailViewController.swift in Sources */,
+				32E29A70251C078F000B5F1C /* OrderRecipeCollectionViewCell.swift in Sources */,
+				32E29A71251C078F000B5F1C /* IngredientListViewModel.swift in Sources */,
+				32E29A72251C078F000B5F1C /* UITableView+Extension.swift in Sources */,
+				32E29A73251C078F000B5F1C /* URLManager.swift in Sources */,
+				32E29A74251C078F000B5F1C /* Foorpie.xcdatamodeld in Sources */,
+				32E29A75251C078F000B5F1C /* UserAPIManager.swift in Sources */,
+				32E29A76251C078F000B5F1C /* UIImage+Extension.swift in Sources */,
+				32E29A77251C078F000B5F1C /* String+Extension.swift in Sources */,
+				32E29A78251C078F000B5F1C /* OrderTableViewCell.swift in Sources */,
+				32E29A79251C078F000B5F1C /* APIService.swift in Sources */,
+				32E29A7A251C078F000B5F1C /* RecipeDetailViewModel.swift in Sources */,
+				32E29A7B251C078F000B5F1C /* Recipe+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1646,6 +1919,54 @@
 			};
 			name = Release;
 		};
+		32E29A8F251C078F000B5F1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8BEA33587AD25A1C2073FD5 /* Pods-Foorpie.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Foorpie/Foorpie.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 8T85WESY64;
+				INFOPLIST_FILE = "Foorpie/FoorpieStaging-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-DSTAGING";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ignacioparadisi.Foorpie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		32E29A90251C078F000B5F1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2312FE7B61C845E2358C115D /* Pods-Foorpie.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Foorpie/Foorpie.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 8T85WESY64;
+				INFOPLIST_FILE = "Foorpie/FoorpieStaging-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-DSTAGING";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ignacioparadisi.Foorpie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1694,6 +2015,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		32E29A8E251C078F000B5F1C /* Build configuration list for PBXNativeTarget "Foorpie Staging" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32E29A8F251C078F000B5F1C /* Debug */,
+				32E29A90251C078F000B5F1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1713,6 +2043,14 @@
 				minimumVersion = 6.5.6;
 			};
 		};
+		32E29A33251C078F000B5F1C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.6;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1724,6 +2062,11 @@
 		32D6B307251A97BD00DB4CBC /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 32D6B308251A97BD00DB4CBC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		32E29A32251C078F000B5F1C /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32E29A33251C078F000B5F1C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

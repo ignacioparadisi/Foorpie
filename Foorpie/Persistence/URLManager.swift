@@ -11,14 +11,14 @@ import Foundation
 enum Environment {
     case local
     case production
-    case development
+    case staging
 }
 
 var environment: Environment {
     #if LOCAL
     return .local
-    #elseif DEVELOPMENT
-    return .development
+    #elseif STAGING
+    return .staging
     #else
     return .production
     #endif
@@ -29,8 +29,10 @@ class URLManager {
         switch environment {
         case .local:
             return URL(string: "http://10.0.0.7:3000")
-        default:
-            return URL(string: "https://foorpie-dev.herokuapp.com")
+        case .staging:
+            return URL(string: "https://foorpie-dev.herokuapp.com/api")
+        case .production:
+            return URL(string: "https://foorpie.herokuapp.com/api")
         }
     }
     
