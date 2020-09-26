@@ -17,10 +17,10 @@ class User: Codable {
     
     enum CodingKeys: String, CodingKey {
         case id
-        case fullName = "full_name"
+        case fullName
         case email
-        case googleToken = "google_token"
-        case appleToken = "apple_token"
+        case googleToken
+        case appleToken
     }
     
     init(email: String, fullName: String? = nil, googleToken: String? = nil, appleToken: String? = nil) {

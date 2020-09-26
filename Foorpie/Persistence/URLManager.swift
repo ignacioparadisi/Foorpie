@@ -28,7 +28,7 @@ class URLManager {
     static private var baseURL: URL? {
         switch environment {
         case .local:
-            return URL(string: "http://10.0.0.7:3000")
+            return URL(string: "http://192.168.1.4:3000/api")
         case .staging:
             return URL(string: "https://foorpie-dev.herokuapp.com/api")
         case .production:

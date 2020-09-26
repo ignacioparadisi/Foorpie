@@ -85,6 +85,7 @@ extension SceneDelegate: GIDSignInDelegate {
         let givenName = user.profile.givenName
         let familyName = user.profile.familyName
         guard let email = user.profile.email else { return }
+        print(idToken)
         let user = User(email: email, fullName: fullName, googleToken: idToken)
         PersistenceManagerFactory.userPersistenceManager.login(user: user) { result in
             print(result)
