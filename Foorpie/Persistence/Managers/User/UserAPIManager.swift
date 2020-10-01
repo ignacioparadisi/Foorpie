@@ -22,6 +22,9 @@ class UserAPIManager: UserPersistenceManagerRepresentable {
             switch res {
             case .success(let user):
                 UserDefaults.standard.setValue(user.token, forKey: "X-Auth-Token")
+                if let company = user.company {
+                    UserDefaults.standard.setValue(company.id, forKey: "selectedCompany")
+                }
                 result(.success(user))
             case .failure(let error):
                 result(.failure(error))
@@ -31,6 +34,7 @@ class UserAPIManager: UserPersistenceManagerRepresentable {
     
     func getCompanies(result: @escaping (Result<[Company], Error>) -> Void) {
         guard let url = URLManager.companiesURL else { return result(.failure(RequestError.invalidURL)) }
+        print(url)
         APIService.shared.makeRequest(url: url, method: .get, result: result)
     }
 }

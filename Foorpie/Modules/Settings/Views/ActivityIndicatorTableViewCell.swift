@@ -21,7 +21,7 @@ class ActivityIndicatorTableViewCell: UITableViewCell, ReusableView {
         }
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(style: .value1, reuseIdentifier: reuseIdentifier)
         setupView()
     }
     
@@ -47,7 +47,8 @@ class ActivityIndicatorTableViewCell: UITableViewCell, ReusableView {
         self.accessoryView = nil
     }
     
-    func configure(with title: String) {
+    func configure(with title: String, value: String) {
         textLabel?.text = title
+        detailTextLabel?.text = value
     }
 }

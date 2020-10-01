@@ -40,7 +40,6 @@ class SettingsViewModel {
     }
     
     func fetchCompanies() {
-        self.isLoadingCompanies = true
         if isLoadingCompanies { return }
         isLoadingCompanies = true
         UserAPIManager.shared.getCompanies { [weak self] result in

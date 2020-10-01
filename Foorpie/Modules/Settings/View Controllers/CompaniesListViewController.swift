@@ -12,6 +12,9 @@ class CompaniesListViewController: BaseViewController {
     
     private var companies: [Company] = []
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
+    private var selectedCompany: Int? {
+        return UserDefaults.standard.integer(forKey: "selectedCompany")
+    }
     
     init(companies: [Company]) {
         self.companies = companies
@@ -23,6 +26,7 @@ class CompaniesListViewController: BaseViewController {
     }
     
     override func setupView() {
+        title = "Companies"
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
@@ -40,6 +44,11 @@ extension CompaniesListViewController: UITableViewDataSource {
         let company = companies[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath)
         cell.textLabel?.text = company.name
+        if company.id == selectedCompany {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
         return cell
     }
 }
