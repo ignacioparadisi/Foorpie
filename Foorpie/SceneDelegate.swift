@@ -19,13 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        if !(GIDSignIn.sharedInstance()?.hasPreviousSignIn() ?? false) {
-            window?.rootViewController = LoginViewController()
-        } else {
-            GIDSignIn.sharedInstance()?.delegate = self
-            GIDSignIn.sharedInstance()?.restorePreviousSignIn()
-            window?.rootViewController = MainTabBarController()
-        }
+        window?.rootViewController = MainTabBarController()
         window?.makeKeyAndVisible()
     }
 
@@ -66,35 +60,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
-}
-
-extension SceneDelegate: GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let error = error {
-            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
-                print("The user has not signed in before or they have since signed out.")
-            } else {
-                print("\(error.localizedDescription)")
-            }
-            return
-        }
-        // Perform any operations on signed in user here.
-        let userId = user.userID                  // For client-side use only!
-        let idToken = user.authentication.idToken // Safe to send to the server
-        let fullName = user.profile.name
-        let givenName = user.profile.givenName
-        let familyName = user.profile.familyName
-        guard let email = user.profile.email else { return }
-        print(idToken)
-        let user = User(email: email, fullName: fullName, googleToken: idToken)
-        PersistenceManagerFactory.userPersistenceManager.login(user: user) { result in
-            print(result)
-            switch result {
-            case .success(let user):
-                break
-            case .failure(let error):
-                GIDSignIn.sharedInstance()?.signOut()
-            }
-        }
-    }
 }

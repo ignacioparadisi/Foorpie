@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class MainTabBarController: UITabBarController {
     // MARK: Properties
@@ -32,6 +33,46 @@ class MainTabBarController: UITabBarController {
             menuSplitViewController,
             settingsViewController
         ]
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !(GIDSignIn.sharedInstance()?.hasPreviousSignIn() ?? false) {
+            let loginViewController = LoginViewController()
+            loginViewController.modalPresentationStyle = .overFullScreen
+            present(loginViewController, animated: false)
+        } else {
+            GIDSignIn.sharedInstance()?.delegate = self
+            GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        }
+    }
+}
+
+extension MainTabBarController: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                print("The user has not signed in before or they have since signed out.")
+            } else {
+                print("\(error.localizedDescription)")
+            }
+            return
+        }
+        // Perform any operations on signed in user here.
+        let idToken = user.authentication.idToken // Safe to send to the server
+        let fullName = user.profile.name
+        guard let email = user.profile.email else { return }
+        let user = User(email: email, fullName: fullName, googleToken: idToken)
+        PersistenceManagerFactory.userPersistenceManager.login(user: user) { result in
+            print(result)
+            switch result {
+            case .success(let user):
+                break
+            case .failure(let error):
+                GIDSignIn.sharedInstance()?.signOut()
+            }
+        }
     }
 }
 

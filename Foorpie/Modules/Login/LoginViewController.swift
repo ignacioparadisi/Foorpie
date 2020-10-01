@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleSignIn
+import AuthenticationServices
 
 class LoadingView: UIView {
     
@@ -88,14 +89,29 @@ class LoadingView: UIView {
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var googleSignInButton: GIDSignInButton!
-    private let loadingView = LoadingView(title: "Loading")
-    private var isLoading = false
+    @IBOutlet weak var appleSignInButton: ASAuthorizationAppleIDButton!
+//    private let loadingView = LoadingView(title: "Loading")
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    private var isLoading = false {
+        didSet {
+            activityIndicator.isHidden = !isLoading
+            if isLoading {
+                activityIndicator.startAnimating()
+            } else {
+                activityIndicator.stopAnimating()
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(loadingView)
         GIDSignIn.sharedInstance()?.delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
+        googleSignInButton.colorScheme = .dark
+        appleSignInButton.cornerRadius = 5
+        activityIndicator.color = .white
+        activityIndicator.isHidden = true
     }
 
 
@@ -123,24 +139,18 @@ extension LoginViewController: GIDSignInDelegate {
             return
         }
         // Perform any operations on signed in user here.
-        let userId = user.userID                  // For client-side use only!
         let idToken = user.authentication.idToken // Safe to send to the server
         let fullName = user.profile.name
-        let givenName = user.profile.givenName
-        let familyName = user.profile.familyName
         guard let email = user.profile.email else { return }
         let user = User(email: email, fullName: fullName, googleToken: idToken)
         isLoading = true
-        loadingView.startAnimating()
         PersistenceManagerFactory.userPersistenceManager.login(user: user) { [weak self] result in
             self?.isLoading = false
             print(result)
             switch result {
             case .success(let user):
-                let window = UIApplication.shared.windows.first
-                window?.setRootViewController(MainTabBarController())
+                self?.dismiss(animated: true)
             case .failure(let error):
-                self?.loadingView.stopAnimating()
                 let alert = UIAlertController(title: "Inicio de sesión fallido", message: "Hubo un error al iniciar sesión.", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
                 alert.addAction(okAction)
