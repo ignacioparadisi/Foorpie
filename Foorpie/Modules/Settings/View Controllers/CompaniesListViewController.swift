@@ -26,12 +26,24 @@ class CompaniesListViewController: BaseViewController {
     }
     
     override func setupView() {
+        super.setupView()
         title = "Companies"
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
         tableView.anchor.edgesToSuperview().activate()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellID")
+    }
+    
+    override func setupNavigationBar() {
+        super.setupNavigationBar()
+        let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        navigationItem.setRightBarButtonItems([addButtonItem, editButtonItem], animated: false)
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: animated)
     }
 }
 
@@ -51,8 +63,16 @@ extension CompaniesListViewController: UITableViewDataSource {
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
 }
 
 extension CompaniesListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+        }
+    }
 }
