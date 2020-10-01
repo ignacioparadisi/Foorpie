@@ -26,7 +26,7 @@ class MainTabBarController: UITabBarController {
         } else {
             menuSplitViewController.tabBarItem = UITabBarItem(title: Localizable.Title.menu, image: .docPlaintext, tag: 1)
         }
-        settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: .gearshape, tag: 2)
+        settingsViewController.tabBarItem = UITabBarItem(title: Localizable.Title.settings, image: .gearshape, tag: 2)
         menuSplitViewController.preferredDisplayMode = .allVisible
         viewControllers = [
             orderSplitViewController,

@@ -31,7 +31,7 @@ class IngredientDetailViewModel {
         if let ingredient = ingredient {
             return ingredient.name
         }
-        return "Nuevo Ingrediente"
+        return Localizable.Title.newIngredient
     }
     var isEditing: Bool {
         return ingredient != nil
@@ -46,14 +46,14 @@ class IngredientDetailViewModel {
     }
     /// Checks that the information of all fields are valid
     var fieldsAreValid: AnyPublisher<Bool, Never> {
-        return Publishers.CombineLatest4(fields[0].$isValid, fields[1].$isValid, fields[2].$isValid, fields[3].$isValid)
-            .map { $0 && $1 && $2 && $3 }
+        return Publishers.CombineLatest3(fields[0].$isValid, fields[1].$isValid, fields[2].$isValid)
+            .map { $0 && $1 && $2 }
             .eraseToAnyPublisher()
     }
     /// Checks if the information of any field changed
     var fieldsAreChanged: AnyPublisher<Bool, Never> {
-        return Publishers.CombineLatest4(fields[0].$isChanged, fields[1].$isChanged, fields[2].$isChanged, fields[3].$isChanged)
-            .map { $0 || $1 || $2 || $3 }
+        return Publishers.CombineLatest3(fields[0].$isChanged, fields[1].$isChanged, fields[2].$isChanged)
+            .map { $0 || $1 || $2 }
             .eraseToAnyPublisher()
     }
     /// Defines if the form is ready to submit based on `fieldsAreValid` and `fieldsAreChanged`
@@ -77,14 +77,14 @@ class IngredientDetailViewModel {
         let priceField = CurrencyTextFieldCellViewModel(title: Localizable.Text.price, placeholder: "$0.00", value: ingredient?.price)
         priceField.validations = [.required]
         let unitType = Ingredient.UnitType(rawValue: ingredient?.unitType ?? "u")
-        let unitField = UnitTextFieldCellViewModel(title: "Unidad", value: Int(ingredient?.unitAmount ?? 0), unitType: unitType)
+        let unitField = UnitTextFieldCellViewModel(title: Localizable.Text.unit, value: Int(ingredient?.unitAmount ?? 0), unitType: unitType)
         unitField.validations = [.required]
 //        let unitAmountField = FloatTextFieldCellViewModel(title: Localizable.Text.availableAmount, value: unitAmount)
 //        unitAmountField.validations = [.required]
         fields = [
             nameField,
-            priceField,
             unitField,
+            priceField
   //          unitAmountField
         ]
     }

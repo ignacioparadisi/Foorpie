@@ -6,14 +6,6 @@
   Copyright © 2020 Ignacio Paradisi. All rights reserved.
 */
 
-// MARK: - Button
-"doneKey" = "Done";
-"resetPhotoKey" = "Reset Photo";
-"takePhotoKey" = "Take Photo";
-"choosePhotoKey" = "Choose Photo";
-"cancelKey" = "Cancel";
-"deleteKey" = "Delete";
-
 // MARK: - Title
 "ordersKey" = "Orders";
 "menuKey" = "Menu";
@@ -23,6 +15,12 @@
 "newRecipeKey" = "New Recipe";
 "deleteTitleKey" = "Delete \"%@?\"";
 "savedTitleKey" = "Saved";
+"logoutQuestionKey" = "Do you want to logout?";
+"settingsKey" = "Settings";
+"errorKey" = "Error";
+"loginErrorTitleKey" = "Login failed";
+"recipesKey" = "Recipes";
+"newIngredientKey" = "New Ingredient";
 
 // MARK: - Message
 "noRecipeSelectedMessageKey" = "Please select a recipe to see its details.";
@@ -30,6 +28,8 @@
 "noIngredientSelectedMessageKey" = "Please select an ingredient to see its details.";
 "deleteRecipeMessageKey" = "Once deleted you won't be able to add this recipe to your orders.";
 "savedRecipeMessageKey" = "The recipe was saved successfully";
+"loginErrorMessageKey" = "There was an error logging in";
+"ingredientPriceDetailInfoKey" = "This information is used to calculate the the gross price of each recipe. The entered price must be the cost of the entered units.";
 
 // MARK: - Text
 "orderKey" = "Order";
@@ -54,6 +54,16 @@
 "feetKey" = "Feet";
 "inchKey" = "Inches";
 "unitKey" = "Units";
+
+// MARK: - Button
+"doneKey" = "Done";
+"resetPhotoKey" = "Reset Photo";
+"takePhotoKey" = "Take Photo";
+"choosePhotoKey" = "Choose Photo";
+"cancelKey" = "Cancel";
+"deleteKey" = "Delete";
+"logoutKey" = "Logout";
+"okKey" = "Ok";
 
 // MARK: - Error
 "fetchingMenuErrorKey" = "There was an error fetching the Menu.";

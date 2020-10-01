@@ -29,7 +29,7 @@ extension UIViewController {
     ///   - message: Message for the alert
     ///   - after: Seconds after the alert will disappear
     func showErrorAlert(message: String, dismiss after: Double? = 2) {
-        showAlert(title: "Error", message: message, style: .error, dismiss: after, feedback: .error)
+        showAlert(title: Localizable.Title.error, message: message, style: .error, dismiss: after, feedback: .error)
     }
     
 }

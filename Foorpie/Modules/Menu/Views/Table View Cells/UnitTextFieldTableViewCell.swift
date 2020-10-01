@@ -83,7 +83,7 @@ class UnitTextFieldTableViewCell: TextFieldTableViewCell {
             }
             sheetController.addAction(action)
         }
-        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: Localizable.Button.cancel, style: .cancel, handler: nil)
         sheetController.addAction(cancelAction)
         if let popoverController = sheetController.popoverPresentationController {
             popoverController.sourceView = unitButton

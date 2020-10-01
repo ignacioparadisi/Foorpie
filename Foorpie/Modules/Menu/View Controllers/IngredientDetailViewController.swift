@@ -122,7 +122,7 @@ extension IngredientDetailViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section != 0 { return nil }
-        return "Esta información se utiliza para calcular el precio bruto de cada receta. El precio introducido debe ser el costo de las unidades ingresadas."
+        return Localizable.Message.ingredientPriceDetailInfo
     }
 }
 

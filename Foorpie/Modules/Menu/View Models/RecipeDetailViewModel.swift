@@ -119,9 +119,9 @@ class RecipeDetailViewModel {
         guard let section = Section(rawValue: section) else { return nil }
         switch section {
         case .recipes:
-            return "Recetas"
+            return Localizable.Title.recipes
         case .ingredients:
-            return "Ingredientes"
+            return Localizable.Title.ingredients
         default:
             return nil
         }

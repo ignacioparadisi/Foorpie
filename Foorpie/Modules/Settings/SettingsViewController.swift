@@ -20,7 +20,7 @@ class SettingsViewController: BaseViewController {
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        title = "Settings"
+        title = Localizable.Title.settings
     }
     
     private func setupTableView() {
@@ -32,8 +32,8 @@ class SettingsViewController: BaseViewController {
     }
     
     private func showLogoutAlert() {
-        let alertController = UIAlertController(title: "Logout?", message: nil, preferredStyle: .alert)
-        let logoutAction = UIAlertAction(title: "Logout", style: .destructive) { [weak self] _ in
+        let alertController = UIAlertController(title: Localizable.Title.logoutQuestion, message: nil, preferredStyle: .alert)
+        let logoutAction = UIAlertAction(title: Localizable.Button.logout, style: .destructive) { [weak self] _ in
             self?.logout()
         }
         let cancelAction = UIAlertAction(title: Localizable.Button.cancel, style: .cancel, handler: nil)
@@ -63,7 +63,7 @@ extension SettingsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath) as ButtonTableViewCell
-        cell.configure(with: "Cerrar Sesión", style: .default)
+        cell.configure(with: Localizable.Button.logout, style: .default)
         return cell
     }
 }
