@@ -92,11 +92,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var googleSignInButton: GIDSignInButton!
     @IBOutlet weak var appleSignInButton: ASAuthorizationAppleIDButton!
-//    private let loadingView = LoadingView(title: "Loading")
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     private var isLoading = false {
         didSet {
             activityIndicator.isHidden = !isLoading
+            view.isUserInteractionEnabled = !isLoading
             if isLoading {
                 activityIndicator.startAnimating()
             } else {
@@ -110,7 +110,6 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         googleSignInButton.colorScheme = .dark
         appleSignInButton.cornerRadius = 5
-        activityIndicator.color = .white
         activityIndicator.isHidden = true
     }
 

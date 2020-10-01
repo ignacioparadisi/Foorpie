@@ -10,18 +10,12 @@ import UIKit
 
 class OrderListViewController: BaseViewController {
 
-    private let loadingView = LoadingView(title: "Loading")
     private let tableView: UITableView = UITableView()
     
     override func setupView() {
         super.setupView()
         setupTableView()
         addErrorMessage()
-        navigationController?.view.addSubview(loadingView)
-        loadingView.startAnimating()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.loadingView.stopAnimating()
-        }
     }
     
     override func setupNavigationBar() {

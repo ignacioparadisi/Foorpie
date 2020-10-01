@@ -30,6 +30,24 @@ class SettingsViewController: BaseViewController {
         tableView.dataSource = self
         tableView.register(ButtonTableViewCell.self)
     }
+    
+    private func showLogoutAlert() {
+        let alertController = UIAlertController(title: "Logout?", message: nil, preferredStyle: .alert)
+        let logoutAction = UIAlertAction(title: "Logout", style: .destructive) { [weak self] _ in
+            self?.logout()
+        }
+        let cancelAction = UIAlertAction(title: Localizable.Button.cancel, style: .cancel, handler: nil)
+        alertController.addAction(logoutAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
+    }
+    
+    private func logout() {
+        GIDSignIn.sharedInstance()?.signOut()
+        let loginViewController = LoginViewController()
+        loginViewController.modalPresentationStyle = .overFullScreen
+        present(loginViewController, animated: true)
+    }
 
 }
 
@@ -51,9 +69,6 @@ extension SettingsViewController: UITableViewDataSource {
 
 extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        GIDSignIn.sharedInstance()?.signOut()
-        let loginViewController = LoginViewController()
-        loginViewController.modalPresentationStyle = .overFullScreen
-        present(loginViewController, animated: true)
+        showLogoutAlert()
     }
 }
