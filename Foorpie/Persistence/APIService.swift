@@ -52,6 +52,17 @@ class APIService {
         task.resume()
     }
     
+    /// Makes an http requests without body
+    /// - Parameters:
+    ///   - url: URL Where the request is made
+    ///   - method: Method for the request
+    ///   - result: Response of the request
+    func makeRequest<D: Decodable>(url: URL, method: HTTPMethod, result: @escaping (Result<D, Error>) -> Void) {
+        let request = createRequest(url: url, method: method)
+        let task = createDataTask(for: request, result: result)
+        task.resume()
+    }
+    
     
     /// Creates an URLRequest with the required headers, URL, HTTP Method and body
     /// - Parameters:
@@ -62,7 +73,10 @@ class APIService {
     private func createRequest(url: URL, method: HTTPMethod, body: Data? = nil) -> URLRequest {
         var request = URLRequest(url: url)
         request.setValue(Locale.current.languageCode, forHTTPHeaderField: "Accept-Language")
-        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        if let token = UserDefaults.standard.string(forKey: "X-Auth-Token") {
+            request.setValue(token, forHTTPHeaderField: "X-Auth-Token")
+        }
         request.httpMethod = method.rawValue
         request.httpBody = body
         return request

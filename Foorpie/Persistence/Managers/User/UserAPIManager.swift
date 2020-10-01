@@ -9,11 +9,28 @@
 import Foundation
 import Combine
 
+enum RequestError: Error {
+    case invalidURL
+}
+
 class UserAPIManager: UserPersistenceManagerRepresentable {
     static var shared: UserAPIManager = UserAPIManager()
     
     func login(user: User, result: @escaping (Result<User, Error>) -> Void) {
-        guard let url = URLManager.loginURL else { return }
-        APIService.shared.makeRequest(url: url, method: .post, body: user, result: result)
+        guard let url = URLManager.loginURL else { return result(.failure(RequestError.invalidURL)) }
+        APIService.shared.makeRequest(url: url, method: .post, body: user) { (res: Result<User, Error>) in
+            switch res {
+            case .success(let user):
+                UserDefaults.standard.setValue(user.token, forKey: "X-Auth-Token")
+                result(.success(user))
+            case .failure(let error):
+                result(.failure(error))
+            }
+        }
+    }
+    
+    func getCompanies(result: @escaping (Result<[Company], Error>) -> Void) {
+        guard let url = URLManager.companiesURL else { return result(.failure(RequestError.invalidURL)) }
+        APIService.shared.makeRequest(url: url, method: .get, result: result)
     }
 }

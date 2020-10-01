@@ -8,10 +8,13 @@
 
 import UIKit
 import GoogleSignIn
+import Combine
 
 class SettingsViewController: BaseViewController {
     
-    let tableView = UITableView(frame: .zero, style: .insetGrouped)
+    private let tableView = UITableView(frame: .zero, style: .insetGrouped)
+    private let viewModel: SettingsViewModel = SettingsViewModel()
+    private var subscriptions = Set<AnyCancellable>()
 
     override func setupView() {
         super.setupView()
@@ -29,6 +32,14 @@ class SettingsViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ButtonTableViewCell.self)
+        tableView.register(ActivityIndicatorTableViewCell.self)
+    }
+    
+    override func setupViewModel() {
+        viewModel.didFetchCompanies = { [weak self] companies in
+            let viewController = CompaniesListViewController(companies: companies)
+            self?.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
     private func showLogoutAlert() {
@@ -54,22 +65,41 @@ class SettingsViewController: BaseViewController {
 
 extension SettingsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return viewModel.numberOfSections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel.numberOfRows(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath) as ButtonTableViewCell
-        cell.configure(with: Localizable.Button.logout, style: .default)
-        return cell
+        guard let section = viewModel.section(for: indexPath) else {
+            return UITableViewCell()
+        }
+        switch section {
+        case .companies:
+            let cell = tableView.dequeueReusableCell(for: indexPath) as ActivityIndicatorTableViewCell
+            cell.configure(with: "Companies")
+            viewModel.$isLoadingCompanies
+                .assign(to: \.isLoading, on: cell)
+                .store(in: &subscriptions)
+            return cell
+        case .logout:
+            let cell = tableView.dequeueReusableCell(for: indexPath) as ButtonTableViewCell
+            cell.configure(with: Localizable.Button.logout, style: .default)
+            return cell
+        }
     }
 }
 
 extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        showLogoutAlert()
+        guard let section = viewModel.section(for: indexPath) else { return }
+        switch section {
+        case .companies:
+            viewModel.fetchCompanies()
+        case .logout:
+            showLogoutAlert()
+        }
     }
 }

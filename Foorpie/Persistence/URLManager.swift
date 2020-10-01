@@ -39,4 +39,8 @@ class URLManager {
     static var loginURL: URL? {
         return baseURL?.appendingPathComponent("login")
     }
+    
+    static var companiesURL: URL? {
+        return baseURL?.appendingPathComponent("companies")
+    }
 }
