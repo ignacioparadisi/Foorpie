@@ -44,6 +44,7 @@ class SettingsViewController: BaseViewController {
     
     private func logout() {
         GIDSignIn.sharedInstance()?.signOut()
+        tabBarController?.selectedIndex = 0
         let loginViewController = LoginViewController()
         loginViewController.modalPresentationStyle = .overFullScreen
         present(loginViewController, animated: true)
