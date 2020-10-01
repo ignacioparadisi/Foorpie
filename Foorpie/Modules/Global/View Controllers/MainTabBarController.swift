@@ -40,7 +40,7 @@ class MainTabBarController: UITabBarController {
         super.viewDidAppear(animated)
         if !(GIDSignIn.sharedInstance()?.hasPreviousSignIn() ?? false) {
             let loginViewController = LoginViewController()
-            loginViewController.modalPresentationStyle = .overFullScreen
+            loginViewController.modalPresentationStyle = .fullScreen
             present(loginViewController, animated: false)
         } else {
             GIDSignIn.sharedInstance()?.delegate = self
