@@ -73,8 +73,8 @@ class APIService {
     private func createRequest(url: URL, method: HTTPMethod, body: Data? = nil) -> URLRequest {
         var request = URLRequest(url: url)
         request.setValue(Locale.current.languageCode, forHTTPHeaderField: "Accept-Language")
-        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        if let token = UserDefaults.standard.string(forKey: "X-Auth-Token") {
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        if let token = UserDefaults.standard.getToken() {
             request.setValue(token, forHTTPHeaderField: "X-Auth-Token")
         }
         request.httpMethod = method.rawValue

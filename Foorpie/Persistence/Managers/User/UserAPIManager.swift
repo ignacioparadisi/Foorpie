@@ -21,14 +21,21 @@ class UserAPIManager: UserPersistenceManagerRepresentable {
         APIService.shared.makeRequest(url: url, method: .post, body: user) { (res: Result<User, Error>) in
             switch res {
             case .success(let user):
-                UserDefaults.standard.setValue(user.token, forKey: "X-Auth-Token")
-                if let company = user.company {
-                    UserDefaults.standard.setValue(company.id, forKey: "selectedCompany")
-                }
+                UserDefaults.standard.setToken(user.token)
+//                if let company = user.company {
+//                    UserDefaults.standard.setValue(company.id, forKey: "selectedCompany")
+//                }
                 result(.success(user))
             case .failure(let error):
                 result(.failure(error))
             }
+        }
+    }
+    
+    func logout(result: @escaping (Result<Bool, Error>) -> Void) {
+        guard let url = URLManager.logoutURL else { return result(.failure(RequestError.invalidURL)) }
+        APIService.shared.makeRequest(url: url, method: .delete) {  (res: Result<SuccessResponse, Error>) in
+            result(.success(true))
         }
     }
     

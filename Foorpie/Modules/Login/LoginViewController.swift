@@ -17,6 +17,7 @@ class LoadingView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .footnote)
+        label.textColor = .secondaryLabel
         return label
     }()
     private var superviewInstance: UIView?
@@ -59,31 +60,27 @@ class LoadingView: UIView {
             .centerToSuperview()
             .width(lessThanOrEqualToConstant: 200)
             .activate()
+        
+        alpha = 0
+    }
+    
+    func setTitle(_ title: String) {
+        titleLabel.text = title.uppercased()
     }
     
     // MARK: Functions
     func startAnimating() {
-        if let superview = superview {
-            superviewInstance = superview
-            self.anchor.edgesToSuperview().activate()
-        } else if let superview = superviewInstance {
-            superview.addSubview(self)
-            self.anchor.edgesToSuperview().activate()
-        }
-        self.alpha = 0
         activityIndicatorView.startAnimating()
         UIView.animate(withDuration: 0.1) { [weak self] in
             self?.alpha = 1
         }
     }
     
-    func stopAnimating() {
+    func stopAnimating(completion: ((Bool) -> Void)? = nil) {
         activityIndicatorView.stopAnimating()
         UIView.animate(withDuration: 0.1, animations: { [weak self] in
             self?.alpha = 0
-        }, completion: { [weak self] _ in
-            self?.removeFromSuperview()
-        })
+        }, completion: completion)
     }
 }
 
@@ -97,6 +94,8 @@ class LoginViewController: UIViewController {
         didSet {
             activityIndicator.isHidden = !isLoading
             view.isUserInteractionEnabled = !isLoading
+            googleSignInButton.isUserInteractionEnabled = !isLoading
+            appleSignInButton.isUserInteractionEnabled = !isLoading
             if isLoading {
                 activityIndicator.startAnimating()
             } else {

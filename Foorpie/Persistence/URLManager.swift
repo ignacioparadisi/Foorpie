@@ -40,6 +40,10 @@ class URLManager {
         return baseURL?.appendingPathComponent("login")
     }
     
+    static var logoutURL: URL? {
+        return baseURL?.appendingPathComponent("logout")
+    }
+    
     static var companiesURL: URL? {
         return baseURL?.appendingPathComponent("companies")
     }

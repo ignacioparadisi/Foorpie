@@ -11,20 +11,17 @@ import Foundation
 class Company: Codable {
     var id: Int
     var name: String
-    var isOwner: Bool
-    var userId: Int?
+    var ownerId: Int
     
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case isOwner
-        case userId
+        case ownerId = "onwer_id"
     }
     
     init(name: String) {
         self.id = 0
-        self.isOwner = true
-        self.userId = 0
+        self.ownerId = 0
         self.name = name
     }
 }

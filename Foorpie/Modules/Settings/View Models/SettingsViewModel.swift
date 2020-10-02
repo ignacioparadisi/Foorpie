@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import GoogleSignIn
 
 class SettingsViewModel {
     enum Sections: Int, CaseIterable {
@@ -17,6 +18,8 @@ class SettingsViewModel {
     
     var didFetchCompanies: (([Company]) -> Void)?
     @Published var isLoadingCompanies = false
+    @Published var isLoggingOut = false
+    var didLogout: ((Bool) -> Void)?
     
     var numberOfSections: Int {
         return Sections.allCases.count
@@ -54,6 +57,17 @@ class SettingsViewModel {
     }
     
     func logout() {
-        
+        if isLoggingOut { return }
+        isLoggingOut = true
+        UserAPIManager.shared.logout { [weak self] result in
+            self?.isLoggingOut = false
+            switch result {
+            case .success:
+                GIDSignIn.sharedInstance()?.signOut()
+                self?.didLogout?(true)
+            case .failure:
+                self?.didLogout?(false)
+            }
+        }
     }
 }
