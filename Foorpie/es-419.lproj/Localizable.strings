@@ -20,6 +20,7 @@
 "loginErrorTitleKey" = "Inicio de sesión fallido";
 "recipesKey" = "Recetas";
 "newIngredientKey" = "Nuevo Ingrediente";
+"profileKey" = "Cuenta";
 
 // MARK: - Message
 "noRecipeSelectedMessageKey" = "Por favor selecciona una receta para ver el detalle.";

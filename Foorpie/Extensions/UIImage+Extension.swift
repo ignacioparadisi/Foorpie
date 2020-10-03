@@ -16,12 +16,16 @@ extension UIImage {
     static var cartFill: UIImage? = UIImage(systemName: "cart.fill")
     static var checkmarkCircle: UIImage? = UIImage(systemName: "checkmark.circle")
     static var docPlaintext: UIImage? = UIImage(systemName: "doc.plaintext")
+    static var docPlaintextFill: UIImage? = UIImage(systemName: "doc.plaintext.fill")
     static var gearshape: UIImage? = UIImage(systemName: "gearshape")
+    static var gearshapeFill: UIImage? = UIImage(systemName: "gearshape.fill")
+    static var personCropCircle: UIImage? = UIImage(systemName: "person.crop.circle")
+    static var personCropCircleFill: UIImage? = UIImage(systemName: "person.crop.circle.fill")
     static var photo: UIImage? = UIImage(systemName: "photo")
     static var photoOnRectangle: UIImage? = UIImage(systemName: "photo.on.rectangle")
     static var trash: UIImage? = UIImage(systemName: "trash")
     static var trayFull: UIImage? = UIImage(systemName: "tray.full")
-    static var walletPass: UIImage? = UIImage(systemName: "wallet.pass")
+    static var trayFullFill: UIImage? = UIImage(systemName: "tray.full.fill")
     static var xmarkCircle: UIImage? = UIImage(systemName: "xmark.circle")
     
 }

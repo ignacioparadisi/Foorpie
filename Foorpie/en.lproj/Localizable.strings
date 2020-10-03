@@ -21,6 +21,7 @@
 "loginErrorTitleKey" = "Login failed";
 "recipesKey" = "Recipes";
 "newIngredientKey" = "New Ingredient";
+"profileKey" = "Account";
 
 // MARK: - Message
 "noRecipeSelectedMessageKey" = "Please select a recipe to see its details.";

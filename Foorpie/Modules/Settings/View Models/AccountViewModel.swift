@@ -10,7 +10,7 @@ import Foundation
 import Combine
 import GoogleSignIn
 
-class SettingsViewModel {
+class AccountViewModel {
     enum Sections: Int, CaseIterable {
         case companies
         case logout

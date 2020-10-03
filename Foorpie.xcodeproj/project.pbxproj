@@ -16,9 +16,9 @@
 		3202ED8A2527E3E700596A42 /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202ED892527E3E700596A42 /* SuccessResponse.swift */; };
 		3202ED8B2527E3E700596A42 /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202ED892527E3E700596A42 /* SuccessResponse.swift */; };
 		3202ED8C2527E3E700596A42 /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202ED892527E3E700596A42 /* SuccessResponse.swift */; };
-		3202ED932527E95D00596A42 /* SettingsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202ED922527E95D00596A42 /* SettingsSplitViewController.swift */; };
-		3202ED942527E95D00596A42 /* SettingsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202ED922527E95D00596A42 /* SettingsSplitViewController.swift */; };
-		3202ED952527E95D00596A42 /* SettingsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202ED922527E95D00596A42 /* SettingsSplitViewController.swift */; };
+		3202ED932527E95D00596A42 /* AccountSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202ED922527E95D00596A42 /* AccountSplitViewController.swift */; };
+		3202ED942527E95D00596A42 /* AccountSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202ED922527E95D00596A42 /* AccountSplitViewController.swift */; };
+		3202ED952527E95D00596A42 /* AccountSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202ED922527E95D00596A42 /* AccountSplitViewController.swift */; };
 		320FF5B22517E2120029EE39 /* FloatTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FF5B12517E2120029EE39 /* FloatTextFieldTableViewCell.swift */; };
 		320FF5BD2517E3410029EE39 /* FloatTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FF5BC2517E3410029EE39 /* FloatTextFieldCellViewModel.swift */; };
 		320FF5E92517E4BF0029EE39 /* Foorpie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 320FF5E72517E4BF0029EE39 /* Foorpie.xcdatamodeld */; };
@@ -85,9 +85,9 @@
 		32932585252673C100F59470 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32932584252673C100F59470 /* User.swift */; };
 		32932590252673E300F59470 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32932584252673C100F59470 /* User.swift */; };
 		32932596252673E300F59470 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32932584252673C100F59470 /* User.swift */; };
-		3293259F2526777E00F59470 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3293259E2526777E00F59470 /* SettingsViewModel.swift */; };
-		329325A02526777E00F59470 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3293259E2526777E00F59470 /* SettingsViewModel.swift */; };
-		329325A12526777E00F59470 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3293259E2526777E00F59470 /* SettingsViewModel.swift */; };
+		3293259F2526777E00F59470 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3293259E2526777E00F59470 /* AccountViewModel.swift */; };
+		329325A02526777E00F59470 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3293259E2526777E00F59470 /* AccountViewModel.swift */; };
+		329325A12526777E00F59470 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3293259E2526777E00F59470 /* AccountViewModel.swift */; };
 		329325A92526794000F59470 /* ActivityIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329325A82526794000F59470 /* ActivityIndicatorTableViewCell.swift */; };
 		329325AA2526794000F59470 /* ActivityIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329325A82526794000F59470 /* ActivityIndicatorTableViewCell.swift */; };
 		329325AB2526794000F59470 /* ActivityIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329325A82526794000F59470 /* ActivityIndicatorTableViewCell.swift */; };
@@ -101,7 +101,7 @@
 		32AEE04724FABD28006EF7CE /* OrderSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04624FABD28006EF7CE /* OrderSplitViewController.swift */; };
 		32AEE04A24FABF6A006EF7CE /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04924FABF6A006EF7CE /* Localizable.swift */; };
 		32AEE05224FAC0B3006EF7CE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32AEE05524FAC0B3006EF7CE /* Localizable.strings */; };
-		32AFEB7C25191ADF00D66485 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFEB7B25191ADF00D66485 /* SettingsViewController.swift */; };
+		32AFEB7C25191ADF00D66485 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFEB7B25191ADF00D66485 /* AccountViewController.swift */; };
 		32AFEB852519241600D66485 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFEB842519241600D66485 /* UIWindow+Extension.swift */; };
 		32BCDCD024FB2390001CA617 /* IngredientListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDCCF24FB2390001CA617 /* IngredientListViewController.swift */; };
 		32BCDCD324FB29AF001CA617 /* IngredientListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDCD224FB29AF001CA617 /* IngredientListViewModel.swift */; };
@@ -119,7 +119,7 @@
 		32D6B30F251A97BD00DB4CBC /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04924FABF6A006EF7CE /* Localizable.swift */; };
 		32D6B310251A97BD00DB4CBC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D824F4862700B7DCD1 /* MainTabBarController.swift */; };
 		32D6B311251A97BD00DB4CBC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32758B0C24F7EA8E0062441F /* UIColor+Extension.swift */; };
-		32D6B312251A97BD00DB4CBC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFEB7B25191ADF00D66485 /* SettingsViewController.swift */; };
+		32D6B312251A97BD00DB4CBC /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFEB7B25191ADF00D66485 /* AccountViewController.swift */; };
 		32D6B313251A97BD00DB4CBC /* IngredientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C706D524FB309D00E86728 /* IngredientDetailViewController.swift */; };
 		32D6B314251A97BD00DB4CBC /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331624F48C4500B7DCD1 /* OrderListViewController.swift */; };
 		32D6B315251A97BD00DB4CBC /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324CAE33250AE33B006A6703 /* IngredientTableViewCell.swift */; };
@@ -207,7 +207,7 @@
 		32E29A3A251C078F000B5F1C /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE04924FABF6A006EF7CE /* Localizable.swift */; };
 		32E29A3B251C078F000B5F1C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B32D824F4862700B7DCD1 /* MainTabBarController.swift */; };
 		32E29A3C251C078F000B5F1C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32758B0C24F7EA8E0062441F /* UIColor+Extension.swift */; };
-		32E29A3D251C078F000B5F1C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFEB7B25191ADF00D66485 /* SettingsViewController.swift */; };
+		32E29A3D251C078F000B5F1C /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFEB7B25191ADF00D66485 /* AccountViewController.swift */; };
 		32E29A3E251C078F000B5F1C /* IngredientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C706D524FB309D00E86728 /* IngredientDetailViewController.swift */; };
 		32E29A3F251C078F000B5F1C /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331624F48C4500B7DCD1 /* OrderListViewController.swift */; };
 		32E29A40251C078F000B5F1C /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324CAE33250AE33B006A6703 /* IngredientTableViewCell.swift */; };
@@ -316,7 +316,7 @@
 		3202C8DA24FC50AA0076B0FA /* ingredients-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "ingredients-data.json"; sourceTree = "<group>"; };
 		3202ED802527D24200596A42 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		3202ED892527E3E700596A42 /* SuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
-		3202ED922527E95D00596A42 /* SettingsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSplitViewController.swift; sourceTree = "<group>"; };
+		3202ED922527E95D00596A42 /* AccountSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSplitViewController.swift; sourceTree = "<group>"; };
 		320FF5B12517E2120029EE39 /* FloatTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatTextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		320FF5BC2517E3410029EE39 /* FloatTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatTextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		320FF5E82517E4BF0029EE39 /* Foorpie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foorpie.xcdatamodel; sourceTree = "<group>"; };
@@ -382,7 +382,7 @@
 		327B331824F48C6600B7DCD1 /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
 		32932554252672CC00F59470 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		32932584252673C100F59470 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		3293259E2526777E00F59470 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		3293259E2526777E00F59470 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		329325A82526794000F59470 /* ActivityIndicatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorTableViewCell.swift; sourceTree = "<group>"; };
 		32ACEF81251784090030EBD1 /* PersistenceManagerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManagerFactory.swift; sourceTree = "<group>"; };
 		32ACEF8A2517868E0030EBD1 /* MenuPersistenceManagerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPersistenceManagerRepresentable.swift; sourceTree = "<group>"; };
@@ -397,7 +397,7 @@
 		32AEE05124FAC0A2006EF7CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		32AEE05424FAC0B3006EF7CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		32AEE05624FAC0B9006EF7CE /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		32AFEB7B25191ADF00D66485 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		32AFEB7B25191ADF00D66485 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		32AFEB842519241600D66485 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 		32BCDCCF24FB2390001CA617 /* IngredientListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListViewController.swift; sourceTree = "<group>"; };
 		32BCDCD224FB29AF001CA617 /* IngredientListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListViewModel.swift; sourceTree = "<group>"; };
@@ -873,7 +873,7 @@
 		3293259C2526776A00F59470 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				3293259E2526777E00F59470 /* SettingsViewModel.swift */,
+				3293259E2526777E00F59470 /* AccountViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -881,9 +881,9 @@
 		3293259D2526776E00F59470 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				32AFEB7B25191ADF00D66485 /* SettingsViewController.swift */,
+				32AFEB7B25191ADF00D66485 /* AccountViewController.swift */,
 				322A2B7B25267FFC00386C21 /* CompaniesListViewController.swift */,
-				3202ED922527E95D00596A42 /* SettingsSplitViewController.swift */,
+				3202ED922527E95D00596A42 /* AccountSplitViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -1460,7 +1460,7 @@
 				32AEE04A24FABF6A006EF7CE /* Localizable.swift in Sources */,
 				327B32D924F4862700B7DCD1 /* MainTabBarController.swift in Sources */,
 				32758B0D24F7EA8E0062441F /* UIColor+Extension.swift in Sources */,
-				32AFEB7C25191ADF00D66485 /* SettingsViewController.swift in Sources */,
+				32AFEB7C25191ADF00D66485 /* AccountViewController.swift in Sources */,
 				32C706D624FB309D00E86728 /* IngredientDetailViewController.swift in Sources */,
 				327B331724F48C4500B7DCD1 /* OrderListViewController.swift in Sources */,
 				324CAE34250AE33B006A6703 /* IngredientTableViewCell.swift in Sources */,
@@ -1473,7 +1473,7 @@
 				32ACEF8B2517868E0030EBD1 /* MenuPersistenceManagerRepresentable.swift in Sources */,
 				32DA6BCE24F7431C0080DD56 /* CustomAlertViewController.swift in Sources */,
 				32AD6C7524FB31AC00A55D7D /* IngredientDetailViewModel.swift in Sources */,
-				3202ED932527E95D00596A42 /* SettingsSplitViewController.swift in Sources */,
+				3202ED932527E95D00596A42 /* AccountSplitViewController.swift in Sources */,
 				320FF6092517E70A0029EE39 /* Ingredient+CoreDataProperties.swift in Sources */,
 				326589B32528B575006C3989 /* LoginResponse.swift in Sources */,
 				32ACEFAF251791510030EBD1 /* UnitTextFieldCellViewModel.swift in Sources */,
@@ -1499,7 +1499,7 @@
 				320FF5BD2517E3410029EE39 /* FloatTextFieldCellViewModel.swift in Sources */,
 				3202C8CD24FBE9730076B0FA /* UIView+Extension.swift in Sources */,
 				32AEE04724FABD28006EF7CE /* OrderSplitViewController.swift in Sources */,
-				3293259F2526777E00F59470 /* SettingsViewModel.swift in Sources */,
+				3293259F2526777E00F59470 /* AccountViewModel.swift in Sources */,
 				3250B07424F49BFE001EE718 /* RecipeViewModel.swift in Sources */,
 				321A166424F93E9600CF0C5A /* ValidatorConvertible.swift in Sources */,
 				3275C6E024F559B4004691EA /* TextFieldCellViewModel.swift in Sources */,
@@ -1562,7 +1562,7 @@
 				32D6B30F251A97BD00DB4CBC /* Localizable.swift in Sources */,
 				32D6B310251A97BD00DB4CBC /* MainTabBarController.swift in Sources */,
 				32D6B311251A97BD00DB4CBC /* UIColor+Extension.swift in Sources */,
-				32D6B312251A97BD00DB4CBC /* SettingsViewController.swift in Sources */,
+				32D6B312251A97BD00DB4CBC /* AccountViewController.swift in Sources */,
 				32D6B313251A97BD00DB4CBC /* IngredientDetailViewController.swift in Sources */,
 				32D6B314251A97BD00DB4CBC /* OrderListViewController.swift in Sources */,
 				32D6B315251A97BD00DB4CBC /* IngredientTableViewCell.swift in Sources */,
@@ -1575,7 +1575,7 @@
 				32D6B31C251A97BD00DB4CBC /* MenuPersistenceManagerRepresentable.swift in Sources */,
 				32D6B31D251A97BD00DB4CBC /* CustomAlertViewController.swift in Sources */,
 				32D6B31E251A97BD00DB4CBC /* IngredientDetailViewModel.swift in Sources */,
-				3202ED942527E95D00596A42 /* SettingsSplitViewController.swift in Sources */,
+				3202ED942527E95D00596A42 /* AccountSplitViewController.swift in Sources */,
 				32D6B31F251A97BD00DB4CBC /* Ingredient+CoreDataProperties.swift in Sources */,
 				326589B42528B575006C3989 /* LoginResponse.swift in Sources */,
 				32D6B320251A97BD00DB4CBC /* UnitTextFieldCellViewModel.swift in Sources */,
@@ -1601,7 +1601,7 @@
 				32D6B332251A97BD00DB4CBC /* UIView+Extension.swift in Sources */,
 				32D6B333251A97BD00DB4CBC /* OrderSplitViewController.swift in Sources */,
 				32D6B334251A97BD00DB4CBC /* RecipeViewModel.swift in Sources */,
-				329325A02526777E00F59470 /* SettingsViewModel.swift in Sources */,
+				329325A02526777E00F59470 /* AccountViewModel.swift in Sources */,
 				32D6B335251A97BD00DB4CBC /* ValidatorConvertible.swift in Sources */,
 				32D6B336251A97BD00DB4CBC /* TextFieldCellViewModel.swift in Sources */,
 				32D6B337251A97BD00DB4CBC /* NoItemSelectedViewController.swift in Sources */,
@@ -1648,7 +1648,7 @@
 				32E29A3A251C078F000B5F1C /* Localizable.swift in Sources */,
 				32E29A3B251C078F000B5F1C /* MainTabBarController.swift in Sources */,
 				32E29A3C251C078F000B5F1C /* UIColor+Extension.swift in Sources */,
-				32E29A3D251C078F000B5F1C /* SettingsViewController.swift in Sources */,
+				32E29A3D251C078F000B5F1C /* AccountViewController.swift in Sources */,
 				32E29A3E251C078F000B5F1C /* IngredientDetailViewController.swift in Sources */,
 				32E29A3F251C078F000B5F1C /* OrderListViewController.swift in Sources */,
 				32E29A40251C078F000B5F1C /* IngredientTableViewCell.swift in Sources */,
@@ -1661,7 +1661,7 @@
 				32E29A47251C078F000B5F1C /* MenuPersistenceManagerRepresentable.swift in Sources */,
 				32E29A48251C078F000B5F1C /* CustomAlertViewController.swift in Sources */,
 				32E29A49251C078F000B5F1C /* IngredientDetailViewModel.swift in Sources */,
-				3202ED952527E95D00596A42 /* SettingsSplitViewController.swift in Sources */,
+				3202ED952527E95D00596A42 /* AccountSplitViewController.swift in Sources */,
 				32E29A4A251C078F000B5F1C /* Ingredient+CoreDataProperties.swift in Sources */,
 				326589B52528B575006C3989 /* LoginResponse.swift in Sources */,
 				32E29A4B251C078F000B5F1C /* UnitTextFieldCellViewModel.swift in Sources */,
@@ -1687,7 +1687,7 @@
 				32E29A5D251C078F000B5F1C /* UIView+Extension.swift in Sources */,
 				32E29A5E251C078F000B5F1C /* OrderSplitViewController.swift in Sources */,
 				32E29A5F251C078F000B5F1C /* RecipeViewModel.swift in Sources */,
-				329325A12526777E00F59470 /* SettingsViewModel.swift in Sources */,
+				329325A12526777E00F59470 /* AccountViewModel.swift in Sources */,
 				32E29A60251C078F000B5F1C /* ValidatorConvertible.swift in Sources */,
 				32E29A61251C078F000B5F1C /* TextFieldCellViewModel.swift in Sources */,
 				32E29A62251C078F000B5F1C /* NoItemSelectedViewController.swift in Sources */,

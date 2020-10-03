@@ -23,6 +23,7 @@ class Localizable {
         static var noOrderSelected: String = "noOrderSelectedTitleKey".localized
         static var noRecipeSelected: String = "noRecipeSelectedTitleKey".localized
         static var orders: String = "ordersKey".localized
+        static var profile: String = "profileKey".localized
         static var recipes: String = "recipesKey".localized
         static var saved: String = "savedTitleKey".localized
         static var settings: String = "settingsKey".localized

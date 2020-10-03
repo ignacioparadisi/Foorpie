@@ -1,5 +1,5 @@
 //
-//  SettingsViewController.swift
+//  AccountViewController.swift
 //  Foorpie
 //
 //  Created by Ignacio Paradisi on 9/21/20.
@@ -10,10 +10,10 @@ import UIKit
 import GoogleSignIn
 import Combine
 
-class SettingsViewController: BaseViewController {
+class AccountViewController: BaseViewController {
     
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
-    private let viewModel: SettingsViewModel = SettingsViewModel()
+    private let viewModel: AccountViewModel = AccountViewModel()
     private var subscriptions = Set<AnyCancellable>()
     private lazy var loadingView = LoadingView()
 
@@ -24,7 +24,7 @@ class SettingsViewController: BaseViewController {
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        title = Localizable.Title.settings
+        title = Localizable.Title.profile
     }
     
     private func setupTableView() {
@@ -94,7 +94,7 @@ class SettingsViewController: BaseViewController {
 
 }
 
-extension SettingsViewController: UITableViewDataSource {
+extension AccountViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections
     }
@@ -123,7 +123,7 @@ extension SettingsViewController: UITableViewDataSource {
     }
 }
 
-extension SettingsViewController: UITableViewDelegate {
+extension AccountViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let section = viewModel.section(for: indexPath) else { return }
         switch section {

@@ -15,18 +15,14 @@ class MainTabBarController: UITabBarController {
     private let orderSplitViewController = OrderSplitViewController()
     /// View controller for listing recipes
     private let menuSplitViewController = MenuSplitViewController()
-    private let settingsSplitViewController = SettingsSplitViewController()
+    private let settingsSplitViewController = AccountSplitViewController()
     
     // MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        orderSplitViewController.tabBarItem = UITabBarItem(title: Localizable.Title.orders, image: .trayFull, tag: 0)
-        if #available(iOS 14, *) {
-            menuSplitViewController.tabBarItem = UITabBarItem(title: Localizable.Title.menu, image: .walletPass, tag: 1)
-        } else {
-            menuSplitViewController.tabBarItem = UITabBarItem(title: Localizable.Title.menu, image: .docPlaintext, tag: 1)
-        }
-        settingsSplitViewController.tabBarItem = UITabBarItem(title: Localizable.Title.settings, image: .gearshape, tag: 2)
+        orderSplitViewController.tabBarItem = UITabBarItem(title: Localizable.Title.orders, image: .trayFull, selectedImage: .trayFullFill)
+        menuSplitViewController.tabBarItem = UITabBarItem(title: Localizable.Title.recipes, image: .docPlaintext, selectedImage: .docPlaintextFill)
+        settingsSplitViewController.tabBarItem = UITabBarItem(title: Localizable.Title.profile, image: .personCropCircle, selectedImage: .personCropCircleFill)
         menuSplitViewController.preferredDisplayMode = .allVisible
         viewControllers = [
             orderSplitViewController,
