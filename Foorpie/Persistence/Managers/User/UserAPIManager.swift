@@ -18,14 +18,20 @@ class UserAPIManager: UserPersistenceManagerRepresentable {
     
     func login(user: User, result: @escaping (Result<User, Error>) -> Void) {
         guard let url = URLManager.loginURL else { return result(.failure(RequestError.invalidURL)) }
-        APIService.shared.makeRequest(url: url, method: .post, body: user) { (res: Result<User, Error>) in
+        APIService.shared.makeRequest(url: url, method: .post, body: user) { (res: Result<LoginResponse, Error>) in
             switch res {
-            case .success(let user):
-                UserDefaults.standard.setToken(user.token)
-//                if let company = user.company {
-//                    UserDefaults.standard.setValue(company.id, forKey: "selectedCompany")
-//                }
-                result(.success(user))
+            case .success(let response):
+                if UserDefaults.standard.getUser() == nil {
+                    if let company = response.company {
+                        UserDefaults.standard.setSelectedCompany(company)
+                    }
+                } else if let user = UserDefaults.standard.getUser(), user.id != response.user.id {
+                    if let company = response.company {
+                        UserDefaults.standard.setSelectedCompany(company)
+                    }
+                }
+                UserDefaults.standard.setUser(response.user)
+                result(.success(response.user))
             case .failure(let error):
                 result(.failure(error))
             }

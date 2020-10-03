@@ -13,7 +13,7 @@ class CompaniesListViewController: BaseViewController {
     private var companies: [Company] = []
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
     private var selectedCompany: Int? {
-        return UserDefaults.standard.integer(forKey: "selectedCompany")
+        return UserDefaults.standard.getSelectedCompany()?.id
     }
     
     init(companies: [Company]) {
@@ -38,7 +38,12 @@ class CompaniesListViewController: BaseViewController {
     override func setupNavigationBar() {
         super.setupNavigationBar()
         let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
-        navigationItem.setRightBarButtonItems([addButtonItem, editButtonItem], animated: false)
+        var buttonItems = [addButtonItem]
+        if companies.count > 1 {
+            buttonItems.append(editButtonItem)
+        }
+        navigationItem.setRightBarButtonItems(buttonItems, animated: false)
+        
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -65,13 +70,13 @@ extension CompaniesListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
+        return companies.count > 1 ? .delete : .none
     }
 }
 
 extension CompaniesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+        if editingStyle == .delete && companies.count > 1 {
             
         }
     }

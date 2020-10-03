@@ -110,8 +110,7 @@ extension SettingsViewController: UITableViewDataSource {
         switch section {
         case .companies:
             let cell = tableView.dequeueReusableCell(for: indexPath) as ActivityIndicatorTableViewCell
-            cell.configure(with: "Companies", value: "Personal")
-            cell.imageView?.image = UIImage(systemName: "building.columns.fill")
+            cell.configure(with: "Company", value: viewModel.companyName)
             viewModel.$isLoadingCompanies
                 .assign(to: \.isLoading, on: cell)
                 .store(in: &subscriptions)

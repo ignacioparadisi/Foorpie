@@ -74,8 +74,8 @@ class APIService {
         var request = URLRequest(url: url)
         request.setValue(Locale.current.languageCode, forHTTPHeaderField: "Accept-Language")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        if let token = UserDefaults.standard.getToken() {
-            request.setValue(token, forHTTPHeaderField: "X-Auth-Token")
+        if let user = UserDefaults.standard.getUser() {
+            request.setValue(user.token, forHTTPHeaderField: "X-Auth-Token")
         }
         request.httpMethod = method.rawValue
         request.httpBody = body

@@ -49,6 +49,9 @@
 		3250B07A24F4B7F7001EE718 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3250B07924F4B7F7001EE718 /* NibLoadableView.swift */; };
 		325CE51B24FA8ECA00E7C88B /* OrderRecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325CE51924FA8ECA00E7C88B /* OrderRecipeCollectionViewCell.swift */; };
 		325CE51D24FA8ECA00E7C88B /* OrderRecipeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325CE51A24FA8ECA00E7C88B /* OrderRecipeCollectionViewCell.xib */; };
+		326589B32528B575006C3989 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326589B22528B575006C3989 /* LoginResponse.swift */; };
+		326589B42528B575006C3989 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326589B22528B575006C3989 /* LoginResponse.swift */; };
+		326589B52528B575006C3989 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326589B22528B575006C3989 /* LoginResponse.swift */; };
 		32758B0D24F7EA8E0062441F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32758B0C24F7EA8E0062441F /* UIColor+Extension.swift */; };
 		3275C6C024F540C3004691EA /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6BF24F540C3004691EA /* RecipeDetailViewController.swift */; };
 		3275C6C324F540D5004691EA /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3275C6C224F540D5004691EA /* RecipeDetailViewModel.swift */; };
@@ -343,6 +346,7 @@
 		325CE51924FA8ECA00E7C88B /* OrderRecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		325CE51A24FA8ECA00E7C88B /* OrderRecipeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderRecipeCollectionViewCell.xib; sourceTree = "<group>"; };
 		32628241251801E900E372EB /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		326589B22528B575006C3989 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		32758B0C24F7EA8E0062441F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		32758B1024F8013A0062441F /* Foorpie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Foorpie.entitlements; sourceTree = "<group>"; };
 		3275C6BF24F540C3004691EA /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
@@ -553,9 +557,43 @@
 			path = "Collection View Cells";
 			sourceTree = "<group>";
 		};
+		3265899B2528B550006C3989 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				326589B22528B575006C3989 /* LoginResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		326589A62528B556006C3989 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		326589AC2528B55F006C3989 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		326589C02528B5AA006C3989 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32E29A26251BDE4C000B5F1C /* APIValidationError.swift */,
+				32932554252672CC00F59470 /* Company.swift */,
+				3202ED892527E3E700596A42 /* SuccessResponse.swift */,
+				32932584252673C100F59470 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		3275C6D724F5595D004691EA /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				326589C02528B5AA006C3989 /* Models */,
 				321A166224F93E8800CF0C5A /* Classes */,
 				3275C6DB24F5598F004691EA /* Protocols */,
 				3275C6DA24F55975004691EA /* View Controllers */,
@@ -767,14 +805,10 @@
 		327B331524F48C1500B7DCD1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				32932554252672CC00F59470 /* Company.swift */,
 				320FF5FF2517E70A0029EE39 /* Recipe+CoreDataClass.swift */,
 				320FF6002517E70A0029EE39 /* Recipe+CoreDataProperties.swift */,
 				320FF6012517E70A0029EE39 /* Ingredient+CoreDataClass.swift */,
 				320FF6022517E70A0029EE39 /* Ingredient+CoreDataProperties.swift */,
-				32E29A26251BDE4C000B5F1C /* APIValidationError.swift */,
-				32932584252673C100F59470 /* User.swift */,
-				3202ED892527E3E700596A42 /* SuccessResponse.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -894,6 +928,9 @@
 		32D1F8A725190507004068C7 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				326589AC2528B55F006C3989 /* View Models */,
+				326589A62528B556006C3989 /* View Controllers */,
+				3265899B2528B550006C3989 /* Models */,
 				32D1F8B02519067E004068C7 /* LoginViewController.swift */,
 				32D1F8B12519067E004068C7 /* LoginViewController.xib */,
 			);
@@ -1438,6 +1475,7 @@
 				32AD6C7524FB31AC00A55D7D /* IngredientDetailViewModel.swift in Sources */,
 				3202ED932527E95D00596A42 /* SettingsSplitViewController.swift in Sources */,
 				320FF6092517E70A0029EE39 /* Ingredient+CoreDataProperties.swift in Sources */,
+				326589B32528B575006C3989 /* LoginResponse.swift in Sources */,
 				32ACEFAF251791510030EBD1 /* UnitTextFieldCellViewModel.swift in Sources */,
 				32932555252672CC00F59470 /* Company.swift in Sources */,
 				320FF6072517E70A0029EE39 /* Ingredient+CoreDataClass.swift in Sources */,
@@ -1539,6 +1577,7 @@
 				32D6B31E251A97BD00DB4CBC /* IngredientDetailViewModel.swift in Sources */,
 				3202ED942527E95D00596A42 /* SettingsSplitViewController.swift in Sources */,
 				32D6B31F251A97BD00DB4CBC /* Ingredient+CoreDataProperties.swift in Sources */,
+				326589B42528B575006C3989 /* LoginResponse.swift in Sources */,
 				32D6B320251A97BD00DB4CBC /* UnitTextFieldCellViewModel.swift in Sources */,
 				32D6B321251A97BD00DB4CBC /* Ingredient+CoreDataClass.swift in Sources */,
 				32D6B322251A97BD00DB4CBC /* TextFieldTableViewCell.swift in Sources */,
@@ -1624,6 +1663,7 @@
 				32E29A49251C078F000B5F1C /* IngredientDetailViewModel.swift in Sources */,
 				3202ED952527E95D00596A42 /* SettingsSplitViewController.swift in Sources */,
 				32E29A4A251C078F000B5F1C /* Ingredient+CoreDataProperties.swift in Sources */,
+				326589B52528B575006C3989 /* LoginResponse.swift in Sources */,
 				32E29A4B251C078F000B5F1C /* UnitTextFieldCellViewModel.swift in Sources */,
 				32E29A4C251C078F000B5F1C /* Ingredient+CoreDataClass.swift in Sources */,
 				32E29A4D251C078F000B5F1C /* TextFieldTableViewCell.swift in Sources */,

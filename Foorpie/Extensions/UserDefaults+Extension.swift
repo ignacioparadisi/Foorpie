@@ -9,16 +9,30 @@
 import Foundation
 
 extension UserDefaults {
-    func setToken(_ token: String) {
-        UserDefaults.standard.setValue(token, forKey: "X-Auth-Token")
+    func setUser(_ user: User) {
+        let userData = try? APIService.shared.encode(user)
+        if let data = userData {
+            UserDefaults.standard.setValue(data, forKey: "loggedUser")
+        }
     }
-    func getToken() -> String? {
-        return UserDefaults.standard.string(forKey: "X-Auth-Token")
+    func getUser() -> User? {
+        let data = UserDefaults.standard.data(forKey: "loggedUser")
+        if let userData = data {
+            return try? APIService.shared.decode(User.self, from: userData)
+        }
+        return nil
     }
-    func setSelectedCompany(_ companyId: Int) {
-        UserDefaults.standard.setValue(companyId, forKey: "selectedCompany")
+    func setSelectedCompany(_ company: Company) {
+        let companyData = try? APIService.shared.encode(company)
+        if let data = companyData {
+            UserDefaults.standard.setValue(data, forKey: "selectedCompany")
+        }
     }
-    func getSelectedCompany() -> Int? {
-        UserDefaults.standard.integer(forKey: "selectedCompany")
+    func getSelectedCompany() -> Company? {
+        let data = UserDefaults.standard.data(forKey: "selectedCompany")
+        if let companyData = data {
+            return try? APIService.shared.decode(Company.self, from: companyData)
+        }
+        return nil
     }
 }

@@ -24,6 +24,9 @@ class SettingsViewModel {
     var numberOfSections: Int {
         return Sections.allCases.count
     }
+    var companyName: String {
+        return UserDefaults.standard.getSelectedCompany()?.name ?? ""
+    }
     
     func numberOfRows(in section: Int) -> Int {
         guard let section = Sections(rawValue: section) else { return 0 }

@@ -16,7 +16,7 @@ class Company: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case ownerId = "onwer_id"
+        case ownerId = "owner_id"
     }
     
     init(name: String) {
