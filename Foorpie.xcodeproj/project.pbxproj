@@ -79,6 +79,9 @@
 		327B331424F48A3D00B7DCD1 /* order-status-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 327B331324F48A3D00B7DCD1 /* order-status-data.json */; };
 		327B331724F48C4500B7DCD1 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331624F48C4500B7DCD1 /* OrderListViewController.swift */; };
 		327B331924F48C6600B7DCD1 /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B331824F48C6600B7DCD1 /* RecipeListViewController.swift */; };
+		3288088A2532466500080CBA /* CompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328808892532466500080CBA /* CompanyViewModel.swift */; };
+		3288088B2532466500080CBA /* CompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328808892532466500080CBA /* CompanyViewModel.swift */; };
+		3288088C2532466500080CBA /* CompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328808892532466500080CBA /* CompanyViewModel.swift */; };
 		32932555252672CC00F59470 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32932554252672CC00F59470 /* Company.swift */; };
 		329325732526739000F59470 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32932554252672CC00F59470 /* Company.swift */; };
 		329325792526739000F59470 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32932554252672CC00F59470 /* Company.swift */; };
@@ -91,6 +94,9 @@
 		329325A92526794000F59470 /* ActivityIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329325A82526794000F59470 /* ActivityIndicatorTableViewCell.swift */; };
 		329325AA2526794000F59470 /* ActivityIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329325A82526794000F59470 /* ActivityIndicatorTableViewCell.swift */; };
 		329325AB2526794000F59470 /* ActivityIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329325A82526794000F59470 /* ActivityIndicatorTableViewCell.swift */; };
+		32A6DD6425291AAB0092CE3B /* CompaniesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6DD6325291AAB0092CE3B /* CompaniesListViewModel.swift */; };
+		32A6DD6525291AAB0092CE3B /* CompaniesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6DD6325291AAB0092CE3B /* CompaniesListViewModel.swift */; };
+		32A6DD6625291AAB0092CE3B /* CompaniesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6DD6325291AAB0092CE3B /* CompaniesListViewModel.swift */; };
 		32ACEF82251784090030EBD1 /* PersistenceManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ACEF81251784090030EBD1 /* PersistenceManagerFactory.swift */; };
 		32ACEF8B2517868E0030EBD1 /* MenuPersistenceManagerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ACEF8A2517868E0030EBD1 /* MenuPersistenceManagerRepresentable.swift */; };
 		32ACEF96251786A40030EBD1 /* MenuCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ACEF95251786A40030EBD1 /* MenuCoreDataManager.swift */; };
@@ -105,6 +111,9 @@
 		32AFEB852519241600D66485 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AFEB842519241600D66485 /* UIWindow+Extension.swift */; };
 		32BCDCD024FB2390001CA617 /* IngredientListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDCCF24FB2390001CA617 /* IngredientListViewController.swift */; };
 		32BCDCD324FB29AF001CA617 /* IngredientListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCDCD224FB29AF001CA617 /* IngredientListViewModel.swift */; };
+		32BD701E2529408A0001B98A /* CompanyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BD701D2529408A0001B98A /* CompanyDetailViewController.swift */; };
+		32BD701F2529408A0001B98A /* CompanyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BD701D2529408A0001B98A /* CompanyDetailViewController.swift */; };
+		32BD70202529408A0001B98A /* CompanyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BD701D2529408A0001B98A /* CompanyDetailViewController.swift */; };
 		32BE299D24F5910400BD9F15 /* IntTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */; };
 		32BE299F24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */; };
 		32C706D624FB309D00E86728 /* IngredientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C706D524FB309D00E86728 /* IngredientDetailViewController.swift */; };
@@ -380,10 +389,12 @@
 		327B331324F48A3D00B7DCD1 /* order-status-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "order-status-data.json"; sourceTree = "<group>"; };
 		327B331624F48C4500B7DCD1 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		327B331824F48C6600B7DCD1 /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
+		328808892532466500080CBA /* CompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyViewModel.swift; sourceTree = "<group>"; };
 		32932554252672CC00F59470 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		32932584252673C100F59470 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3293259E2526777E00F59470 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		329325A82526794000F59470 /* ActivityIndicatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorTableViewCell.swift; sourceTree = "<group>"; };
+		32A6DD6325291AAB0092CE3B /* CompaniesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesListViewModel.swift; sourceTree = "<group>"; };
 		32ACEF81251784090030EBD1 /* PersistenceManagerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManagerFactory.swift; sourceTree = "<group>"; };
 		32ACEF8A2517868E0030EBD1 /* MenuPersistenceManagerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPersistenceManagerRepresentable.swift; sourceTree = "<group>"; };
 		32ACEF95251786A40030EBD1 /* MenuCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoreDataManager.swift; sourceTree = "<group>"; };
@@ -401,6 +412,7 @@
 		32AFEB842519241600D66485 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 		32BCDCCF24FB2390001CA617 /* IngredientListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListViewController.swift; sourceTree = "<group>"; };
 		32BCDCD224FB29AF001CA617 /* IngredientListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListViewModel.swift; sourceTree = "<group>"; };
+		32BD701D2529408A0001B98A /* CompanyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailViewController.swift; sourceTree = "<group>"; };
 		32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		32BE299E24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		32C706D524FB309D00E86728 /* IngredientDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetailViewController.swift; sourceTree = "<group>"; };
@@ -583,7 +595,6 @@
 			isa = PBXGroup;
 			children = (
 				32E29A26251BDE4C000B5F1C /* APIValidationError.swift */,
-				32932554252672CC00F59470 /* Company.swift */,
 				3202ED892527E3E700596A42 /* SuccessResponse.swift */,
 				32932584252673C100F59470 /* User.swift */,
 			);
@@ -870,10 +881,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		32880888253245F000080CBA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32932554252672CC00F59470 /* Company.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		3293259C2526776A00F59470 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				328808892532466500080CBA /* CompanyViewModel.swift */,
 				3293259E2526777E00F59470 /* AccountViewModel.swift */,
+				32A6DD6325291AAB0092CE3B /* CompaniesListViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -884,6 +905,7 @@
 				32AFEB7B25191ADF00D66485 /* AccountViewController.swift */,
 				322A2B7B25267FFC00386C21 /* CompaniesListViewController.swift */,
 				3202ED922527E95D00596A42 /* AccountSplitViewController.swift */,
+				32BD701D2529408A0001B98A /* CompanyDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -918,6 +940,7 @@
 		32AFEB7A25191ACC00D66485 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				32880888253245F000080CBA /* Models */,
 				329325A72526792100F59470 /* Views */,
 				3293259D2526776E00F59470 /* View Controllers */,
 				3293259C2526776A00F59470 /* View Models */,
@@ -1467,6 +1490,7 @@
 				321A166A24F95E2500CF0C5A /* AlertView.swift in Sources */,
 				32BE299F24F5912D00BD9F15 /* IntTextFieldCellViewModel.swift in Sources */,
 				327B32D524F4862700B7DCD1 /* AppDelegate.swift in Sources */,
+				32A6DD6425291AAB0092CE3B /* CompaniesListViewModel.swift in Sources */,
 				3275C6EF24F56040004691EA /* CurrencyTextFieldCellViewModel.swift in Sources */,
 				321A166724F95D2700CF0C5A /* BaseViewController.swift in Sources */,
 				324EE68924F8832700A85781 /* FileManager+Extension.swift in Sources */,
@@ -1515,6 +1539,8 @@
 				32E29A27251BDE4C000B5F1C /* APIValidationError.swift in Sources */,
 				3275C6DD24F5599D004691EA /* FieldViewModel.swift in Sources */,
 				3275C6CC24F5420C004691EA /* ButtonTableViewCell.swift in Sources */,
+				32BD701E2529408A0001B98A /* CompanyDetailViewController.swift in Sources */,
+				3288088A2532466500080CBA /* CompanyViewModel.swift in Sources */,
 				32D6B37D251AA54300DB4CBC /* UserPersistenceManager.swift in Sources */,
 				32ACEF96251786A40030EBD1 /* MenuCoreDataManager.swift in Sources */,
 				3275C6C024F540C3004691EA /* RecipeDetailViewController.swift in Sources */,
@@ -1569,6 +1595,7 @@
 				32D6B316251A97BD00DB4CBC /* AlertView.swift in Sources */,
 				32D6B317251A97BD00DB4CBC /* IntTextFieldCellViewModel.swift in Sources */,
 				32D6B318251A97BD00DB4CBC /* AppDelegate.swift in Sources */,
+				32A6DD6525291AAB0092CE3B /* CompaniesListViewModel.swift in Sources */,
 				32D6B319251A97BD00DB4CBC /* CurrencyTextFieldCellViewModel.swift in Sources */,
 				32D6B31A251A97BD00DB4CBC /* BaseViewController.swift in Sources */,
 				32D6B31B251A97BD00DB4CBC /* FileManager+Extension.swift in Sources */,
@@ -1617,6 +1644,8 @@
 				32E29A28251BDE4C000B5F1C /* APIValidationError.swift in Sources */,
 				32D6B33F251A97BD00DB4CBC /* FieldViewModel.swift in Sources */,
 				32D6B340251A97BD00DB4CBC /* ButtonTableViewCell.swift in Sources */,
+				32BD701F2529408A0001B98A /* CompanyDetailViewController.swift in Sources */,
+				3288088B2532466500080CBA /* CompanyViewModel.swift in Sources */,
 				32D6B37E251AA54300DB4CBC /* UserPersistenceManager.swift in Sources */,
 				32D6B341251A97BD00DB4CBC /* MenuCoreDataManager.swift in Sources */,
 				32D6B342251A97BD00DB4CBC /* RecipeDetailViewController.swift in Sources */,
@@ -1655,6 +1684,7 @@
 				32E29A41251C078F000B5F1C /* AlertView.swift in Sources */,
 				32E29A42251C078F000B5F1C /* IntTextFieldCellViewModel.swift in Sources */,
 				32E29A43251C078F000B5F1C /* AppDelegate.swift in Sources */,
+				32A6DD6625291AAB0092CE3B /* CompaniesListViewModel.swift in Sources */,
 				32E29A44251C078F000B5F1C /* CurrencyTextFieldCellViewModel.swift in Sources */,
 				32E29A45251C078F000B5F1C /* BaseViewController.swift in Sources */,
 				32E29A46251C078F000B5F1C /* FileManager+Extension.swift in Sources */,
@@ -1703,6 +1733,8 @@
 				32E29A6A251C078F000B5F1C /* APIValidationError.swift in Sources */,
 				32E29A6B251C078F000B5F1C /* FieldViewModel.swift in Sources */,
 				32E29A6C251C078F000B5F1C /* ButtonTableViewCell.swift in Sources */,
+				32BD70202529408A0001B98A /* CompanyDetailViewController.swift in Sources */,
+				3288088C2532466500080CBA /* CompanyViewModel.swift in Sources */,
 				32E29A6D251C078F000B5F1C /* UserPersistenceManager.swift in Sources */,
 				32E29A6E251C078F000B5F1C /* MenuCoreDataManager.swift in Sources */,
 				32E29A6F251C078F000B5F1C /* RecipeDetailViewController.swift in Sources */,
@@ -1886,7 +1918,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Foorpie/Foorpie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8T85WESY64;
 				INFOPLIST_FILE = Foorpie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1909,7 +1941,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Foorpie/Foorpie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8T85WESY64;
 				INFOPLIST_FILE = Foorpie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2068,7 +2100,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Foorpie/Foorpie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8T85WESY64;
 				INFOPLIST_FILE = "Foorpie/FoorpieStaging-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2092,7 +2124,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Foorpie/Foorpie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8T85WESY64;
 				INFOPLIST_FILE = "Foorpie/FoorpieStaging-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

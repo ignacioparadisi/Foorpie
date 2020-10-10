@@ -8,6 +8,15 @@
 
 import UIKit
 
+class BaseFormViewController: BaseViewController {
+    lazy var saveButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(didTapSaveButton))
+    lazy var loadingBarActivityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 28, height: 28))
+    lazy var loadingButtonItem = UIBarButtonItem(customView: loadingBarActivityIndicator)
+    
+    @objc func didTapSaveButton() {
+    }
+}
+
 class BaseViewController: UIViewController {
     private lazy var errorLabel: UILabel = {
          let label = UILabel()

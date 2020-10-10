@@ -104,7 +104,7 @@ public struct Anchor {
         guard let superview = view.superview else {
             return self
         }
-        if #available(iOS 11.0, *), toSafeArea {
+        if toSafeArea {
             return top(to: superview.safeAreaLayoutGuide.topAnchor, constant: constant)
         }
         return top(to: superview.topAnchor, constant: constant)
@@ -114,7 +114,7 @@ public struct Anchor {
         guard let superview = view.superview else {
             return self
         }
-        if #available(iOS 11.0, *), toSafeArea {
+        if toSafeArea {
             return leading(to: superview.safeAreaLayoutGuide.leadingAnchor, constant: constant)
         }
         return leading(to: superview.leadingAnchor, constant: constant)
@@ -124,7 +124,7 @@ public struct Anchor {
         guard let superview = view.superview else {
             return self
         }
-        if #available(iOS 11.0, *), toSafeArea {
+        if toSafeArea {
             return bottom(to: superview.safeAreaLayoutGuide.bottomAnchor, constant: constant)
         }
         return bottom(to: superview.bottomAnchor, constant: constant)
@@ -134,7 +134,7 @@ public struct Anchor {
         guard let superview = view.superview else {
             return self
         }
-        if #available(iOS 11.0, *), toSafeArea {
+        if toSafeArea {
             return trailing(to: superview.safeAreaLayoutGuide.trailingAnchor, constant: constant)
         }
         return trailing(to: superview.trailingAnchor, constant: constant)

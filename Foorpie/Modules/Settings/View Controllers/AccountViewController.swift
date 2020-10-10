@@ -37,8 +37,8 @@ class AccountViewController: BaseViewController {
     }
     
     override func setupViewModel() {
-        viewModel.didFetchCompanies = { [weak self] companies in
-            let viewController = CompaniesListViewController(companies: companies)
+        viewModel.didFetchCompanies = { [weak self] companiesViewModel in
+            let viewController = CompaniesListViewController(viewModel: companiesViewModel)
             let navigationController = UINavigationController(rootViewController: viewController)
             self?.showDetailViewController(navigationController, sender: self)
         }
@@ -117,7 +117,7 @@ extension AccountViewController: UITableViewDataSource {
             return cell
         case .logout:
             let cell = tableView.dequeueReusableCell(for: indexPath) as ButtonTableViewCell
-            cell.configure(with: Localizable.Button.logout, style: .default)
+            cell.configure(with: Localizable.Button.logout, style: .destructive)
             return cell
         }
     }

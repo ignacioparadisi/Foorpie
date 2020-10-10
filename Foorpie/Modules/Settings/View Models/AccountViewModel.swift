@@ -16,7 +16,7 @@ class AccountViewModel {
         case logout
     }
     
-    var didFetchCompanies: (([Company]) -> Void)?
+    var didFetchCompanies: ((CompaniesListViewModel) -> Void)?
     @Published var isLoadingCompanies = false
     @Published var isLoggingOut = false
     var didLogout: ((Bool) -> Void)?
@@ -52,7 +52,8 @@ class AccountViewModel {
             self?.isLoadingCompanies = false
             switch result {
             case .success(let companies):
-                self?.didFetchCompanies?(companies)
+                let viewModel = CompaniesListViewModel(companies: companies)
+                self?.didFetchCompanies?(viewModel)
             case .failure(let error):
                 print(error)
             }

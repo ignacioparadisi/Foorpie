@@ -45,7 +45,6 @@ class UnitTextFieldTableViewCell: TextFieldTableViewCell {
             .activate()
         unitButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         unitButton.layer.cornerRadius = 10
-        
         if #available(iOS 14.0, *) {
             unitButton.menu = createMenu()
             unitButton.showsMenuAsPrimaryAction = true
