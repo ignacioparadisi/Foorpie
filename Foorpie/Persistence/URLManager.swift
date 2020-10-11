@@ -36,12 +36,20 @@ class URLManager {
         }
     }
     
+    static func appInvitationURL() -> URL? {
+        return URL(string: "foorpie-stg://invitation?token=12345")
+    }
+    
     static var loginURL: URL? {
         return baseURL?.appendingPathComponent("login")
     }
     
     static var logoutURL: URL? {
         return baseURL?.appendingPathComponent("logout")
+    }
+    
+    static var invitationURL: URL? {
+        return baseURL?.appendingPathComponent("invitation")
     }
     
     static func companiesURL(id: Int? = nil) -> URL? {

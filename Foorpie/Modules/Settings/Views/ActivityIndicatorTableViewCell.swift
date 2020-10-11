@@ -47,7 +47,7 @@ class ActivityIndicatorTableViewCell: UITableViewCell, ReusableView {
         self.accessoryView = nil
     }
     
-    func configure(with title: String, value: String) {
+    func configure(with title: String, value: String? = nil) {
         textLabel?.text = title
         detailTextLabel?.text = value
     }

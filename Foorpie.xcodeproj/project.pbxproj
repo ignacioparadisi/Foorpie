@@ -35,6 +35,15 @@
 		322A2B7C25267FFC00386C21 /* CompaniesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322A2B7B25267FFC00386C21 /* CompaniesListViewController.swift */; };
 		322A2B7D25267FFC00386C21 /* CompaniesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322A2B7B25267FFC00386C21 /* CompaniesListViewController.swift */; };
 		322A2B7E25267FFC00386C21 /* CompaniesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322A2B7B25267FFC00386C21 /* CompaniesListViewController.swift */; };
+		3231809E2533679700B76A06 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3231809D2533679700B76A06 /* UsersListViewController.swift */; };
+		3231809F2533679700B76A06 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3231809D2533679700B76A06 /* UsersListViewController.swift */; };
+		323180A02533679700B76A06 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3231809D2533679700B76A06 /* UsersListViewController.swift */; };
+		323180A7253367CE00B76A06 /* UsersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323180A6253367CE00B76A06 /* UsersListViewModel.swift */; };
+		323180A8253367CE00B76A06 /* UsersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323180A6253367CE00B76A06 /* UsersListViewModel.swift */; };
+		323180A9253367CE00B76A06 /* UsersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323180A6253367CE00B76A06 /* UsersListViewModel.swift */; };
+		323180B5253368E500B76A06 /* UsersListDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323180B4253368E500B76A06 /* UsersListDiffableDataSource.swift */; };
+		323180B6253368E500B76A06 /* UsersListDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323180B4253368E500B76A06 /* UsersListDiffableDataSource.swift */; };
+		323180B7253368E500B76A06 /* UsersListDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323180B4253368E500B76A06 /* UsersListDiffableDataSource.swift */; };
 		324CAE34250AE33B006A6703 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324CAE33250AE33B006A6703 /* IngredientTableViewCell.swift */; };
 		324EE68924F8832700A85781 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68824F8832700A85781 /* FileManager+Extension.swift */; };
 		324EE68C24F884A100A85781 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68B24F884A100A85781 /* UIImage+Extension.swift */; };
@@ -346,6 +355,9 @@
 		321A166C24F9CAC400CF0C5A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		321A167024F9E55C00CF0C5A /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		322A2B7B25267FFC00386C21 /* CompaniesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesListViewController.swift; sourceTree = "<group>"; };
+		3231809D2533679700B76A06 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
+		323180A6253367CE00B76A06 /* UsersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewModel.swift; sourceTree = "<group>"; };
+		323180B4253368E500B76A06 /* UsersListDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListDiffableDataSource.swift; sourceTree = "<group>"; };
 		324CAE33250AE33B006A6703 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		324EE68824F8832700A85781 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		324EE68B24F884A100A85781 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -895,6 +907,7 @@
 			children = (
 				32932554252672CC00F59470 /* Company.swift */,
 				32DD132D25328E7F00A1E0E7 /* CompaniesListDiffableDataSource.swift */,
+				323180B4253368E500B76A06 /* UsersListDiffableDataSource.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -905,6 +918,7 @@
 				328808892532466500080CBA /* CompanyViewModel.swift */,
 				3293259E2526777E00F59470 /* AccountViewModel.swift */,
 				32A6DD6325291AAB0092CE3B /* CompaniesListViewModel.swift */,
+				323180A6253367CE00B76A06 /* UsersListViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -916,6 +930,7 @@
 				322A2B7B25267FFC00386C21 /* CompaniesListViewController.swift */,
 				3202ED922527E95D00596A42 /* AccountSplitViewController.swift */,
 				32BD701D2529408A0001B98A /* CompanyDetailViewController.swift */,
+				3231809D2533679700B76A06 /* UsersListViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -1548,10 +1563,12 @@
 				320FF6052517E70A0029EE39 /* Recipe+CoreDataProperties.swift in Sources */,
 				327B330D24F4873500B7DCD1 /* Persistence.swift in Sources */,
 				32AFEB852519241600D66485 /* UIWindow+Extension.swift in Sources */,
+				3231809E2533679700B76A06 /* UsersListViewController.swift in Sources */,
 				32E29A27251BDE4C000B5F1C /* APIValidationError.swift in Sources */,
 				3275C6DD24F5599D004691EA /* FieldViewModel.swift in Sources */,
 				3275C6CC24F5420C004691EA /* ButtonTableViewCell.swift in Sources */,
 				32BD701E2529408A0001B98A /* CompanyDetailViewController.swift in Sources */,
+				323180B5253368E500B76A06 /* UsersListDiffableDataSource.swift in Sources */,
 				3288088A2532466500080CBA /* CompanyViewModel.swift in Sources */,
 				32D6B37D251AA54300DB4CBC /* UserPersistenceManager.swift in Sources */,
 				32ACEF96251786A40030EBD1 /* MenuCoreDataManager.swift in Sources */,
@@ -1564,6 +1581,7 @@
 				320FF5E92517E4BF0029EE39 /* Foorpie.xcdatamodeld in Sources */,
 				32D6B372251AA53600DB4CBC /* UserAPIManager.swift in Sources */,
 				324EE68C24F884A100A85781 /* UIImage+Extension.swift in Sources */,
+				323180A7253367CE00B76A06 /* UsersListViewModel.swift in Sources */,
 				3275C6EC24F55F96004691EA /* String+Extension.swift in Sources */,
 				321A167124F9E55C00CF0C5A /* OrderTableViewCell.swift in Sources */,
 				32932585252673C100F59470 /* User.swift in Sources */,
@@ -1655,10 +1673,12 @@
 				32D6B33C251A97BD00DB4CBC /* Recipe+CoreDataProperties.swift in Sources */,
 				32D6B33D251A97BD00DB4CBC /* Persistence.swift in Sources */,
 				32D6B33E251A97BD00DB4CBC /* UIWindow+Extension.swift in Sources */,
+				3231809F2533679700B76A06 /* UsersListViewController.swift in Sources */,
 				32E29A28251BDE4C000B5F1C /* APIValidationError.swift in Sources */,
 				32D6B33F251A97BD00DB4CBC /* FieldViewModel.swift in Sources */,
 				32D6B340251A97BD00DB4CBC /* ButtonTableViewCell.swift in Sources */,
 				32BD701F2529408A0001B98A /* CompanyDetailViewController.swift in Sources */,
+				323180B6253368E500B76A06 /* UsersListDiffableDataSource.swift in Sources */,
 				3288088B2532466500080CBA /* CompanyViewModel.swift in Sources */,
 				32D6B37E251AA54300DB4CBC /* UserPersistenceManager.swift in Sources */,
 				32D6B341251A97BD00DB4CBC /* MenuCoreDataManager.swift in Sources */,
@@ -1671,6 +1691,7 @@
 				32D6B347251A97BD00DB4CBC /* Foorpie.xcdatamodeld in Sources */,
 				32D6B373251AA53600DB4CBC /* UserAPIManager.swift in Sources */,
 				32D6B348251A97BD00DB4CBC /* UIImage+Extension.swift in Sources */,
+				323180A8253367CE00B76A06 /* UsersListViewModel.swift in Sources */,
 				32D6B349251A97BD00DB4CBC /* String+Extension.swift in Sources */,
 				32D6B34A251A97BD00DB4CBC /* OrderTableViewCell.swift in Sources */,
 				32932590252673E300F59470 /* User.swift in Sources */,
@@ -1746,10 +1767,12 @@
 				32E29A67251C078F000B5F1C /* Recipe+CoreDataProperties.swift in Sources */,
 				32E29A68251C078F000B5F1C /* Persistence.swift in Sources */,
 				32E29A69251C078F000B5F1C /* UIWindow+Extension.swift in Sources */,
+				323180A02533679700B76A06 /* UsersListViewController.swift in Sources */,
 				32E29A6A251C078F000B5F1C /* APIValidationError.swift in Sources */,
 				32E29A6B251C078F000B5F1C /* FieldViewModel.swift in Sources */,
 				32E29A6C251C078F000B5F1C /* ButtonTableViewCell.swift in Sources */,
 				32BD70202529408A0001B98A /* CompanyDetailViewController.swift in Sources */,
+				323180B7253368E500B76A06 /* UsersListDiffableDataSource.swift in Sources */,
 				3288088C2532466500080CBA /* CompanyViewModel.swift in Sources */,
 				32E29A6D251C078F000B5F1C /* UserPersistenceManager.swift in Sources */,
 				32E29A6E251C078F000B5F1C /* MenuCoreDataManager.swift in Sources */,
@@ -1762,6 +1785,7 @@
 				32E29A74251C078F000B5F1C /* Foorpie.xcdatamodeld in Sources */,
 				32E29A75251C078F000B5F1C /* UserAPIManager.swift in Sources */,
 				32E29A76251C078F000B5F1C /* UIImage+Extension.swift in Sources */,
+				323180A9253367CE00B76A06 /* UsersListViewModel.swift in Sources */,
 				32E29A77251C078F000B5F1C /* String+Extension.swift in Sources */,
 				32E29A78251C078F000B5F1C /* OrderTableViewCell.swift in Sources */,
 				32932596252673E300F59470 /* User.swift in Sources */,

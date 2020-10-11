@@ -19,6 +19,7 @@ class ButtonTableViewCell: UITableViewCell, ReusableView {
     enum Style {
         case `default`
         case destructive
+        case filled
     }
     
     // MARK: Initializers
@@ -55,6 +56,11 @@ class ButtonTableViewCell: UITableViewCell, ReusableView {
         case .destructive:
             textLabel?.textColor = .systemRed
             imageView?.tintColor = .systemRed
+        case .filled:
+            selectionStyle = .none
+            textLabel?.textColor = .white
+            imageView?.tintColor = .white
+            backgroundColor = .systemBlue
         }
     }
 }

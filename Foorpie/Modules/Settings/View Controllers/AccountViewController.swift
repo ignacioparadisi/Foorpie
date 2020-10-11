@@ -44,13 +44,25 @@ class AccountViewController: BaseViewController {
                 return nil
             }
             switch section {
-            case .companies:
-                let cell = tableView.dequeueReusableCell(for: indexPath) as ActivityIndicatorTableViewCell
-                cell.configure(with: title, value: self.viewModel.companyName)
-                self.viewModel.$isLoadingCompanies
-                    .assign(to: \.isLoading, on: cell)
-                    .store(in: &self.subscriptions)
-                return cell
+            case .information:
+                guard let row = self.viewModel.informationRow(for: indexPath) else { return nil }
+                switch row {
+                case .companies:
+                    let cell = tableView.dequeueReusableCell(for: indexPath) as ActivityIndicatorTableViewCell
+                    cell.configure(with: title, value: self.viewModel.companyName)
+                    self.viewModel.$isLoadingCompanies
+                        .assign(to: \.isLoading, on: cell)
+                        .store(in: &self.subscriptions)
+                    return cell
+                case .users:
+                    let cell = tableView.dequeueReusableCell(for: indexPath) as ActivityIndicatorTableViewCell
+                    cell.configure(with: title)
+                    self.viewModel.$isLoadingUsers
+                        .assign(to: \.isLoading, on: cell)
+                        .store(in: &self.subscriptions)
+                    return cell
+                }
+                
             case .logout:
                 let cell = tableView.dequeueReusableCell(for: indexPath) as ButtonTableViewCell
                 cell.configure(with: title, style: .destructive)
@@ -61,8 +73,8 @@ class AccountViewController: BaseViewController {
     
     private func reloadData(animated: Bool = false) {
         var snapshot = NSDiffableDataSourceSnapshot<AccountViewModel.Section, String>()
-        snapshot.appendSections([.companies, .logout])
-        snapshot.appendItems(["Company"], toSection: .companies)
+        snapshot.appendSections([.information, .logout])
+        snapshot.appendItems(viewModel.informationRowsTitle, toSection: .information)
         snapshot.appendItems([Localizable.Button.logout], toSection: .logout)
         dataSource.apply(snapshot, animatingDifferences: animated)
     }
@@ -138,8 +150,18 @@ extension AccountViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let section = viewModel.section(for: indexPath) else { return }
         switch section {
-        case .companies:
-            viewModel.fetchCompanies()
+        case .information:
+            guard let row = viewModel.informationRow(for: indexPath) else { return }
+            switch row {
+            case .companies:
+                viewModel.fetchCompanies()
+            case .users:
+                let viewModel = UsersListViewModel()
+                let viewController = UsersListViewController(viewModel: viewModel)
+                let navigationController = UINavigationController(rootViewController: viewController)
+                showDetailViewController(navigationController, sender: self)
+            }
+            
         case .logout:
             showLogoutAlert()
         }

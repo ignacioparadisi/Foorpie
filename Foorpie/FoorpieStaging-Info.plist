@@ -26,6 +26,18 @@
 				<string>com.googleusercontent.apps.556085442737-apnkeicq085s6hul32gm2qs0qknbtgdr</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLIconFile</key>
+			<string></string>
+			<key>CFBundleURLName</key>
+			<string>com.ignacioparadisi.foorpie-stg.open</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>foorpie-stg</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
