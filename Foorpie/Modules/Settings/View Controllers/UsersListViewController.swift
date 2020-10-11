@@ -38,6 +38,19 @@ class UsersListViewController: BaseViewController {
         title = "Users"
     }
     
+    override func setupViewModel() {
+        super.setupViewModel()
+        viewModel.didCreateInvitation = { [weak self] error in
+            if let error = error {
+                self?.showErrorMessage(error.localizedDescription)
+                return
+            }
+            if let cell = self?.tableView.cellForRow(at: IndexPath(item: 0, section: 0)) {
+                self?.showActivityViewController(sourceView: cell)
+            }
+        }
+    }
+    
     override func setupDataSource() {
         dataSource = UsersListDiffableDataSource(viewModel: viewModel, viewController: self, tableView: tableView, cellProvider: { [weak self] tableView, indexPath, title in
             guard let section = self?.viewModel.section(for: indexPath) else { return nil }
@@ -73,8 +86,7 @@ extension UsersListViewController: UITableViewDelegate {
         guard let section = viewModel.section(for: indexPath) else { return }
         switch section {
         case .invite:
-            guard let cell = tableView.cellForRow(at: indexPath) else { return }
-            showActivityViewController(sourceView: cell)
+            viewModel.createInvitation()
         case .users:
             break
         }

@@ -44,6 +44,15 @@
 		323180B5253368E500B76A06 /* UsersListDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323180B4253368E500B76A06 /* UsersListDiffableDataSource.swift */; };
 		323180B6253368E500B76A06 /* UsersListDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323180B4253368E500B76A06 /* UsersListDiffableDataSource.swift */; };
 		323180B7253368E500B76A06 /* UsersListDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323180B4253368E500B76A06 /* UsersListDiffableDataSource.swift */; };
+		323180DF253386FF00B76A06 /* InvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323180DD253386FF00B76A06 /* InvitationViewController.swift */; };
+		323180E0253386FF00B76A06 /* InvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323180DD253386FF00B76A06 /* InvitationViewController.swift */; };
+		323180E1253386FF00B76A06 /* InvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323180DD253386FF00B76A06 /* InvitationViewController.swift */; };
+		323180E2253386FF00B76A06 /* InvitationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323180DE253386FF00B76A06 /* InvitationViewController.xib */; };
+		323180E3253386FF00B76A06 /* InvitationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323180DE253386FF00B76A06 /* InvitationViewController.xib */; };
+		323180E4253386FF00B76A06 /* InvitationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323180DE253386FF00B76A06 /* InvitationViewController.xib */; };
+		323180EB2533B72600B76A06 /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323180EA2533B72600B76A06 /* Invitation.swift */; };
+		323180EC2533B72600B76A06 /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323180EA2533B72600B76A06 /* Invitation.swift */; };
+		323180ED2533B72600B76A06 /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323180EA2533B72600B76A06 /* Invitation.swift */; };
 		324CAE34250AE33B006A6703 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324CAE33250AE33B006A6703 /* IngredientTableViewCell.swift */; };
 		324EE68924F8832700A85781 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68824F8832700A85781 /* FileManager+Extension.swift */; };
 		324EE68C24F884A100A85781 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324EE68B24F884A100A85781 /* UIImage+Extension.swift */; };
@@ -358,6 +367,9 @@
 		3231809D2533679700B76A06 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		323180A6253367CE00B76A06 /* UsersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewModel.swift; sourceTree = "<group>"; };
 		323180B4253368E500B76A06 /* UsersListDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListDiffableDataSource.swift; sourceTree = "<group>"; };
+		323180DD253386FF00B76A06 /* InvitationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationViewController.swift; sourceTree = "<group>"; };
+		323180DE253386FF00B76A06 /* InvitationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvitationViewController.xib; sourceTree = "<group>"; };
+		323180EA2533B72600B76A06 /* Invitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invitation.swift; sourceTree = "<group>"; };
 		324CAE33250AE33B006A6703 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		324EE68824F8832700A85781 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		324EE68B24F884A100A85781 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -664,6 +676,8 @@
 				32DA6BCD24F7431C0080DD56 /* CustomAlertViewController.swift */,
 				32DA6BD324F75D8B0080DD56 /* NoItemSelectedViewController.swift */,
 				321A166624F95D2700CF0C5A /* BaseViewController.swift */,
+				323180DD253386FF00B76A06 /* InvitationViewController.swift */,
+				323180DE253386FF00B76A06 /* InvitationViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -908,6 +922,7 @@
 				32932554252672CC00F59470 /* Company.swift */,
 				32DD132D25328E7F00A1E0E7 /* CompaniesListDiffableDataSource.swift */,
 				323180B4253368E500B76A06 /* UsersListDiffableDataSource.swift */,
+				323180EA2533B72600B76A06 /* Invitation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1190,6 +1205,7 @@
 				32AEE05224FAC0B3006EF7CE /* Localizable.strings in Resources */,
 				327B32E124F4862800B7DCD1 /* Assets.xcassets in Resources */,
 				32D1F88E251903C6004068C7 /* GoogleService-Info.plist in Resources */,
+				323180E2253386FF00B76A06 /* InvitationViewController.xib in Resources */,
 				3202C8DB24FC50AA0076B0FA /* ingredients-data.json in Resources */,
 				325CE51D24FA8ECA00E7C88B /* OrderRecipeCollectionViewCell.xib in Resources */,
 			);
@@ -1222,6 +1238,7 @@
 				32D6B358251A97BD00DB4CBC /* Localizable.strings in Resources */,
 				32D6B359251A97BD00DB4CBC /* Assets.xcassets in Resources */,
 				32D6B35A251A97BD00DB4CBC /* GoogleService-Info.plist in Resources */,
+				323180E3253386FF00B76A06 /* InvitationViewController.xib in Resources */,
 				32D6B35B251A97BD00DB4CBC /* ingredients-data.json in Resources */,
 				32D6B35C251A97BD00DB4CBC /* OrderRecipeCollectionViewCell.xib in Resources */,
 			);
@@ -1240,6 +1257,7 @@
 				32E29A87251C078F000B5F1C /* Localizable.strings in Resources */,
 				32E29A88251C078F000B5F1C /* Assets.xcassets in Resources */,
 				32E29A89251C078F000B5F1C /* GoogleService-Info.plist in Resources */,
+				323180E4253386FF00B76A06 /* InvitationViewController.xib in Resources */,
 				32E29A8A251C078F000B5F1C /* ingredients-data.json in Resources */,
 				32E29A8B251C078F000B5F1C /* OrderRecipeCollectionViewCell.xib in Resources */,
 			);
@@ -1530,6 +1548,7 @@
 				32ACEFAF251791510030EBD1 /* UnitTextFieldCellViewModel.swift in Sources */,
 				32932555252672CC00F59470 /* Company.swift in Sources */,
 				320FF6072517E70A0029EE39 /* Ingredient+CoreDataClass.swift in Sources */,
+				323180DF253386FF00B76A06 /* InvitationViewController.swift in Sources */,
 				3275C6C924F541F9004691EA /* TextFieldTableViewCell.swift in Sources */,
 				32ACEF9D251786B60030EBD1 /* MenuAPIManager.swift in Sources */,
 				329325A92526794000F59470 /* ActivityIndicatorTableViewCell.swift in Sources */,
@@ -1546,6 +1565,7 @@
 				3275C6C624F541E1004691EA /* PhotoPickerTableViewCell.swift in Sources */,
 				327B32D724F4862700B7DCD1 /* SceneDelegate.swift in Sources */,
 				321A166024F9313000CF0C5A /* UIAlertController+Extension.swift in Sources */,
+				323180EB2533B72600B76A06 /* Invitation.swift in Sources */,
 				32BE299D24F5910400BD9F15 /* IntTextFieldTableViewCell.swift in Sources */,
 				320FF5BD2517E3410029EE39 /* FloatTextFieldCellViewModel.swift in Sources */,
 				3202C8CD24FBE9730076B0FA /* UIView+Extension.swift in Sources */,
@@ -1640,6 +1660,7 @@
 				32D6B320251A97BD00DB4CBC /* UnitTextFieldCellViewModel.swift in Sources */,
 				32D6B321251A97BD00DB4CBC /* Ingredient+CoreDataClass.swift in Sources */,
 				32D6B322251A97BD00DB4CBC /* TextFieldTableViewCell.swift in Sources */,
+				323180E0253386FF00B76A06 /* InvitationViewController.swift in Sources */,
 				32D6B323251A97BD00DB4CBC /* MenuAPIManager.swift in Sources */,
 				32D6B324251A97BD00DB4CBC /* ReusableView.swift in Sources */,
 				329325AA2526794000F59470 /* ActivityIndicatorTableViewCell.swift in Sources */,
@@ -1656,6 +1677,7 @@
 				32D6B32E251A97BD00DB4CBC /* SceneDelegate.swift in Sources */,
 				32D6B32F251A97BD00DB4CBC /* UIAlertController+Extension.swift in Sources */,
 				32D6B330251A97BD00DB4CBC /* IntTextFieldTableViewCell.swift in Sources */,
+				323180EC2533B72600B76A06 /* Invitation.swift in Sources */,
 				32D6B331251A97BD00DB4CBC /* FloatTextFieldCellViewModel.swift in Sources */,
 				32D6B332251A97BD00DB4CBC /* UIView+Extension.swift in Sources */,
 				32D6B333251A97BD00DB4CBC /* OrderSplitViewController.swift in Sources */,
@@ -1734,6 +1756,7 @@
 				32E29A4B251C078F000B5F1C /* UnitTextFieldCellViewModel.swift in Sources */,
 				32E29A4C251C078F000B5F1C /* Ingredient+CoreDataClass.swift in Sources */,
 				32E29A4D251C078F000B5F1C /* TextFieldTableViewCell.swift in Sources */,
+				323180E1253386FF00B76A06 /* InvitationViewController.swift in Sources */,
 				32E29A4E251C078F000B5F1C /* MenuAPIManager.swift in Sources */,
 				32E29A4F251C078F000B5F1C /* ReusableView.swift in Sources */,
 				329325AB2526794000F59470 /* ActivityIndicatorTableViewCell.swift in Sources */,
@@ -1750,6 +1773,7 @@
 				32E29A59251C078F000B5F1C /* SceneDelegate.swift in Sources */,
 				32E29A5A251C078F000B5F1C /* UIAlertController+Extension.swift in Sources */,
 				32E29A5B251C078F000B5F1C /* IntTextFieldTableViewCell.swift in Sources */,
+				323180ED2533B72600B76A06 /* Invitation.swift in Sources */,
 				32E29A5C251C078F000B5F1C /* FloatTextFieldCellViewModel.swift in Sources */,
 				32E29A5D251C078F000B5F1C /* UIView+Extension.swift in Sources */,
 				32E29A5E251C078F000B5F1C /* OrderSplitViewController.swift in Sources */,

@@ -77,9 +77,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                   let params = components.queryItems else {
                 return
             }
-            if host == "invitation", let invitationToken = params.first(where: { $0.name == "token" })?.value {
-                let viewController = UIViewController()
-                viewController.view.backgroundColor = .systemBackground
+            if host == "invitations", let invitationToken = params.first(where: { $0.name == "token" })?.value {
+                let viewController = InvitationViewController()
                 window?.rootViewController?.present(viewController, animated: true)
             }
         }

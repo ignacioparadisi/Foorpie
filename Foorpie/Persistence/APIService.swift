@@ -119,6 +119,11 @@ class APIService {
                         result(.failure(APIError.apiValidationError(errors)))
                     }
                     return
+                } else if let error = try? self.decode(ServerError.self, from: data) {
+                    DispatchQueue.main.async {
+                        result(.failure(APIError.apiError(error.message)))
+                    }
+                    return
                 }
                 DispatchQueue.main.async {
                     result(.failure(APIError.unknown))

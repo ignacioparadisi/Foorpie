@@ -8,6 +8,14 @@
 
 import Foundation
 
+class ServerError: Decodable {
+    var message: String
+    
+    enum CodingKeys: String, CodingKey {
+        case message
+    }
+}
+
 class APIValidationError: Decodable {
     var value: String?
     var message: String

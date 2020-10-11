@@ -14,9 +14,25 @@ class UsersListViewModel: NSObject {
         case users
     }
     
+    var didCreateInvitation: ((Error?) -> Void)?
+    private var invitation: Invitation?
+    
     func section(for indexPath: IndexPath) -> Section? {
         guard let section = Section(rawValue: indexPath.section) else { return nil }
         return section
+    }
+    
+    func createInvitation() {
+        UserAPIManager.shared.createInvitation { [weak self] result in
+            switch result {
+            case .success(let invitation):
+                self?.invitation = invitation
+                self?.didCreateInvitation?(nil)
+            case .failure(let error):
+                print(error)
+                self?.didCreateInvitation?(error)
+            }
+        }
     }
 }
 
@@ -27,8 +43,8 @@ extension UsersListViewModel: UIActivityItemSource {
     }
     
     func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
-        guard let invitationURL = URLManager.appInvitationURL() else { return nil }
-        return invitationURL
+        guard let string = invitation?.urlString, let url = URL(string: string) else { return nil }
+        return url
     }
     
     func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
