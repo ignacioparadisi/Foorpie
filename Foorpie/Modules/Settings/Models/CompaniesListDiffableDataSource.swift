@@ -17,4 +17,9 @@ class CompaniesListDiffableDataSource: UITableViewDiffableDataSource<CompaniesLi
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return viewModel.canEditRow(at: indexPath)
     }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.deleteCompany(at: indexPath)
+        }
+    }
 }

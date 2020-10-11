@@ -16,6 +16,7 @@ class CompaniesListViewModel {
     
     @Published var isLoading = false
     var didSaveCompany: ((Bool) -> Void)?
+    var didDeleteCompany: (() -> Void)?
     var canEdit: Bool {
         return companies.count > 1
     }
@@ -59,6 +60,12 @@ class CompaniesListViewModel {
         previouslySelected?.isSelected = false
         let company = companies[indexPath.row]
         company.isSelected = true
+    }
+    
+    func deleteCompany(at indexPath: IndexPath) {
+        let company = companies[indexPath.row]
+        companies.remove(at: indexPath.row)
+        didDeleteCompany?()
     }
     
 }

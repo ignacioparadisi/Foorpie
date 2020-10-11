@@ -69,6 +69,10 @@ class CompaniesListViewController: BaseViewController {
                 self?.reloadData(animated: true)
             }
         }
+        
+        viewModel.didDeleteCompany = { [weak self] in
+            self?.reloadData(animated: true)
+        }
     }
     
     override func setupDataSource() {
@@ -118,12 +122,6 @@ class CompaniesListViewController: BaseViewController {
 
 // MARK: - UITableViewDelegate
 extension CompaniesListViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete && viewModel.canEdit {
-            
-        }
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.selectCompany(at: indexPath)
