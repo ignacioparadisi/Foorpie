@@ -21,16 +21,16 @@ class UserAPIManager: UserPersistenceManagerRepresentable {
         APIService.shared.makeRequest(url: url, method: .post, body: user) { (res: Result<LoginResponse, Error>) in
             switch res {
             case .success(let response):
-                if UserDefaults.standard.getUser() == nil {
+                if UserDefaults.standard.user == nil {
                     if let company = response.company {
-                        UserDefaults.standard.setSelectedCompany(company)
+                        UserDefaults.standard.company = company
                     }
-                } else if let user = UserDefaults.standard.getUser(), user.id != response.user.id {
+                } else if let user = UserDefaults.standard.user, user.id != response.user.id {
                     if let company = response.company {
-                        UserDefaults.standard.setSelectedCompany(company)
+                        UserDefaults.standard.company = company
                     }
                 }
-                UserDefaults.standard.setUser(response.user)
+                UserDefaults.standard.user = response.user
                 result(.success(response.user))
             case .failure(let error):
                 result(.failure(error))
@@ -47,7 +47,11 @@ class UserAPIManager: UserPersistenceManagerRepresentable {
     
     func getCompanies(result: @escaping (Result<[Company], Error>) -> Void) {
         guard let url = URLManager.companiesURL else { return result(.failure(RequestError.invalidURL)) }
-        print(url)
         APIService.shared.makeRequest(url: url, method: .get, result: result)
+    }
+    
+    func createCompany(_ company: Company, result: @escaping (Result<Company, Error>) -> Void) {
+        guard let url = URLManager.companiesURL else { return result(.failure(RequestError.invalidURL)) }
+        APIService.shared.makeRequest(url: url, method: .post, body: company, result: result)
     }
 }

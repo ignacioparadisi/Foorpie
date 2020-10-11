@@ -21,6 +21,7 @@
 "recipesKey" = "Recetas";
 "newIngredientKey" = "Nuevo Ingrediente";
 "profileKey" = "Cuenta";
+"settingsKey" = "Ajustes";
 
 // MARK: - Message
 "noRecipeSelectedMessageKey" = "Por favor selecciona una receta para ver el detalle.";
@@ -47,6 +48,7 @@
 "poundKey" = "Libras";
 "onceKey" = "Onzas";
 "literKey" = "Litros";
+"loadingKey" = "Cargando";
 "milliliterKey" = "Mililitros";
 "gallonKey" = "Galones";
 "meterKey" = "Metros";
@@ -63,8 +65,8 @@
 "cancelKey" = "Cancelar";
 "deleteKey" = "Eliminar";
 "logoutKey" = "Cerrar Sesión";
-"settingsKey" = "Ajustes";
 "okKey" = "Aceptar";
+"saveKey" = "Guardar";
 
 // MARK: - Error
 "fetchingMenuErrorKey" = "Ocurrió un error obteniendo el Menú.";

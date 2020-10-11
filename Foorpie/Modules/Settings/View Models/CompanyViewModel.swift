@@ -11,14 +11,22 @@ import Foundation
 class CompanyViewModel: Hashable {
     
     private let company: Company
+    var id: Int {
+        return company.id
+    }
     var name: String {
         return company.name
     }
-    var isSelected: Bool {
-        return UserDefaults.standard.getSelectedCompany()?.id == company.id
+    var isSelected: Bool = false {
+        didSet {
+            if isSelected {
+                UserDefaults.standard.company = company
+            }
+        }
     }
     init(company: Company) {
         self.company = company
+        isSelected = UserDefaults.standard.company?.id == company.id
     }
     
     static func == (lhs: CompanyViewModel, rhs: CompanyViewModel) -> Bool {
@@ -28,4 +36,13 @@ class CompanyViewModel: Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(company.id)
     }
+    
+//    func setSelected(_ value: String) {
+//
+//        isSelected = true
+//    }
+//
+//    func setDeselected() {
+//        isSelected = false
+//    }
 }

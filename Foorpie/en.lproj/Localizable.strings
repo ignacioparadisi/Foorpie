@@ -48,6 +48,7 @@
 "poundKey" = "Pounds";
 "onceKey" = "Onces";
 "literKey" = "Liters";
+"loadingKey" = "Loading";
 "milliliterKey" = "Milliliters";
 "gallonKey" = "Gallons";
 "meterKey" = "Meters";
@@ -65,6 +66,7 @@
 "deleteKey" = "Delete";
 "logoutKey" = "Logout";
 "okKey" = "Ok";
+"saveKey" = "Save";
 
 // MARK: - Error
 "fetchingMenuErrorKey" = "There was an error fetching the Menu.";

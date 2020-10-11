@@ -50,6 +50,7 @@ class Localizable {
         static var inch: String = "inchKey".localized
         static var kilogram: String = "kilogramKey".localized
         static var liter: String = "literKey".localized
+        static var loading: String = "loadingKey".localized
         static var meters: String = "meterKey".localized
         static var milligram: String = "milligramKey".localized
         static var milliliter: String = "milliliterKey".localized
@@ -71,6 +72,7 @@ class Localizable {
         static var logout: String = "logoutKey".localized
         static var ok: String = "okKey".localized
         static var resetPhoto: String = "resetPhotoKey".localized
+        static var save: String = "saveKey".localized
         static var takePhoto: String = "takePhotoKey".localized
     }
     

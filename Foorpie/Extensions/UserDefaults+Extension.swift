@@ -9,30 +9,46 @@
 import Foundation
 
 extension UserDefaults {
-    func setUser(_ user: User) {
-        let userData = try? APIService.shared.encode(user)
-        if let data = userData {
-            UserDefaults.standard.setValue(data, forKey: "loggedUser")
+    var user: User? {
+        get {
+            let userData = data(forKey: "loggedUser")
+            if let userData = userData {
+                return try? APIService.shared.decode(User.self, from: userData)
+            }
+            return nil
+        }
+        set {
+            let userData = try? APIService.shared.encode(newValue)
+            if let data = userData {
+                setValue(data, forKey: "loggedUser")
+            }
         }
     }
-    func getUser() -> User? {
-        let data = UserDefaults.standard.data(forKey: "loggedUser")
-        if let userData = data {
-            return try? APIService.shared.decode(User.self, from: userData)
+    
+    var company: Company? {
+        get {
+            let companyData = data(forKey: "selectedCompany")
+            if let companyData = companyData {
+                return try? APIService.shared.decode(Company.self, from: companyData)
+            }
+            return nil
         }
-        return nil
+        set {
+            let companyData = try? APIService.shared.encode(newValue)
+            if let data = companyData {
+                setValue(data, forKey: "selectedCompany")
+                companyName = newValue?.name ?? ""
+            }
+        }
     }
-    func setSelectedCompany(_ company: Company) {
-        let companyData = try? APIService.shared.encode(company)
-        if let data = companyData {
-            UserDefaults.standard.setValue(data, forKey: "selectedCompany")
+    
+    
+    @objc dynamic var companyName: String {
+        get {
+            return string(forKey: "selectedCompanyName") ?? ""
         }
-    }
-    func getSelectedCompany() -> Company? {
-        let data = UserDefaults.standard.data(forKey: "selectedCompany")
-        if let companyData = data {
-            return try? APIService.shared.decode(Company.self, from: companyData)
+        set {
+            setValue(newValue, forKey: "selectedCompanyName")
         }
-        return nil
     }
 }

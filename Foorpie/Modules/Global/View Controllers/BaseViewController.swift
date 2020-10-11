@@ -38,20 +38,25 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         setupViewModel()
+        setupDataSource()
         setupView()
     }
     
-    /// Called in `viewDidAppear`. This method is for setting up the Navigation Bar
+    /// Called in `viewDidLoad`. This method is for setting up the Navigation Bar
     func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    ///  This functions is the last function called in `viewDidAppear`. It's for setting up the view.
+    ///  This functions is the last function called in `viewDidLoad`. It's for setting up the view.
     func setupView() {
     }
     
-    /// Called in `viewDidAppear`. This method is for setting up the view model subscriptions and closures.
+    /// Called in `viewDidLoad`. This method is for setting up the view model subscriptions and closures.
     func setupViewModel() {
+    }
+    
+    /// Called in `viewDidLoad`. This method if for setting up the tableView dataSource in case a tableView is being used.
+    func setupDataSource() {
     }
     
     func addErrorMessage() {

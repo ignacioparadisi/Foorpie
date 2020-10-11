@@ -82,6 +82,9 @@
 		3288088A2532466500080CBA /* CompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328808892532466500080CBA /* CompanyViewModel.swift */; };
 		3288088B2532466500080CBA /* CompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328808892532466500080CBA /* CompanyViewModel.swift */; };
 		3288088C2532466500080CBA /* CompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328808892532466500080CBA /* CompanyViewModel.swift */; };
+		3289D1B625327FB800AFA9A4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3289D1B525327FB800AFA9A4 /* TableViewCell.swift */; };
+		3289D1B725327FB800AFA9A4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3289D1B525327FB800AFA9A4 /* TableViewCell.swift */; };
+		3289D1B825327FB800AFA9A4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3289D1B525327FB800AFA9A4 /* TableViewCell.swift */; };
 		32932555252672CC00F59470 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32932554252672CC00F59470 /* Company.swift */; };
 		329325732526739000F59470 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32932554252672CC00F59470 /* Company.swift */; };
 		329325792526739000F59470 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32932554252672CC00F59470 /* Company.swift */; };
@@ -205,6 +208,9 @@
 		32D6B37E251AA54300DB4CBC /* UserPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6B37C251AA54300DB4CBC /* UserPersistenceManager.swift */; };
 		32DA6BCE24F7431C0080DD56 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6BCD24F7431C0080DD56 /* CustomAlertViewController.swift */; };
 		32DA6BD424F75D8B0080DD56 /* NoItemSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6BD324F75D8B0080DD56 /* NoItemSelectedViewController.swift */; };
+		32DD132E25328E7F00A1E0E7 /* CompaniesListDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD132D25328E7F00A1E0E7 /* CompaniesListDiffableDataSource.swift */; };
+		32DD132F25328E7F00A1E0E7 /* CompaniesListDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD132D25328E7F00A1E0E7 /* CompaniesListDiffableDataSource.swift */; };
+		32DD133025328E7F00A1E0E7 /* CompaniesListDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD132D25328E7F00A1E0E7 /* CompaniesListDiffableDataSource.swift */; };
 		32E29A1C251BD616000B5F1C /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E29A1B251BD616000B5F1C /* APIService.swift */; };
 		32E29A1D251BD616000B5F1C /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E29A1B251BD616000B5F1C /* APIService.swift */; };
 		32E29A27251BDE4C000B5F1C /* APIValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E29A26251BDE4C000B5F1C /* APIValidationError.swift */; };
@@ -390,6 +396,7 @@
 		327B331624F48C4500B7DCD1 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		327B331824F48C6600B7DCD1 /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
 		328808892532466500080CBA /* CompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyViewModel.swift; sourceTree = "<group>"; };
+		3289D1B525327FB800AFA9A4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		32932554252672CC00F59470 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		32932584252673C100F59470 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3293259E2526777E00F59470 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
@@ -426,6 +433,7 @@
 		32D6B37C251AA54300DB4CBC /* UserPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPersistenceManager.swift; sourceTree = "<group>"; };
 		32DA6BCD24F7431C0080DD56 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		32DA6BD324F75D8B0080DD56 /* NoItemSelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemSelectedViewController.swift; sourceTree = "<group>"; };
+		32DD132D25328E7F00A1E0E7 /* CompaniesListDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesListDiffableDataSource.swift; sourceTree = "<group>"; };
 		32E29A1B251BD616000B5F1C /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		32E29A26251BDE4C000B5F1C /* APIValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIValidationError.swift; sourceTree = "<group>"; };
 		32E29A91251C078F000B5F1C /* Foorpie Staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Foorpie Staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -505,6 +513,7 @@
 				3275C6E824F55EDA004691EA /* CurrencyTextFieldTableViewCell.swift */,
 				32BE299C24F5910400BD9F15 /* IntTextFieldTableViewCell.swift */,
 				320FF5B12517E2120029EE39 /* FloatTextFieldTableViewCell.swift */,
+				3289D1B525327FB800AFA9A4 /* TableViewCell.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -885,6 +894,7 @@
 			isa = PBXGroup;
 			children = (
 				32932554252672CC00F59470 /* Company.swift */,
+				32DD132D25328E7F00A1E0E7 /* CompaniesListDiffableDataSource.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1484,6 +1494,7 @@
 				327B32D924F4862700B7DCD1 /* MainTabBarController.swift in Sources */,
 				32758B0D24F7EA8E0062441F /* UIColor+Extension.swift in Sources */,
 				32AFEB7C25191ADF00D66485 /* AccountViewController.swift in Sources */,
+				3289D1B625327FB800AFA9A4 /* TableViewCell.swift in Sources */,
 				32C706D624FB309D00E86728 /* IngredientDetailViewController.swift in Sources */,
 				327B331724F48C4500B7DCD1 /* OrderListViewController.swift in Sources */,
 				324CAE34250AE33B006A6703 /* IngredientTableViewCell.swift in Sources */,
@@ -1494,6 +1505,7 @@
 				3275C6EF24F56040004691EA /* CurrencyTextFieldCellViewModel.swift in Sources */,
 				321A166724F95D2700CF0C5A /* BaseViewController.swift in Sources */,
 				324EE68924F8832700A85781 /* FileManager+Extension.swift in Sources */,
+				32DD132E25328E7F00A1E0E7 /* CompaniesListDiffableDataSource.swift in Sources */,
 				32ACEF8B2517868E0030EBD1 /* MenuPersistenceManagerRepresentable.swift in Sources */,
 				32DA6BCE24F7431C0080DD56 /* CustomAlertViewController.swift in Sources */,
 				32AD6C7524FB31AC00A55D7D /* IngredientDetailViewModel.swift in Sources */,
@@ -1589,6 +1601,7 @@
 				32D6B310251A97BD00DB4CBC /* MainTabBarController.swift in Sources */,
 				32D6B311251A97BD00DB4CBC /* UIColor+Extension.swift in Sources */,
 				32D6B312251A97BD00DB4CBC /* AccountViewController.swift in Sources */,
+				3289D1B725327FB800AFA9A4 /* TableViewCell.swift in Sources */,
 				32D6B313251A97BD00DB4CBC /* IngredientDetailViewController.swift in Sources */,
 				32D6B314251A97BD00DB4CBC /* OrderListViewController.swift in Sources */,
 				32D6B315251A97BD00DB4CBC /* IngredientTableViewCell.swift in Sources */,
@@ -1599,6 +1612,7 @@
 				32D6B319251A97BD00DB4CBC /* CurrencyTextFieldCellViewModel.swift in Sources */,
 				32D6B31A251A97BD00DB4CBC /* BaseViewController.swift in Sources */,
 				32D6B31B251A97BD00DB4CBC /* FileManager+Extension.swift in Sources */,
+				32DD132F25328E7F00A1E0E7 /* CompaniesListDiffableDataSource.swift in Sources */,
 				32D6B31C251A97BD00DB4CBC /* MenuPersistenceManagerRepresentable.swift in Sources */,
 				32D6B31D251A97BD00DB4CBC /* CustomAlertViewController.swift in Sources */,
 				32D6B31E251A97BD00DB4CBC /* IngredientDetailViewModel.swift in Sources */,
@@ -1678,6 +1692,7 @@
 				32E29A3B251C078F000B5F1C /* MainTabBarController.swift in Sources */,
 				32E29A3C251C078F000B5F1C /* UIColor+Extension.swift in Sources */,
 				32E29A3D251C078F000B5F1C /* AccountViewController.swift in Sources */,
+				3289D1B825327FB800AFA9A4 /* TableViewCell.swift in Sources */,
 				32E29A3E251C078F000B5F1C /* IngredientDetailViewController.swift in Sources */,
 				32E29A3F251C078F000B5F1C /* OrderListViewController.swift in Sources */,
 				32E29A40251C078F000B5F1C /* IngredientTableViewCell.swift in Sources */,
@@ -1688,6 +1703,7 @@
 				32E29A44251C078F000B5F1C /* CurrencyTextFieldCellViewModel.swift in Sources */,
 				32E29A45251C078F000B5F1C /* BaseViewController.swift in Sources */,
 				32E29A46251C078F000B5F1C /* FileManager+Extension.swift in Sources */,
+				32DD133025328E7F00A1E0E7 /* CompaniesListDiffableDataSource.swift in Sources */,
 				32E29A47251C078F000B5F1C /* MenuPersistenceManagerRepresentable.swift in Sources */,
 				32E29A48251C078F000B5F1C /* CustomAlertViewController.swift in Sources */,
 				32E29A49251C078F000B5F1C /* IngredientDetailViewModel.swift in Sources */,

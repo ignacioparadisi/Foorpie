@@ -11,7 +11,7 @@ import Combine
 import GoogleSignIn
 
 class AccountViewModel {
-    enum Sections: Int, CaseIterable {
+    enum Section: Int, CaseIterable {
         case companies
         case logout
     }
@@ -21,27 +21,12 @@ class AccountViewModel {
     @Published var isLoggingOut = false
     var didLogout: ((Bool) -> Void)?
     
-    var numberOfSections: Int {
-        return Sections.allCases.count
-    }
     var companyName: String {
-        return UserDefaults.standard.getSelectedCompany()?.name ?? ""
+        return UserDefaults.standard.company?.name ?? ""
     }
     
-    func numberOfRows(in section: Int) -> Int {
-        guard let section = Sections(rawValue: section) else { return 0 }
-        switch section {
-        case .companies:
-            return 1
-        case .logout:
-            return 1
-        default:
-            return 0
-        }
-    }
-    
-    func section(for indexPath: IndexPath) -> Sections? {
-        guard let section = Sections(rawValue: indexPath.section) else { return nil }
+    func section(for indexPath: IndexPath) -> Section? {
+        guard let section = Section(rawValue: indexPath.section) else { return nil }
         return section
     }
     

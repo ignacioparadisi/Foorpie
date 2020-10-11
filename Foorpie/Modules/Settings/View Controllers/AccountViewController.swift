@@ -13,6 +13,7 @@ import Combine
 class AccountViewController: BaseViewController {
     
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
+    private var dataSource: UITableViewDiffableDataSource<AccountViewModel.Section, String>!
     private let viewModel: AccountViewModel = AccountViewModel()
     private var subscriptions = Set<AnyCancellable>()
     private lazy var loadingView = LoadingView()
@@ -20,6 +21,7 @@ class AccountViewController: BaseViewController {
     override func setupView() {
         super.setupView()
         setupTableView()
+        reloadData()
     }
     
     override func setupNavigationBar() {
@@ -31,9 +33,38 @@ class AccountViewController: BaseViewController {
         view.addSubview(tableView)
         tableView.anchor.edgesToSuperview().activate()
         tableView.delegate = self
-        tableView.dataSource = self
+        tableView.dataSource = dataSource
         tableView.register(ButtonTableViewCell.self)
         tableView.register(ActivityIndicatorTableViewCell.self)
+    }
+    
+    override func setupDataSource() {
+        dataSource = UITableViewDiffableDataSource<AccountViewModel.Section, String>(tableView: tableView, cellProvider: { [weak self] tableView, indexPath, title in
+            guard let self = self, let section = self.viewModel.section(for: indexPath) else {
+                return nil
+            }
+            switch section {
+            case .companies:
+                let cell = tableView.dequeueReusableCell(for: indexPath) as ActivityIndicatorTableViewCell
+                cell.configure(with: title, value: self.viewModel.companyName)
+                self.viewModel.$isLoadingCompanies
+                    .assign(to: \.isLoading, on: cell)
+                    .store(in: &self.subscriptions)
+                return cell
+            case .logout:
+                let cell = tableView.dequeueReusableCell(for: indexPath) as ButtonTableViewCell
+                cell.configure(with: title, style: .destructive)
+                return cell
+            }
+        })
+    }
+    
+    private func reloadData(animated: Bool = false) {
+        var snapshot = NSDiffableDataSourceSnapshot<AccountViewModel.Section, String>()
+        snapshot.appendSections([.companies, .logout])
+        snapshot.appendItems(["Company"], toSection: .companies)
+        snapshot.appendItems([Localizable.Button.logout], toSection: .logout)
+        dataSource.apply(snapshot, animatingDifferences: animated)
     }
     
     override func setupViewModel() {
@@ -65,6 +96,15 @@ class AccountViewController: BaseViewController {
                 }
             }
             .store(in: &subscriptions)
+        
+        UserDefaults.standard
+            .publisher(for: \.companyName)
+            .sink { [weak self] _ in
+                if self?.dataSource != nil {
+                    self?.reloadData()
+                }
+            }
+            .store(in: &subscriptions)
     }
     
     private func showLoadingView() {
@@ -92,35 +132,6 @@ class AccountViewController: BaseViewController {
         present(loginViewController, animated: true)
     }
 
-}
-
-extension AccountViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.numberOfSections
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRows(in: section)
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let section = viewModel.section(for: indexPath) else {
-            return UITableViewCell()
-        }
-        switch section {
-        case .companies:
-            let cell = tableView.dequeueReusableCell(for: indexPath) as ActivityIndicatorTableViewCell
-            cell.configure(with: "Company", value: viewModel.companyName)
-            viewModel.$isLoadingCompanies
-                .assign(to: \.isLoading, on: cell)
-                .store(in: &subscriptions)
-            return cell
-        case .logout:
-            let cell = tableView.dequeueReusableCell(for: indexPath) as ButtonTableViewCell
-            cell.configure(with: Localizable.Button.logout, style: .destructive)
-            return cell
-        }
-    }
 }
 
 extension AccountViewController: UITableViewDelegate {
