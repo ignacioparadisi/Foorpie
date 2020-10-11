@@ -16,8 +16,8 @@ extension UIViewController {
     ///   - message: Message for the alert
     ///   - style: Style of the alert
     ///   - after: Seconds after the alert will disappear
-    func showAlert(title: String, message: String, style: AlertView.Style, dismiss after: Double? = 1.5, feedback: UINotificationFeedbackGenerator.FeedbackType? = nil) {
-        let alert = CustomAlertViewController(title: title, message: message, style: style, dismiss: after)
+    func showAlert(title: String, message: String, style: AlertView.Style, dismissAfter seconds: Double? = 1.5, feedback: UINotificationFeedbackGenerator.FeedbackType? = nil) {
+        let alert = CustomAlertViewController(title: title, message: message, style: style, dismissAfter: seconds)
         present(alert, animated: true)
         if let feedback = feedback {
             UINotificationFeedbackGenerator().notificationOccurred(feedback)
@@ -28,8 +28,8 @@ extension UIViewController {
     /// - Parameters:
     ///   - message: Message for the alert
     ///   - after: Seconds after the alert will disappear
-    func showErrorAlert(message: String, dismiss after: Double? = 2) {
-        showAlert(title: Localizable.Title.error, message: message, style: .error, dismiss: after, feedback: .error)
+    func showErrorAlert(message: String, dismissAfter seconds: Double? = 2) {
+        showAlert(title: Localizable.Title.error, message: message, style: .error, dismissAfter: seconds, feedback: .error)
     }
     
 }

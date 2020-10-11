@@ -21,8 +21,8 @@ class CustomAlertViewController: UIViewController {
     private let dismissAfter: Double?
     
     // MARK: Initializers
-    init(title: String, message: String, style: AlertView.Style, dismiss after: Double? = 1.5) {
-        dismissAfter = after
+    init(title: String, message: String, style: AlertView.Style, dismissAfter seconds: Double? = 1.5) {
+        self.dismissAfter = seconds
         super.init(nibName: nil, bundle: nil)
         modalTransitionStyle = .crossDissolve
         modalPresentationStyle = .overFullScreen

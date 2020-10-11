@@ -44,7 +44,11 @@ class URLManager {
         return baseURL?.appendingPathComponent("logout")
     }
     
-    static var companiesURL: URL? {
-        return baseURL?.appendingPathComponent("companies")
+    static func companiesURL(id: Int? = nil) -> URL? {
+        var url = baseURL?.appendingPathComponent("companies")
+        if let id = id {
+            url = url?.appendingPathComponent("\(id)")
+        }
+        return url
     }
 }

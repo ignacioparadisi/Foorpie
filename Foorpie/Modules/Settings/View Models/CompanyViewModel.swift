@@ -24,6 +24,12 @@ class CompanyViewModel: Hashable {
             }
         }
     }
+    var userIsOwner: Bool {
+        return company.ownerId == UserDefaults.standard.user?.id
+    }
+    var canBeDeleted: Bool {
+        return company.id != UserDefaults.standard.company?.id && userIsOwner
+    }
     init(company: Company) {
         self.company = company
         isSelected = UserDefaults.standard.company?.id == company.id

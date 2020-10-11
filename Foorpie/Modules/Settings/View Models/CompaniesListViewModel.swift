@@ -16,7 +16,7 @@ class CompaniesListViewModel {
     
     @Published var isLoading = false
     var didSaveCompany: ((Bool) -> Void)?
-    var didDeleteCompany: (() -> Void)?
+    var didDeleteCompany: ((IndexPath, Error?) -> Void)?
     var canEdit: Bool {
         return companies.count > 1
     }
@@ -29,9 +29,9 @@ class CompaniesListViewModel {
         self.companies = companies.map { CompanyViewModel(company: $0) }
     }
     
-    func canEditRow(at indexPath: IndexPath) -> Bool {
+    func canDeleteRow(at indexPath: IndexPath) -> Bool {
         let company = companies[indexPath.row]
-        return company.id != UserDefaults.standard.company?.id && canEdit
+        return canEdit && company.canBeDeleted
     }
     
     func saveCompany(named name: String) {
@@ -62,10 +62,24 @@ class CompaniesListViewModel {
         company.isSelected = true
     }
     
+    func nameForCompany(at indexPath: IndexPath) -> String {
+        let company = companies[indexPath.row]
+        return company.name
+    }
+    
     func deleteCompany(at indexPath: IndexPath) {
         let company = companies[indexPath.row]
-        companies.remove(at: indexPath.row)
-        didDeleteCompany?()
+        UserAPIManager.shared.deleteCompany(company.id) { [weak self] result in
+            switch result {
+            case .success:
+                self?.companies.remove(at: indexPath.row)
+                self?.didDeleteCompany?(indexPath, nil)
+            case .failure(let error):
+                print(error)
+                self?.didDeleteCompany?(indexPath, error)
+            }
+        }
+        
     }
     
 }

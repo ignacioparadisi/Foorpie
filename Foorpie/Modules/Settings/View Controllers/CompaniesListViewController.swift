@@ -49,37 +49,31 @@ class CompaniesListViewController: BaseViewController {
     
     override func setupViewModel() {
         super.setupViewModel()
-        viewModel.$isLoading
-            .sink { [weak self] isLoading in
-                guard let self = self else { return }
-//                if isLoading {
-//                    self.view.addSubview(self.loadingView)
-//                    self.loadingView.anchor.edgesToSuperview().activate()
-//                    self.loadingView.startAnimating()
-//                } else {
-//                    self.loadingView.stopAnimating { [weak self] _ in
-//                        self?.loadingView.removeFromSuperview()
-//                    }
-//                }
-            }
-            .store(in: &subscriptions)
-        
         viewModel.didSaveCompany = { [weak self] success in
             if success {
                 self?.reloadData(animated: true)
             }
         }
         
-        viewModel.didDeleteCompany = { [weak self] in
+        viewModel.didDeleteCompany = { [weak self] indexPath, error in
+            if let cell = self?.tableView.cellForRow(at: indexPath) {
+                cell.accessoryView = nil
+            }
+            if let error = error {
+                self?.showErrorAlert(message: error.localizedDescription, dismissAfter: 4)
+                return
+            }
             self?.reloadData(animated: true)
         }
     }
     
     override func setupDataSource() {
-        dataSource = CompaniesListDiffableDataSource(viewModel: viewModel, tableView: tableView, cellProvider: { tableView, indexPath, company in
+        dataSource = CompaniesListDiffableDataSource(viewModel: viewModel, viewController: self, tableView: tableView, cellProvider: { tableView, indexPath, company in
             let cell = tableView.dequeueReusableCell(for: indexPath) as TableViewCell
             cell.textLabel?.text = company.name
             cell.accessoryType = company.isSelected ? .checkmark : .none
+            cell.imageView?.image = company.userIsOwner ? .crownFill : nil
+            cell.imageView?.tintColor = .systemYellow
             return cell
         })
     }
@@ -114,7 +108,27 @@ class CompaniesListViewController: BaseViewController {
         alert.addAction(cancelAction)
         alert.addTextField { textField in
             textField.placeholder = Localizable.Text.name
+            textField.autocapitalizationType = .sentences
         }
+        present(alert, animated: true)
+    }
+    
+    func showDeleteAlert(for indexPath: IndexPath) {
+        let companyName = viewModel.nameForCompany(at: indexPath)
+        let alert = UIAlertController(title: "Delete company \"\(companyName)\"?", message: "If you delete this company you will lose all orders, recipes and ingredients that belong to it.", preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: Localizable.Button.delete, style: .destructive) { [weak self] _ in
+            
+            if let cell = self?.tableView.cellForRow(at: indexPath) {
+                let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 28, height: 28))
+                cell.accessoryView = activityIndicator
+                cell.accessoryType = .none
+                activityIndicator.startAnimating()
+            }
+            self?.viewModel.deleteCompany(at: indexPath)
+        }
+        let cancelAction = UIAlertAction(title: Localizable.Button.cancel, style: .cancel, handler: nil)
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
         present(alert, animated: true)
     }
     

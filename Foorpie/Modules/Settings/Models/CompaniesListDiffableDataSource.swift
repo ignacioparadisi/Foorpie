@@ -10,16 +10,18 @@ import UIKit
 
 class CompaniesListDiffableDataSource: UITableViewDiffableDataSource<CompaniesListViewModel.Section, CompanyViewModel> {
     private let viewModel: CompaniesListViewModel
-    init(viewModel: CompaniesListViewModel, tableView: UITableView, cellProvider: @escaping UITableViewDiffableDataSource<CompaniesListViewModel.Section, CompanyViewModel>.CellProvider) {
+    private let viewController: CompaniesListViewController
+    init(viewModel: CompaniesListViewModel, viewController: CompaniesListViewController, tableView: UITableView, cellProvider: @escaping UITableViewDiffableDataSource<CompaniesListViewModel.Section, CompanyViewModel>.CellProvider) {
         self.viewModel = viewModel
+        self.viewController = viewController
         super.init(tableView: tableView, cellProvider: cellProvider)
     }
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return viewModel.canEditRow(at: indexPath)
+        return viewModel.canDeleteRow(at: indexPath)
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            viewModel.deleteCompany(at: indexPath)
+            viewController.showDeleteAlert(for: indexPath)
         }
     }
 }
