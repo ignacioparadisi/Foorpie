@@ -28,7 +28,6 @@ class InvitationViewModel {
         if isLoading { return }
         isLoading = true
         UserAPIManager.shared.fetchInvitationInformation(token: token) { [weak self] result in
-            self?.isLoading = false
             switch result {
             case .success(let invitation):
                 self?.invitation = invitation
@@ -37,6 +36,7 @@ class InvitationViewModel {
                 print(error)
                 self?.didFetchInvitation?(error)
             }
+            self?.isLoading = false
         }
     }
 }

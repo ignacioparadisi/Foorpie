@@ -11,6 +11,7 @@
 "Title.company.key" = "Company";
 "Title.error.key" = "Error";
 "Title.ingredients.key" = "Ingredients";
+"Title.invitationExpired.key" = "Invitation Expired";
 "Title.newIngredient.key" = "New Ingredient";
 "Title.newRecipe.key" = "New Recipe";
 "Title.noIngredientSelected.key" = "No Ingredient Selected";
@@ -25,6 +26,7 @@
 // MARK: - Message
 "Message.ingredientPriceDetailInfo.key" = "This information is used to calculate the the gross price of each recipe. The entered price must be the cost of the entered units.";
 "Message.invitationDetail.key" = "You've been invited to join %@";
+"Message.invitationExpired.key" = "This invitation is no longer valid. Please contact the owner of the company to send you a new invitation.";
 "Message.noIngredientSelected.key" = "Please select an ingredient to see its details.";
 "Message.noOrderSelected.key" = "Please select an order to see its details.";
 "Message.noRecipeSelected.key" = "Please select a recipe to see its details.";

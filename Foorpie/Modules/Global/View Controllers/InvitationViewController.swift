@@ -20,6 +20,7 @@ class InvitationViewController: BaseViewController {
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.numberOfLines = 0
         return label
     }()
     private let acceptButton: UIButton = {
@@ -34,6 +35,13 @@ class InvitationViewController: BaseViewController {
     private let closeButton: UIButton = {
         let button = UIButton(type: .close)
         return button
+    }()
+    private let companyLogoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "building.columns.fill")
+        imageView.tintColor = .systemGray4
+        imageView.contentMode = .scaleAspectFit
+        return imageView
     }()
     private let contentView = UIView()
     private let viewModel: InvitationViewModel
@@ -63,16 +71,28 @@ class InvitationViewController: BaseViewController {
     private func setupInformationView() {
         contentView.anchor
             .top(greaterOrEqual: closeButton.bottomAnchor, constant: 20)
-            .leadingToSuperview(constant: 20, toSafeArea: true)
+            .leading(greaterOrEqual: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)
             .bottom(lessOrEqual: acceptButton.topAnchor, constant: -20)
-            .trailingToSuperview(constant: -20, toSafeArea: true)
+            .trailing(lessOrEqual: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
             .centerToSuperview()
+            .width(lessThanOrEqualToConstant: 400)
             .activate()
+        
+        contentView.addSubview(companyLogoImageView)
         contentView.addSubview(companyNameLabel)
         contentView.addSubview(descriptionLabel)
         
-        companyNameLabel.anchor
+        companyLogoImageView.anchor
             .topToSuperview()
+             .leading(greaterOrEqual: contentView.leadingAnchor)
+             .trailing(greaterOrEqual: contentView.trailingAnchor)
+            .centerXToSuperview()
+            .height(to: companyLogoImageView.widthAnchor)
+            .width(lessThanOrEqualToConstant: 300)
+            .activate()
+        
+        companyNameLabel.anchor
+            .top(to: companyLogoImageView.bottomAnchor, constant: 20)
             .leadingToSuperview()
             .trailingToSuperview()
             .centerXToSuperview()
@@ -90,10 +110,12 @@ class InvitationViewController: BaseViewController {
     private func setupAcceptButton() {
         acceptButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         acceptButton.anchor
-            .leadingToSuperview(constant: 20, toSafeArea: true)
+            .leading(greaterOrEqual: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)
             .bottomToSuperview(constant: -40, toSafeArea: true)
-            .trailingToSuperview(constant: -20, toSafeArea: true)
+            .trailing(lessOrEqual: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
             .height(constant: 44)
+            .width(greaterThanOrEqualToConstant: 400)
+            .centerXToSuperview()
             .activate()
     }
     
@@ -108,7 +130,17 @@ class InvitationViewController: BaseViewController {
     override func setupViewModel() {
         viewModel.didFetchInvitation = { [weak self] error in
             if let error = error {
-                self?.showErrorMessage(error.localizedDescription)
+                if let apiError = error as? APIService.APIError {
+                    if apiError.localizedDescription == "This invitation is no longer valid" {
+                        self?.companyLogoImageView.image = UIImage(systemName: "clock.arrow.circlepath")
+                        self?.companyLogoImageView.tintColor = .systemOrange
+                        self?.companyNameLabel.text = LocalizedStrings.Title.invitationExpired
+                        self?.descriptionLabel.text = LocalizedStrings.Message.invitationExpired
+                        self?.acceptButton.isHidden = true
+                        return
+                    }
+                }
+                self?.showErrorAlert(message: error.localizedDescription)
                 return
             }
             self?.companyNameLabel.text = self?.viewModel.companyName ?? ""

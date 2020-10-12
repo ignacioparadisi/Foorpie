@@ -15,6 +15,7 @@ class LocalizedStrings {
         static var company: String = "Title.company.key".localized
         static var error: String = "Title.error.key".localized
         static var ingredients: String = "Title.ingredients.key".localized
+        static var invitationExpired: String = "Title.invitationExpired.key".localized
         static var newIngredient = "Title.newIngredient.key".localized
         static var newRecipe: String = "Title.newRecipe.key".localized
         static var noIngredientSelected: String = "Title.noIngredientSelected.key".localized
@@ -30,6 +31,7 @@ class LocalizedStrings {
     struct Message {
         static var ingredientPriceDetailInfo: String = "Message.ingredientPriceDetailInfo.key".localized
         static var invitationDetail: String = "Message.invitationDetail.key".localized
+        static var invitationExpired: String = "Message.invitationExpired.key".localized
         static var noIngredientSelected: String = "Message.noIngredientSelected.key".localized
         static var noOrderSelected: String = "Message.noOrderSelected.key".localized
         static var noRecipeSelected: String = "Message.noRecipeSelected.key".localized

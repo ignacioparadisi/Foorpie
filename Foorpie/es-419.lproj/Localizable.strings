@@ -11,6 +11,7 @@
 "Title.company.key" = "Compañía";
 "Title.error.key" = "Error";
 "Title.ingredients.key" = "Ingredientes";
+"Title.invitationExpired.key" = "Invitación Expirada";
 "Title.newIngredient.key" = "Nuevo Ingrediente";
 "Title.newRecipe.key" = "Nueva Receta";
 "Title.noIngredientSelected.key" = "No tienes ningún ingrediente seleccionado";
@@ -25,6 +26,7 @@
 // MARK: - Message
 "Message.ingredientPriceDetailInfo.key" = "Esta información se utiliza para calcular el precio bruto de cada receta. El precio introducido debe ser el costo de las unidades ingresadas.";
 "Message.invitationDetail.key" = "Te han invitado a unirte a %@";
+"Message.invitationExpired.key" = "Esta invitación no es válida. Por favor comunícate con el propietario de la compañía para que te envíe una nueva invitación.";
 "Message.noIngredientSelected.key" = "Por favor selecciona un ingrediente para ver el detalle.";
 "Message.noOrderSelected.key" = "Por favor selecciona una orden para ver el detalle.";
 "Message.noRecipeSelected.key" = "Por favor selecciona una receta para ver el detalle.";
