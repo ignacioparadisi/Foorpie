@@ -23,13 +23,14 @@ class InvitationViewController: BaseViewController {
         label.numberOfLines = 0
         return label
     }()
-    private let acceptButton: UIButton = {
-        let button = UIButton()
+    private let acceptButton: LoadingButton = {
+        let button = LoadingButton()
         button.setTitle(LocalizedStrings.Button.acceptInvitation, for: .normal)
         button.backgroundColor = .systemBlue
         button.tintColor = .white
         button.titleLabel?.textColor = .white
         button.layer.cornerRadius = 10
+        button.activityIndicatorColor = .white
         return button
     }()
     private let closeButton: UIButton = {
@@ -108,7 +109,7 @@ class InvitationViewController: BaseViewController {
     }
     
     private func setupAcceptButton() {
-        acceptButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        acceptButton.addTarget(self, action: #selector(acceptInvitation), for: .touchUpInside)
         acceptButton.anchor
             .leading(greaterOrEqual: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)
             .bottomToSuperview(constant: -40, toSafeArea: true)
@@ -160,5 +161,32 @@ class InvitationViewController: BaseViewController {
                 }
             }
             .store(in: &subscriptions)
+        viewModel.$isAcceptingInvitation
+            .map { !$0 }
+            .assign(to: \.isEnabled, on: acceptButton)
+            .store(in: &subscriptions)
+        viewModel.$isAcceptingInvitation
+            .sink { [weak self] isLoading in
+                if isLoading {
+                    self?.acceptButton.startLoading()
+                } else {
+                    self?.acceptButton.stopLoading()
+                }
+            }
+            .store(in: &subscriptions)
+        viewModel.didAcceptInvitation = { [weak self] error in
+            if let error = error {
+                self?.showErrorAlert(message: error.localizedDescription)
+            } else {
+                self?.showAlert(title: "Bienvenido", message: "Has sido agregado a la compañía", style: .success, completion: {
+                    self?.dismiss(animated: true)
+                })
+                
+            }
+        }
+    }
+    
+    @objc private func acceptInvitation() {
+        viewModel.acceptInvitation()
     }
 }

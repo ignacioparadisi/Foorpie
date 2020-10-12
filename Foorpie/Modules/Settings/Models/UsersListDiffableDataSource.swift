@@ -8,10 +8,10 @@
 
 import UIKit
 
-class UsersListDiffableDataSource: UITableViewDiffableDataSource<UsersListViewModel.Section, String> {
+class UsersListDiffableDataSource: UITableViewDiffableDataSource<UsersListViewModel.Section, AnyHashable> {
     private let viewModel: UsersListViewModel
     private let viewController: UsersListViewController
-    init(viewModel: UsersListViewModel, viewController: UsersListViewController, tableView: UITableView, cellProvider: @escaping UITableViewDiffableDataSource<UsersListViewModel.Section, String>.CellProvider) {
+    init(viewModel: UsersListViewModel, viewController: UsersListViewController, tableView: UITableView, cellProvider: @escaping UITableViewDiffableDataSource<UsersListViewModel.Section, AnyHashable>.CellProvider) {
         self.viewModel = viewModel
         self.viewController = viewController
         super.init(tableView: tableView, cellProvider: cellProvider)

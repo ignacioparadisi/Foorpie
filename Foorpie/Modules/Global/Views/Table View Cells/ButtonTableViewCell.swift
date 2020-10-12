@@ -21,6 +21,7 @@ class ButtonTableViewCell: UITableViewCell, ReusableView {
         case destructive
         case filled
     }
+    private lazy var activityIndicator = UIActivityIndicatorView()
     
     // MARK: Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -45,7 +46,7 @@ class ButtonTableViewCell: UITableViewCell, ReusableView {
     ///   - image: Image to be shown in the imageView
     ///   - style: Style of the cell
     ///   - alignment: Alignment for the text
-    func configure(with title: String, image: UIImage? = nil, style: ButtonTableViewCell.Style, alignment: NSTextAlignment = .center) {
+    func configure(with title: String, image: UIImage? = nil, style: ButtonTableViewCell.Style, alignment: NSTextAlignment = .center, activityIndicatorColor: UIColor? = nil) {
         textLabel?.text = title
         textLabel?.textAlignment = alignment
         imageView?.image = image
@@ -62,5 +63,23 @@ class ButtonTableViewCell: UITableViewCell, ReusableView {
             imageView?.tintColor = .white
             backgroundColor = .systemBlue
         }
+        
+        if let color = activityIndicatorColor {
+            addSubview(activityIndicator)
+            activityIndicator.anchor.centerToSuperview().activate()
+            activityIndicator.color = color
+        }
+    }
+    
+    func startLoading() {
+        textLabel?.isHidden = true
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    func stopLoading() {
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        textLabel?.isHidden = false
     }
 }

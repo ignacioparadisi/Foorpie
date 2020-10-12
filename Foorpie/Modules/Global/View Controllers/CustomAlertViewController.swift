@@ -19,6 +19,7 @@ class CustomAlertViewController: UIViewController {
     private var timer: Timer?
     /// Amount of time after the alert should be dismissed.
     private let dismissAfter: Double?
+    var dismissCompletion: (() -> Void)?
     
     // MARK: Initializers
     init(title: String, message: String, style: AlertView.Style, dismissAfter seconds: Double? = 1.5) {
@@ -59,6 +60,7 @@ class CustomAlertViewController: UIViewController {
     @objc private func dismissView() {
         dismiss(animated: true) {
             self.timer?.invalidate()
+            self.dismissCompletion?()
         }
     }
     
@@ -91,9 +93,7 @@ class CustomAlertViewController: UIViewController {
             self.alertView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
             self.alertView.alpha = 0
         })
-        self.dismiss(animated: true) {
-            self.timer?.invalidate()
-        }
+        self.dismissView()
     }
     
 }

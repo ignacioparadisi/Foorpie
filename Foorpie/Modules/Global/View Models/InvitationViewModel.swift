@@ -14,7 +14,9 @@ class InvitationViewModel {
     private let token: String
     private var invitation: Invitation?
     var didFetchInvitation: ((Error?) -> Void)?
+    var didAcceptInvitation: ((Error?) -> Void)?
     @Published private(set) var isLoading: Bool = false
+    @Published private(set) var isAcceptingInvitation: Bool = false
     
     var companyName: String {
         return invitation?.company?.name ?? LocalizedStrings.Title.company
@@ -37,6 +39,22 @@ class InvitationViewModel {
                 self?.didFetchInvitation?(error)
             }
             self?.isLoading = false
+        }
+    }
+    
+    func acceptInvitation() {
+        guard let invitation = invitation else { return }
+        if isAcceptingInvitation { return }
+        isAcceptingInvitation = true
+        invitation.token = token
+        UserAPIManager.shared.acceptInvitation(invitation: invitation) { [weak self] result in
+            self?.isAcceptingInvitation = false
+            switch result {
+            case .success:
+                self?.didAcceptInvitation?(nil)
+            case .failure(let error):
+                self?.didAcceptInvitation?(error)
+            }
         }
     }
 }

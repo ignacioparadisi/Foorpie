@@ -80,8 +80,21 @@ class AccountViewController: BaseViewController {
     }
     
     override func setupViewModel() {
-        viewModel.didFetchCompanies = { [weak self] companiesViewModel in
-            let viewController = CompaniesListViewController(viewModel: companiesViewModel)
+        viewModel.didFetchCompanies = { [weak self] companiesViewModel, error in
+            if let error = error {
+                self?.showErrorAlert(message: error.localizedDescription)
+            }
+            guard let viewModel = companiesViewModel else { return }
+            let viewController = CompaniesListViewController(viewModel: viewModel)
+            let navigationController = UINavigationController(rootViewController: viewController)
+            self?.showDetailViewController(navigationController, sender: self)
+        }
+        viewModel.didFetchUsers = { [weak self] usersViewModel, error in
+            if let error = error {
+                self?.showErrorAlert(message: error.localizedDescription)
+            }
+            guard let viewModel = usersViewModel else { return }
+            let viewController = UsersListViewController(viewModel: viewModel)
             let navigationController = UINavigationController(rootViewController: viewController)
             self?.showDetailViewController(navigationController, sender: self)
         }
@@ -156,10 +169,7 @@ extension AccountViewController: UITableViewDelegate {
             case .companies:
                 viewModel.fetchCompanies()
             case .users:
-                let viewModel = UsersListViewModel()
-                let viewController = UsersListViewController(viewModel: viewModel)
-                let navigationController = UINavigationController(rootViewController: viewController)
-                showDetailViewController(navigationController, sender: self)
+                viewModel.fetchUsers()
             }
             
         case .logout:

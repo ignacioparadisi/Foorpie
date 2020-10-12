@@ -11,7 +11,7 @@ import Foundation
 class Invitation: Codable {
     let urlString: String
     let companyId: Int?
-    let token: String?
+    var token: String?
     let company: Company?
     
     init(companyId: Int = -1, token: String = "") {

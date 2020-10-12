@@ -86,4 +86,14 @@ class UserAPIManager: UserPersistenceManagerRepresentable {
         let invitation = Invitation(companyId: companyId)
         APIService.shared.makeRequest(url: url, method: .post, body: invitation, result: result)
     }
+    
+    func acceptInvitation(invitation: Invitation, result: @escaping (Result<Company, Error>) -> Void) {
+        guard let url = URLManager.acceptInvitationURL else { return result(.failure(RequestError.invalidURL)) }
+        APIService.shared.makeRequest(url: url, method: .post, body: invitation, result: result)
+    }
+    
+    func fetchUsers(companyId: Int, result: @escaping (Result<[User], Error>) -> Void) {
+        guard let url = URLManager.usersURL(companyId: companyId) else { return result(.failure(RequestError.invalidURL)) }
+        APIService.shared.makeRequest(url: url, method: .get, result: result)
+    }
 }

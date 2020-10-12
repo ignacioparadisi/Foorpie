@@ -8,13 +8,40 @@
 
 import Foundation
 
-class User: Codable {
+class UserViewModel: Hashable {
+    private let user: User
+    var fullName: String {
+        var name = user.fullName ?? ""
+        if isMe {
+            name += " (Me)"
+        }
+        return name
+    }
+    var isMe: Bool {
+        return UserDefaults.standard.user?.id == user.id
+    }
+    
+    init(user: User) {
+        self.user = user
+    }
+    
+    static func == (lhs: UserViewModel, rhs: UserViewModel) -> Bool {
+        return lhs.user == rhs.user
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(user.id)
+    }
+    
+}
+
+class User: Codable, Equatable {
     var id: Int
     var fullName: String?
-    var email: String
+    var email: String?
     var googleToken: String?
     var appleToken: String?
-    var token: String
+    var token: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -32,5 +59,9 @@ class User: Codable {
         self.googleToken = googleToken
         self.appleToken = appleToken
         self.token = ""
+    }
+    
+    static func == (lhs: User, rhs: User) -> Bool {
+        return lhs.id == rhs.id
     }
 }

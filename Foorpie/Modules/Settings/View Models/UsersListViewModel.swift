@@ -15,7 +15,13 @@ class UsersListViewModel: NSObject {
     }
     
     var didCreateInvitation: ((Error?) -> Void)?
+    var didFetchUsers: ((Error?) -> Void)?
     private var invitation: Invitation?
+    private(set) var users: [UserViewModel] = []
+    
+    init(users: [User]) {
+        self.users = users.map { UserViewModel(user: $0) }
+    }
     
     func section(for indexPath: IndexPath) -> Section? {
         guard let section = Section(rawValue: indexPath.section) else { return nil }

@@ -44,6 +44,10 @@ class URLManager {
         return baseURL?.appendingPathComponent("logout")
     }
     
+    static var acceptInvitationURL: URL? {
+        return baseURL?.appendingPathComponent("invitations/accept")
+    }
+    
     static func invitationURL(token: String? = nil) -> URL? {
         var url = baseURL?.appendingPathComponent("invitations")
         if let token = token {
@@ -58,5 +62,10 @@ class URLManager {
             url = url?.appendingPathComponent("\(id)")
         }
         return url
+    }
+    
+    static func usersURL(companyId: Int) -> URL? {
+        return baseURL?.appendingPathComponent("users")
+            .appendingQueryItem("company_id", value: "\(companyId)")
     }
 }

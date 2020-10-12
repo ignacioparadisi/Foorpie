@@ -20,7 +20,8 @@ class AccountViewModel {
         case users
     }
     
-    var didFetchCompanies: ((CompaniesListViewModel) -> Void)?
+    var didFetchCompanies: ((CompaniesListViewModel?, Error?) -> Void)?
+    var didFetchUsers: ((UsersListViewModel?, Error?) -> Void)?
     @Published private(set) var isLoadingCompanies = false
     @Published private(set) var isLoadingUsers = false
     @Published var isLoggingOut = false
@@ -56,9 +57,27 @@ class AccountViewModel {
             switch result {
             case .success(let companies):
                 let viewModel = CompaniesListViewModel(companies: companies)
-                self?.didFetchCompanies?(viewModel)
+                self?.didFetchCompanies?(viewModel, nil)
             case .failure(let error):
                 print(error)
+                self?.didFetchCompanies?(nil, error)
+            }
+        }
+    }
+    
+    func fetchUsers() {
+        if isLoadingUsers { return }
+        guard let companyId = UserDefaults.standard.company?.id else { return }
+        isLoadingUsers = true
+        UserAPIManager.shared.fetchUsers(companyId: companyId) { [weak self] result in
+            self?.isLoadingUsers = false
+            switch result {
+            case .success(let users):
+                let viewModel = UsersListViewModel(users: users)
+                self?.didFetchUsers?(viewModel, nil)
+            case .failure(let error):
+                print(error)
+                self?.didFetchUsers?(nil, error)
             }
         }
     }

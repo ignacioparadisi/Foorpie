@@ -115,6 +115,12 @@
 		3293411425348B7100387CE3 /* InvitationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3293411325348B7100387CE3 /* InvitationViewModel.swift */; };
 		3293411525348B7100387CE3 /* InvitationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3293411325348B7100387CE3 /* InvitationViewModel.swift */; };
 		3293411625348B7100387CE3 /* InvitationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3293411325348B7100387CE3 /* InvitationViewModel.swift */; };
+		329341272534CB0700387CE3 /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329341262534CB0700387CE3 /* LoadingButton.swift */; };
+		329341282534CB0700387CE3 /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329341262534CB0700387CE3 /* LoadingButton.swift */; };
+		329341292534CB0700387CE3 /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329341262534CB0700387CE3 /* LoadingButton.swift */; };
+		329341302534D1E000387CE3 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3293412F2534D1E000387CE3 /* URL+Extension.swift */; };
+		329341312534D1E000387CE3 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3293412F2534D1E000387CE3 /* URL+Extension.swift */; };
+		329341322534D1E000387CE3 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3293412F2534D1E000387CE3 /* URL+Extension.swift */; };
 		32A6DD6425291AAB0092CE3B /* CompaniesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6DD6325291AAB0092CE3B /* CompaniesListViewModel.swift */; };
 		32A6DD6525291AAB0092CE3B /* CompaniesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6DD6325291AAB0092CE3B /* CompaniesListViewModel.swift */; };
 		32A6DD6625291AAB0092CE3B /* CompaniesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6DD6325291AAB0092CE3B /* CompaniesListViewModel.swift */; };
@@ -425,6 +431,8 @@
 		3293259E2526777E00F59470 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		329325A82526794000F59470 /* ActivityIndicatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorTableViewCell.swift; sourceTree = "<group>"; };
 		3293411325348B7100387CE3 /* InvitationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationViewModel.swift; sourceTree = "<group>"; };
+		329341262534CB0700387CE3 /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		3293412F2534D1E000387CE3 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		32A6DD6325291AAB0092CE3B /* CompaniesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesListViewModel.swift; sourceTree = "<group>"; };
 		32ACEF81251784090030EBD1 /* PersistenceManagerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManagerFactory.swift; sourceTree = "<group>"; };
 		32ACEF8A2517868E0030EBD1 /* MenuPersistenceManagerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPersistenceManagerRepresentable.swift; sourceTree = "<group>"; };
@@ -666,6 +674,7 @@
 				320A2D8B24F5675D006140A5 /* Table View Cells */,
 				321A166924F95E2500CF0C5A /* AlertView.swift */,
 				3202C8D124FC0A820076B0FA /* CurrencyTextField.swift */,
+				329341262534CB0700387CE3 /* LoadingButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -796,6 +805,7 @@
 				3202C8CC24FBE9730076B0FA /* UIView+Extension.swift */,
 				32AFEB842519241600D66485 /* UIWindow+Extension.swift */,
 				3202ED802527D24200596A42 /* UserDefaults+Extension.swift */,
+				3293412F2534D1E000387CE3 /* URL+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1537,6 +1547,7 @@
 				324EE68924F8832700A85781 /* FileManager+Extension.swift in Sources */,
 				32DD132E25328E7F00A1E0E7 /* CompaniesListDiffableDataSource.swift in Sources */,
 				32ACEF8B2517868E0030EBD1 /* MenuPersistenceManagerRepresentable.swift in Sources */,
+				329341302534D1E000387CE3 /* URL+Extension.swift in Sources */,
 				32DA6BCE24F7431C0080DD56 /* CustomAlertViewController.swift in Sources */,
 				32AD6C7524FB31AC00A55D7D /* IngredientDetailViewModel.swift in Sources */,
 				3202ED932527E95D00596A42 /* AccountSplitViewController.swift in Sources */,
@@ -1594,6 +1605,7 @@
 				3202ED8A2527E3E700596A42 /* SuccessResponse.swift in Sources */,
 				32BCDCD324FB29AF001CA617 /* IngredientListViewModel.swift in Sources */,
 				3250B06524F493F3001EE718 /* UITableView+Extension.swift in Sources */,
+				329341272534CB0700387CE3 /* LoadingButton.swift in Sources */,
 				32D6B2FF251A974200DB4CBC /* URLManager.swift in Sources */,
 				320FF5E92517E4BF0029EE39 /* Foorpie.xcdatamodeld in Sources */,
 				32D6B372251AA53600DB4CBC /* UserAPIManager.swift in Sources */,
@@ -1650,6 +1662,7 @@
 				32D6B31B251A97BD00DB4CBC /* FileManager+Extension.swift in Sources */,
 				32DD132F25328E7F00A1E0E7 /* CompaniesListDiffableDataSource.swift in Sources */,
 				32D6B31C251A97BD00DB4CBC /* MenuPersistenceManagerRepresentable.swift in Sources */,
+				329341312534D1E000387CE3 /* URL+Extension.swift in Sources */,
 				32D6B31D251A97BD00DB4CBC /* CustomAlertViewController.swift in Sources */,
 				32D6B31E251A97BD00DB4CBC /* IngredientDetailViewModel.swift in Sources */,
 				3202ED942527E95D00596A42 /* AccountSplitViewController.swift in Sources */,
@@ -1707,6 +1720,7 @@
 				3202ED8B2527E3E700596A42 /* SuccessResponse.swift in Sources */,
 				32D6B344251A97BD00DB4CBC /* IngredientListViewModel.swift in Sources */,
 				32D6B345251A97BD00DB4CBC /* UITableView+Extension.swift in Sources */,
+				329341282534CB0700387CE3 /* LoadingButton.swift in Sources */,
 				32D6B346251A97BD00DB4CBC /* URLManager.swift in Sources */,
 				32D6B347251A97BD00DB4CBC /* Foorpie.xcdatamodeld in Sources */,
 				32D6B373251AA53600DB4CBC /* UserAPIManager.swift in Sources */,
@@ -1747,6 +1761,7 @@
 				32E29A46251C078F000B5F1C /* FileManager+Extension.swift in Sources */,
 				32DD133025328E7F00A1E0E7 /* CompaniesListDiffableDataSource.swift in Sources */,
 				32E29A47251C078F000B5F1C /* MenuPersistenceManagerRepresentable.swift in Sources */,
+				329341322534D1E000387CE3 /* URL+Extension.swift in Sources */,
 				32E29A48251C078F000B5F1C /* CustomAlertViewController.swift in Sources */,
 				32E29A49251C078F000B5F1C /* IngredientDetailViewModel.swift in Sources */,
 				3202ED952527E95D00596A42 /* AccountSplitViewController.swift in Sources */,
@@ -1804,6 +1819,7 @@
 				3202ED8C2527E3E700596A42 /* SuccessResponse.swift in Sources */,
 				32E29A71251C078F000B5F1C /* IngredientListViewModel.swift in Sources */,
 				32E29A72251C078F000B5F1C /* UITableView+Extension.swift in Sources */,
+				329341292534CB0700387CE3 /* LoadingButton.swift in Sources */,
 				32E29A73251C078F000B5F1C /* URLManager.swift in Sources */,
 				32E29A74251C078F000B5F1C /* Foorpie.xcdatamodeld in Sources */,
 				32E29A75251C078F000B5F1C /* UserAPIManager.swift in Sources */,
