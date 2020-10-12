@@ -98,4 +98,8 @@ class BaseViewController: UIViewController {
             errorLabelTopAnchor?.constant = topSafeAreaHeight
         }
     }
+    
+    @objc func dismissView() {
+        dismiss(animated: true)
+    }
 }

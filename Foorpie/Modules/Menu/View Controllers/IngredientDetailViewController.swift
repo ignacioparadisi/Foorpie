@@ -62,10 +62,6 @@ class IngredientDetailViewController: BaseViewController {
             .store(in: &subscriptions)
     }
     
-    @objc private func dismissView() {
-        dismiss(animated: true)
-    }
-    
     @objc private func save() {
         viewModel.save()
         dismiss(animated: true) { [weak self] in
@@ -75,7 +71,7 @@ class IngredientDetailViewController: BaseViewController {
     }
     /// Presents a success alert
     private func showSuccessAlert() {
-        showAlert(title: Localizable.Title.saved, message: Localizable.Message.savedRecipe, style: .success)
+        showAlert(title: LocalizedStrings.AlertTitle.saved, message: LocalizedStrings.AlertMessage.savedRecipe, style: .success)
     }
 
 }
@@ -116,13 +112,13 @@ extension IngredientDetailViewController: UITableViewDataSource {
             }
         case .delete:
             let cell = tableView.dequeueReusableCell(for: indexPath) as ButtonTableViewCell
-            cell.configure(with: Localizable.Button.delete, style: .destructive)
+            cell.configure(with: LocalizedStrings.Button.delete, style: .destructive)
             return cell
         }
     }
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section != 0 { return nil }
-        return Localizable.Message.ingredientPriceDetailInfo
+        return LocalizedStrings.Message.ingredientPriceDetailInfo
     }
 }
 

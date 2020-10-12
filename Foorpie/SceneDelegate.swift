@@ -69,7 +69,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let sendingAppID = urlContext.options.sourceApplication
             let url = urlContext.url
             print("source application = \(sendingAppID ?? "Unknown")")
-            print("url = \(url)")
             
             // Process the URL.
             guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
@@ -78,7 +77,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 return
             }
             if host == "invitations", let invitationToken = params.first(where: { $0.name == "token" })?.value {
-                let viewController = InvitationViewController()
+                let viewModel = InvitationViewModel(token: invitationToken)
+                let viewController = InvitationViewController(viewModel: viewModel)
                 window?.rootViewController?.present(viewController, animated: true)
             }
         }

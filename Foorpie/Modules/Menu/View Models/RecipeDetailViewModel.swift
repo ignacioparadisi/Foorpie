@@ -64,7 +64,7 @@ class RecipeDetailViewModel {
         if let recipe = recipe {
             return recipe.name
         } else {
-            return Localizable.Title.newRecipe
+            return LocalizedStrings.Title.newRecipe
         }
     }
     /// Checks that the information of all fields are valid
@@ -119,9 +119,9 @@ class RecipeDetailViewModel {
         guard let section = Section(rawValue: section) else { return nil }
         switch section {
         case .recipes:
-            return Localizable.Title.recipes
+            return LocalizedStrings.Title.recipes
         case .ingredients:
-            return Localizable.Title.ingredients
+            return LocalizedStrings.Title.ingredients
         default:
             return nil
         }
@@ -151,11 +151,11 @@ class RecipeDetailViewModel {
         if let recipe = recipe {
             availableCount = Int(recipe.availableCount)
         }
-        let nameField = TextFieldCellViewModel(title: Localizable.Text.name, value: recipe?.name)
+        let nameField = TextFieldCellViewModel(title: LocalizedStrings.Text.name, value: recipe?.name)
         nameField.validations = [.required]
-        let priceField = CurrencyTextFieldCellViewModel(title: Localizable.Text.price, placeholder: "$0.00", value: recipe?.price)
+        let priceField = CurrencyTextFieldCellViewModel(title: LocalizedStrings.Text.price, placeholder: "$0.00", value: recipe?.price)
         priceField.validations = [.required]
-        let availabilityField = IntTextFieldCellViewModel(title: Localizable.Text.availableCount, value: availableCount)
+        let availabilityField = IntTextFieldCellViewModel(title: LocalizedStrings.Text.availableCount, value: availableCount)
         availabilityField.validations = [.required]
         fields = [
             nameField,
@@ -189,7 +189,7 @@ class RecipeDetailViewModel {
                     self?.delegate?.refresh()
                 case .failure(let error):
                     print(error.localizedDescription)
-                    self?.errorHandler?(Localizable.Error.saveRecipe)
+                    self?.errorHandler?(LocalizedStrings.Error.saveRecipe)
                 }
             }
         } else {
@@ -200,7 +200,7 @@ class RecipeDetailViewModel {
                     self?.delegate?.refresh()
                 case .failure(let error):
                     print(error.localizedDescription)
-                    self?.errorHandler?(Localizable.Error.saveRecipe)
+                    self?.errorHandler?(LocalizedStrings.Error.saveRecipe)
                 }
             }
         }
@@ -230,7 +230,7 @@ class RecipeDetailViewModel {
             refresh?(Section.photo.rawValue)
             delegate?.refresh()
         } catch {
-            errorHandler?(Localizable.Error.resetImage)
+            errorHandler?(LocalizedStrings.Error.resetImage)
         }
     }
 }

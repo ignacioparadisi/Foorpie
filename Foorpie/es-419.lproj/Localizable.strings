@@ -7,68 +7,83 @@
 */
 
 // MARK: - Title
-"ordersKey" = "Pedidos";
-"menuKey" = "Menú";
-"noRecipeSelectedTitleKey" = "No tienes ninguna receta seleccionado";
-"noOrderSelectedTitleKey" = "No tienes ninguna orden seleccionada";
-"noIngredientSelectedTitleKey" = "No tienes ningún ingrediente seleccionado";
-"newRecipeKey" = "Nueva Receta";
-"deleteTitleKey" = "¿Eliminar \"%@?\"";
-"savedTitleKey" = "Guardado";
-"logoutQuestionKey" = "¿Quieres cerrar sesión?";
-"errorKey" = "Error";
-"loginErrorTitleKey" = "Inicio de sesión fallido";
-"recipesKey" = "Recetas";
-"newIngredientKey" = "Nuevo Ingrediente";
-"profileKey" = "Cuenta";
-"settingsKey" = "Ajustes";
+"Title.companies.key" = "Compañías";
+"Title.company.key" = "Compañía";
+"Title.error.key" = "Error";
+"Title.ingredients.key" = "Ingredientes";
+"Title.newIngredient.key" = "Nuevo Ingrediente";
+"Title.newRecipe.key" = "Nueva Receta";
+"Title.noIngredientSelected.key" = "No tienes ningún ingrediente seleccionado";
+"Title.noOrderSelected.key" = "No tienes ninguna orden seleccionada";
+"Title.noRecipeSelected.key" = "No tienes ninguna receta seleccionado";
+"Title.orders.key" = "Pedidos";
+"Title.profile.key" = "Cuenta";
+"Title.recipes.key" = "Recetas";
+"Title.settings.key" = "Ajustes";
+"Title.users.key" = "Usuarios";
 
 // MARK: - Message
-"noRecipeSelectedMessageKey" = "Por favor selecciona una receta para ver el detalle.";
-"noOrderSelectedMessageKey" = "Por favor selecciona una orden para ver el detalle.";
-"noIngredientSelectedMessageKey" = "Por favor selecciona un ingrediente para ver el detalle.";
-"deleteRecipeMessageKey" = "Al eliminar, no podrás agregar esta receta a tus órdenes.";
-"savedRecipeMessageKey" = "La receta se guardó de manera exitosa";
-"loginErrorMessageKey" = "Hubo un error al iniciar sesión.";
-"ingredientPriceDetailInfoKey" = "Esta información se utiliza para calcular el precio bruto de cada receta. El precio introducido debe ser el costo de las unidades ingresadas.";
+"Message.ingredientPriceDetailInfo.key" = "Esta información se utiliza para calcular el precio bruto de cada receta. El precio introducido debe ser el costo de las unidades ingresadas.";
+"Message.invitationDetail.key" = "Te han invitado a unirte a %@";
+"Message.noIngredientSelected.key" = "Por favor selecciona un ingrediente para ver el detalle.";
+"Message.noOrderSelected.key" = "Por favor selecciona una orden para ver el detalle.";
+"Message.noRecipeSelected.key" = "Por favor selecciona una receta para ver el detalle.";
 
 // MARK: - Text
-"orderKey" = "Orden";
-"totalKey" = "Total";
-"availableKey" = "Disponibles";
-"nameKey" = "Nombre";
-"priceKey" = "Precio";
-"availableCountKey" = "Cantidad Disponible";
-"availableAmountKey" = "Cantidad Disponible";
-"searchKey" = "Buscar";
-"ingredientsKey" = "Ingredientes";
-"kilogramKey" = "Kilogramos";
-"gramKey" = "Gramos";
-"milligramKey" = "Miligramos";
-"poundKey" = "Libras";
-"onceKey" = "Onzas";
-"literKey" = "Litros";
-"loadingKey" = "Cargando";
-"milliliterKey" = "Mililitros";
-"gallonKey" = "Galones";
-"meterKey" = "Metros";
-"centimeterKey" = "Centímetros";
-"feetKey" = "Pies";
-"inchKey" = "Pulgadas";
-"unitKey" = "Unidades";
+"Text.available.key" = "Disponibles";
+"Text.availableAmount.key" = "Cantidad Disponible";
+"Text.availableCount.key" = "Cantidad Disponible";
+"Text.centimeters.key" = "Centímetros";
+"Text.feet.key" = "Pies";
+"Text.gallon.key" = "Galones";
+"Text.gram.key" = "Gramos";
+"Text.inch.key" = "Pulgadas";
+"Text.kilogram.key" = "Kilogramos";
+"Text.liter.key" = "Litros";
+"Text.loading.key" = "Cargando";
+"Text.loggingOut.key" = "Cerrando sesión";
+"Text.meters.key" = "Metros";
+"Text.milligram.key" = "Miligramos";
+"Text.milliliter.key" = "Mililitros";
+"Text.name.key" = "Nombre";
+"Text.order.key" = "Orden";
+"Text.ounce.key" = "Onzas";
+"Text.pound.key" = "Libras";
+"Text.price.key" = "Precio";
+"Text.search.key" = "Buscar";
+"Text.total.key" = "Total";
+"Text.unit.key" = "Unidades";
 
 // MARK: - Button
-"doneKey" = "Listo";
-"resetPhotoKey" = "Restablecer Foto";
-"takePhotoKey" = "Tomar Foto";
-"choosePhotoKey" = "Seleccionar Foto";
-"cancelKey" = "Cancelar";
-"deleteKey" = "Eliminar";
-"logoutKey" = "Cerrar Sesión";
-"okKey" = "Aceptar";
-"saveKey" = "Guardar";
+"Button.acceptInvitation.key" = "Aceptar Invitación";
+"Button.cancel.key" = "Cancelar";
+"Button.choosePhoto.key" = "Seleccionar Foto";
+"Button.delete.key" = "Eliminar";
+"Button.done.key" = "Listo";
+"Button.inviteUser.key" = "Invitar Usuario";
+"Button.logout.key" = "Cerrar Sesión";
+"Button.ok.key" = "Aceptar";
+"Button.resetPhoto.key" = "Restablecer Foto";
+"Button.save.key" = "Guardar";
+"Button.takePhoto.key" = "Tomar Foto";
 
 // MARK: - Error
-"fetchingMenuErrorKey" = "Ocurrió un error obteniendo el Menú.";
-"saveRecipeErrorKey" = "Ocurrió un error al guardar la receta.";
-"resetImageErrorKey" = "Ocurrió un error al restablecer la imagen.";
+"Error.fetchingMenu.key" = "Ocurrió un error obteniendo el Menú.";
+"Error.resetImage.key" = "Ocurrió un error al restablecer la imagen.";
+"Error.saveRecipe.key" = "Ocurrió un error al guardar la receta.";
+
+// MARK: - AlertTitle
+"AlertTitle.delete.key" = "¿Eliminar \"%@?\"";
+"AlertTitle.createCompany.key" = "Crear Compañía";
+"AlertTitle.loginError.key" = "Inicio de sesión fallido";
+"AlertTitle.logoutError.key" = "Error cerrando sesión";
+"AlertTitle.logoutQuestion.key" = "¿Quieres cerrar sesión?";
+"AlertTitle.saved.key" = "Guardado";
+
+// MARK: - AlertMessage
+"AlertMessage.deleteRecipe.key" = "Al eliminar, no podrás agregar esta receta a tus órdenes.";
+"AlertMessage.deleteCompany.key" = "Si eliminas esta compañía vas a perder todas las órdenes, recetas e ingredientes que le pertenecen.";
+"AlertMessage.createCompany.key" = "Por favor ingresa el nombre de la compañía.";
+"AlertMessage.loginError.key" = "Hubo un error al iniciar sesión.";
+"AlertMessage.logoutError.key" = "Hubo un error cerrando sesión. Por favor intenta nuevamente.";
+"AlertMessage.savedRecipe.key" = "La receta se guardó de manera exitosa";

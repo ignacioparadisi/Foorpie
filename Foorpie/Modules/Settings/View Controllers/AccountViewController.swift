@@ -26,7 +26,7 @@ class AccountViewController: BaseViewController {
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        title = Localizable.Title.profile
+        title = LocalizedStrings.Title.profile
     }
     
     private func setupTableView() {
@@ -75,7 +75,7 @@ class AccountViewController: BaseViewController {
         var snapshot = NSDiffableDataSourceSnapshot<AccountViewModel.Section, String>()
         snapshot.appendSections([.information, .logout])
         snapshot.appendItems(viewModel.informationRowsTitle, toSection: .information)
-        snapshot.appendItems([Localizable.Button.logout], toSection: .logout)
+        snapshot.appendItems([LocalizedStrings.Button.logout], toSection: .logout)
         dataSource.apply(snapshot, animatingDifferences: animated)
     }
     
@@ -89,8 +89,8 @@ class AccountViewController: BaseViewController {
             if success {
                 self?.logout()
             } else {
-                let alert = UIAlertController(title: "Logout Error", message: "There was an error logging out. Please try again.", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: Localizable.Button.ok, style: .default, handler: nil)
+                let alert = UIAlertController(title: LocalizedStrings.AlertTitle.logoutError, message: LocalizedStrings.AlertMessage.logoutError, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: LocalizedStrings.Button.ok, style: .default, handler: nil)
                 alert.addAction(okAction)
                 self?.present(alert, animated: true)
             }
@@ -120,18 +120,18 @@ class AccountViewController: BaseViewController {
     }
     
     private func showLoadingView() {
-        loadingView.setTitle("Logging out")
+        loadingView.setTitle(LocalizedStrings.Text.loggingOut)
         navigationController?.view.addSubview(loadingView)
         loadingView.anchor.edgesToSuperview().activate()
         loadingView.startAnimating()
     }
     
     private func showLogoutAlert() {
-        let alertController = UIAlertController(title: Localizable.Title.logoutQuestion, message: nil, preferredStyle: .alert)
-        let logoutAction = UIAlertAction(title: Localizable.Button.logout, style: .destructive) { [weak self] _ in
+        let alertController = UIAlertController(title: LocalizedStrings.AlertTitle.logoutQuestion, message: nil, preferredStyle: .alert)
+        let logoutAction = UIAlertAction(title: LocalizedStrings.Button.logout, style: .destructive) { [weak self] _ in
             self?.viewModel.logout()
         }
-        let cancelAction = UIAlertAction(title: Localizable.Button.cancel, style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: LocalizedStrings.Button.cancel, style: .cancel, handler: nil)
         alertController.addAction(logoutAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true)

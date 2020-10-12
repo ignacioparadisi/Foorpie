@@ -21,8 +21,8 @@ class AccountViewModel {
     }
     
     var didFetchCompanies: ((CompaniesListViewModel) -> Void)?
-    @Published var isLoadingCompanies = false
-    @Published var isLoadingUsers = false
+    @Published private(set) var isLoadingCompanies = false
+    @Published private(set) var isLoadingUsers = false
     @Published var isLoggingOut = false
     var didLogout: ((Bool) -> Void)?
     
@@ -30,9 +30,9 @@ class AccountViewModel {
         return UserDefaults.standard.company?.name ?? ""
     }
     var informationRowsTitle: [String] {
-        var rows = ["Company"]
+        var rows = [LocalizedStrings.Title.company]
         if UserDefaults.standard.company?.ownerId == UserDefaults.standard.user?.id {
-            rows.append("Users")
+            rows.append(LocalizedStrings.Title.users)
         }
         return rows
     }

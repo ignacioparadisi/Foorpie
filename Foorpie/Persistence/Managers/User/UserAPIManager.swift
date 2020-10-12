@@ -75,8 +75,13 @@ class UserAPIManager: UserPersistenceManagerRepresentable {
         }
     }
     
+    func fetchInvitationInformation(token: String, result: @escaping (Result<Invitation, Error>) -> Void) {
+        guard let url = URLManager.invitationURL(token: token) else { return result(.failure(RequestError.invalidURL)) }
+        APIService.shared.makeRequest(url: url, method: .get, result: result)
+    }
+    
     func createInvitation(result: @escaping (Result<Invitation, Error>) -> Void) {
-        guard let url = URLManager.invitationURL else { return result(.failure(RequestError.invalidURL)) }
+        guard let url = URLManager.invitationURL() else { return result(.failure(RequestError.invalidURL)) }
         guard let companyId = UserDefaults.standard.company?.id else { return result(.failure(RequestError.invalidBody)) }
         let invitation = Invitation(companyId: companyId)
         APIService.shared.makeRequest(url: url, method: .post, body: invitation, result: result)

@@ -18,7 +18,7 @@ class IngredientListViewController: BaseViewController {
     // MARK: - Functions
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        title = Localizable.Title.ingredients
+        title = LocalizedStrings.Title.ingredients
         let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showNewIngredientView))
         navigationItem.setRightBarButtonItems([addButtonItem, editButtonItem], animated: false)
         setupSearchController()
@@ -42,7 +42,7 @@ class IngredientListViewController: BaseViewController {
     private func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = Localizable.Text.search
+        searchController.searchBar.placeholder = LocalizedStrings.Text.search
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }

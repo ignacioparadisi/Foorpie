@@ -29,7 +29,7 @@ class RecipeListViewController: BaseViewController {
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        title = Localizable.Title.menu
+        title = LocalizedStrings.Title.recipes
         let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItem))
         navigationItem.setRightBarButtonItems([addButtonItem, editButtonItem], animated: false)
         setupSearchController()
@@ -63,7 +63,7 @@ class RecipeListViewController: BaseViewController {
     private func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = Localizable.Text.search
+        searchController.searchBar.placeholder = LocalizedStrings.Text.search
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
@@ -105,7 +105,7 @@ extension RecipeListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if viewModel.section(for: indexPath) == .ingredients {
             let cell = tableView.dequeueReusableCell(for: indexPath) as ButtonTableViewCell
-            cell.configure(with: Localizable.Title.ingredients, image: .cartFill, style: .default, alignment: .natural)
+            cell.configure(with: LocalizedStrings.Title.ingredients, image: .cartFill, style: .default, alignment: .natural)
             cell.accessoryType = .disclosureIndicator
             return cell
         } else {

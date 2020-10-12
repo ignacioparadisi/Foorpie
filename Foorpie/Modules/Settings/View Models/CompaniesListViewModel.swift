@@ -14,7 +14,7 @@ class CompaniesListViewModel {
         case companies
     }
     
-    @Published var isLoading = false
+    @Published private(set) var isLoading = false
     var didSaveCompany: ((Bool) -> Void)?
     var didDeleteCompany: ((IndexPath, Error?) -> Void)?
     var canEdit: Bool {

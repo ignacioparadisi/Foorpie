@@ -152,8 +152,8 @@ extension LoginViewController: GIDSignInDelegate {
             case .success(let user):
                 self?.dismiss(animated: true)
             case .failure(let error):
-                let alert = UIAlertController(title: Localizable.Title.loginError, message: Localizable.Message.loginError, preferredStyle: .alert)
-                let okAction = UIAlertAction(title: Localizable.Button.ok, style: .default, handler: nil)
+                let alert = UIAlertController(title: LocalizedStrings.AlertTitle.loginError, message: LocalizedStrings.AlertMessage.loginError, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: LocalizedStrings.Button.ok, style: .default, handler: nil)
                 alert.addAction(okAction)
                 GIDSignIn.sharedInstance()?.signOut()
                 self?.present(alert, animated: true)

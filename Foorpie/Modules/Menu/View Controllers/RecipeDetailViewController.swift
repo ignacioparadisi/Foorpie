@@ -105,21 +105,21 @@ class RecipeDetailViewController: UIViewController {
     private func showImagePickerAlert(sender: PhotoPickerTableViewCell) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if viewModel.image != nil {
-            alertController.addAction(title: Localizable.Button.resetPhoto, style: .destructive, image: .trash) { [weak self] _ in
+            alertController.addAction(title: LocalizedStrings.Button.resetPhoto, style: .destructive, image: .trash) { [weak self] _ in
                self?.viewModel.clearImage()
             }
         }
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            alertController.addAction(title: Localizable.Button.takePhoto, style: .default, image: .camera) { [weak self] _ in
+            alertController.addAction(title: LocalizedStrings.Button.takePhoto, style: .default, image: .camera) { [weak self] _ in
                self?.presentImagePicker(sourceType: .camera)
             }
         }
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            alertController.addAction(title: Localizable.Button.choosePhoto, style: .default, image: .photoOnRectangle) { [weak self] _ in
+            alertController.addAction(title: LocalizedStrings.Button.choosePhoto, style: .default, image: .photoOnRectangle) { [weak self] _ in
                self?.presentImagePicker(sourceType: .photoLibrary)
             }
         }
-        alertController.addAction(title: Localizable.Button.cancel, style: .cancel)
+        alertController.addAction(title: LocalizedStrings.Button.cancel, style: .cancel)
         if let popoverController = alertController.popoverPresentationController {
             sender.setPopoverController(popoverController)
         }
@@ -138,8 +138,8 @@ class RecipeDetailViewController: UIViewController {
     
     /// Show delete confirmation alert
     private func showDeleteAlert() {
-        let alertController = UIAlertController(title: String(format:Localizable.Title.delete, viewModel.title), message: Localizable.Message.deleteRecipe, preferredStyle: .alert)
-        let deleteAction = UIAlertAction(title: Localizable.Button.delete, style: .destructive) { _ in
+        let alertController = UIAlertController(title: String(format:LocalizedStrings.AlertTitle.delete, viewModel.title), message: LocalizedStrings.AlertMessage.deleteRecipe, preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: LocalizedStrings.Button.delete, style: .destructive) { _ in
             self.viewModel.delete()
             if self.splitViewController?.viewControllers.count == 2 {
                 self.splitViewController?.viewControllers[1] = NoItemSelectedViewController.noRecipeSelected
@@ -147,7 +147,7 @@ class RecipeDetailViewController: UIViewController {
                 self.dismissView()
             }
         }
-        let cancelAction = UIAlertAction(title: Localizable.Button.cancel, style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: LocalizedStrings.Button.cancel, style: .cancel, handler: nil)
         alertController.addAction(deleteAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true)
@@ -155,7 +155,7 @@ class RecipeDetailViewController: UIViewController {
     
     /// Presents a success alert
     private func showSuccessAlert() {
-        showAlert(title: Localizable.Title.saved, message: Localizable.Message.savedRecipe, style: .success)
+        showAlert(title: LocalizedStrings.AlertTitle.saved, message: LocalizedStrings.AlertMessage.savedRecipe, style: .success)
     }
 
 }
@@ -207,7 +207,7 @@ extension RecipeDetailViewController: UITableViewDataSource {
             return cell
         case .delete:
             let cell = tableView.dequeueReusableCell(for: indexPath) as ButtonTableViewCell
-            cell.configure(with: Localizable.Button.delete, style: .destructive)
+            cell.configure(with: LocalizedStrings.Button.delete, style: .destructive)
             return cell
         default:
             return UITableViewCell()

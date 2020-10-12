@@ -7,68 +7,83 @@
 */
 
 // MARK: - Title
-"ordersKey" = "Orders";
-"menuKey" = "Menu";
-"noRecipeSelectedTitleKey" = "No Recipe Selected";
-"noOrderSelectedTitleKey" = "No Order Selected";
-"noIngredientSelectedTitleKey" = "No Ingredient Selected";
-"newRecipeKey" = "New Recipe";
-"deleteTitleKey" = "Delete \"%@?\"";
-"savedTitleKey" = "Saved";
-"logoutQuestionKey" = "Do you want to logout?";
-"settingsKey" = "Settings";
-"errorKey" = "Error";
-"loginErrorTitleKey" = "Login failed";
-"recipesKey" = "Recipes";
-"newIngredientKey" = "New Ingredient";
-"profileKey" = "Account";
+"Title.companies.key" = "Companies";
+"Title.company.key" = "Company";
+"Title.error.key" = "Error";
+"Title.ingredients.key" = "Ingredients";
+"Title.newIngredient.key" = "New Ingredient";
+"Title.newRecipe.key" = "New Recipe";
+"Title.noIngredientSelected.key" = "No Ingredient Selected";
+"Title.noOrderSelected.key" = "No Order Selected";
+"Title.noRecipeSelected.key" = "No Recipe Selected";
+"Title.orders.key" = "Orders";
+"Title.profile.key" = "Account";
+"Title.recipes.key" = "Recipes";
+"Title.settings.key" = "Settings";
+"Title.users.key" = "Users";
 
 // MARK: - Message
-"noRecipeSelectedMessageKey" = "Please select a recipe to see its details.";
-"noOrderSelectedMessageKey" = "Please select an order to see its details.";
-"noIngredientSelectedMessageKey" = "Please select an ingredient to see its details.";
-"deleteRecipeMessageKey" = "Once deleted you won't be able to add this recipe to your orders.";
-"savedRecipeMessageKey" = "The recipe was saved successfully";
-"loginErrorMessageKey" = "There was an error logging in";
-"ingredientPriceDetailInfoKey" = "This information is used to calculate the the gross price of each recipe. The entered price must be the cost of the entered units.";
+"Message.ingredientPriceDetailInfo.key" = "This information is used to calculate the the gross price of each recipe. The entered price must be the cost of the entered units.";
+"Message.invitationDetail.key" = "You've been invited to join %@";
+"Message.noIngredientSelected.key" = "Please select an ingredient to see its details.";
+"Message.noOrderSelected.key" = "Please select an order to see its details.";
+"Message.noRecipeSelected.key" = "Please select a recipe to see its details.";
 
 // MARK: - Text
-"orderKey" = "Order";
-"totalKey" = "Total";
-"availableKey" = "Available";
-"nameKey" = "Name";
-"priceKey" = "Price";
-"availableCountKey" = "Available Count";
-"availableAmountKey" = "Available Amount";
-"searchKey" = "Search";
-"ingredientsKey" = "Ingredients";
-"kilogramKey" = "Kilogram";
-"gramKey" = "Grams";
-"milligramKey" = "Milligrams";
-"poundKey" = "Pounds";
-"onceKey" = "Onces";
-"literKey" = "Liters";
-"loadingKey" = "Loading";
-"milliliterKey" = "Milliliters";
-"gallonKey" = "Gallons";
-"meterKey" = "Meters";
-"centimeterKey" = "Centimeters";
-"feetKey" = "Feet";
-"inchKey" = "Inches";
-"unitKey" = "Units";
+"Text.available.key" = "Available";
+"Text.availableAmount.key" = "Available Amount";
+"Text.availableCount.key" = "Available Count";
+"Text.centimeters.key" = "Centimeters";
+"Text.feet.key" = "Feet";
+"Text.gallon.key" = "Gallons";
+"Text.gram.key" = "Grams";
+"Text.inch.key" = "Inches";
+"Text.kilogram.key" = "Kilogram";
+"Text.liter.key" = "Liters";
+"Text.loading.key" = "Loading";
+"Text.loggingOut.key" = "Logging out";
+"Text.meters.key" = "Meters";
+"Text.milligram.key" = "Milligrams";
+"Text.milliliter.key" = "Milliliters";
+"Text.name.key" = "Name";
+"Text.order.key" = "Order";
+"Text.ounce.key" = "Onces";
+"Text.pound.key" = "Pounds";
+"Text.price.key" = "Price";
+"Text.search.key" = "Search";
+"Text.total.key" = "Total";
+"Text.unit.key" = "Units";
 
 // MARK: - Button
-"doneKey" = "Done";
-"resetPhotoKey" = "Reset Photo";
-"takePhotoKey" = "Take Photo";
-"choosePhotoKey" = "Choose Photo";
-"cancelKey" = "Cancel";
-"deleteKey" = "Delete";
-"logoutKey" = "Logout";
-"okKey" = "Ok";
-"saveKey" = "Save";
+"Button.acceptInvitation.key" = "Accept Invitation";
+"Button.cancel.key" = "Cancel";
+"Button.choosePhoto.key" = "Choose Photo";
+"Button.delete.key" = "Delete";
+"Button.done.key" = "Done";
+"Button.inviteUser.key" = "Invite User";
+"Button.logout.key" = "Logout";
+"Button.ok.key" = "Ok";
+"Button.resetPhoto.key" = "Reset Photo";
+"Button.save.key" = "Save";
+"Button.takePhoto.key" = "Take Photo";
 
 // MARK: - Error
-"fetchingMenuErrorKey" = "There was an error fetching the Menu.";
-"saveRecipeErrorKey" = "There was an error saving the recpie.";
-"resetImageErrorKey" = "There was an error resetting the image.";
+"Error.fetchingMenu.key" = "There was an error fetching the Menu.";
+"Error.resetImage.key" = "There was an error resetting the image.";
+"Error.saveRecipe.key" = "There was an error saving the recpie.";
+
+// MARK: - AlertTitle
+"AlertTitle.delete.key" = "Delete \"%@?\"";
+"AlertTitle.createCompany.key" = "Create Company";
+"AlertTitle.loginError.key" = "Login failed";
+"AlertTitle.logoutError.key" = "Logout Error";
+"AlertTitle.logoutQuestion.key" = "Do you want to logout?";
+"AlertTitle.saved.key" = "Saved";
+
+// MARK: - AlertMessage
+"AlertMessage.deleteRecipe.key" = "Once deleted you won't be able to add this recipe to your orders.";
+"AlertMessage.deleteCompany.key" = "If you delete this company you will lose all orders, recipes and ingredients that belong to it.";
+"AlertMessage.createCompany.key" = "Please enter the name of the company.";
+"AlertMessage.loginError.key" = "There was an error logging in";
+"AlertMessage.logoutError.key" = "There was an error logging out. Please try again.";
+"AlertMessage.savedRecipe.key" = "The recipe was saved successfully";

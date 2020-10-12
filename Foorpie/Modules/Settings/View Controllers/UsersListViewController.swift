@@ -35,7 +35,7 @@ class UsersListViewController: BaseViewController {
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        title = "Users"
+        title = LocalizedStrings.Title.users
     }
     
     override func setupViewModel() {
@@ -68,13 +68,13 @@ class UsersListViewController: BaseViewController {
     private func reloadData(animated: Bool = false) {
         var snapshot = NSDiffableDataSourceSnapshot<UsersListViewModel.Section, String>()
         snapshot.appendSections([.invite, .users])
-        snapshot.appendItems(["Invite User"], toSection: .invite)
+        snapshot.appendItems([LocalizedStrings.Button.inviteUser], toSection: .invite)
         dataSource.apply(snapshot, animatingDifferences: animated)
     }
     
     private func showActivityViewController(sourceView: UIView) {
         let activityViewController = UIActivityViewController(activityItems: [viewModel], applicationActivities: nil)
-        activityViewController.title = "Invite User"
+        activityViewController.title = LocalizedStrings.Button.inviteUser
         activityViewController.popoverPresentationController?.sourceView = sourceView
         activityViewController.popoverPresentationController?.sourceRect = sourceView.bounds
         present(activityViewController, animated: true)

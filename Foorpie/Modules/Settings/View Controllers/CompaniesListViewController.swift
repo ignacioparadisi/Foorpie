@@ -14,7 +14,7 @@ class CompaniesListViewController: BaseViewController {
     private var dataSource: UITableViewDiffableDataSource<CompaniesListViewModel.Section, CompanyViewModel>!
     private let viewModel: CompaniesListViewModel
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
-    private lazy var loadingView = LoadingView(title: Localizable.Text.loading)
+    private lazy var loadingView = LoadingView(title: LocalizedStrings.Text.loading)
     private var subscriptions = Set<AnyCancellable>()
     
     init(viewModel: CompaniesListViewModel) {
@@ -38,7 +38,7 @@ class CompaniesListViewController: BaseViewController {
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        title = "Companies"
+        title = LocalizedStrings.Title.companies
         let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showCreateCompanyAlert))
         var buttonItems = [addButtonItem]
         if viewModel.canEdit {
@@ -97,17 +97,17 @@ class CompaniesListViewController: BaseViewController {
     }
     
     @objc func showCreateCompanyAlert() {
-        let alert = UIAlertController(title: "Create Company", message: "Please enter the name of the company", preferredStyle: .alert)
-        let saveAction = UIAlertAction(title: Localizable.Button.save, style: .default, handler: { [weak alert, weak self] _ in
+        let alert = UIAlertController(title: LocalizedStrings.AlertTitle.createCompany, message: LocalizedStrings.AlertMessage.createCompany, preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: LocalizedStrings.Button.save, style: .default, handler: { [weak alert, weak self] _ in
             guard let textField = alert?.textFields?[0], let name = textField.text else { return }
             self?.viewModel.saveCompany(named: name)
             alert?.dismiss(animated: true)
         })
-        let cancelAction = UIAlertAction(title: Localizable.Button.cancel, style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: LocalizedStrings.Button.cancel, style: .cancel, handler: nil)
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
         alert.addTextField { textField in
-            textField.placeholder = Localizable.Text.name
+            textField.placeholder = LocalizedStrings.Text.name
             textField.autocapitalizationType = .sentences
         }
         present(alert, animated: true)
@@ -115,8 +115,8 @@ class CompaniesListViewController: BaseViewController {
     
     func showDeleteAlert(for indexPath: IndexPath) {
         let companyName = viewModel.nameForCompany(at: indexPath)
-        let alert = UIAlertController(title: "Delete company \"\(companyName)\"?", message: "If you delete this company you will lose all orders, recipes and ingredients that belong to it.", preferredStyle: .alert)
-        let deleteAction = UIAlertAction(title: Localizable.Button.delete, style: .destructive) { [weak self] _ in
+        let alert = UIAlertController(title: String(format: LocalizedStrings.AlertTitle.delete, companyName), message: LocalizedStrings.AlertMessage.deleteCompany, preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: LocalizedStrings.Button.delete, style: .destructive) { [weak self] _ in
             
             if let cell = self?.tableView.cellForRow(at: indexPath) {
                 let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 28, height: 28))
@@ -126,7 +126,7 @@ class CompaniesListViewController: BaseViewController {
             }
             self?.viewModel.deleteCompany(at: indexPath)
         }
-        let cancelAction = UIAlertAction(title: Localizable.Button.cancel, style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: LocalizedStrings.Button.cancel, style: .cancel, handler: nil)
         alert.addAction(deleteAction)
         alert.addAction(cancelAction)
         present(alert, animated: true)

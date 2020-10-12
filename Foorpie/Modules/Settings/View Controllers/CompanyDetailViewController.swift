@@ -14,7 +14,7 @@ class CompanyDetailViewController: BaseFormViewController {
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        title = "Company"
+        title = LocalizedStrings.Title.company
         navigationItem.rightBarButtonItem = saveButtonItem
     }
     

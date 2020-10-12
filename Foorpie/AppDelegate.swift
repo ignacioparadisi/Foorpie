@@ -35,27 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        var canOpen = false
-        // Determine who sent the URL.
-            let sendingAppID = options[.sourceApplication]
-            print("source application = \(sendingAppID ?? "Unknown")")
-            
-            // Process the URL.
-            if let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
-                let componentPath = components.path,
-                let params = components.queryItems {
-                if let invitationToken = params.first(where: { $0.name == "token" })?.value {
-                    print("componentPath = \(componentPath)")
-                    print("invitationToken = \(invitationToken)")
-                    canOpen = true
-                }
-            }
-            else {
-                canOpen = false
-            }
-            
-            
-        return GIDSignIn.sharedInstance()?.handle(url) ?? canOpen
+        return GIDSignIn.sharedInstance()?.handle(url) ?? false
     }
 }
 

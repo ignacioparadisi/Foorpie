@@ -44,8 +44,12 @@ class URLManager {
         return baseURL?.appendingPathComponent("logout")
     }
     
-    static var invitationURL: URL? {
-        return baseURL?.appendingPathComponent("invitations")
+    static func invitationURL(token: String? = nil) -> URL? {
+        var url = baseURL?.appendingPathComponent("invitations")
+        if let token = token {
+            url = url?.appendingPathComponent(token)
+        }
+        return url
     }
     
     static func companiesURL(id: Int? = nil) -> URL? {

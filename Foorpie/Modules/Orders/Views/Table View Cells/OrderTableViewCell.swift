@@ -115,12 +115,12 @@ class OrderTableViewCell: UITableViewCell, ReusableView {
     }
     
     func configure(orderNumber: Int, clientName: String, status: String) {
-        orderNumberLabel.text = "\(Localizable.Text.order) \(orderNumber)"
+        orderNumberLabel.text = "\(LocalizedStrings.Text.order) \(orderNumber)"
         clientNameLabel.text = clientName
         orderStatusButton.setTitle(status, for: .normal)
         orderStatusButton.setTitleColor(.white, for: .normal)
         orderStatusButton.backgroundColor = .systemBlue
-        totalPriceLabel.text = "\(Localizable.Text.total): $14.00"
+        totalPriceLabel.text = "\(LocalizedStrings.Text.total): $14.00"
     }
 }
 

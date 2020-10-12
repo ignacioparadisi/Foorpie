@@ -21,7 +21,7 @@ class OrderRecipeCollectionViewCell: UICollectionViewCell, ReusableView, NibLoad
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        statusButton.setTitle(Localizable.Button.done, for: .normal)
+        statusButton.setTitle(LocalizedStrings.Button.done, for: .normal)
         priceLabel.font = UIFont.preferredFont(forTextStyle: .title2).bold
         statusButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .footnote).bold
         availabilityStepper.value = Double(availableCount)

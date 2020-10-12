@@ -31,7 +31,7 @@ class IngredientDetailViewModel {
         if let ingredient = ingredient {
             return ingredient.name
         }
-        return Localizable.Title.newIngredient
+        return LocalizedStrings.Title.newIngredient
     }
     var isEditing: Bool {
         return ingredient != nil
@@ -72,12 +72,12 @@ class IngredientDetailViewModel {
     // MARK: Functions
     /// Creates all fields that will be shown in the table view
     private func setupFields() {
-        let nameField = TextFieldCellViewModel(title: Localizable.Text.name, value: ingredient?.name)
+        let nameField = TextFieldCellViewModel(title: LocalizedStrings.Text.name, value: ingredient?.name)
         nameField.validations = [.required]
-        let priceField = CurrencyTextFieldCellViewModel(title: Localizable.Text.price, placeholder: "$0.00", value: ingredient?.price)
+        let priceField = CurrencyTextFieldCellViewModel(title: LocalizedStrings.Text.price, placeholder: "$0.00", value: ingredient?.price)
         priceField.validations = [.required]
         let unitType = Ingredient.UnitType(rawValue: ingredient?.unitType ?? "u")
-        let unitField = UnitTextFieldCellViewModel(title: Localizable.Text.unit, value: Int(ingredient?.unitAmount ?? 0), unitType: unitType)
+        let unitField = UnitTextFieldCellViewModel(title: LocalizedStrings.Text.unit, value: Int(ingredient?.unitAmount ?? 0), unitType: unitType)
         unitField.validations = [.required]
 //        let unitAmountField = FloatTextFieldCellViewModel(title: Localizable.Text.availableAmount, value: unitAmount)
 //        unitAmountField.validations = [.required]
@@ -135,7 +135,7 @@ class IngredientDetailViewModel {
                     print("Success")
                 case .failure(let error):
                     print(error.localizedDescription)
-                    self?.errorHandler?(Localizable.Error.saveRecipe)
+                    self?.errorHandler?(LocalizedStrings.Error.saveRecipe)
                 }
             }
         } else {
@@ -146,7 +146,7 @@ class IngredientDetailViewModel {
                     self?.delegate?.refresh()
                 case .failure(let error):
                     print(error.localizedDescription)
-                    self?.errorHandler?(Localizable.Error.saveRecipe)
+                    self?.errorHandler?(LocalizedStrings.Error.saveRecipe)
                 }
             }
         }

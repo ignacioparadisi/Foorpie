@@ -20,9 +20,9 @@ class MainTabBarController: UITabBarController {
     // MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        orderSplitViewController.tabBarItem = UITabBarItem(title: Localizable.Title.orders, image: .trayFull, selectedImage: .trayFullFill)
-        menuSplitViewController.tabBarItem = UITabBarItem(title: Localizable.Title.recipes, image: .docPlaintext, selectedImage: .docPlaintextFill)
-        settingsSplitViewController.tabBarItem = UITabBarItem(title: Localizable.Title.profile, image: .personCropCircle, selectedImage: .personCropCircleFill)
+        orderSplitViewController.tabBarItem = UITabBarItem(title: LocalizedStrings.Title.orders, image: .trayFull, selectedImage: .trayFullFill)
+        menuSplitViewController.tabBarItem = UITabBarItem(title: LocalizedStrings.Title.recipes, image: .docPlaintext, selectedImage: .docPlaintextFill)
+        settingsSplitViewController.tabBarItem = UITabBarItem(title: LocalizedStrings.Title.profile, image: .personCropCircle, selectedImage: .personCropCircleFill)
         menuSplitViewController.preferredDisplayMode = .allVisible
         viewControllers = [
             orderSplitViewController,

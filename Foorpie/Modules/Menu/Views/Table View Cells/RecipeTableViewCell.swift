@@ -34,7 +34,7 @@ class RecipeTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
         nameLabel.text = viewModel.name
         priceLabel.text = viewModel.price
         availabilityView.backgroundColor = viewModel.availableCount > 0 ? .systemGreen : .systemRed
-        availabilityLabel.text = "\(viewModel.availableCount) \(Localizable.Text.available)"
+        availabilityLabel.text = "\(viewModel.availableCount) \(LocalizedStrings.Text.available)"
     }
     
 }

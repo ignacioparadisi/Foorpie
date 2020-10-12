@@ -11,14 +11,20 @@ import Foundation
 class Invitation: Codable {
     let urlString: String
     let companyId: Int?
+    let token: String?
+    let company: Company?
     
-    init(companyId: Int) {
+    init(companyId: Int = -1, token: String = "") {
+        self.company = nil
         self.urlString = ""
+        self.token = token
         self.companyId = companyId
     }
     
     enum CodingKeys: String, CodingKey {
         case urlString = "url"
         case companyId = "company_id"
+        case company
+        case token
     }
 }

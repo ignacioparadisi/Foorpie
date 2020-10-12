@@ -41,7 +41,7 @@ class RecipeListViewModel {
                 self.recipes = recipes
                 self.filteredRecipes = recipes
             case .failure:
-                errorHandler?(Localizable.Error.fetchingMenu)
+                errorHandler?(LocalizedStrings.Error.fetchingMenu)
             }
         }
     }

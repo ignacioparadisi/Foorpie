@@ -1,6 +1,6 @@
 //
-//  Localizable.swift
-//  Cottura
+//  LocalizedStrings.swift
+//  Foorpie
 //
 //  Created by Ignacio Paradisi on 8/29/20.
 //  Copyright © 2020 Ignacio Paradisi. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Localizable {
+class LocalizedStrings {
     
     struct Title {
         static var delete: String = "deleteTitleKey".localized
@@ -80,6 +80,14 @@ class Localizable {
         static var fetchingMenu: String = "fetchingMenuErrorKey".localized
         static var resetImage: String = "resetImageErrorKey".localized
         static var saveRecipe: String = "saveRecipeErrorKey".localized
+    }
+    
+    struct AlertTitle {
+        static var logoutError: String = "logoutError.AlertTitle.Key".localized
+    }
+    
+    struct AlertMessage {
+        static var logoutError: String = "logoutError.AlertMessage.Key".localized
     }
     
 }

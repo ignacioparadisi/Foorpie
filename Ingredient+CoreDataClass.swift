@@ -190,31 +190,31 @@ extension Ingredient {
         var text: String {
             switch self {
             case .kilogram:
-                return Localizable.Text.kilogram
+                return LocalizedStrings.Text.kilogram
             case .gram:
-                return Localizable.Text.gram
+                return LocalizedStrings.Text.gram
             case .milligram:
-                return Localizable.Text.milligram
+                return LocalizedStrings.Text.milligram
             case .pound:
-                return Localizable.Text.pound
+                return LocalizedStrings.Text.pound
             case .ounce:
-                return Localizable.Text.ounce
+                return LocalizedStrings.Text.ounce
             case .liter:
-                return Localizable.Text.liter
+                return LocalizedStrings.Text.liter
             case .milliliter:
-                return Localizable.Text.milliliter
+                return LocalizedStrings.Text.milliliter
             case .gallon:
-                return Localizable.Text.gallon
+                return LocalizedStrings.Text.gallon
             case .meters:
-                return Localizable.Text.meters
+                return LocalizedStrings.Text.meters
             case .centimeters:
-                return Localizable.Text.centimeters
+                return LocalizedStrings.Text.centimeters
             case .feet:
-                return Localizable.Text.feet
+                return LocalizedStrings.Text.feet
             case .inch:
-                return Localizable.Text.inch
+                return LocalizedStrings.Text.inch
             case .unit:
-                return Localizable.Text.unit
+                return LocalizedStrings.Text.unit
             }
         }
     }
