@@ -323,7 +323,6 @@
 		32E29A8B251C078F000B5F1C /* OrderRecipeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325CE51A24FA8ECA00E7C88B /* OrderRecipeCollectionViewCell.xib */; };
 		473559E2822CF0F4FFFBECD4 /* Pods_Foorpie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374BC301F05832E9885FAACB /* Pods_Foorpie.framework */; };
 		562CF7810FC2778FC27D04B0 /* Pods_FoorpieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D529183EB31AF22299ABA6 /* Pods_FoorpieTests.framework */; };
-		6D368B239BF404BB9C8B8559 /* Pods_Foorpie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374BC301F05832E9885FAACB /* Pods_Foorpie.framework */; };
 		BB90D01D7A5CAB009C437C2A /* Pods_Foorpie_Staging_FoorpieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB60C9FC517F1CBAE2AA053 /* Pods_Foorpie_Staging_FoorpieUITests.framework */; };
 		C8E8F574152969A4516A5B5B /* Pods_Foorpie_Local.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48ACFD14D90B6038AB9C0A99 /* Pods_Foorpie_Local.framework */; };
 		CA963E6D4564B33F9320C92F /* Pods_Foorpie_Staging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F665A259D86792DA13BBAF1 /* Pods_Foorpie_Staging.framework */; };
@@ -496,7 +495,6 @@
 			files = (
 				3275C6E424F55DD1004691EA /* IQKeyboardManagerSwift in Frameworks */,
 				473559E2822CF0F4FFFBECD4 /* Pods_Foorpie.framework in Frameworks */,
-				6D368B239BF404BB9C8B8559 /* Pods_Foorpie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
