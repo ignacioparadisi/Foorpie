@@ -145,13 +145,13 @@ extension LoginViewController: GIDSignInDelegate {
         guard let email = user.profile.email else { return }
         let user = User(email: email, fullName: fullName, googleToken: idToken)
         isLoading = true
-        PersistenceManagerFactory.userPersistenceManager.login(user: user) { [weak self] result in
+        APIManagerFactory.userAPIManager.login(user: user) { [weak self] result in
             self?.isLoading = false
             print(result)
             switch result {
-            case .success(let user):
+            case .success:
                 self?.dismiss(animated: true)
-            case .failure(let error):
+            case .failure:
                 let alert = UIAlertController(title: LocalizedStrings.AlertTitle.loginError, message: LocalizedStrings.AlertMessage.loginError, preferredStyle: .alert)
                 let okAction = UIAlertAction(title: LocalizedStrings.Button.ok, style: .default, handler: nil)
                 alert.addAction(okAction)

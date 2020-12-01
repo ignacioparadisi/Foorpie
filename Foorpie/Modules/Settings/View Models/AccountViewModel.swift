@@ -52,7 +52,7 @@ class AccountViewModel {
     func fetchCompanies() {
         if isLoadingCompanies { return }
         isLoadingCompanies = true
-        UserAPIManager.shared.getCompanies { [weak self] result in
+        APIManagerFactory.companyAPIManager.getCompanies { [weak self] result in
             self?.isLoadingCompanies = false
             switch result {
             case .success(let companies):
@@ -69,7 +69,7 @@ class AccountViewModel {
         if isLoadingUsers { return }
         guard let companyId = UserDefaults.standard.company?.id else { return }
         isLoadingUsers = true
-        UserAPIManager.shared.fetchUsers(companyId: companyId) { [weak self] result in
+        APIManagerFactory.userAPIManager.fetchUsers(companyId: companyId) { [weak self] result in
             self?.isLoadingUsers = false
             switch result {
             case .success(let users):
@@ -85,7 +85,7 @@ class AccountViewModel {
     func logout() {
         if isLoggingOut { return }
         isLoggingOut = true
-        UserAPIManager.shared.logout { [weak self] result in
+        APIManagerFactory.userAPIManager.logout { [weak self] result in
             self?.isLoggingOut = false
             switch result {
             case .success:

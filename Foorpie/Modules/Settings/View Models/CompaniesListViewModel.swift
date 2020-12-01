@@ -38,7 +38,7 @@ class CompaniesListViewModel {
         if isLoading { return }
         self.isLoading = true
         let company = Company(name: name)
-        UserAPIManager.shared.createCompany(company) { [weak self] result in
+        APIManagerFactory.companyAPIManager.createCompany(company) { [weak self] result in
             self?.isLoading = false
             switch result {
             case .success(let company):
@@ -69,7 +69,7 @@ class CompaniesListViewModel {
     
     func deleteCompany(at indexPath: IndexPath) {
         let company = companies[indexPath.row]
-        UserAPIManager.shared.deleteCompany(company.id) { [weak self] result in
+        APIManagerFactory.companyAPIManager.deleteCompany(company.id) { [weak self] result in
             switch result {
             case .success:
                 self?.companies.remove(at: indexPath.row)

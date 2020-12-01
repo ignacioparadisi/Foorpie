@@ -29,7 +29,7 @@ class InvitationViewModel {
     func fetchInvitationInformation() {
         if isLoading { return }
         isLoading = true
-        UserAPIManager.shared.fetchInvitationInformation(token: token) { [weak self] result in
+        APIManagerFactory.userAPIManager.fetchInvitationInformation(token: token) { [weak self] result in
             switch result {
             case .success(let invitation):
                 self?.invitation = invitation
@@ -47,7 +47,7 @@ class InvitationViewModel {
         if isAcceptingInvitation { return }
         isAcceptingInvitation = true
         invitation.token = token
-        UserAPIManager.shared.acceptInvitation(invitation: invitation) { [weak self] result in
+        APIManagerFactory.userAPIManager.acceptInvitation(invitation: invitation) { [weak self] result in
             self?.isAcceptingInvitation = false
             switch result {
             case .success:

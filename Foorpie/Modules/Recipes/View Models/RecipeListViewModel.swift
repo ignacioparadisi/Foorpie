@@ -34,7 +34,7 @@ class RecipeListViewModel {
     // MARK: Functions
     /// Fetch all recipes to be displayed
     func fetch() {
-        PersistenceManagerFactory.menuPersistenceManager.fetchRecipes { [weak self] result in
+        APIManagerFactory.menuPersistenceManager.fetchRecipes { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let recipes):
@@ -74,7 +74,7 @@ class RecipeListViewModel {
     /// - Parameter indexPath: Index path of the recipe to be deleted
     func deleteRecipe(at indexPath: IndexPath) {
         let recipeToBeDeleted = filteredRecipes[indexPath.row]
-        PersistenceManagerFactory.menuPersistenceManager.delete(recipe: recipeToBeDeleted) { [weak self] result in
+        APIManagerFactory.menuPersistenceManager.delete(recipe: recipeToBeDeleted) { [weak self] result in
             switch result {
             case .success:
                 self?.filteredRecipes.remove(at: indexPath.row)
@@ -140,13 +140,13 @@ class RecipeListViewModel {
                     uuids.append(uuid)
                 }
             }
-            PersistenceManagerFactory.menuPersistenceManager.fetchIngredient(by: uuids) { result in
+            APIManagerFactory.menuPersistenceManager.fetchIngredient(by: uuids) { result in
                 guard let self = self else { return }
                 switch result {
                 case .success(let ingredients):
                     let recipe = self.recipes[indexPath.row]
                     recipe.addToIngredients(NSSet(array: ingredients))
-                    PersistenceManagerFactory.menuPersistenceManager.update(recipe: recipe) { _ in
+                    APIManagerFactory.menuPersistenceManager.update(recipe: recipe) { _ in
                         
                     }
                 case .failure(let error):

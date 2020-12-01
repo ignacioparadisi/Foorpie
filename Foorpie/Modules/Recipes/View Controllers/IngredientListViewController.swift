@@ -73,8 +73,9 @@ extension IngredientListViewController: UITableViewDataSource {
 extension IngredientListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailViewModel = viewModel.detailForRow(at: indexPath)
-        let viewController = IngredientDetailViewController(viewModel: detailViewModel)
-        present(UINavigationController(rootViewController: viewController), animated: true)
+        let detailViewController = IngredientDetailViewController(viewModel: detailViewModel)
+        let viewController = UINavigationController(rootViewController: detailViewController)
+        showDetailViewController(viewController, sender: nil)
     }
 }
 

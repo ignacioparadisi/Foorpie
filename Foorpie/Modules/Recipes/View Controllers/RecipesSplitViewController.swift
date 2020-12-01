@@ -1,5 +1,5 @@
 //
-//  MenuSplitViewController.swift
+//  RecipesSplitViewController.swift
 //  Cottura
 //
 //  Created by Ignacio Paradisi on 8/25/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuSplitViewController: UISplitViewController {
+class RecipesSplitViewController: UISplitViewController {
 
     /// Add the View Controller to the Split View Controller
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class MenuSplitViewController: UISplitViewController {
     }
 }
 
-extension MenuSplitViewController: UISplitViewControllerDelegate {
+extension RecipesSplitViewController: UISplitViewControllerDelegate {
     
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         // Always show the master controller

@@ -1,5 +1,5 @@
 //
-//  PersistenceManagerFactory.swift
+//  APIManagerFactory.swift
 //  Foorpie
 //
 //  Created by Ignacio Paradisi on 9/20/20.
@@ -8,14 +8,18 @@
 
 import Foundation
 
-class PersistenceManagerFactory {
+class APIManagerFactory {
     
     static var menuPersistenceManager: MenuPersistenceManagerRepresentable {
         return MenuCoreDataManager.shared
     }
     
-    static var userPersistenceManager: UserPersistenceManagerRepresentable {
+    static var userAPIManager: UserAPIManagerRepresentable {
         return UserAPIManager.shared
+    }
+    
+    static var companyAPIManager: CompanyAPIManagerRepresentable {
+        return CompanyAPIManager.shared
     }
     
 }

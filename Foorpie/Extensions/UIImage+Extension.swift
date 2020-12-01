@@ -24,6 +24,7 @@ extension UIImage {
     static var personCropCircleFill: UIImage? = UIImage(systemName: "person.crop.circle.fill")
     static var photo: UIImage? = UIImage(systemName: "photo")
     static var photoOnRectangle: UIImage? = UIImage(systemName: "photo.on.rectangle")
+    static var plus: UIImage? = UIImage(systemName: "plus")
     static var trash: UIImage? = UIImage(systemName: "trash")
     static var trayFull: UIImage? = UIImage(systemName: "tray.full")
     static var trayFullFill: UIImage? = UIImage(systemName: "tray.full.fill")

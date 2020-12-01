@@ -17,11 +17,11 @@ class UsersListDiffableDataSource: UITableViewDiffableDataSource<UsersListViewMo
         super.init(tableView: tableView, cellProvider: cellProvider)
     }
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return false
+        return viewModel.canDeleteUser(at: indexPath)
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-           
+            viewModel.deleteUser(at: indexPath)
         }
     }
 }

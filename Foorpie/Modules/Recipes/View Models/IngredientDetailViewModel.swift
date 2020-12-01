@@ -128,7 +128,7 @@ class IngredientDetailViewModel {
             newIngredient.availableAmount = availableAmount
         }
         if ingredient == nil {
-            PersistenceManagerFactory.menuPersistenceManager.create(ingredient: newIngredient) { [weak self] result in
+            APIManagerFactory.menuPersistenceManager.create(ingredient: newIngredient) { [weak self] result in
                 switch result {
                 case .success:
                     self?.delegate?.refresh()
@@ -139,7 +139,7 @@ class IngredientDetailViewModel {
                 }
             }
         } else {
-            PersistenceManagerFactory.menuPersistenceManager.update(ingredient: newIngredient) { [weak self] result in
+            APIManagerFactory.menuPersistenceManager.update(ingredient: newIngredient) { [weak self] result in
                 switch result {
                 case .success(let ingredient):
                     self?.ingredient = ingredient

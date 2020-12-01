@@ -29,7 +29,7 @@ class UsersListViewModel: NSObject {
     }
     
     func createInvitation() {
-        UserAPIManager.shared.createInvitation { [weak self] result in
+        APIManagerFactory.userAPIManager.createInvitation { [weak self] result in
             switch result {
             case .success(let invitation):
                 self?.invitation = invitation
@@ -37,6 +37,27 @@ class UsersListViewModel: NSObject {
             case .failure(let error):
                 print(error)
                 self?.didCreateInvitation?(error)
+            }
+        }
+    }
+    
+    func canDeleteUser(at indexPath: IndexPath) -> Bool {
+        if section(for: indexPath) != .users || indexPath.row >= users.count {
+            return false
+        }
+        let user = users[indexPath.row]
+        return !user.isMe
+    }
+    
+    func deleteUser(at indexPath: IndexPath) {
+        if section(for: indexPath) != .users { return }
+        let user = users[indexPath.row]
+        user.delete { [weak self] result in
+            switch result {
+            case .success:
+                self?.users.remove(at: indexPath.row)
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }

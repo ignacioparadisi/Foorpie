@@ -33,6 +33,10 @@ class UserViewModel: Hashable {
         hasher.combine(user.id)
     }
     
+    func delete(result: @escaping (Result<Bool, Error>) -> Void) {
+        result(.success(true))
+    }
+    
 }
 
 class User: Codable, Equatable {

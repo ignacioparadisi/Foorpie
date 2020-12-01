@@ -14,19 +14,18 @@ class MainTabBarController: UITabBarController {
     /// View controller for listing orders
     private let orderSplitViewController = OrderSplitViewController()
     /// View controller for listing recipes
-    private let menuSplitViewController = MenuSplitViewController()
+    private let recipesSplitViewController = RecipesSplitViewController()
     private let settingsSplitViewController = AccountSplitViewController()
     
     // MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         orderSplitViewController.tabBarItem = UITabBarItem(title: LocalizedStrings.Title.orders, image: .trayFull, selectedImage: .trayFullFill)
-        menuSplitViewController.tabBarItem = UITabBarItem(title: LocalizedStrings.Title.recipes, image: .docPlaintext, selectedImage: .docPlaintextFill)
+        recipesSplitViewController.tabBarItem = UITabBarItem(title: LocalizedStrings.Title.recipes, image: .docPlaintext, selectedImage: .docPlaintextFill)
         settingsSplitViewController.tabBarItem = UITabBarItem(title: LocalizedStrings.Title.profile, image: .personCropCircle, selectedImage: .personCropCircleFill)
-        menuSplitViewController.preferredDisplayMode = .allVisible
         viewControllers = [
             orderSplitViewController,
-            menuSplitViewController,
+            recipesSplitViewController,
             settingsSplitViewController
         ]
         
@@ -60,12 +59,12 @@ extension MainTabBarController: GIDSignInDelegate {
         let fullName = user.profile.name
         guard let email = user.profile.email else { return }
         let user = User(email: email, fullName: fullName, googleToken: idToken)
-        PersistenceManagerFactory.userPersistenceManager.login(user: user) { result in
+        APIManagerFactory.userAPIManager.login(user: user) { result in
             print(result)
             switch result {
-            case .success(let user):
+            case .success:
                 break
-            case .failure(let error):
+            case .failure:
                 GIDSignIn.sharedInstance()?.signOut()
             }
         }

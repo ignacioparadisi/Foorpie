@@ -70,7 +70,7 @@ class IngredientListViewModel {
     }
     
     func fetch() {
-        PersistenceManagerFactory.menuPersistenceManager.fetchIngredients { [weak self] result in
+        APIManagerFactory.menuPersistenceManager.fetchIngredients { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let ingredients):
