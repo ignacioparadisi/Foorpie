@@ -32,6 +32,9 @@
 		3217DABA2576819B006CAC22 /* CompanyAPIManagerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3217DAB92576819B006CAC22 /* CompanyAPIManagerRepresentable.swift */; };
 		3217DABB2576819B006CAC22 /* CompanyAPIManagerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3217DAB92576819B006CAC22 /* CompanyAPIManagerRepresentable.swift */; };
 		3217DABC2576819B006CAC22 /* CompanyAPIManagerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3217DAB92576819B006CAC22 /* CompanyAPIManagerRepresentable.swift */; };
+		3217DAF3257687A1006CAC22 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3217DAF2257687A1006CAC22 /* FormViewController.swift */; };
+		3217DAF4257687A1006CAC22 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3217DAF2257687A1006CAC22 /* FormViewController.swift */; };
+		3217DAF5257687A1006CAC22 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3217DAF2257687A1006CAC22 /* FormViewController.swift */; };
 		321A166024F9313000CF0C5A /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A165F24F9313000CF0C5A /* UIAlertController+Extension.swift */; };
 		321A166424F93E9600CF0C5A /* ValidatorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A166324F93E9600CF0C5A /* ValidatorConvertible.swift */; };
 		321A166724F95D2700CF0C5A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A166624F95D2700CF0C5A /* BaseViewController.swift */; };
@@ -370,6 +373,7 @@
 		320FF6022517E70A0029EE39 /* Ingredient+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ingredient+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		3217DAAB2576818D006CAC22 /* CompanyAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyAPIManager.swift; sourceTree = "<group>"; };
 		3217DAB92576819B006CAC22 /* CompanyAPIManagerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyAPIManagerRepresentable.swift; sourceTree = "<group>"; };
+		3217DAF2257687A1006CAC22 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		321A165F24F9313000CF0C5A /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		321A166324F93E9600CF0C5A /* ValidatorConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorConvertible.swift; sourceTree = "<group>"; };
 		321A166624F95D2700CF0C5A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -702,6 +706,7 @@
 				32DA6BD324F75D8B0080DD56 /* NoItemSelectedViewController.swift */,
 				321A166624F95D2700CF0C5A /* BaseViewController.swift */,
 				323180DD253386FF00B76A06 /* InvitationViewController.swift */,
+				3217DAF2257687A1006CAC22 /* FormViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -1545,6 +1550,7 @@
 				32D1F8B22519067E004068C7 /* LoginViewController.swift in Sources */,
 				3275C6D224F547F1004691EA /* RecipesSplitViewController.swift in Sources */,
 				32BCDCD024FB2390001CA617 /* IngredientListViewController.swift in Sources */,
+				3217DAF3257687A1006CAC22 /* FormViewController.swift in Sources */,
 				3250B06724F493FB001EE718 /* UICollectionView+Extension.swift in Sources */,
 				32AEE04A24FABF6A006EF7CE /* LocalizedStrings.swift in Sources */,
 				327B32D924F4862700B7DCD1 /* MainTabBarController.swift in Sources */,
@@ -1662,6 +1668,7 @@
 				32D6B30B251A97BD00DB4CBC /* LoginViewController.swift in Sources */,
 				32D6B30C251A97BD00DB4CBC /* RecipesSplitViewController.swift in Sources */,
 				32D6B30D251A97BD00DB4CBC /* IngredientListViewController.swift in Sources */,
+				3217DAF4257687A1006CAC22 /* FormViewController.swift in Sources */,
 				32D6B30E251A97BD00DB4CBC /* UICollectionView+Extension.swift in Sources */,
 				32D6B30F251A97BD00DB4CBC /* LocalizedStrings.swift in Sources */,
 				32D6B310251A97BD00DB4CBC /* MainTabBarController.swift in Sources */,
@@ -1763,6 +1770,7 @@
 				32E29A36251C078F000B5F1C /* LoginViewController.swift in Sources */,
 				32E29A37251C078F000B5F1C /* RecipesSplitViewController.swift in Sources */,
 				32E29A38251C078F000B5F1C /* IngredientListViewController.swift in Sources */,
+				3217DAF5257687A1006CAC22 /* FormViewController.swift in Sources */,
 				32E29A39251C078F000B5F1C /* UICollectionView+Extension.swift in Sources */,
 				32E29A3A251C078F000B5F1C /* LocalizedStrings.swift in Sources */,
 				32E29A3B251C078F000B5F1C /* MainTabBarController.swift in Sources */,
